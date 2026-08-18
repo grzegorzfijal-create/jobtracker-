@@ -73,12 +73,17 @@ zewnętrznych, działa lokalnie i jako Artifact):
   - 🎯 Idealnie dopasowane
   - 👀 Warto rozważyć
 - Dla KAŻDEJ oferty w obu segmentach, bez wyjątku:
-  - tytuł, firma, lokalizacja, widełki (lub "brak danych"), fit score
+  - tytuł, firma, lokalizacja, widełki (lub "brak danych")
+  - **fit score czytelnie opisany**, np. "58/100" z podpisem "Fit score" —
+    nie sama goła liczba
   - **link do oferty** (klikalny, otwiera się w nowej karcie)
   - **kilkuzdaniowe podsumowanie/uzasadnienie** (co pasuje, co nie, co
     nieznane) — nie skracaj do jednego zdania
-  - przycisk **"Dostosuj CV"** (patrz krok 5b) — pobiera gotowy, dostosowany
-    do tej oferty plik CV
+  - przycisk **"👁️ Podgląd i dostosowanie CV"** (patrz krok 5b) — otwiera
+    NAJPIERW podgląd dostosowanego CV w modalu, a dopiero na dole podglądu
+    użytkownik wybiera format do pobrania: **Word (.docx) lub PDF**. Nigdy
+    nie pobieraj pliku bezpośrednio z klika na karcie oferty — podgląd jest
+    obowiązkowym krokiem pośrednim.
 - Sekcja archiwum (zwinięta): lista ofert ⚪ pominiętych tego dnia (fit score
   < 55). Każda pozycja, bez wyjątku, musi mieć **klikalny link do oferty**
   (tytuł jako link) obok krótkiego powodu pominięcia — nie tylko sam tekst.
@@ -93,9 +98,10 @@ to nowy typ treści w tej sesji, więc wczytaj go przed pisaniem znaczników).
 
 Dla KAŻDEJ oferty, która trafia na dashboard (oba segmenty, 🎯 i 👀),
 przygotuj dostosowaną wersję CV **z góry** (podczas tego samego uruchomienia
-pipeline'u), tak żeby przycisk "Dostosuj CV" w Artifakcie działał od razu, bez
-czekania na kolejne uruchomienie (Artifact jest stroną statyczną — nie ma w
-niej żywego backendu, więc generowanie "na klik" nie jest możliwe).
+pipeline'u), tak żeby przycisk "Podgląd i dostosowanie CV" w Artifakcie
+działał od razu, bez czekania na kolejne uruchomienie (Artifact jest stroną
+statyczną — nie ma w niej żywego backendu, więc generowanie "na klik" nie
+jest możliwe).
 
 Zasady dostosowania (twarde, nie do złamania):
 - Jedyne źródło treści to `data/cv_base.md`. NIE wolno dopisywać nowych
@@ -105,21 +111,51 @@ Zasady dostosowania (twarde, nie do złamania):
   mnie" pod kątem słownictwa z oferty, i doborze bulletów najbardziej
   relewantnych dla danej roli/branży. Fakty (firmy, daty, liczby, wyniki)
   zostają identyczne jak w `data/cv_base.md`.
-- Format: DOCX (użyj skilla `docx`). Nazwa pliku:
-  `cv_<slug-firmy>_<slug-stanowiska>.docx`.
-- Zakoduj wygenerowany plik DOCX jako base64 i osadź w
-  `dashboard/index.html` jako string w JS (per oferta) — przycisk "Dostosuj
-  CV" wywołuje `claude.use("downloads")` → `downloads.save({filename, data})`
-  po zdekodowaniu base64 do `Uint8Array`. Zadeklaruj `capabilities:
-  {downloads: true}` przy publikacji Artifactu (patrz krok 7).
-  Jeśli `save()` odrzuci z kodem `extension_not_enabled` (DOCX może nie być
-  włączony w danym widoku), kod JS powinien mieć fallback: spróbować
-  ponownie z plikiem `.md` (zwykły tekst) zamiast `.docx`.
+
+Pipeline (użyj skryptów w `pipeline/scripts/`, `npm install` w tym katalogu
+jeśli `node_modules/docx` brakuje):
+1. Zbuduj JSON konfiguracyjny per oferta (struktura jak w
+   `pipeline/cv_data/*.json` — `candidate`, `contact`, `targetRoleNote`,
+   `about`, `skills[]`, `experience[]`, `education[]`, `additional[]`,
+   `references[]`) wyłącznie z treści `data/cv_base.md`, dobranej pod ofertę.
+   Zapisz do `pipeline/cv_data/<job-id-slug>.json`.
+2. `node pipeline/scripts/build_cv_docx.js <config.json> <out.docx>` — DOCX
+   (skill `docx` jako punkt odniesienia dla jakości, ale generacja idzie
+   przez ten skrypt/docx-js).
+3. `node pipeline/scripts/build_cv_print_html.js <config.json> <out.html>` →
+   `node pipeline/scripts/build_cv_pdf.js <out.html> <out.pdf>` — PDF przez
+   Playwright + preinstalowany Chromium (`/opt/pw-browsers/...`). NIE używaj
+   LibreOffice/`soffice` do PDF — w tym środowisku sandboxowym jest
+   niefunkcjonalne (`source file could not be loaded` nawet na trywialnym
+   pliku); Playwright działa niezawodnie.
+4. `node pipeline/scripts/build_cv_payload.js <config.json> <out.docx>
+   <out.pdf> <job-id> <slug>` — zwraca JSON `{ [job-id]: { cv, docxFilename,
+   docxBase64, pdfFilename, pdfBase64, mdFilename, mdText } }`. Pole `cv` to
+   ten sam config z kroku 1 — dashboard renderuje z niego podgląd w modalu.
+5. Scal payloady wszystkich ofert w jeden obiekt i osadź w
+   `dashboard/index.html` w `<script type="application/json" id="cv-data">`.
+   NIE wklejaj tego ręcznie do dużego stringa w edytorze (base64 potrafi się
+   uciąć) — zamiast tego wstaw placeholder `__CV_DATA_JSON__` w miejscu tego
+   scripta i podmień go programowo (np. `python3 -c "..."` czytające plik i
+   zapisujące z powrotem), tak jak w istniejącym `dashboard/index.html`.
+   Po podmianie ZAWSZE zweryfikuj round-trip: zdekoduj `docxBase64`/
+   `pdfBase64` z finalnego pliku i porównaj bajt-w-bajt z oryginalnym
+   `.docx`/`.pdf` na dysku.
+6. Przycisk na karcie oferty (`onclick="openCvPreview(this)"`) otwiera modal
+   z podglądem zbudowanym z pola `cv` (JS renderuje HTML z tokenów CSS
+   dashboardu — nie osadzaj osobnego zduplikowanego layoutu). W stopce
+   modala dwa przyciski: **"Pobierz Word (.docx)"** i **"Pobierz PDF"**,
+   każdy wywołuje `claude.use("downloads")` → `downloads.save({filename,
+   data})` po zdekodowaniu odpowiedniego base64 do `Uint8Array`. Zadeklaruj
+   `capabilities: {downloads: true}` przy publikacji Artifactu (patrz krok
+   7). Jeśli `save()` odrzuci z kodem `extension_not_enabled` (rozszerzenie
+   może nie być włączone w danym widoku), fallback na plik `.md` (zwykły
+   tekst) z pola `mdText`.
 - Jeśli oferta nie ma wystarczająco informacji (brak treści/JD w mailu, tylko
   tytuł+firma), dostosuj mimo to na bazie tego, co wiadomo (tytuł, branża,
   firma) — zaznacz w uzasadnieniu na dashboardzie, że dostosowanie jest
   ogólne, bo mail nie zawierał pełnego opisu stanowiska.
-- To krok kosztowny (jeden plik DOCX na ofertę) — ale liczba ofert na
+- To krok kosztowny (jeden DOCX + jeden PDF na ofertę) — ale liczba ofert na
   dashboardzie jest z założenia mała (kilka dziennie), więc jest to
   akceptowalne.
 
@@ -153,8 +189,10 @@ Zacommituj zmiany (`profile.md` i `data/cv_base.md` NIE powinny się zmienić,
 chyba że użytkownik je edytował ręcznie — wtedy zostaw jego zmiany) w
 `data/seen_jobs.json`, `dashboard/index.html`, `data/artifact_url.txt`, z
 komunikatem w stylu `Daily job matches — YYYY-MM-DD (N nowych ofert)`. Push
-na branch `main`. Nie commituj wygenerowanych plików DOCX osobno do repo —
-żyją tylko jako base64 wewnątrz `dashboard/index.html` (Artifact).
+na branch `main`. Nie commituj wygenerowanych plików DOCX/PDF/HTML osobno do
+repo (`.gitignore` już wyklucza `*.docx`) — żyją tylko jako base64 wewnątrz
+`dashboard/index.html` (Artifact); JSON-y konfiguracyjne w
+`pipeline/cv_data/*.json` owszem commituj (to źródło, nie build output).
 
 ## Uwagi
 

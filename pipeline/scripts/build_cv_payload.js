@@ -1,19 +1,22 @@
 // Builds the JSON payload embedded in dashboard/index.html for the
-// "Dostosuj CV" buttons: for one job, produces a docx (base64) + a plain
-// markdown fallback (for viewers where the docx extension isn't enabled).
+// "Dostosuj CV" preview + download flow: structured content for the
+// in-page preview, plus DOCX and PDF (base64) for the two download
+// choices, plus a plain-markdown fallback for viewers where those
+// extensions aren't enabled.
 //
-// Usage: node build_cv_payload.js <cv_config.json> <docx_path> <job_id> <slug>
-// Prints one JSON object: { [job_id]: { docxFilename, docxBase64, mdFilename, mdText } }
+// Usage: node build_cv_payload.js <cv_config.json> <docx_path> <pdf_path> <job_id> <slug>
+// Prints one JSON object: { [job_id]: { cv, docxFilename, docxBase64, pdfFilename, pdfBase64, mdFilename, mdText } }
 
 const fs = require("fs");
-const [, , cfgPath, docxPath, jobId, slug] = process.argv;
-if (!cfgPath || !docxPath || !jobId || !slug) {
-  console.error("Usage: node build_cv_payload.js <cv_config.json> <docx_path> <job_id> <slug>");
+const [, , cfgPath, docxPath, pdfPath, jobId, slug] = process.argv;
+if (!cfgPath || !docxPath || !pdfPath || !jobId || !slug) {
+  console.error("Usage: node build_cv_payload.js <cv_config.json> <docx_path> <pdf_path> <job_id> <slug>");
   process.exit(1);
 }
 
 const cfg = JSON.parse(fs.readFileSync(cfgPath, "utf8"));
 const docxBase64 = fs.readFileSync(docxPath).toString("base64");
+const pdfBase64 = fs.readFileSync(pdfPath).toString("base64");
 
 const lines = [];
 lines.push(`# ${cfg.candidate}`);
@@ -40,8 +43,11 @@ const mdText = lines.join("\n");
 
 const payload = {
   [jobId]: {
+    cv: cfg,
     docxFilename: `cv_${slug}.docx`,
     docxBase64,
+    pdfFilename: `cv_${slug}.pdf`,
+    pdfBase64,
     mdFilename: `cv_${slug}.md`,
     mdText,
   },
