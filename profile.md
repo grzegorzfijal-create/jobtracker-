@@ -99,7 +99,27 @@ Dla każdej oferty pipeline powinien przypisać:
 - **Fit score** 0–100
 - Krótkie uzasadnienie (2–4 zdania): co pasuje, co nie, co nieznane (np. brak
   widełek, brak info o aucie)
-- Flagę: 🟢 top match / 🟡 warto rozważyć / ⚪ pominięte (poniżej progu)
+- Segment: 🎯 idealnie dopasowane / 👀 warto rozważyć / ⚪ pominięte (poniżej progu)
 
-Do dashboardu trafiają tylko oferty 🟢 i 🟡 (próg ok. fit score ≥ 55), posortowane
-malejąco po fit score.
+### Segmentacja (dwa segmenty na dashboardzie)
+
+- **🎯 Idealnie dopasowane** (fit score ≥ 75): rola z górnej części preferencji
+  (Brand Manager / Senior Brand Manager, ew. Marketing Manager z pełnym
+  zakresem P&L) ORAZ branża FMCG napojowa (drinks/energy/izotoniki/soki/wody)
+  lub wyjątkowo silne dopasowanie na innych wymiarach (lokalizacja, widełki,
+  seniority) rekompensujące branżę spożywczą ogólną. Samo trafienie tytułem
+  stanowiska (np. "Brand Manager") przy branży spoza FMCG/pharma NIE
+  wystarcza na ten segment.
+- **👀 Warto rozważyć** (fit score 55–74): dobre dopasowanie na części wymiarów,
+  ale z istotnym brakiem — np. trafny tytuł, lecz branża inna niż
+  FMCG-napoje/pharma (w tym FMCG spożywcze ogólne, automotive z dużym
+  brand-buildingiem, usługi), albo brak kluczowych informacji (widełki,
+  zakres), albo rola pokrewna, ale nie idealnie w linii (np. Head of
+  Marketing w mniejszej branży). Tu ląduje np. "Brand Manager" w firmie spoza
+  FMCG napojowego — trafny tytuł, ale nietrafna branża.
+- **⚪ Pominięte** (fit score < 55): poniżej progu — nie trafia na dashboard,
+  ale nadal zapisywane w ledgerze (żeby nie oceniać ponownie).
+
+Do dashboardu trafiają oferty z obu segmentów (🎯 i 👀), każda z linkiem do
+oferty i krótkim podsumowaniem/uzasadnieniem, posortowane malejąco po fit
+score w ramach segmentu.

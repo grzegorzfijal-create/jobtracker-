@@ -8,7 +8,11 @@ uzasadnieniu — nie przerywaj pipeline'u.
 ## 0. Kontekst
 
 - Profil kandydata i kryteria dopasowania: `profile.md` w tym repo. Przeczytaj
-  go PRZED oceną ofert — kryteria mogą się zmieniać.
+  go PRZED oceną ofert — kryteria mogą się zmieniać. Zawiera też definicję
+  dwóch segmentów dashboardu (🎯 idealnie dopasowane / 👀 warto rozważyć).
+- Bazowe CV kandydata: `data/cv_base.md` — jedyne dopuszczalne źródło treści
+  przy generowaniu dostosowanych CV (patrz krok 5b). Nigdy nie dodawaj
+  umiejętności/osiągnięć spoza tego pliku.
 - Ledger już widzianych ofert: `data/seen_jobs.json` — lista obiektów z polami
   `id` (patrz niżej), `first_seen`, `title`, `company`, `sent` (bool).
 - Wygenerowany dashboard z ostatniego uruchomienia: `dashboard/index.html`.
@@ -54,7 +58,10 @@ oceniaj ich ponownie). Nowe oferty dopisz do ledgera na końcu (patrz krok 6).
 
 Dla każdej NOWEJ (niezdeduplikowanej) oferty zastosuj kryteria z `profile.md`
 sekcja "Kryteria dopasowania ofert". Przypisz fit score 0–100, uzasadnienie i
-flagę (🟢/🟡/⚪) zgodnie z opisanym tam formatem.
+segment (🎯/👀/⚪) zgodnie z sekcją "Format oceny" / "Segmentacja" w tym
+pliku — **branża liczy się tak samo mocno jak tytuł stanowiska**: trafny
+tytuł w nietrafnej branży (np. Brand Manager poza FMCG-napojami/pharma)
+to zwykle 👀, nie 🎯.
 
 ## 5. Wygeneruj dashboard
 
@@ -62,11 +69,18 @@ Zbuduj `dashboard/index.html` — statyczna strona HTML (bez zależności
 zewnętrznych, działa lokalnie i jako Artifact):
 - Nagłówek z datą wygenerowania i liczbą nowych ofert przeanalizowanych /
   zakwalifikowanych
-- Lista ofert 🟢 top match i 🟡 warto rozważyć, posortowana malejąco po fit
-  score, z: tytułem, firmą, lokalizacją, widełkami (lub "brak danych"), fit
-  score, uzasadnieniem, linkiem do oferty
-- Sekcja archiwum: zwinięta lista wcześniejszych dni (opcjonalnie, jeśli już
-  istnieje historia)
+- **Dwie sekcje/segmenty**, każda posortowana malejąco po fit score:
+  - 🎯 Idealnie dopasowane
+  - 👀 Warto rozważyć
+- Dla KAŻDEJ oferty w obu segmentach, bez wyjątku:
+  - tytuł, firma, lokalizacja, widełki (lub "brak danych"), fit score
+  - **link do oferty** (klikalny, otwiera się w nowej karcie)
+  - **kilkuzdaniowe podsumowanie/uzasadnienie** (co pasuje, co nie, co
+    nieznane) — nie skracaj do jednego zdania
+  - przycisk **"Dostosuj CV"** (patrz krok 5b) — pobiera gotowy, dostosowany
+    do tej oferty plik CV
+- Sekcja archiwum: zwinięta lista wcześniejszych dni / ofert pominiętych
+  (opcjonalnie, jeśli już istnieje historia)
 
 Zachowaj też styl/motyw jasny+ciemny (`prefers-color-scheme`), responsywny
 layout — to strona, którą użytkownik będzie oglądał na telefonie.
@@ -74,21 +88,58 @@ layout — to strona, którą użytkownik będzie oglądał na telefonie.
 Przy pisaniu HTML/Artifactu skorzystaj ze skilla `artifact-design` (dashboard
 to nowy typ treści w tej sesji, więc wczytaj go przed pisaniem znaczników).
 
+## 5b. Przygotuj dostosowane CV dla każdej oferty na dashboardzie
+
+Dla KAŻDEJ oferty, która trafia na dashboard (oba segmenty, 🎯 i 👀),
+przygotuj dostosowaną wersję CV **z góry** (podczas tego samego uruchomienia
+pipeline'u), tak żeby przycisk "Dostosuj CV" w Artifakcie działał od razu, bez
+czekania na kolejne uruchomienie (Artifact jest stroną statyczną — nie ma w
+niej żywego backendu, więc generowanie "na klik" nie jest możliwe).
+
+Zasady dostosowania (twarde, nie do złamania):
+- Jedyne źródło treści to `data/cv_base.md`. NIE wolno dopisywać nowych
+  umiejętności, osiągnięć, narzędzi, lat doświadczenia ani niczego, czego tam
+  nie ma — dostosowanie polega WYŁĄCZNIE na: zmianie kolejności punktów,
+  wyborze/skróceniu które punkty wyeksponować, przeformułowaniu nagłówka "O
+  mnie" pod kątem słownictwa z oferty, i doborze bulletów najbardziej
+  relewantnych dla danej roli/branży. Fakty (firmy, daty, liczby, wyniki)
+  zostają identyczne jak w `data/cv_base.md`.
+- Format: DOCX (użyj skilla `docx`). Nazwa pliku:
+  `cv_<slug-firmy>_<slug-stanowiska>.docx`.
+- Zakoduj wygenerowany plik DOCX jako base64 i osadź w
+  `dashboard/index.html` jako string w JS (per oferta) — przycisk "Dostosuj
+  CV" wywołuje `claude.use("downloads")` → `downloads.save({filename, data})`
+  po zdekodowaniu base64 do `Uint8Array`. Zadeklaruj `capabilities:
+  {downloads: true}` przy publikacji Artifactu (patrz krok 7).
+  Jeśli `save()` odrzuci z kodem `extension_not_enabled` (DOCX może nie być
+  włączony w danym widoku), kod JS powinien mieć fallback: spróbować
+  ponownie z plikiem `.md` (zwykły tekst) zamiast `.docx`.
+- Jeśli oferta nie ma wystarczająco informacji (brak treści/JD w mailu, tylko
+  tytuł+firma), dostosuj mimo to na bazie tego, co wiadomo (tytuł, branża,
+  firma) — zaznacz w uzasadnieniu na dashboardzie, że dostosowanie jest
+  ogólne, bo mail nie zawierał pełnego opisu stanowiska.
+- To krok kosztowny (jeden plik DOCX na ofertę) — ale liczba ofert na
+  dashboardzie jest z założenia mała (kilka dziennie), więc jest to
+  akceptowalne.
+
 ## 6. Zaktualizuj ledger
 
 Dopisz nowe oferty do `data/seen_jobs.json` z polami: `id`, `first_seen`
-(ISO timestamp), `title`, `company`, `fit_score`, `flag`, `sent: true` (dla
-🟢/🟡 trafiających na dashboard) lub `sent: false` (dla ⚪ pominiętych —
-nadal zapisz, żeby nie oceniać ich ponownie jutro).
+(ISO timestamp), `title`, `company`, `fit_score`, `flag` (🎯/👀/⚪),
+`sent: true` (dla 🎯/👀 trafiających na dashboard) lub `sent: false` (dla ⚪
+pominiętych — nadal zapisz, żeby nie oceniać ich ponownie jutro).
 
 ## 7. Opublikuj i wyślij
 
 - Opublikuj/zaktualizuj dashboard jako Artifact (użyj `Artifact` tool,
-  `file_path` = `dashboard/index.html`). Jeśli `data/artifact_url.txt` już
-  zawiera URL, zaktualizuj TEN SAM artifact (parametr `url`) zamiast tworzyć
-  nowy. Jeśli to pierwsze uruchomienie, opublikuj nowy i zapisz zwrócony URL
-  do `data/artifact_url.txt`.
-- Jeśli są nowe oferty 🟢/🟡, wyślij użytkownikowi powiadomienie push
+  `file_path` = `dashboard/index.html`, `capabilities: {downloads: true}` —
+  wymagane dla przycisków "Dostosuj CV", patrz krok 5b). Jeśli
+  `data/artifact_url.txt` już zawiera URL, zaktualizuj TEN SAM artifact
+  (parametr `url`) zamiast tworzyć nowy — PRZED tym zawsze najpierw
+  `WebFetch` obecny URL, żeby nie nadpisać nieodczytanej wersji. Jeśli to
+  pierwsze uruchomienie, opublikuj nowy i zapisz zwrócony URL do
+  `data/artifact_url.txt`.
+- Jeśli są nowe oferty 🎯/👀, wyślij użytkownikowi powiadomienie push
   (`PushNotification` tool, jeśli dostępne) z krótkim podsumowaniem (liczba
   nowych trafień, najlepszy match) i linkiem do dashboardu.
 - Jeśli NIE ma żadnych nowych ofert spełniających próg, nie wysyłaj
@@ -97,11 +148,12 @@ nadal zapisz, żeby nie oceniać ich ponownie jutro).
 
 ## 8. Commit i push
 
-Zacommituj zmiany (`profile.md` NIE powinien się zmienić, chyba że
-użytkownik go edytował ręcznie — wtedy zostaw jego zmiany) w
+Zacommituj zmiany (`profile.md` i `data/cv_base.md` NIE powinny się zmienić,
+chyba że użytkownik je edytował ręcznie — wtedy zostaw jego zmiany) w
 `data/seen_jobs.json`, `dashboard/index.html`, `data/artifact_url.txt`, z
 komunikatem w stylu `Daily job matches — YYYY-MM-DD (N nowych ofert)`. Push
-na branch `main`.
+na branch `main`. Nie commituj wygenerowanych plików DOCX osobno do repo —
+żyją tylko jako base64 wewnątrz `dashboard/index.html` (Artifact).
 
 ## Uwagi
 
@@ -113,3 +165,5 @@ na branch `main`.
   podsumowaniu, czy użytkownik na pewno ma aktywne alerty ustawione na
   pracuj.pl i LinkedIn — to jednorazowa rzecz do zweryfikowania, nie błąd
   pipeline'u.
+- CV: nigdy nie zmyślaj umiejętności/osiągnięć spoza `data/cv_base.md` — to
+  twardy wymóg użytkownika, nie sugestia.

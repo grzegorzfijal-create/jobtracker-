@@ -12,8 +12,8 @@
     --accent-ink: #7a3d0c;
     --good: #2f6b4a;
     --good-bg: #e4efe6;
-    --consider: #92700a;
-    --consider-bg: #f6eed4;
+    --consider: #4a5f92;
+    --consider-bg: #e6eaf6;
     --warn: #92700a;
     --warn-bg: #f6eed4;
     --shadow: 0 1px 2px rgba(30, 42, 47, 0.06), 0 8px 24px -12px rgba(30, 42, 47, 0.18);
@@ -31,8 +31,8 @@
       --accent-ink: #f0ad6e;
       --good: #6fbf97;
       --good-bg: #223731;
-      --consider: #e0b84a;
-      --consider-bg: #372f18;
+      --consider: #8fa8e0;
+      --consider-bg: #232c40;
       --warn: #e0b84a;
       --warn-bg: #372f18;
       --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
@@ -50,8 +50,8 @@
     --accent-ink: #f0ad6e;
     --good: #6fbf97;
     --good-bg: #223731;
-    --consider: #e0b84a;
-    --consider-bg: #372f18;
+    --consider: #8fa8e0;
+    --consider-bg: #232c40;
     --warn: #e0b84a;
     --warn-bg: #372f18;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
@@ -150,18 +150,33 @@
 
   .notice strong { color: inherit; }
 
-  section.results { margin-bottom: 8px; }
+  section.segment { margin-bottom: 8px; }
 
-  section.results h2 {
+  section.segment h2 {
     font-family: "Big Shoulders Display", system-ui, sans-serif;
     font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: 0.02em;
+    font-size: 1.3rem;
+    letter-spacing: 0.01em;
     text-transform: uppercase;
+    color: var(--ink);
+    margin: 32px 0 4px;
+  }
+
+  section.segment .segment-desc {
+    font-size: 0.84rem;
     color: var(--ink-soft);
-    margin: 28px 0 12px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid var(--line);
+    margin: 0 0 14px;
+    line-height: 1.5;
+    max-width: 60ch;
+  }
+
+  .empty-segment {
+    border: 1px dashed var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
   }
 
   .card {
@@ -236,16 +251,48 @@
   .card p.reason {
     line-height: 1.55;
     color: var(--ink);
-    margin: 10px 0 14px;
+    margin: 10px 0 16px;
+  }
+
+  .card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    align-items: center;
   }
 
   .card a.apply {
-    display: inline-block;
     font-weight: 600;
     color: var(--accent-ink);
     text-decoration: none;
     border-bottom: 2px solid var(--accent);
     padding-bottom: 1px;
+  }
+
+  button.cv-btn {
+    font: inherit;
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 0.86rem;
+    color: var(--surface);
+    background: var(--ink);
+    border: none;
+    border-radius: 999px;
+    padding: 8px 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  button.cv-btn:hover { opacity: 0.88; }
+  button.cv-btn:disabled { opacity: 0.55; cursor: default; }
+  button.cv-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .cv-note {
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    margin-top: 8px;
   }
 
   details.archive {
@@ -290,18 +337,25 @@
   <div class="meta-line" style="margin-bottom: 4px;">Aktualizacja: 18 sierpnia 2026</div>
 
   <div class="stat-row">
-    <div class="stat"><div class="n">1</div><div class="l">Top match</div></div>
-    <div class="stat"><div class="n">0</div><div class="l">Warto rozważyć</div></div>
+    <div class="stat"><div class="n">0</div><div class="l">Idealnie dopasowane</div></div>
+    <div class="stat"><div class="n">1</div><div class="l">Warto rozważyć</div></div>
     <div class="stat"><div class="n">12</div><div class="l">Przeanalizowane</div></div>
   </div>
 
   <div class="notice">
     <span>⚠️</span>
-    <span><strong>Brak alertów z pracuj.pl.</strong> Dzisiejsze skanowanie znalazło alerty tylko z LinkedIn — na koncie Gmail nie ma żadnych maili od pracuj.pl za ostatnie 30 dni. Jeśli chcesz, żeby pracuj.pl też był źródłem, ustaw tam alert mailowy na stanowiska Brand Manager / Marketing Manager w Warszawie.</span>
+    <span><strong>Brak alertów z pracuj.pl w tej rundzie.</strong> Alerty na pracuj.pl zostały właśnie skonfigurowane (Brand Manager / Senior Brand Manager / Marketing Manager / Dyrektor Marketingu, Warszawa) — pierwsze maile mogą przyjść z opóźnieniem do 24-48h i pojawią się w kolejnym uruchomieniu.</span>
   </div>
 
-  <section class="results">
-    <h2>🟢 Top match</h2>
+  <section class="segment">
+    <h2>🎯 Idealnie dopasowane</h2>
+    <p class="segment-desc">Trafny tytuł stanowiska ORAZ branża FMCG-napoje/pharma (lub wyjątkowo silne dopasowanie na innych wymiarach).</p>
+    <div class="empty-segment">Dziś brak ofert w tym segmencie — żadna z 12 przeanalizowanych nie połączyła trafnego tytułu z branżą FMCG napojową/pharma na poziomie wymaganym dla top matcha.</div>
+  </section>
+
+  <section class="segment">
+    <h2>👀 Warto rozważyć</h2>
+    <p class="segment-desc">Dobre dopasowanie na części wymiarów, ale z istotnym brakiem — najczęściej trafny tytuł w branży spoza ścisłego profilu, albo brakujące informacje (widełki, zakres).</p>
 
     <div class="card">
       <div class="card-top">
@@ -309,20 +363,25 @@
           <h3>Brand Manager</h3>
           <p class="company">EuroMatch Group</p>
         </div>
-        <div class="score">65</div>
+        <div class="score">58</div>
       </div>
       <div class="tags">
         <span>📍 Warszawa</span>
         <span>💰 widełki nieznane</span>
-        <span class="pill good">🟢 top match</span>
+        <span class="pill consider">👀 warto rozważyć</span>
       </div>
       <p class="reason">
-        Tytuł stanowiska to dokładne trafienie w pierwszą preferencję z profilu (Brand Manager)
-        i lokalizacja pasuje (Warszawa). Sam alert LinkedIn nie podaje branży ani widełek — to
-        do zweryfikowania po otwarciu oferty. Warto sprawdzić kategorię produktową i czy jest
-        to rola z pełną odpowiedzialnością za markę, zanim zdecydujesz się aplikować.
+        Tytuł stanowiska to dokładne trafienie w pierwszą preferencję z profilu (Brand Manager),
+        lokalizacja pasuje (Warszawa). Jednak EuroMatch Group nie jest firmą FMCG-napojową — to,
+        wraz z brakiem informacji o widełkach, branży dokładnej kategorii produktowej i aucie
+        służbowym w samym alercie LinkedIn, sprowadza to do segmentu "warto rozważyć" zamiast top
+        matcha. Zdecydowanie warto otworzyć ofertę i sprawdzić szczegóły przed decyzją o aplikacji.
       </p>
-      <a class="apply" href="https://www.linkedin.com/jobs/view/4452245439/">Zobacz ofertę →</a>
+      <div class="card-actions">
+        <a class="apply" href="https://www.linkedin.com/jobs/view/4452245439/" target="_blank" rel="noopener">Zobacz ofertę →</a>
+        <button type="button" class="cv-btn" data-job-id="linkedin:4452245439" onclick="downloadTailoredCV(this)">📄 Dostosuj CV</button>
+      </div>
+      <div class="cv-note">CV wyróżnia Twoje doświadczenie w brand managemencie i uruchomieniach produktów — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
     </div>
   </section>
 
@@ -350,5 +409,59 @@
     </div>
   </details>
 
-  <footer>Job Radar · wygenerowano przez codzienny pipeline · źródło: LinkedIn (alerty mailowe) — pracuj.pl brak alertów</footer>
+  <footer>Job Radar · wygenerowano przez codzienny pipeline · źródło: LinkedIn + pracuj.pl (alerty mailowe)</footer>
 </div>
+
+<script type="application/json" id="cv-data">{"linkedin:4452245439":{"docxFilename":"cv_brand-manager_euromatch-group.docx","docxBase64":"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","mdFilename":"cv_brand-manager_euromatch-group.md","mdText":"# Grzegorz Fijał\nWarszawa, ul. Sokołowska · +48 606 965 819 · grzegorz.fijal@gmail.com · linkedin.com (bit.ly/48345d1)\n\n_CV dostosowane pod ofertę: Brand Manager, EuroMatch Group (Warszawa)_\n\n## O mnie\nDynamic marketing leader with almost 10 years of experience driving growth for consumer goods brands. Proven track record in launching and managing FMCG products, with strong expertise in brand positioning, consumer behavior analysis, and in-store execution. Full ownership of marketing strategy, execution and performance (P&L), with hands-on experience across ATL/BTL/digital, NPD and go-to-market for retail-facing brands.\n\n## Kluczowe kompetencje\n- Strategic brand management across multiple FMCG categories\n- Full ownership of marketing strategy, execution, and performance (P&L responsibility)\n- Integrated 360° campaign leadership (ATL/BTL/Digital)\n- Product launch and go-to-market strategy development\n- Deep expertise in consumer behavior, shopper insights, and segmentation\n- Innovation leadership: trend analysis, NPD process, and brand innovation pipeline\n- Stakeholder management: C-level, agencies, sales, media, R&D\n- Data-driven planning, forecasting and budget management\n- Influencer marketing, branded content & social media campaign development\n- Leading with empathy, clarity and strategic direction — low turnover, high team morale\n\n## Doświadczenie zawodowe\n\n**XL Energy Marketing**\nSenior Brand Manager / Marketing Manager — 04.2025–now\nBrand Manager — 04.2024–03.2025\n- Held full responsibility for 360° marketing activities in Poland across energy drink and mocktail categories\n- Led NPD (New Product Development) projects from insight to launch, aligning with brand strategy and market trends\n- Managed a team of 4 marketers, providing leadership, mentorship and performance accountability\n- Designed and executed high-impact social media and influencer campaigns, reaching 100M+ views and engaging over 80 influencers\n- Oversaw integrated communication across digital, retail, trade and media channels; collaborated cross-functionally with sales, trade marketing, R&D and external agencies\n- Monitored campaign KPIs using Nielsen, Google Analytics, Power BI and internal sales data; ensured budget management, cost control and ROI optimization\n- Reported directly to the CEO and founder, providing strategic recommendations and performance updates\n\n**OSHEE**\nBrand Manager — 12.2017–10.2019\n- Co-designed the ambassador contract with Robert and Anna Lewandowski, resulting in significant market share gains in sports drinks and vitamin water\n- Launched the first all-natural isotonic drink on the market; planned and implemented a fully integrated marketing campaign with Robert Lewandowski\n- Launched an innovative COMBU beer-flavoured energy drink, including planning and implementation of promotional activities\n- Conducted effective product presentations for retail chains such as Żabka and Biedronka\n- Carried out promotional activities with brand ambassadors, influencers and sponsorship contracts (PZPN, Joanna Jędrzejczyk, KSW, Ekstraklasa)\n\n**Olimp Laboratories**\nBrand Manager — 08.2019–10.2019\nMarketing Specialist — 12.2017–08.2019\n- Developed the Olimp Store stationary network from 5 to 16 points in 2 years\n- Managed a group of Olimp Sport Nutrition brand ambassadors, doubled their number and grew brand-channel content\n- Ran the Olimp Sport Nutrition Facebook fanpage — largest reach in the category at the time\n- Initiated and implemented the launch of the Olimp Premium Club loyalty programme\n\n**Neo-Vinci Pharma Marketing**\nHead of Strategy and New Business — 09.2022–03.2024\nMarketing and Sales Manager — 10.2019–09.2022\n- Defined and implemented a new operating-model and agency structure, resulting in a 34% reduction of customer's turnover\n- Developed and rolled out a new commercial policy, resulting in nearly 50% growth in new customer acquisition\n- Independently developed strategies and solutions for clients including Pierre Fabre, Novo Nordisk, Glenmark, Sanprobi, Stada and Filofarm\n\n## Wykształcenie\n- Warsaw School of Economics — Business Management, Postgraduate Studies (2022)\n- Lazarski University — Economics and Management, specialization: Digital Marketing\n- University of Warsaw — International Relations (niedokończone)\n\n## Dodatkowe umiejętności i języki\n- Polski — native language, Angielski — C1\n- Prawo jazdy: A, B\n- Hard skills: budget planning, pricing strategy, forecasting, category management, agency briefing, data-driven decision making, stakeholder communication\n- Narzędzia: Nielsen, GfK, Meta Business Suite, TikTok Ads, Google Analytics 4, Power BI, Jira, Asana, Canva, Brand24, Senuto\n\n## Referencje\n- Artur Konefał — CEO & Founder, Neo-Vinci — 792 850 530\n- Mariusz Ryciak — CMO, OSHEE — +48 664 941 141\n- Wacław Widomski — CMO, Olimp Laboratories — +48 602 669 819"}}</script>
+<script>
+  (function () {
+    function b64ToBytes(b64) {
+      const binary = atob(b64);
+      const bytes = new Uint8Array(binary.length);
+      for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+      return bytes;
+    }
+
+    let cvData = {};
+    try {
+      cvData = JSON.parse(document.getElementById("cv-data").textContent);
+    } catch (e) {
+      cvData = {};
+    }
+
+    window.downloadTailoredCV = async function (btn) {
+      const jobId = btn.getAttribute("data-job-id");
+      const entry = cvData[jobId];
+      if (!entry) return;
+
+      if (!window.claude || !window.claude.use) {
+        alert("Pobieranie plików nie jest dostępne w tym widoku.");
+        return;
+      }
+
+      const originalLabel = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = "Przygotowuję…";
+
+      try {
+        const downloads = await window.claude.use("downloads");
+        if (!downloads) {
+          alert("Pobieranie plików nie jest dostępne w tym widoku.");
+          return;
+        }
+        try {
+          await downloads.save({ filename: entry.docxFilename, data: b64ToBytes(entry.docxBase64) });
+        } catch (err) {
+          if (err && err.code === "extension_not_enabled" && entry.mdText) {
+            await downloads.save({ filename: entry.mdFilename, data: entry.mdText });
+          } else if (err && err.code !== "declined") {
+            alert("Nie udało się pobrać pliku (" + (err && err.code ? err.code : "błąd") + "). Spróbuj ponownie.");
+          }
+        }
+      } finally {
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+      }
+    };
+  })();
+</script>
