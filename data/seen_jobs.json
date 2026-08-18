@@ -1,1 +1,110 @@
-[]
+[
+  {
+    "id": "linkedin:4452245439",
+    "first_seen": "2026-08-18T20:36:17Z",
+    "title": "Brand Manager",
+    "company": "EuroMatch Group",
+    "fit_score": 65,
+    "flag": "🟢",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4455284646",
+    "first_seen": "2026-08-18T20:36:17Z",
+    "title": "Marketing Manager - DENZA Brand",
+    "company": "BYD Polska",
+    "fit_score": 45,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4454280198",
+    "first_seen": "2026-08-18T20:36:17Z",
+    "title": "Marketing Manager - Medical Clinics (F/M/D)",
+    "company": "Sanity Group",
+    "fit_score": 50,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4454234711",
+    "first_seen": "2026-08-18T20:36:17Z",
+    "title": "Remote Brand and Marketplace Operations Manager",
+    "company": "Excelsior Group",
+    "fit_score": 40,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4444180321",
+    "first_seen": "2026-08-18T20:36:17Z",
+    "title": "Senior General Marketing Manager/Head of Marketing",
+    "company": "RWS",
+    "fit_score": 35,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4440116460",
+    "first_seen": "2026-08-18T20:36:17Z",
+    "title": "PR Manager",
+    "company": "Stellantis",
+    "fit_score": 22,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4418870629",
+    "first_seen": "2026-08-18T20:36:17Z",
+    "title": "Junior / Senior Marketing Manager",
+    "company": "SOFAR",
+    "fit_score": 20,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4386909342",
+    "first_seen": "2026-08-18T20:36:17Z",
+    "title": "Export Manager",
+    "company": "Bunge",
+    "fit_score": 18,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4454263165",
+    "first_seen": "2026-08-18T20:36:17Z",
+    "title": "Sales Manager Poland and Eastern Europe Human Health (m/f)",
+    "company": "Novonesis",
+    "fit_score": 15,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4446725834",
+    "first_seen": "2026-08-18T20:36:17Z",
+    "title": "HEAD OF KAM (F/M/D)",
+    "company": "Ignitis Group Polska",
+    "fit_score": 12,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4426653056",
+    "first_seen": "2026-08-18T20:36:17Z",
+    "title": "Business Development Manager – HPE Aruba (k/m)",
+    "company": "Ingram Micro",
+    "fit_score": 12,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4427943716",
+    "first_seen": "2026-08-18T20:36:17Z",
+    "title": "Sales Team Leader",
+    "company": "ZnanyLekarz",
+    "fit_score": 10,
+    "flag": "⚪",
+    "sent": false
+  }
+]
