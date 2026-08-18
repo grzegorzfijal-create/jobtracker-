@@ -79,8 +79,9 @@ zewnętrznych, działa lokalnie i jako Artifact):
     nieznane) — nie skracaj do jednego zdania
   - przycisk **"Dostosuj CV"** (patrz krok 5b) — pobiera gotowy, dostosowany
     do tej oferty plik CV
-- Sekcja archiwum: zwinięta lista wcześniejszych dni / ofert pominiętych
-  (opcjonalnie, jeśli już istnieje historia)
+- Sekcja archiwum (zwinięta): lista ofert ⚪ pominiętych tego dnia (fit score
+  < 55). Każda pozycja, bez wyjątku, musi mieć **klikalny link do oferty**
+  (tytuł jako link) obok krótkiego powodu pominięcia — nie tylko sam tekst.
 
 Zachowaj też styl/motyw jasny+ciemny (`prefers-color-scheme`), responsywny
 layout — to strona, którą użytkownik będzie oglądał na telefonie.
