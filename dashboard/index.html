@@ -1,0 +1,294 @@
+<title>Job Radar</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root {
+    --bg: #f4f5f1;
+    --surface: #ffffff;
+    --surface-2: #eceee7;
+    --ink: #1e2a2f;
+    --ink-soft: #55625f;
+    --line: #dcded5;
+    --accent: #b45a12;
+    --accent-ink: #7a3d0c;
+    --good: #2f6b4a;
+    --good-bg: #e4efe6;
+    --consider: #92700a;
+    --consider-bg: #f6eed4;
+    --shadow: 0 1px 2px rgba(30, 42, 47, 0.06), 0 8px 24px -12px rgba(30, 42, 47, 0.18);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #171d1c;
+      --surface: #1f2624;
+      --surface-2: #263030;
+      --ink: #eeece4;
+      --ink-soft: #a3ada8;
+      --line: #333e3b;
+      --accent: #e08a3c;
+      --accent-ink: #f0ad6e;
+      --good: #6fbf97;
+      --good-bg: #223731;
+      --consider: #e0b84a;
+      --consider-bg: #372f18;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #171d1c;
+    --surface: #1f2624;
+    --surface-2: #263030;
+    --ink: #eeece4;
+    --ink-soft: #a3ada8;
+    --line: #333e3b;
+    --accent: #e08a3c;
+    --accent-ink: #f0ad6e;
+    --good: #6fbf97;
+    --good-bg: #223731;
+    --consider: #e0b84a;
+    --consider-bg: #372f18;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: clamp(20px, 5vw, 56px) clamp(16px, 4vw, 24px) 64px;
+  }
+
+  header.masthead {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 14px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+
+  .wordmark {
+    font-family: "Big Shoulders Display", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    line-height: 0.9;
+  }
+
+  .wordmark span { color: var(--accent); }
+
+  .meta-line {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin: 20px 0 32px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .stat {
+    background: var(--surface);
+    padding: 14px 16px;
+  }
+
+  .stat .n {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stat .l {
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 2px;
+  }
+
+  .empty {
+    background: var(--surface);
+    border: 1px dashed var(--line);
+    border-radius: 10px;
+    padding: clamp(28px, 6vw, 48px) clamp(20px, 5vw, 32px);
+    text-align: left;
+  }
+
+  .empty h2 {
+    font-family: "Big Shoulders Display", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+
+  .empty p {
+    color: var(--ink-soft);
+    line-height: 1.6;
+    max-width: 56ch;
+    margin: 0 0 12px;
+  }
+
+  .empty ol {
+    color: var(--ink-soft);
+    line-height: 1.7;
+    padding-left: 1.2em;
+    margin: 16px 0 0;
+  }
+
+  .empty code {
+    background: var(--surface-2);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.9em;
+    color: var(--ink);
+  }
+
+  footer {
+    margin-top: 40px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Reference card markup for the daily pipeline to reuse when it has real offers */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    margin-bottom: 14px;
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .card h3 {
+    font-family: "Big Shoulders Display", system-ui, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 2px;
+    text-transform: uppercase;
+  }
+
+  .card .company {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    margin: 0;
+  }
+
+  .score {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 1.4rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--accent-ink);
+    white-space: nowrap;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+
+  .pill.good { background: var(--good-bg); color: var(--good); }
+  .pill.consider { background: var(--consider-bg); color: var(--consider); }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+
+  .tags span {
+    background: var(--surface-2);
+    padding: 3px 9px;
+    border-radius: 6px;
+  }
+
+  .card p.reason {
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 10px 0 14px;
+  }
+
+  .card a.apply {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--accent-ink);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 1px;
+  }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <div class="wordmark">Job<span>Radar</span></div>
+    <div class="meta-line">Brand &amp; Marketing · FMCG / Napoje</div>
+  </header>
+  <div class="meta-line" style="margin-bottom: 4px;">Jeszcze nie uruchomiono · czeka na pierwszy przebieg</div>
+
+  <div class="stat-row">
+    <div class="stat"><div class="n">0</div><div class="l">Top match</div></div>
+    <div class="stat"><div class="n">0</div><div class="l">Warto rozważyć</div></div>
+    <div class="stat"><div class="n">0</div><div class="l">Przeanalizowane</div></div>
+  </div>
+
+  <div class="empty">
+    <h2>Radar uzbrojony, czeka na sygnał</h2>
+    <p>
+      Ten dashboard zapełni się automatycznie po pierwszym uruchomieniu
+      codziennego pipeline'u — przeczyta alerty mailowe z pracuj.pl i
+      LinkedIn, oceni każdą ofertę względem profilu w <code>profile.md</code>
+      i pokaże tu tylko te, które naprawdę pasują.
+    </p>
+    <ol>
+      <li>Ustaw alerty mailowe (dzienne lub natychmiastowe) na pracuj.pl i LinkedIn na skrzynkę powiązaną z tym kontem.</li>
+      <li>Sprawdź / dopracuj kryteria w <code>profile.md</code>.</li>
+      <li>Poczekaj na pierwsze uruchomienie zaplanowanego triggera — dashboard nadpisze tę stronę realnymi ofertami.</li>
+    </ol>
+  </div>
+
+  <footer>Job Radar · wygenerowano przez codzienny pipeline · źródło: pracuj.pl + LinkedIn (alerty mailowe)</footer>
+</div>
