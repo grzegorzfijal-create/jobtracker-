@@ -106,5 +106,149 @@
     "fit_score": 10,
     "flag": "⚪",
     "sent": false
+  },
+  {
+    "id": "linkedin:4454315607",
+    "first_seen": "2026-08-19T09:32:00Z",
+    "title": "Senior Director, MM & Cappy",
+    "company": "The Coca-Cola Company",
+    "fit_score": 82,
+    "flag": "🎯",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4427861262",
+    "first_seen": "2026-08-19T09:32:00Z",
+    "title": "Brand Manager EUCERIN",
+    "company": "Beiersdorf",
+    "fit_score": 60,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4451267893",
+    "first_seen": "2026-08-19T09:32:00Z",
+    "title": "Brand Manager I Neurology",
+    "company": "Novartis Poland",
+    "fit_score": 58,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4451290632",
+    "first_seen": "2026-08-19T09:32:00Z",
+    "title": "Brand Manager | Hematology",
+    "company": "Novartis Poland",
+    "fit_score": 58,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4452225436",
+    "first_seen": "2026-08-19T09:32:00Z",
+    "title": "Brand Manager (kategoria Beauty)",
+    "company": "Orbico Poland",
+    "fit_score": 58,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4452997903",
+    "first_seen": "2026-08-19T09:32:00Z",
+    "title": "Senior Manager—Marketing (all genders)",
+    "company": "Boston Consulting Group (BCG)",
+    "fit_score": 30,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4450167179",
+    "first_seen": "2026-08-19T09:32:00Z",
+    "title": "Cluster Marketing Lead - Generics",
+    "company": "ARTO",
+    "fit_score": 48,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4452270774",
+    "first_seen": "2026-08-19T09:32:00Z",
+    "title": "Senior Amazon Brand Manager",
+    "company": "GNO Partners",
+    "fit_score": 38,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4434309800",
+    "first_seen": "2026-08-19T09:32:00Z",
+    "title": "Franchise Lead R&I",
+    "company": "AstraZeneca",
+    "fit_score": 42,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4451225785",
+    "first_seen": "2026-08-19T09:32:00Z",
+    "title": "Category Marketing & Business Development - Oil Crops",
+    "company": "Vylor",
+    "fit_score": 52,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4454023619",
+    "first_seen": "2026-08-19T09:32:00Z",
+    "title": "Marketing Manager",
+    "company": "Franke Group",
+    "fit_score": 48,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4450458865",
+    "first_seen": "2026-08-19T09:32:00Z",
+    "title": "Brand Marketing Manager",
+    "company": "AsstrA-Associated Traffic AG",
+    "fit_score": 30,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4454099576",
+    "first_seen": "2026-08-19T09:32:00Z",
+    "title": "Dyrektor/Dyrektorka ds. Marketingu",
+    "company": "AIBY",
+    "fit_score": 45,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4455353931",
+    "first_seen": "2026-08-19T09:32:00Z",
+    "title": "Marketing lead",
+    "company": "JugaBet",
+    "fit_score": 30,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4454390839",
+    "first_seen": "2026-08-19T09:32:00Z",
+    "title": "Head of Marketing",
+    "company": "Flobotics",
+    "fit_score": 35,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4452709585",
+    "first_seen": "2026-08-19T09:32:00Z",
+    "title": "Head of Marketing & Growth - financial services",
+    "company": "PAYALLY GLOBAL",
+    "fit_score": 30,
+    "flag": "⚪",
+    "sent": false
   }
 ]
