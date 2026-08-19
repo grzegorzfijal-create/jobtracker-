@@ -250,5 +250,77 @@
     "fit_score": 30,
     "flag": "⚪",
     "sent": false
+  },
+  {
+    "id": "linkedin:4436611231",
+    "first_seen": "2026-08-19T12:34:00Z",
+    "title": "Group Brand Manager Skin Care",
+    "company": "Beiersdorf",
+    "fit_score": 62,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4435612095",
+    "first_seen": "2026-08-19T12:34:00Z",
+    "title": "Brand Manager NIVEA - Baltic region",
+    "company": "Beiersdorf",
+    "fit_score": 62,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4455320597",
+    "first_seen": "2026-08-19T12:34:00Z",
+    "title": "Brand Manager, Dermatology (Aesthetics & Prescription Products)",
+    "company": "Galderma",
+    "fit_score": 60,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4455348022",
+    "first_seen": "2026-08-19T12:34:00Z",
+    "title": "Digital Ecosystem & Performance Lead - WINIARY",
+    "company": "Nestlé",
+    "fit_score": 56,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4441052751",
+    "first_seen": "2026-08-19T12:34:00Z",
+    "title": "Trade Marketing Manager - Eucerin",
+    "company": "Beiersdorf",
+    "fit_score": 45,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4455717789",
+    "first_seen": "2026-08-19T12:34:00Z",
+    "title": "Product Marketing Manager",
+    "company": "Xopero Software | GitProtect",
+    "fit_score": 28,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4455347402",
+    "first_seen": "2026-08-19T12:34:00Z",
+    "title": "Global Corporate Sales Manager",
+    "company": "Roundtrip",
+    "fit_score": 15,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4455312109",
+    "first_seen": "2026-08-19T12:34:00Z",
+    "title": "Sales Development Manager",
+    "company": "Hudson Talent Solutions",
+    "fit_score": 15,
+    "flag": "⚪",
+    "sent": false
   }
 ]
