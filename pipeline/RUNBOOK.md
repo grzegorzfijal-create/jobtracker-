@@ -34,6 +34,23 @@ Jeśli dokładny adres nadawcy jest nieznany, przeszukaj po słowach kluczowych
 (`pracuj.pl oferty`, `linkedin oferty pracy`, `job alert`) i zawęź po domenie
 nadawcy w wynikach.
 
+**KRYTYCZNE — nie oceniaj maila po temacie ani po `snippet`.** Maile LinkedIn
+z tematem "Twój alert o ofertach pracy: X został utworzony" WYGLĄDAJĄ jak
+samo potwierdzenie założenia alertu, a `snippet` (skrót widoczny w liście
+wyników wyszukiwania) jest generyczny ("Zobacz najnowsze dopasowania...") i
+NIE mówi nic o zawartości. W praktyce te maile **regularnie zawierają
+kilka(-naście) realnych ofert pracy w treści**, tuż pod linijką
+potwierdzenia — dokładnie w tym samym formacie co "zwykłe" maile z
+dopasowaniami. Dlatego dla KAŻDEGO maila od `jobalerts-noreply@linkedin.com`
+(niezależnie od tematu — "został utworzony", "nowe oferty", cokolwiek) ZAWSZE
+pobierz pełną treść przez `get_message` z `messageFormat: PLAIN_TEXT` i
+sprawdź, czy poniżej nagłówka są wpisy firma/stanowisko/link
+`linkedin.com/comm/jobs/view/<id>` — jeśli tak, to są to realne oferty do
+oceny, nawet jeśli temat sugeruje "tylko potwierdzenie". Ten błąd (pomijanie
+całych maili na podstawie tematu/snippetu) już raz spowodował utratę
+realnych, dobrze pasujących ofert (np. Senior Director Marketing w Coca-Coli)
+— nie powtarzaj go.
+
 ## 2. Wyodrębnij pojedyncze oferty z maili
 
 Każdy mail-alert może zawierać wiele ofert. Dla każdej wyodrębnij:
