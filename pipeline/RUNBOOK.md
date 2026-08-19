@@ -67,8 +67,11 @@ to zwykle 👀, nie 🎯.
 
 Zbuduj `dashboard/index.html` — statyczna strona HTML (bez zależności
 zewnętrznych, działa lokalnie i jako Artifact):
-- Nagłówek z datą wygenerowania i liczbą nowych ofert przeanalizowanych /
-  zakwalifikowanych
+- Nagłówek z **dokładną datą I godziną wygenerowania** (czas polski,
+  format np. "19 sierpnia 2026, 07:06") — nie sama data. To pole ma się
+  zmieniać przy KAŻDYM uruchomieniu (nawet jeśli 0 nowych ofert), żeby
+  użytkownik widział, że pipeline faktycznie odpalił się o danej porze —
+  oraz liczbą nowych ofert przeanalizowanych / zakwalifikowanych
 - **Dwie sekcje/segmenty**, każda posortowana malejąco po fit score:
   - 🎯 Idealnie dopasowane
   - 👀 Warto rozważyć
