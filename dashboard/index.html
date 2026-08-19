@@ -327,6 +327,99 @@
     margin-top: 8px;
   }
 
+  /* --- Opinie o pracodawcy (GoWork) --- */
+
+  .gw {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--line);
+  }
+
+  .gw-head {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+  }
+
+  .gw-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.64rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    width: 100%;
+    margin-bottom: 2px;
+  }
+
+  .gw-stars {
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .gw-stars .empty { opacity: 0.28; }
+
+  .gw-score {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
+
+  .gw-score span {
+    font-size: 0.78em;
+    font-weight: 500;
+    color: var(--ink-soft);
+  }
+
+  .gw-count {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  .gw-summary {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 8px 0 0;
+  }
+
+  .gw-nodata {
+    font-size: 0.84rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin: 2px 0 0;
+  }
+
+  .gw-warn {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    background: var(--warn-bg);
+    color: var(--warn);
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    line-height: 1.45;
+    margin: 8px 0 0;
+  }
+
+  .gw-more {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-ink);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 1px;
+  }
+
+  .gw-more:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
   .cv-modal-backdrop {
     position: fixed;
     inset: 0;
