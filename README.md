@@ -1,4 +1,4 @@
-# Do Roboty!
+# Wybierz Swoją Robotę by GF
 
 Codzienne narzędzie, które selekcjonuje oferty pracy dla Grzegorza Fijała
 (Brand/Marketing Manager, FMCG — najchętniej napoje) na podstawie alertów

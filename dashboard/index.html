@@ -1,4 +1,4 @@
-<title>Do Roboty!</title>
+<title>Wybierz Swoją Robotę</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
   :root {
@@ -87,13 +87,27 @@
   .wordmark {
     font-family: "Big Shoulders Display", system-ui, sans-serif;
     font-weight: 800;
-    font-size: clamp(2rem, 6vw, 2.75rem);
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
     letter-spacing: 0.01em;
     text-transform: uppercase;
     line-height: 0.9;
+    max-width: 100%;
   }
 
-  .wordmark span { color: var(--accent); }
+  .wordmark span:not(.byline) { color: var(--accent); }
+
+  .wordmark .byline {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-size: 0.34em;
+    letter-spacing: 0.14em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin-left: 0.5em;
+    white-space: nowrap;
+  }
 
   .meta-line {
     font-family: "IBM Plex Mono", monospace;
@@ -465,7 +479,7 @@
 
 <div class="wrap">
   <header class="masthead">
-    <div class="wordmark">DO <span>ROBOTY!</span></div>
+    <div class="wordmark">Wybierz Swoją <span>Robotę</span><span class="byline">by GF</span></div>
     <div class="meta-line">Brand &amp; Marketing · FMCG / Napoje</div>
   </header>
   <div class="meta-line" style="margin-bottom: 4px;">Aktualizacja: 19 sierpnia 2026, 20:30</div>
@@ -802,7 +816,7 @@
     </div>
   </details>
 
-  <footer>Do Roboty! · wygenerowano przez codzienny pipeline · źródło: LinkedIn + pracuj.pl (alerty mailowe)</footer>
+  <footer>Wybierz Swoją Robotę by GF · wygenerowano przez pipeline na żądanie · źródło: LinkedIn + pracuj.pl (alerty mailowe)</footer>
 </div>
 
 <div class="cv-modal-backdrop" id="cv-modal-backdrop" hidden>
