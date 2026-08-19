@@ -89,6 +89,11 @@ zewnętrznych, działa lokalnie i jako Artifact):
   zmieniać przy KAŻDYM uruchomieniu (nawet jeśli 0 nowych ofert), żeby
   użytkownik widział, że pipeline faktycznie odpalił się o danej porze —
   oraz liczbą nowych ofert przeanalizowanych / zakwalifikowanych
+- **Bez baneru/ostrzeżenia typu "Dziś brak nowych ofert" czy podobnego
+  komunikatu tekstowego o stanie dnia.** Data/godzina aktualizacji + wiersz
+  statystyk (Idealnie dopasowane / Warto rozważyć / Przeanalizowane) w
+  zupełności wystarczają jako sygnał, że pipeline odpalił się i co znalazł —
+  nie dodawaj żadnego dodatkowego tekstu-notki nad segmentami.
 - **Dwie sekcje/segmenty**, każda posortowana malejąco po fit score:
   - 🎯 Idealnie dopasowane
   - 👀 Warto rozważyć
