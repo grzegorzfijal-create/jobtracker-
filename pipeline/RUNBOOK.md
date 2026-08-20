@@ -34,7 +34,7 @@ kilka.** Odpytaj wszystkie poniższe kategorie, nie tylko LinkedIn.
 |---|---|---|
 | LinkedIn Job Alerts | `from:jobalerts-noreply@linkedin.com` | kilka maili dziennie, po 1–30 ofert; główne źródło |
 | Michael Page Poland | `from:noreply@mail.michaelpage.pl` | ~2–4 maile/mies., temat „Nowe miejsca pracy dla: Marketing, Agency & Digital : Warsaw”, zwykle 1–3 oferty |
-| pracuj.pl | `from:pracuj.pl OR from:noreply@pracuj.pl` | **historycznie NIC nie przysyła** mimo 4 aktywnych zapisanych wyszukiwań — sprawdzaj mimo to i odnotuj w podsumowaniu, jeśli dalej cisza |
+| pracuj.pl | `from:pracuj.pl` | **nigdy nie przysłał ani jednej oferty.** Zweryfikowane 20.08.2026 na pełnej historii skrzynki: 201 maili z domeny, wszystkie to statusy aplikacji z 2022, kod weryfikacyjny (2024) i ankiety. Ostatni mail jakiegokolwiek typu: 18.03.2026. Maile z tej domeny docierają normalnie do INBOX (nie spam) — to nie problem z dostarczalnością, tylko z konfiguracją konta. Sprawdzaj mimo to i odnotuj w podsumowaniu, jeśli dalej cisza |
 
 Uwaga na `webfeedback@mail.michaelpage.pl` — to newsletter marketingowy
 (raporty Talent Trends itp.), **nie** alert o ofertach. Pomiń.
