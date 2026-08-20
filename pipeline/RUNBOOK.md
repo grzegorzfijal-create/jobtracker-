@@ -34,7 +34,7 @@ kilka.** Odpytaj wszystkie poniższe kategorie, nie tylko LinkedIn.
 |---|---|---|
 | LinkedIn Job Alerts | `from:jobalerts-noreply@linkedin.com` | kilka maili dziennie, po 1–30 ofert; główne źródło |
 | Michael Page Poland | `from:noreply@mail.michaelpage.pl` | ~2–4 maile/mies., temat „Nowe miejsca pracy dla: Marketing, Agency & Digital : Warsaw”, zwykle 1–3 oferty |
-| pracuj.pl | `from:pracuj.pl` | **nigdy nie przysłał ani jednej oferty.** Zweryfikowane 20.08.2026 na pełnej historii skrzynki: 201 maili z domeny, wszystkie to statusy aplikacji z 2022, kod weryfikacyjny (2024) i ankiety. Ostatni mail jakiegokolwiek typu: 18.03.2026. Maile z tej domeny docierają normalnie do INBOX (nie spam) — to nie problem z dostarczalnością, tylko z konfiguracją konta. Sprawdzaj mimo to i odnotuj w podsumowaniu, jeśli dalej cisza |
+| pracuj.pl | `from:pracuj.pl` | **nigdy nie przysłał ani jednej oferty** — patrz sekcja 1e niżej. Sprawdzaj przy każdym uruchomieniu i odnotuj w podsumowaniu, jeśli dalej cisza |
 
 Uwaga na `webfeedback@mail.michaelpage.pl` — to newsletter marketingowy
 (raporty Talent Trends itp.), **nie** alert o ofertach. Pomiń.
@@ -64,6 +64,38 @@ wpisywać do ledgera ani na dashboard:
 
 Kryterium: mail proponuje rolę, o którą użytkownik się jeszcze NIE ubiegał →
 oferta. Mail dotyczy istniejącej aplikacji → pomiń.
+
+### 1e. pracuj.pl — stan rozpoznania (20.08.2026)
+
+Nie diagnozuj tego od zera przy każdym uruchomieniu. Ustalone fakty:
+
+- W całej historii skrzynki jest **201 maili z domeny pracuj.pl i ani jednej
+  oferty pracy**. Wszystko to: statusy aplikacji (`noreply@aplikacje.pracuj.pl`,
+  z 2022 r.), kod weryfikacyjny (`noreply@konto.pracuj.pl`, 2024),
+  wiadomość od pracodawcy (`wiadomosci@konto.pracuj.pl`) i ankiety
+  (`no-reply@wysylka.pracuj.pl`). Ostatni mail jakiegokolwiek typu: 18.03.2026.
+- Maile z tej domeny **docierają normalnie do INBOX**, nie do spamu — to nie
+  jest problem z dostarczalnością ani z filtrem Gmaila (sprawdzone przez
+  `in:anywhere` z koszem i spamem).
+- Pracuj.pl **generuje rekomendacje, ale dostarcza je tylko jako powiadomienia
+  w serwisie (dzwonek)**, nie mailem. Użytkownik ma tam m.in. „5 dopasowanych
+  ofert na podstawie Twojego CV" i pojedyncze oferty (Ceramstic, Renault Group
+  — ta ostatnia wisi od ~3 tygodni). Przełącznik „Chcę otrzymywać mailem
+  rekomendowane oferty pracy" jest włączony i mimo to nie wygenerował maila.
+- W dzwonku **nie ma ani jednego powiadomienia z zapisanych wyszukiwań** — to
+  osobny mechanizm od rekomendacji i wygląda na to, że nigdy nie był aktywny.
+  To najbardziej obiecujący kanał, bo jest z założenia mailowy.
+- **pracuj.pl jest niedostępny z tego środowiska** — polityka sieciowa odrzuca
+  CONNECT z 403 (tak samo jak gowork.pl). Nie próbuj pobierać ofert
+  bezpośrednio, dopóki użytkownik nie zmieni polityki sieciowej środowiska.
+
+Gdy maile z ofertami wreszcie ruszą, odróżnij je od szumu z tej samej domeny:
+`noreply@aplikacje.pracuj.pl` (statusy aplikacji: „Dostarczenie aplikacji",
+„Otwarcie aplikacji", „Rozpatrywanie kandydatury", „Podsumowanie Twoich
+aplikacji"), `no-reply@wysylka.pracuj.pl` (ankiety) i `noreply@konto.pracuj.pl`
+(kody, sprawy konta) to **zawsze** szum — pomijaj, tak jak resztę szumu ATS
+z sekcji 1b. Ofertą jest tylko mail z nowymi ogłoszeniami (zapisane
+wyszukiwanie albo rekomendacje). Id buduj jako `pracuj:<id oferty z URL-a>`.
 
 ### 1c. Zwiad na nowe źródła (raz na uruchomienie, tanio)
 
