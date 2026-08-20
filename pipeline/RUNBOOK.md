@@ -82,9 +82,19 @@ Nie diagnozuj tego od zera przy każdym uruchomieniu. Ustalone fakty:
   ofert na podstawie Twojego CV" i pojedyncze oferty (Ceramstic, Renault Group
   — ta ostatnia wisi od ~3 tygodni). Przełącznik „Chcę otrzymywać mailem
   rekomendowane oferty pracy" jest włączony i mimo to nie wygenerował maila.
-- W dzwonku **nie ma ani jednego powiadomienia z zapisanych wyszukiwań** — to
-  osobny mechanizm od rekomendacji i wygląda na to, że nigdy nie był aktywny.
-  To najbardziej obiecujący kanał, bo jest z założenia mailowy.
+- **Alerty z zapisanych wyszukiwań są poprawnie skonfigurowane i mimo to nie
+  wysyłają maili.** Zweryfikowane na ekranie „Zapisane → Wyszukiwania":
+  „brand manager – Warszawa + 30 km" (126 ofert) i „marketing manager –
+  Warszawa + 30 km" (195 ofert) mają obie ustawione „Powiadomienia e-mail:
+  raz dziennie". Przy takiej puli nowe ogłoszenia pojawiają się codziennie,
+  więc alerty powinny chodzić — nie przyszedł ani jeden mail. **To przesądza,
+  że problem jest po stronie pracuj.pl, nie w ustawieniach konta** —
+  najprawdopodobniej adres użytkownika jest na liście wstrzymanych
+  (suppression list) u ich dostawcy poczty.
+- Wdrażane obejście: zmiana adresu na koncie na `grzegorz.fijal+pracuj@gmail.com`.
+  Gmail dostarcza plus-adresowanie do tej samej skrzynki, a dla ich ESP to
+  nowy, nieobciążony adres. **Nie wymaga żadnej zmiany w pipelinie** —
+  wyszukiwanie idzie po nadawcy (`from:pracuj.pl`), nie po adresacie.
 - **pracuj.pl jest niedostępny z tego środowiska** — polityka sieciowa odrzuca
   CONNECT z 403 (tak samo jak gowork.pl). Nie próbuj pobierać ofert
   bezpośrednio, dopóki użytkownik nie zmieni polityki sieciowej środowiska.
