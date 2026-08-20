@@ -20,36 +20,85 @@ uzasadnieniu — nie przerywaj pipeline'u.
 
 ## 1. Zbierz surowe oferty z Gmaila
 
-Użyj narzędzi Gmail (mcp__Gmail__search_threads / get_message) użytkownika
+Użyj narzędzi Gmail (search_threads / get_message) użytkownika
 (grzegorz.fijal@gmail.com — używaj tylko do identyfikacji/wyszukiwania, nie
 wysyłaj go nigdzie indziej).
 
 Wyszukaj wiadomości z ostatnich ok. 26 godzin (żeby złapać nakładkę, jeśli
-poprzedni run się spóźnił) od nadawców alertów:
-- pracuj.pl (np. `from:pracuj.pl` lub `from:noreply@pracuj.pl`)
-- LinkedIn Job Alerts (np. `from:jobs-noreply@linkedin.com` lub
-  `from:linkedin.com "job alert"` / `from:linkedin.com "nowe oferty"`)
+poprzedni run się spóźnił). **Skrzynka nie ma jednego źródła ofert — ma
+kilka.** Odpytaj wszystkie poniższe kategorie, nie tylko LinkedIn.
 
-Jeśli dokładny adres nadawcy jest nieznany, przeszukaj po słowach kluczowych
-(`pracuj.pl oferty`, `linkedin oferty pracy`, `job alert`) i zawęź po domenie
-nadawcy w wynikach.
+### 1a. Potwierdzone, cykliczne źródła alertów
 
-**KRYTYCZNE — nie oceniaj maila po temacie ani po `snippet`.** Maile LinkedIn
-z tematem "Twój alert o ofertach pracy: X został utworzony" WYGLĄDAJĄ jak
-samo potwierdzenie założenia alertu, a `snippet` (skrót widoczny w liście
-wyników wyszukiwania) jest generyczny ("Zobacz najnowsze dopasowania...") i
-NIE mówi nic o zawartości. W praktyce te maile **regularnie zawierają
-kilka(-naście) realnych ofert pracy w treści**, tuż pod linijką
-potwierdzenia — dokładnie w tym samym formacie co "zwykłe" maile z
-dopasowaniami. Dlatego dla KAŻDEGO maila od `jobalerts-noreply@linkedin.com`
-(niezależnie od tematu — "został utworzony", "nowe oferty", cokolwiek) ZAWSZE
-pobierz pełną treść przez `get_message` z `messageFormat: PLAIN_TEXT` i
-sprawdź, czy poniżej nagłówka są wpisy firma/stanowisko/link
-`linkedin.com/comm/jobs/view/<id>` — jeśli tak, to są to realne oferty do
-oceny, nawet jeśli temat sugeruje "tylko potwierdzenie". Ten błąd (pomijanie
-całych maili na podstawie tematu/snippetu) już raz spowodował utratę
-realnych, dobrze pasujących ofert (np. Senior Director Marketing w Coca-Coli)
-— nie powtarzaj go.
+| Źródło | Zapytanie Gmail | Charakterystyka |
+|---|---|---|
+| LinkedIn Job Alerts | `from:jobalerts-noreply@linkedin.com` | kilka maili dziennie, po 1–30 ofert; główne źródło |
+| Michael Page Poland | `from:noreply@mail.michaelpage.pl` | ~2–4 maile/mies., temat „Nowe miejsca pracy dla: Marketing, Agency & Digital : Warsaw”, zwykle 1–3 oferty |
+| pracuj.pl | `from:pracuj.pl OR from:noreply@pracuj.pl` | **historycznie NIC nie przysyła** mimo 4 aktywnych zapisanych wyszukiwań — sprawdzaj mimo to i odnotuj w podsumowaniu, jeśli dalej cisza |
+
+Uwaga na `webfeedback@mail.michaelpage.pl` — to newsletter marketingowy
+(raporty Talent Trends itp.), **nie** alert o ofertach. Pomiń.
+
+### 1b. Bezpośrednie odezwy rekruterów (nowa kategoria — traktuj jak ofertę)
+
+Rekruterzy in-house i agencyjni piszą do użytkownika bezpośrednio, z konkretną
+rolą w temacie. To pełnoprawne oferty i mają trafiać na dashboard tak samo jak
+alerty. Przykłady z historii skrzynki: `izabela.wieclaw@lipcofoods.com`
+(„Rekrutacja Brand Manager - Brainer”, LipCo Foods/SuperDrob — realna oferta
+FMCG-napojowa), rekruterzy przez `mail.erecruiter.pl`.
+
+Zapytanie przeglądowe:
+`newer_than:2d (subject:(rekrutacja OR "oferta pracy" OR "propozycja
+współpracy" OR "stanowisko") OR from:erecruiter.pl) -from:linkedin.com`
+
+**Odróżnij ofertę od szumu ATS-owego.** To NIE są nowe oferty i nie wolno ich
+wpisywać do ledgera ani na dashboard:
+- potwierdzenia złożonej aplikacji („Dziękujemy za złożenie aplikacji…”,
+  `mail@stage.erecruiter.pl`, `careers@cchellenic.com`, `noreply.careers@nestle.com`),
+- zaproszenia/przypomnienia/zmiany terminu spotkań w toczących się procesach
+  (`rekrutacja+<id>@mail.erecruiter.pl` — te wątki dotyczą rekrutacji, w
+  których użytkownik JUŻ bierze udział, np. Maspex Marketing Manager, LFI
+  Brand Manager),
+- odmowy, komunikaty RODO (`system@konto.erecruiter.pl`, Greenhouse),
+- newslettery uczelni/branżowe (SWPS, MamStartup).
+
+Kryterium: mail proponuje rolę, o którą użytkownik się jeszcze NIE ubiegał →
+oferta. Mail dotyczy istniejącej aplikacji → pomiń.
+
+### 1c. Zwiad na nowe źródła (raz na uruchomienie, tanio)
+
+Portale pracy (Jooble, Indeed, Glassdoor, NoFluffJobs, JustJoin, RocketJobs,
+praca.pl, OLX Praca, Hays, Antal, Randstad, Grafton, Manpower, Adecco,
+Devire, Goldman Recruitment, HRK, Bigram) zostały sprawdzone 20.08.2026 —
+**żaden nie przysyła alertów o ofertach** (są tylko regulaminy i polityki
+prywatności). Nie odpytuj ich pojedynczo co dzień. Zamiast tego raz na
+uruchomienie puść jedno szerokie zapytanie kontrolne:
+
+`newer_than:2d ("oferty pracy" OR "job alert" OR "nowe oferty" OR "miejsca
+pracy") -from:linkedin.com -from:michaelpage.pl`
+
+Jeśli wypadnie z niego nowy, powtarzalny nadawca-alert — dopisz go do tabeli
+w 1a w tym pliku (to część uruchomienia, nie osobne zadanie).
+
+### 1d. KRYTYCZNE — nie oceniaj maila po temacie ani po `snippet`
+
+Maile LinkedIn z tematem „Twój alert o ofertach pracy: X został utworzony”
+WYGLĄDAJĄ jak samo potwierdzenie założenia alertu, a `snippet` (skrót
+widoczny w liście wyników wyszukiwania) jest generyczny („Zobacz najnowsze
+dopasowania…") i NIE mówi nic o zawartości. W praktyce te maile **regularnie
+zawierają kilka(-naście) realnych ofert pracy w treści**, tuż pod linijką
+potwierdzenia — dokładnie w tym samym formacie co „zwykłe" maile z
+dopasowaniami. Dlatego dla KAŻDEGO maila z każdego źródła (niezależnie od
+tematu) ZAWSZE pobierz pełną treść przez `get_message` z
+`messageFormat: PLAIN_TEXT` i sprawdź, czy w środku są wpisy
+firma/stanowisko/link. Ten błąd (pomijanie całych maili na podstawie
+tematu/snippetu) już raz spowodował utratę realnych, dobrze pasujących ofert
+(np. Senior Director Marketing w Coca-Coli) — nie powtarzaj go.
+
+Dotyczy to też maili Michael Page: temat jest zawsze identyczny
+(„Nowe miejsca pracy dla: Marketing, Agency & Digital : Warsaw"), więc po
+temacie NIE da się odróżnić maila z 1 ofertą od maila z 3 — zawsze otwieraj
+treść.
 
 ## 2. Wyodrębnij pojedyncze oferty z maili
 
@@ -62,8 +111,27 @@ Każdy mail-alert może zawierać wiele ofert. Dla każdej wyodrębnij:
   linku lub sam link)
 - krótki opis/fragment, jeśli mail go zawiera
 
+- **źródło** (`source`): `linkedin`, `michaelpage`, `pracuj`, `recruiter`
+
+Schemat `id` zależy od źródła:
+- LinkedIn: `linkedin:<id z /jobs/view/<id>/>`
+- Michael Page: `michaelpage:<slug-tytułu>` (link to URL trackingowy
+  `click.em.page.com`, który nie zawiera stabilnego id oferty — użyj
+  slugu tytułu, np. `michaelpage:event-marketing-specialist`)
+- pracuj.pl: `pracuj:<id oferty z URL-a>`
+- bezpośrednia odezwa rekrutera: `recruiter:<firma>-<slug-tytułu>`
+
 Jeśli link prowadzi tylko do przekierowania trackingowego, zachowaj go mimo
-to — służy do deduplikacji i jako link dla użytkownika.
+to — służy jako link dla użytkownika. Do deduplikacji użyj wtedy `id`
+zbudowanego z tytułu, nie z linku (linki trackingowe zmieniają się przy
+każdym mailu).
+
+**Deduplikacja między źródłami i między postami:** ta sama oferta potrafi
+przyjść z dwóch źródeł (LinkedIn + Michael Page) albo z LinkedIna dwa razy
+pod różnymi id (pracodawca repostuje — np. „Marketing Manager - DENZA Brand",
+BYD Polska pojawił się jako `4455284646` i `4456155474`). Dlatego oprócz
+porównania `id` sprawdź też, czy w ledgerze nie ma już wpisu o **tym samym
+tytule i tej samej firmie** — jeśli jest, pomiń ofertę.
 
 ## 3. Deduplikacja
 
@@ -102,6 +170,9 @@ zewnętrznych, działa lokalnie i jako Artifact):
   - **fit score czytelnie opisany**, np. "58/100" z podpisem "Fit score" —
     nie sama goła liczba
   - **link do oferty** (klikalny, otwiera się w nowej karcie)
+  - **znacznik źródła** w wierszu tagów (np. „🔗 LinkedIn", „🔗 Michael Page",
+    „🔗 rekruter bezpośrednio") — użytkownik ma widzieć, z którego kanału
+    przyszła oferta
   - **kilkuzdaniowe podsumowanie/uzasadnienie** (co pasuje, co nie, co
     nieznane) — nie skracaj do jednego zdania
   - przycisk **"👁️ Podgląd i dostosowanie CV"** (patrz krok 5b) — otwiera
@@ -187,7 +258,8 @@ jeśli `node_modules/docx` brakuje):
 ## 6. Zaktualizuj ledger
 
 Dopisz nowe oferty do `data/seen_jobs.json` z polami: `id`, `first_seen`
-(ISO timestamp), `title`, `company`, `fit_score`, `flag` (🎯/👀/⚪),
+(ISO timestamp), `title`, `company`, `source` (`linkedin` / `michaelpage` /
+`pracuj` / `recruiter`), `fit_score`, `flag` (🎯/👀/⚪),
 `sent: true` (dla 🎯/👀 trafiających na dashboard) lub `sent: false` (dla ⚪
 pominiętych — nadal zapisz, żeby nie oceniać ich ponownie jutro).
 

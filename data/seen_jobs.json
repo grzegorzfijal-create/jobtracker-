@@ -6,7 +6,8 @@
     "company": "EuroMatch Group",
     "fit_score": 58,
     "flag": "👀",
-    "sent": true
+    "sent": true,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4455284646",
@@ -15,7 +16,8 @@
     "company": "BYD Polska",
     "fit_score": 45,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4454280198",
@@ -24,7 +26,8 @@
     "company": "Sanity Group",
     "fit_score": 50,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4454234711",
@@ -33,7 +36,8 @@
     "company": "Excelsior Group",
     "fit_score": 40,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4444180321",
@@ -42,7 +46,8 @@
     "company": "RWS",
     "fit_score": 35,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4440116460",
@@ -51,7 +56,8 @@
     "company": "Stellantis",
     "fit_score": 22,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4418870629",
@@ -60,7 +66,8 @@
     "company": "SOFAR",
     "fit_score": 20,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4386909342",
@@ -69,7 +76,8 @@
     "company": "Bunge",
     "fit_score": 18,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4454263165",
@@ -78,7 +86,8 @@
     "company": "Novonesis",
     "fit_score": 15,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4446725834",
@@ -87,7 +96,8 @@
     "company": "Ignitis Group Polska",
     "fit_score": 12,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4426653056",
@@ -96,7 +106,8 @@
     "company": "Ingram Micro",
     "fit_score": 12,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4427943716",
@@ -105,7 +116,8 @@
     "company": "ZnanyLekarz",
     "fit_score": 10,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4454315607",
@@ -114,7 +126,8 @@
     "company": "The Coca-Cola Company",
     "fit_score": 82,
     "flag": "🎯",
-    "sent": true
+    "sent": true,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4427861262",
@@ -123,7 +136,8 @@
     "company": "Beiersdorf",
     "fit_score": 60,
     "flag": "👀",
-    "sent": true
+    "sent": true,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4451267893",
@@ -132,7 +146,8 @@
     "company": "Novartis Poland",
     "fit_score": 58,
     "flag": "👀",
-    "sent": true
+    "sent": true,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4451290632",
@@ -141,7 +156,8 @@
     "company": "Novartis Poland",
     "fit_score": 58,
     "flag": "👀",
-    "sent": true
+    "sent": true,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4452225436",
@@ -150,7 +166,8 @@
     "company": "Orbico Poland",
     "fit_score": 58,
     "flag": "👀",
-    "sent": true
+    "sent": true,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4452997903",
@@ -159,7 +176,8 @@
     "company": "Boston Consulting Group (BCG)",
     "fit_score": 30,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4450167179",
@@ -168,7 +186,8 @@
     "company": "ARTO",
     "fit_score": 48,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4452270774",
@@ -177,7 +196,8 @@
     "company": "GNO Partners",
     "fit_score": 38,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4434309800",
@@ -186,7 +206,8 @@
     "company": "AstraZeneca",
     "fit_score": 42,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4451225785",
@@ -195,7 +216,8 @@
     "company": "Vylor",
     "fit_score": 52,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4454023619",
@@ -204,7 +226,8 @@
     "company": "Franke Group",
     "fit_score": 48,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4450458865",
@@ -213,7 +236,8 @@
     "company": "AsstrA-Associated Traffic AG",
     "fit_score": 30,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4454099576",
@@ -222,7 +246,8 @@
     "company": "AIBY",
     "fit_score": 45,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4455353931",
@@ -231,7 +256,8 @@
     "company": "JugaBet",
     "fit_score": 30,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4454390839",
@@ -240,7 +266,8 @@
     "company": "Flobotics",
     "fit_score": 35,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4452709585",
@@ -249,7 +276,8 @@
     "company": "PAYALLY GLOBAL",
     "fit_score": 30,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4436611231",
@@ -258,7 +286,8 @@
     "company": "Beiersdorf",
     "fit_score": 62,
     "flag": "👀",
-    "sent": true
+    "sent": true,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4435612095",
@@ -267,7 +296,8 @@
     "company": "Beiersdorf",
     "fit_score": 62,
     "flag": "👀",
-    "sent": true
+    "sent": true,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4455320597",
@@ -276,7 +306,8 @@
     "company": "Galderma",
     "fit_score": 60,
     "flag": "👀",
-    "sent": true
+    "sent": true,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4455348022",
@@ -285,7 +316,8 @@
     "company": "Nestlé",
     "fit_score": 56,
     "flag": "👀",
-    "sent": true
+    "sent": true,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4441052751",
@@ -294,7 +326,8 @@
     "company": "Beiersdorf",
     "fit_score": 45,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4455717789",
@@ -303,7 +336,8 @@
     "company": "Xopero Software | GitProtect",
     "fit_score": 28,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4455347402",
@@ -312,7 +346,8 @@
     "company": "Roundtrip",
     "fit_score": 15,
     "flag": "⚪",
-    "sent": false
+    "sent": false,
+    "source": "linkedin"
   },
   {
     "id": "linkedin:4455312109",
@@ -321,6 +356,188 @@
     "company": "Hudson Talent Solutions",
     "fit_score": 15,
     "flag": "⚪",
+    "sent": false,
+    "source": "linkedin"
+  },
+  {
+    "id": "linkedin:4434485007",
+    "first_seen": "2026-08-20T13:35:00Z",
+    "title": "EU Brand Manager Cough, Cold & Pain",
+    "company": "Teva Pharmaceuticals",
+    "source": "linkedin",
+    "fit_score": 76,
+    "flag": "🎯",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4453457246",
+    "first_seen": "2026-08-20T13:35:00Z",
+    "title": "Marketing Manager / Brand Manager — Maranello Coffee",
+    "company": "Maranello",
+    "source": "linkedin",
+    "fit_score": 74,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4446054292",
+    "first_seen": "2026-08-20T13:35:00Z",
+    "title": "Brand Business Leader - Vichy",
+    "company": "L'Oréal",
+    "source": "linkedin",
+    "fit_score": 70,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "michaelpage:event-marketing-specialist",
+    "first_seen": "2026-08-20T13:35:00Z",
+    "title": "Event Marketing Specialist",
+    "company": "Michael Page (klient z branży automotive)",
+    "source": "michaelpage",
+    "fit_score": 30,
+    "flag": "⚪",
     "sent": false
+  },
+  {
+    "id": "linkedin:4452831097",
+    "first_seen": "2026-08-20T13:35:00Z",
+    "title": "Marketing Director",
+    "company": "ASBIS",
+    "source": "linkedin",
+    "fit_score": 48,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4455785290",
+    "first_seen": "2026-08-20T13:35:00Z",
+    "title": "Marketing Manager TOEFL + GRE",
+    "company": "ETS",
+    "source": "linkedin",
+    "fit_score": 45,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4456190096",
+    "first_seen": "2026-08-20T13:35:00Z",
+    "title": "Trade Marketing Manager",
+    "company": "HRK S.A.",
+    "source": "linkedin",
+    "fit_score": 45,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4443289785",
+    "first_seen": "2026-08-20T13:35:00Z",
+    "title": "Marketing Manager (f/m/x)",
+    "company": "Sii Poland",
+    "source": "linkedin",
+    "fit_score": 42,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4456164197",
+    "first_seen": "2026-08-20T13:35:00Z",
+    "title": "Commercial Growth and Retail Sr Manager",
+    "company": "Paramount",
+    "source": "linkedin",
+    "fit_score": 32,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4456169755",
+    "first_seen": "2026-08-20T13:35:00Z",
+    "title": "Category Expert (Beauty Premium)",
+    "company": "Allegro",
+    "source": "linkedin",
+    "fit_score": 30,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4454764054",
+    "first_seen": "2026-08-20T13:35:00Z",
+    "title": "Ekspertka/Ekspert ds. komunikacji marketingowej",
+    "company": "PKO Bank Polski",
+    "source": "linkedin",
+    "fit_score": 25,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4456174985",
+    "first_seen": "2026-08-20T13:35:00Z",
+    "title": "Senior Commercial Manager (F/M/D)",
+    "company": "HRK S.A.",
+    "source": "linkedin",
+    "fit_score": 25,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4453212063",
+    "first_seen": "2026-08-20T13:35:00Z",
+    "title": "Expert - Growth Marketing",
+    "company": "ING Polska",
+    "source": "linkedin",
+    "fit_score": 22,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4456178515",
+    "first_seen": "2026-08-20T13:35:00Z",
+    "title": "Junior Product Manager (f/m/d)",
+    "company": "HRK S.A.",
+    "source": "linkedin",
+    "fit_score": 20,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4429104544",
+    "first_seen": "2026-08-20T13:35:00Z",
+    "title": "SMB Product Solution Manager - CEE",
+    "company": "Worldline",
+    "source": "linkedin",
+    "fit_score": 18,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4453423568",
+    "first_seen": "2026-08-20T13:35:00Z",
+    "title": "Head of Sales",
+    "company": "Previo Polska",
+    "source": "linkedin",
+    "fit_score": 12,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4453409851",
+    "first_seen": "2026-08-20T13:35:00Z",
+    "title": "Sales Director",
+    "company": "XINLEI Global",
+    "source": "linkedin",
+    "fit_score": 10,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4456155474",
+    "first_seen": "2026-08-20T13:35:00Z",
+    "title": "Marketing Manager - DENZA Brand",
+    "company": "BYD Polska",
+    "source": "linkedin",
+    "fit_score": 45,
+    "flag": "⚪",
+    "sent": false,
+    "duplicate_of": "linkedin:4455284646"
   }
 ]

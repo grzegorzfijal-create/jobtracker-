@@ -1,16 +1,31 @@
 # Wybierz Swoją Robotę by GF
 
 Codzienne narzędzie, które selekcjonuje oferty pracy dla Grzegorza Fijała
-(Brand/Marketing Manager, FMCG — najchętniej napoje) na podstawie alertów
-mailowych z pracuj.pl i LinkedIn.
+(Brand/Marketing Manager, FMCG — najchętniej napoje) na podstawie wszystkich
+maili z ofertami, jakie trafiają do jego skrzynki.
 
 **Dashboard (na żywo):** https://claude.ai/code/artifact/79715365-4b31-405f-b1cb-7973626ac460
 
 ## Jak to działa
 
-1. Ty ustawiasz na pracuj.pl i LinkedIn zwykłe, szerokie alerty mailowe o
-   nowych ofertach pracy (im szerzej, tym lepiej — selekcję robi pipeline,
-   nie filtr portalu).
+1. Ty ustawiasz szerokie alerty mailowe o nowych ofertach pracy (im szerzej,
+   tym lepiej — selekcję robi pipeline, nie filtr portalu). Pipeline czyta
+   dziś trzy kanały:
+   - **LinkedIn Job Alerts** — główne źródło, kilka maili dziennie,
+   - **Michael Page Poland** — „Nowe miejsca pracy dla: Marketing, Agency &
+     Digital : Warsaw", ~2–4 maile miesięcznie,
+   - **bezpośrednie odezwy rekruterów** (in-house i agencyjne, m.in. przez
+     erecruiter.pl) — konkretna rola zaproponowana Tobie mailem liczy się tak
+     samo jak oferta z alertu; potwierdzenia aplikacji i ustalanie terminów
+     spotkań w trwających procesach są odfiltrowane.
+
+   **pracuj.pl** jest podpięty (4 aktywne zapisane wyszukiwania), ale
+   historycznie nie przysłał ani jednego alertu — do sprawdzenia w
+   ustawieniach powiadomień konta.
+
+   Lista źródeł jest odświeżana przy każdym uruchomieniu: pipeline puszcza
+   jedno szerokie zapytanie kontrolne po nowych nadawcach-alertach i dopisuje
+   znalezione do [`pipeline/RUNBOOK.md`](./pipeline/RUNBOOK.md).
 2. Codziennie o zaplanowanej porze uruchamia się agent Claude, który:
    - czyta nowe maile z alertami z Twojej skrzynki Gmail,
    - wyciąga z nich pojedyncze oferty,
