@@ -46,6 +46,15 @@ otworzysz. Dzięki temu dashboard waży ~280 kB zamiast 2,4 MB, a koszt nie
 rośnie z liczbą ofert. CV nigdy nie zawiera zmyślonych umiejętności — tylko
 inny dobór i kolejność tego, co już jest w `data/cv_base.md`.
 
+Pod każdą ofertą jest też **ocena jednym kliknięciem** — 👍 albo 👎, a po
+kliknięciu pojawia się wiersz powodów (branża, poziom, zakres roli, widełki,
+lokalizacja, firma). Oceny zapisują się w opublikowanym dashboardzie i wracają
+do pipeline'u przy kolejnym uruchomieniu: powtarzający się wzorzec (np. dwa
+razy „nie ta branża" przy pharmie) zmienia kryteria w
+[`profile.md`](./profile.md), a każda taka zmiana jest raportowana. Historia
+ocen leży w `data/feedback_log.json`. Powody odpowiadają wymiarom fit score,
+więc ten sam log jest materiałem na wagi/„suwaki".
+
 Pełna instrukcja dla agenta: [`pipeline/RUNBOOK.md`](./pipeline/RUNBOOK.md).
 
 ## Dlaczego nie scraping

@@ -427,6 +427,65 @@
 
   .gw-more:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
+
+  /* --- Feedback: uczy pipeline na przyszłość --- */
+
+  .fb {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+  }
+
+  .fb-row, .fb-why {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .fb-why { margin-top: 8px; }
+  .fb-why[hidden] { display: none; }
+
+  .fb-q {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.64rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin-right: 4px;
+  }
+
+  .fb-v, .fb-r {
+    font: inherit;
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    background: var(--surface-2);
+    color: var(--ink-soft);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s, border-color 0.12s;
+  }
+
+  .fb-v { font-size: 1rem; line-height: 1; padding: 6px 12px; }
+  .fb-r { font-size: 0.76rem; padding: 4px 10px; }
+
+  .fb-v:hover, .fb-r:hover { border-color: var(--ink-soft); }
+  .fb-v:focus-visible, .fb-r:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .fb-v[aria-pressed="true"][data-v="up"] { background: var(--good-bg); color: var(--good); border-color: var(--good); }
+  .fb-v[aria-pressed="true"][data-v="down"] { background: var(--warn-bg); color: var(--warn); border-color: var(--warn); }
+  .fb-r[aria-pressed="true"] { background: var(--accent); color: var(--surface); border-color: var(--accent); }
+
+  .fb-note {
+    font-size: 0.72rem;
+    color: var(--warn);
+    margin-top: 6px;
+  }
+  .fb-note[hidden] { display: none; }
+
+  [artifact-sync-state="off"] .fb-v,
+  [artifact-sync-state="off"] .fb-r { opacity: 0.45; cursor: default; }
+
   .cv-modal-backdrop {
     position: fixed;
     inset: 0;
@@ -582,7 +641,7 @@
     <div class="wordmark">Wybierz Swoją <span>Robotę</span><span class="byline">by GF</span></div>
     <div class="meta-line">Brand &amp; Marketing · FMCG / Napoje</div>
   </header>
-  <div class="meta-line" style="margin-bottom: 4px;">Aktualizacja: 21 sierpnia 2026, 18:40</div>
+  <div class="meta-line" style="margin-bottom: 4px;">Aktualizacja: 21 sierpnia 2026, 19:25</div>
 
   <div class="stat-row">
     <div class="stat"><div class="n">2</div><div class="l">Idealnie dopasowane</div></div>
@@ -609,12 +668,7 @@
         <span class="pill good">🎯 idealnie dopasowane</span>
       </div>
       <p class="reason">
-        Coca-Cola to czołowa firma FMCG-napojowa — dokładnie ta branża, w której masz najsilniejsze
-        doświadczenie (OSHEE, XL Energy). Rola dotyczy marketingu marki Cappy (soki Coca-Coli) na
-        poziomie Senior Director — naturalne rozwinięcie ścieżki Brand/Senior Brand Manager w stronę
-        kierownictwa portfela napojowego. Widełki i szczegóły o aucie służbowym nieznane z alertu, ale
-        skala firmy i dopasowanie branżowe czynią to najlepszym dotychczasowym trafieniem — zdecydowanie
-        warto aplikować.
+        Coca-Cola to czołowa firma FMCG-napojowa — dokładnie ta branża, w której zbudowałeś dorobek w OSHEE i XL Energy, a rola dotyczy marki Cappy na poziomie Senior Directora. To naturalny krok w górę ze ścieżki Brand/Senior Brand Manager i najlepsze dotychczasowe trafienie.
       </p>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4454315607/" target="_blank" rel="noopener">Zobacz ofertę →</a>
@@ -623,9 +677,30 @@
       <div class="cv-note">CV wyróżnia Twoje doświadczenie w kategorii napojowej (XL Energy, OSHEE) i pełną odpowiedzialność za markę — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
       <div class="gw">
         <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div></div>
-        <p class="gw-nodata">Dla polskiej spółki The Coca-Cola Company (Coca-Cola Poland Services) GoWork ma wyłącznie wizytówkę kontaktową — bez opinii i bez oceny.</p>
-        <div class="gw-warn"><span>⚠️</span><span>Wszystkie oceny Coca-Coli widoczne na GoWork (m.in. 2,1/5 z ponad 1600 ocen) dotyczą Coca-Cola HBC Polska — rozlewni i dystrybutora, czyli innego podmiotu niż biuro marki, w którym jest ta oferta. Opinie pochodzą tam głównie od pracowników produkcji i magazynów.</span></div>
-        <a class="gw-more" href="https://www.gowork.pl/coca-cola-poland-services-sp.-z-o.o.,24031890/dane-kontaktowe-firmy" target="_blank" rel="noopener">Zobacz profil firmy na GoWork →</a>
+        <a class="gw-more" href="https://www.gowork.pl/coca-cola-poland-services-sp.-z-o.o.,24031890/dane-kontaktowe-firmy" target="_blank" rel="noopener">Zobacz pracodawcę na GoWork →</a>
+      </div>
+      <div class="fb" artifact-sync>
+        <div class="fb-row">
+          <span class="fb-q">Trafiona propozycja?</span>
+          <button type="button" class="fb-v" data-v="up" aria-pressed="false" onclick="fbVote(this)">👍</button>
+          <button type="button" class="fb-v" data-v="down" aria-pressed="false" onclick="fbVote(this)">👎</button>
+        </div>
+        <div class="fb-why" data-for="up" hidden>
+          <span class="fb-q">Co konkretnie pasuje?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">zakres roli</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
+        <div class="fb-why" data-for="down" hidden>
+          <span class="fb-q">Co nie gra?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">nie ta branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">nie ten poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">nie ta rola</button>
+          <button type="button" class="fb-r" data-r="widelki" aria-pressed="false" onclick="fbWhy(this)">widełki</button>
+          <button type="button" class="fb-r" data-r="lokalizacja" aria-pressed="false" onclick="fbWhy(this)">lokalizacja</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
       </div>
     </div>
 
@@ -644,16 +719,7 @@
         <span class="pill good">🎯 idealnie dopasowane</span>
       </div>
       <p class="reason">
-        Najlepsze nowe trafienie. Tytuł „Brand Manager" to dokładne trafienie w Twoją pierwszą preferencję,
-        a kategoria — Cough, Cold &amp; Pain — to OTC/consumer health, czyli produkty sprzedawane w aptekach
-        i handlu masowym. Mechanika tej pracy (budowanie marki konsumenckiej, ATL/BTL, ekspozycja, NPD) jest
-        znacznie bliższa FMCG niż marketing Rx, i dlatego ta oferta stoi wyżej niż role Brand Managera
-        w Novartisie (58/100), które dotyczą leków receptowych. Zasięg jest europejski, nie jednorynkowy —
-        to krok w górę względem Twojej obecnej roli na Polskę, a masz już w CV wspieranie inicjatyw
-        marketingowych na rynkach międzynarodowych (XL Energy) oraz solidne tło farmaceutyczne z Neo-Vinci
-        (Pierre Fabre, Novo Nordisk, Glenmark, Stada). Czego alert nie mówi: widełek, wielkości zespołu ani
-        tego, czy rola jest w pełni warszawska, czy wiąże się z intensywnymi podróżami po Europie —
-        to warto wyjaśnić na pierwszej rozmowie.
+        Kategoria Cough, Cold &amp; Pain to OTC sprzedawane w aptekach i handlu masowym — budowanie marki konsumenckiej, ATL/BTL i NPD, czyli mechanika bliższa FMCG niż marketingowi leków receptowych. Do tego zasięg europejski zamiast jednorynkowego, a tło farmaceutyczne masz z Neo-Vinci.
       </p>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4434485007/" target="_blank" rel="noopener">Zobacz ofertę →</a>
@@ -661,10 +727,31 @@
       </div>
       <div class="cv-note">CV wysuwa na przód tło farmaceutyczne (Neo-Vinci: Pierre Fabre, Novo Nordisk, Glenmark, Stada) i wspieranie rynków międzynarodowych, zachowując dorobek FMCG — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
       <div class="gw">
-        <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div><div class="gw-count">381 opinii · brak potwierdzonej oceny</div></div>
-        <p class="gw-summary">Opinie są wyraźnie podzielone. Po stronie plusów najczęściej wracają: dobre i terminowo wypłacane wynagrodzenia (wyżej niż w porównywalnych firmach farmaceutycznych), działający system premiowy, elastyczne godziny pracy i możliwości rozwoju. Po stronie minusów powtarza się typowy zarzut wobec dużej korporacji — styl zarządzania i podejście przełożonych do ludzi, które „nie każdemu będzie odpowiadać". Atmosfera bywa opisywana jako przyjazna, ale ocena mocno zależy od konkretnego zespołu.</p>
-        <div class="gw-warn"><span>⚠️</span><span>Profil miesza dwa różne miejsca pracy: warszawskie biuro komercyjne (tu jest ta oferta) oraz fabrykę w Krakowie / Teva Operations Poland. Część opinii dotyczy produkcji, nie marketingu. Nie udało się też potwierdzić średniej oceny gwiazdkowej — GoWork jest nieosiągalny z tego środowiska, więc podana jest tylko liczba opinii, bez wymyślania oceny.</span></div>
-        <a class="gw-more" href="https://www.gowork.pl/teva-pharmaceuticals-polska-sp.-z-o.o.,306379/praca-i-zarobki" target="_blank" rel="noopener">Czytaj więcej na GoWork →</a>
+        <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div><div class="gw-count">381 opinii</div></div>
+        <a class="gw-more" href="https://www.gowork.pl/teva-pharmaceuticals-polska-sp.-z-o.o.,306379/praca-i-zarobki" target="_blank" rel="noopener">Zobacz pracodawcę na GoWork →</a>
+      </div>
+      <div class="fb" artifact-sync>
+        <div class="fb-row">
+          <span class="fb-q">Trafiona propozycja?</span>
+          <button type="button" class="fb-v" data-v="up" aria-pressed="false" onclick="fbVote(this)">👍</button>
+          <button type="button" class="fb-v" data-v="down" aria-pressed="false" onclick="fbVote(this)">👎</button>
+        </div>
+        <div class="fb-why" data-for="up" hidden>
+          <span class="fb-q">Co konkretnie pasuje?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">zakres roli</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
+        <div class="fb-why" data-for="down" hidden>
+          <span class="fb-q">Co nie gra?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">nie ta branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">nie ten poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">nie ta rola</button>
+          <button type="button" class="fb-r" data-r="widelki" aria-pressed="false" onclick="fbWhy(this)">widełki</button>
+          <button type="button" class="fb-r" data-r="lokalizacja" aria-pressed="false" onclick="fbWhy(this)">lokalizacja</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
       </div>
     </div>
   </section>
@@ -687,15 +774,7 @@
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
       <p class="reason">
-        Branżowo to najbliższe trafienie ze wszystkich dzisiejszych ofert: kawa to napoje, czyli dokładnie
-        kategoria, w której zbudowałeś większość dorobku (energetyki i mocktaile w XL Energy, izotoniki
-        i wody witaminowe w OSHEE). Tytuł też jest dokładnym trafieniem — „Marketing Manager / Brand Manager".
-        Do segmentu „idealnie dopasowane" zabrakło jednak dwóch rzeczy, obu wynikających z tego, że ogłoszenie
-        jest bardzo skąpe. Po pierwsze, lokalizacja w ogłoszeniu brzmi „Warszawa, Włochy | On-site" — nie
-        wiadomo, czy praca jest w Warszawie, czy wymaga obecności we Włoszech. Po drugie, firma wygląda na
-        znacznie mniejszą niż Twoi dotychczasowi pracodawcy, więc realny budżet, wielkość zespołu i zakres
-        odpowiedzialności mogą być poniżej Twojego obecnego poziomu (Senior Brand Manager z zespołem 4 osób).
-        Warto otworzyć ofertę i wyjaśnić oba punkty — jeśli skala się zgadza, to bardzo dobre dopasowanie.
+        Kawa to napoje, czyli Twoja najmocniejsza kategoria, a tytuł trafia dokładnie w preferencje. Ogłoszenie jest jednak skąpe — lokalizacja brzmi „Warszawa, Włochy”, a firma wygląda na dużo mniejszą niż Twoi dotychczasowi pracodawcy.
       </p>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4453457246/" target="_blank" rel="noopener">Zobacz ofertę →</a>
@@ -704,9 +783,30 @@
       <div class="cv-note">CV stawia na pierwszym planie kategorię napojową — XL Energy i OSHEE z premiery pierwszego naturalnego izotoniku i energetyka COMBU, plus prezentacje dla Żabki i Biedronki — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
       <div class="gw">
         <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div></div>
-        <p class="gw-nodata">Dla firmy Maranello Coffee nie ma na GoWork profilu pracodawcy — ani oceny, ani opinii, ani wizytówki.</p>
-        <div class="gw-warn"><span>⚠️</span><span>Wyniki, które GoWork pokazuje na hasło „Maranello", dotyczą Hotelu Maranello w Otwocku — innej firmy z branży hotelarsko-gastronomicznej. Tamtejsze opinie (zarówno pochwały atmosfery, jak i zarzuty o obiecywane i niedotrzymane umowy o pracę) NIE mówią nic o tym pracodawcy. Nie przypisuj ich tej ofercie.</span></div>
-        <a class="gw-more" href="https://www.gowork.pl/" target="_blank" rel="noopener">Szukaj pracodawcy na GoWork →</a>
+        <a class="gw-more" href="https://www.gowork.pl/" target="_blank" rel="noopener">Zobacz pracodawcę na GoWork →</a>
+      </div>
+      <div class="fb" artifact-sync>
+        <div class="fb-row">
+          <span class="fb-q">Trafiona propozycja?</span>
+          <button type="button" class="fb-v" data-v="up" aria-pressed="false" onclick="fbVote(this)">👍</button>
+          <button type="button" class="fb-v" data-v="down" aria-pressed="false" onclick="fbVote(this)">👎</button>
+        </div>
+        <div class="fb-why" data-for="up" hidden>
+          <span class="fb-q">Co konkretnie pasuje?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">zakres roli</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
+        <div class="fb-why" data-for="down" hidden>
+          <span class="fb-q">Co nie gra?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">nie ta branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">nie ten poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">nie ta rola</button>
+          <button type="button" class="fb-r" data-r="widelki" aria-pressed="false" onclick="fbWhy(this)">widełki</button>
+          <button type="button" class="fb-r" data-r="lokalizacja" aria-pressed="false" onclick="fbWhy(this)">lokalizacja</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
       </div>
     </div>
 
@@ -725,15 +825,7 @@
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
       <p class="reason">
-        „Kierownik Marki” to polski odpowiednik Brand Managera — dokładne trafienie w pierwszą preferencję
-        z Twojego profilu. Dr Gerard to klasyczne FMCG spożywcze (ciastka, wafle, herbatniki), czyli
-        dokładnie ten typ produktu i ten kanał sprzedaży, w którym się poruszasz: półka w Biedronce
-        i Żabce, walka o ekspozycję, promocje, NPD. Twoje prezentacje produktowe dla sieci handlowych
-        z czasów OSHEE przekładają się tu jeden do jednego. Do segmentu „idealnie dopasowane” zabrakło
-        jednej rzeczy — profil stawia na pierwszym miejscu FMCG napojowe, a to jest FMCG spożywcze,
-        które kryteria opisują jako „akceptowalne”, nie „najchętniej”. Bez podanych widełek nie da się
-        tego nadrobić po stronie wynagrodzenia, więc oferta ląduje na szczycie segmentu „warto
-        rozważyć”. Zdecydowanie warto ją otworzyć i sprawdzić zakres oraz widełki.
+        „Kierownik Marki” to po prostu Brand Manager, a Dr Gerard to klasyczne FMCG spożywcze — ta sama półka w Biedronce i Żabce, na której pracowałeś w OSHEE. Brakuje tylko kategorii napojowej i widełek, żeby to było trafienie idealne.
       </p>
       <div class="card-actions">
         <a class="apply" href="https://pracuj.pl/praca/kierownik-kierowniczka-marki-warszawa,oferta,1005001298" target="_blank" rel="noopener">Zobacz ofertę →</a>
@@ -742,9 +834,30 @@
       <div class="cv-note">CV eksponuje pełne FMCG-owe brand ownership: NPD, kampanie 360°, launche i prezentacje dla Żabki i Biedronki — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
       <div class="gw">
         <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div></div>
-        <p class="gw-nodata">Profil Dr Gerard na GoWork istnieje (spółka z Ożarowa Mazowieckiego), ale nie ma przy nim potwierdzonej oceny gwiazdkowej ani liczby opinii — GoWork jest nieosiągalny z tego środowiska, więc ocena nie jest tu zgadywana.</p>
-        <div class="gw-warn"><span>⚠️</span><span>Nieliczne opinie, które udało się namierzyć przez wyszukiwarkę, pochodzą od przedstawicieli handlowych z regionu północnego i dotyczą pracy w terenie — narzekają na brak wsparcia produktowego i komunikację z hurtowniami. To inny dział i inna rola niż marketing marki, którego dotyczy ta oferta.</span></div>
-        <a class="gw-more" href="https://www.gowork.pl/opinie_czytaj,816629,2" target="_blank" rel="noopener">Czytaj więcej na GoWork →</a>
+        <a class="gw-more" href="https://www.gowork.pl/opinie_czytaj,816629,2" target="_blank" rel="noopener">Zobacz pracodawcę na GoWork →</a>
+      </div>
+      <div class="fb" artifact-sync>
+        <div class="fb-row">
+          <span class="fb-q">Trafiona propozycja?</span>
+          <button type="button" class="fb-v" data-v="up" aria-pressed="false" onclick="fbVote(this)">👍</button>
+          <button type="button" class="fb-v" data-v="down" aria-pressed="false" onclick="fbVote(this)">👎</button>
+        </div>
+        <div class="fb-why" data-for="up" hidden>
+          <span class="fb-q">Co konkretnie pasuje?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">zakres roli</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
+        <div class="fb-why" data-for="down" hidden>
+          <span class="fb-q">Co nie gra?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">nie ta branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">nie ten poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">nie ta rola</button>
+          <button type="button" class="fb-r" data-r="widelki" aria-pressed="false" onclick="fbWhy(this)">widełki</button>
+          <button type="button" class="fb-r" data-r="lokalizacja" aria-pressed="false" onclick="fbWhy(this)">lokalizacja</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
       </div>
     </div>
 
@@ -763,14 +876,7 @@
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
       <p class="reason">
-        Vichy to marka z portfela L'Oréal Dermatological Beauty — dermokosmetyki sprzedawane głównie
-        w kanale aptecznym, czyli dokładnie na styku dwóch obszarów, które masz w CV: FMCG i pharma
-        (Neo-Vinci: Pierre Fabre, Novo Nordisk, Glenmark, Stada). Sam tytuł, „Brand Business Leader",
-        sugeruje odpowiedzialność biznesową za markę wraz z wynikiem, a pełną odpowiedzialność za strategię,
-        egzekucję i P&amp;L prowadzisz dziś w XL Energy. L'Oréal to też pracodawca pierwszej ligi w FMCG —
-        marka na CV, która otwiera kolejne drzwi. Do segmentu „idealnie dopasowane" zabrakło branży
-        w ścisłym rozumieniu Twojego profilu: to kosmetyki, nie napoje. Widełki i wielkość zespołu
-        nieznane z alertu.
+        Vichy to dermokosmetyki L'Oréala sprzedawane w aptekach — styk FMCG i pharmy, czyli obu obszarów, które masz w CV. „Brand Business Leader” sugeruje odpowiedzialność za markę wraz z wynikiem, a P&amp;L prowadzisz dziś w XL Energy.
       </p>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4446054292/" target="_blank" rel="noopener">Zobacz ofertę →</a>
@@ -778,10 +884,31 @@
       </div>
       <div class="cv-note">CV eksponuje pełną odpowiedzialność za markę i P&L, prowadzenie zespołu oraz doświadczenie w kanale farmaceutycznym z Neo-Vinci — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
       <div class="gw">
-        <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div><div class="gw-count">brak potwierdzonej oceny</div></div>
-        <p class="gw-summary">W dostępnych opiniach powtarza się obraz „typowej dużej korporacji": atmosfera oceniana wysoko, zespoły młode i ambitne, benefity standardowe dla korporacji. Krytyka idzie w dwóch kierunkach — wynagrodzenia opisywane jako rynkowe, ale nieadekwatne do skali firmy, oraz zarzuty wobec kadry menedżerskiej awansowanej wewnętrznie „od stażu". Wracają też wątki dotyczące współpracy między działami i tego, jak w praktyce wygląda deklarowany work-life balance.</p>
-        <div class="gw-warn"><span>⚠️</span><span>Ostrożnie z tymi opiniami: profil L'Oréal Polska na GoWork miesza warszawskie biuro marki (gdzie jest ta oferta) z fabryką — jednym z największych zakładów L'Oréal na świecie. Część cytowanych opinii wprost odnosi się do lokalizacji produkcyjnej i dojazdu na Białołękę, a nie do działu marketingu. Średniej oceny gwiazdkowej nie udało się potwierdzić i nie jest tu zgadywana.</span></div>
-        <a class="gw-more" href="https://www.gowork.pl/opinie_czytaj,32387,6" target="_blank" rel="noopener">Czytaj więcej na GoWork →</a>
+        <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div></div>
+        <a class="gw-more" href="https://www.gowork.pl/opinie_czytaj,32387,6" target="_blank" rel="noopener">Zobacz pracodawcę na GoWork →</a>
+      </div>
+      <div class="fb" artifact-sync>
+        <div class="fb-row">
+          <span class="fb-q">Trafiona propozycja?</span>
+          <button type="button" class="fb-v" data-v="up" aria-pressed="false" onclick="fbVote(this)">👍</button>
+          <button type="button" class="fb-v" data-v="down" aria-pressed="false" onclick="fbVote(this)">👎</button>
+        </div>
+        <div class="fb-why" data-for="up" hidden>
+          <span class="fb-q">Co konkretnie pasuje?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">zakres roli</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
+        <div class="fb-why" data-for="down" hidden>
+          <span class="fb-q">Co nie gra?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">nie ta branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">nie ten poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">nie ta rola</button>
+          <button type="button" class="fb-r" data-r="widelki" aria-pressed="false" onclick="fbWhy(this)">widełki</button>
+          <button type="button" class="fb-r" data-r="lokalizacja" aria-pressed="false" onclick="fbWhy(this)">lokalizacja</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
       </div>
     </div>
 
@@ -800,14 +927,7 @@
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
       <p class="reason">
-        Dokładne trafienie tytułem (Brand Manager) w firmie działającej na styku żywności i produktów
-        medycznych — czyli tam, gdzie schodzą się trzy Twoje doświadczenia naraz: Olimp Sport Nutrition
-        z Olimp Laboratories, napoje funkcjonalne z OSHEE i XL Energy oraz marketing farmaceutyczny
-        z Neo-Vinci (Pierre Fabre, Novo Nordisk, Glenmark, Stada). Mało która oferta łączy je tak
-        wprost. Lokalizacja warszawska pasuje. Czego nie wiadomo z ogłoszenia: widełek, wielkości
-        zespołu ani tego, jak duży jest realny budżet marketingowy — MEDIFOODS to firma znacznie
-        mniejsza niż Twoi dotychczasowi pracodawcy, więc zakres odpowiedzialności może odbiegać od
-        obecnego. To warto wyjaśnić przed decyzją o aplikacji.
+        Firma działa na styku żywności i produktów medycznych, gdzie schodzą się naraz trzy Twoje doświadczenia: Olimp, napoje funkcjonalne i pharma z Neo-Vinci. Tytuł trafia dokładnie, ale firma jest mała i nie podaje widełek ani zakresu.
       </p>
       <div class="card-actions">
         <a class="apply" href="https://pracuj.pl/praca/brand-manager-warszawa-ostrobramska-101-a,oferta,1004997138" target="_blank" rel="noopener">Zobacz ofertę →</a>
@@ -816,9 +936,30 @@
       <div class="cv-note">CV zestawia obok siebie Olimp Sport Nutrition, napoje funkcjonalne (OSHEE, XL Energy) i tło farmaceutyczne z Neo-Vinci — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
       <div class="gw">
         <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div></div>
-        <p class="gw-nodata">Dla firmy MEDIFOODS nie udało się potwierdzić żadnego profilu pracodawcy na GoWork — ani oceny, ani opinii.</p>
-        <div class="gw-warn"><span>⚠️</span><span>Uwaga na podmioty o podobnie brzmiących nazwach (zagraniczne firmy z członem Medifood) — to nie są ci pracodawcy i ich opinie nie dotyczą tej oferty. Przy firmie tej wielkości brak opinii jest normalny, ale oznacza też, że o warunkach dowiesz się dopiero na rozmowie.</span></div>
-        <a class="gw-more" href="https://www.gowork.pl/" target="_blank" rel="noopener">Szukaj pracodawcy na GoWork →</a>
+        <a class="gw-more" href="https://www.gowork.pl/" target="_blank" rel="noopener">Zobacz pracodawcę na GoWork →</a>
+      </div>
+      <div class="fb" artifact-sync>
+        <div class="fb-row">
+          <span class="fb-q">Trafiona propozycja?</span>
+          <button type="button" class="fb-v" data-v="up" aria-pressed="false" onclick="fbVote(this)">👍</button>
+          <button type="button" class="fb-v" data-v="down" aria-pressed="false" onclick="fbVote(this)">👎</button>
+        </div>
+        <div class="fb-why" data-for="up" hidden>
+          <span class="fb-q">Co konkretnie pasuje?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">zakres roli</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
+        <div class="fb-why" data-for="down" hidden>
+          <span class="fb-q">Co nie gra?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">nie ta branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">nie ten poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">nie ta rola</button>
+          <button type="button" class="fb-r" data-r="widelki" aria-pressed="false" onclick="fbWhy(this)">widełki</button>
+          <button type="button" class="fb-r" data-r="lokalizacja" aria-pressed="false" onclick="fbWhy(this)">lokalizacja</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
       </div>
     </div>
 
@@ -837,13 +978,7 @@
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
       <p class="reason">
-        Weleda to naturalne kosmetyki i produkty lecznicze pochodzenia roślinnego, sprzedawane w dużej
-        mierze przez kanał apteczny i drogeryjny — branża leży między FMCG a pharmą, czyli w obszarze,
-        w którym masz doświadczenie z obu stron (Neo-Vinci od strony farmaceutycznej, XL Energy i OSHEE
-        od strony marki konsumenckiej). Rola łączy komunikację z zarządzaniem marką, a prowadzenie
-        zintegrowanej komunikacji przez digital, retail, trade i media plus kampanie influencerskie
-        o zasięgu 100M+ to Twój codzienny zakres w XL Energy. Nie są to jednak napoje ani FMCG
-        spożywcze, więc według kryteriów z profilu to segment „warto rozważyć”. Widełki nieznane.
+        Weleda to naturalne kosmetyki i produkty lecznicze w kanale aptecznym — znów styk FMCG i pharmy. Rola łączy komunikację z zarządzaniem marką, czyli dokładnie to, co robisz w XL Energy przy kampaniach 360° i influencerskich.
       </p>
       <div class="card-actions">
         <a class="apply" href="https://pracuj.pl/praca/communication-brand-manager-warszawa-pabianicka-12,oferta,1004982984" target="_blank" rel="noopener">Zobacz ofertę →</a>
@@ -852,9 +987,30 @@
       <div class="cv-note">CV wysuwa na przód zintegrowaną komunikację 360°, influencer & branded content oraz doświadczenie w kanale farmaceutycznym z Neo-Vinci — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
       <div class="gw">
         <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div></div>
-        <p class="gw-nodata">Dla Weleda Polska nie udało się potwierdzić profilu z oceną na GoWork — brak danych o ocenie i liczbie opinii.</p>
-        <div class="gw-warn"><span>⚠️</span><span>GoWork jest niedostępny z tego środowiska (blokada sieciowa), a wyszukiwarka nie zwróciła profilu tego pracodawcy. Nie zgaduję tu oceny — brak danych oznacza brak danych, a nie ocenę neutralną.</span></div>
-        <a class="gw-more" href="https://www.gowork.pl/" target="_blank" rel="noopener">Szukaj pracodawcy na GoWork →</a>
+        <a class="gw-more" href="https://www.gowork.pl/" target="_blank" rel="noopener">Zobacz pracodawcę na GoWork →</a>
+      </div>
+      <div class="fb" artifact-sync>
+        <div class="fb-row">
+          <span class="fb-q">Trafiona propozycja?</span>
+          <button type="button" class="fb-v" data-v="up" aria-pressed="false" onclick="fbVote(this)">👍</button>
+          <button type="button" class="fb-v" data-v="down" aria-pressed="false" onclick="fbVote(this)">👎</button>
+        </div>
+        <div class="fb-why" data-for="up" hidden>
+          <span class="fb-q">Co konkretnie pasuje?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">zakres roli</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
+        <div class="fb-why" data-for="down" hidden>
+          <span class="fb-q">Co nie gra?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">nie ta branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">nie ten poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">nie ta rola</button>
+          <button type="button" class="fb-r" data-r="widelki" aria-pressed="false" onclick="fbWhy(this)">widełki</button>
+          <button type="button" class="fb-r" data-r="lokalizacja" aria-pressed="false" onclick="fbWhy(this)">lokalizacja</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
       </div>
     </div>
 
@@ -873,10 +1029,7 @@
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
       <p class="reason">
-        "Group Brand Manager" to poziom seniority bliski Twojemu obecnemu (Senior Brand Manager w XL
-        Energy) — dobre dopasowanie zakresu odpowiedzialności. Beiersdorf to rozpoznawalna firma FMCG,
-        ale kategoria (skincare) to kosmetyki, nie napoje, stąd "warto rozważyć" zamiast top matcha.
-        Widełki i informacja o aucie nieznane z alertu.
+        „Group Brand Manager” to poziom bliski Twojemu obecnemu, a Beiersdorf to duże, rozpoznawalne FMCG z realnym brand ownership. Kategoria to jednak kosmetyki, nie napoje.
       </p>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4436611231/" target="_blank" rel="noopener">Zobacz ofertę →</a>
@@ -885,9 +1038,30 @@
       <div class="cv-note">CV wyróżnia doświadczenie w prowadzeniu zespołu i pełną odpowiedzialność za markę — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
       <div class="gw">
         <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div></div>
-        <p class="gw-nodata">Dla warszawskiego biura Beiersdorf/NIVEA profil na GoWork istnieje, ale nie ma przy nim potwierdzonej oceny gwiazdkowej ani liczby opinii.</p>
-        <div class="gw-warn"><span>⚠️</span><span>Opinie widoczne w wyszukiwarce dotyczą zakładów w Poznaniu (Beiersdorf Manufacturing, Beiersdorf Shared Services) — to inne spółki i inne lokalizacje niż warszawskie biuro marketingu, w którym jest ta oferta. Nie traktuj ich jako opinii o tym stanowisku.</span></div>
-        <a class="gw-more" href="https://www.gowork.pl/opinie_czytaj,32" target="_blank" rel="noopener">Zobacz profil Nivea Beiersdorf Warszawa →</a>
+        <a class="gw-more" href="https://www.gowork.pl/opinie_czytaj,32" target="_blank" rel="noopener">Zobacz pracodawcę na GoWork →</a>
+      </div>
+      <div class="fb" artifact-sync>
+        <div class="fb-row">
+          <span class="fb-q">Trafiona propozycja?</span>
+          <button type="button" class="fb-v" data-v="up" aria-pressed="false" onclick="fbVote(this)">👍</button>
+          <button type="button" class="fb-v" data-v="down" aria-pressed="false" onclick="fbVote(this)">👎</button>
+        </div>
+        <div class="fb-why" data-for="up" hidden>
+          <span class="fb-q">Co konkretnie pasuje?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">zakres roli</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
+        <div class="fb-why" data-for="down" hidden>
+          <span class="fb-q">Co nie gra?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">nie ta branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">nie ten poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">nie ta rola</button>
+          <button type="button" class="fb-r" data-r="widelki" aria-pressed="false" onclick="fbWhy(this)">widełki</button>
+          <button type="button" class="fb-r" data-r="lokalizacja" aria-pressed="false" onclick="fbWhy(this)">lokalizacja</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
       </div>
     </div>
 
@@ -906,10 +1080,7 @@
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
       <p class="reason">
-        NIVEA to jedna z najbardziej rozpoznawalnych marek FMCG na świecie, a zakres regionalny
-        (kraje bałtyckie) pasuje do Twojego doświadczenia we wspieraniu inicjatyw na rynkach
-        międzynarodowych (XL Energy). Kategoria to kosmetyki, nie napoje — stąd "warto rozważyć".
-        Widełki i informacja o aucie nieznane z alertu.
+        NIVEA to jedna z najsilniejszych marek FMCG na świecie, a zakres bałtycki pasuje do Twojego doświadczenia na rynkach międzynarodowych. Kategoria to kosmetyki, nie napoje.
       </p>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4435612095/" target="_blank" rel="noopener">Zobacz ofertę →</a>
@@ -918,9 +1089,30 @@
       <div class="cv-note">CV wyróżnia doświadczenie międzynarodowe i strategiczne zarządzanie marką — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
       <div class="gw">
         <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div></div>
-        <p class="gw-nodata">Dla warszawskiego biura Beiersdorf/NIVEA profil na GoWork istnieje, ale nie ma przy nim potwierdzonej oceny gwiazdkowej ani liczby opinii.</p>
-        <div class="gw-warn"><span>⚠️</span><span>Opinie widoczne w wyszukiwarce dotyczą zakładów w Poznaniu (Beiersdorf Manufacturing, Beiersdorf Shared Services) — to inne spółki i inne lokalizacje niż warszawskie biuro marketingu, w którym jest ta oferta. Nie traktuj ich jako opinii o tym stanowisku.</span></div>
-        <a class="gw-more" href="https://www.gowork.pl/opinie_czytaj,32" target="_blank" rel="noopener">Zobacz profil Nivea Beiersdorf Warszawa →</a>
+        <a class="gw-more" href="https://www.gowork.pl/opinie_czytaj,32" target="_blank" rel="noopener">Zobacz pracodawcę na GoWork →</a>
+      </div>
+      <div class="fb" artifact-sync>
+        <div class="fb-row">
+          <span class="fb-q">Trafiona propozycja?</span>
+          <button type="button" class="fb-v" data-v="up" aria-pressed="false" onclick="fbVote(this)">👍</button>
+          <button type="button" class="fb-v" data-v="down" aria-pressed="false" onclick="fbVote(this)">👎</button>
+        </div>
+        <div class="fb-why" data-for="up" hidden>
+          <span class="fb-q">Co konkretnie pasuje?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">zakres roli</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
+        <div class="fb-why" data-for="down" hidden>
+          <span class="fb-q">Co nie gra?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">nie ta branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">nie ten poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">nie ta rola</button>
+          <button type="button" class="fb-r" data-r="widelki" aria-pressed="false" onclick="fbWhy(this)">widełki</button>
+          <button type="button" class="fb-r" data-r="lokalizacja" aria-pressed="false" onclick="fbWhy(this)">lokalizacja</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
       </div>
     </div>
 
@@ -939,10 +1131,7 @@
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
       <p class="reason">
-        Trafny tytuł (Brand Manager) w wyspecjalizowanej firmie dermatologicznej — zakres łączy
-        estetykę i produkty na receptę, blisko Twojego doświadczenia pharma-marketingowego z
-        Neo-Vinci. Branża dermo/pharma jest niżej priorytetowo niż FMCG-napoje. Widełki i informacja
-        o aucie nieznane z alertu.
+        Trafny tytuł w wyspecjalizowanej firmie dermatologicznej, blisko Twojego doświadczenia pharma-marketingowego z Neo-Vinci. Branża dermo/pharma jest w Twoim profilu niżej niż FMCG napojowe.
       </p>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4455320597/" target="_blank" rel="noopener">Zobacz ofertę →</a>
@@ -950,9 +1139,31 @@
       </div>
       <div class="cv-note">CV wyróżnia doświadczenie pharma-marketingowe z Neo-Vinci — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
       <div class="gw">
-        <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div><div class="gw-score">3,0<span>/5</span></div><div class="gw-count">· z 1 oceny</div></div>
-        <div class="gw-warn"><span>⚠️</span><span>Ocena pochodzi z jednej opinii, więc jest statystycznie bez znaczenia. Dodatkowo w GoWork istnieją dwa profile o tej samej nazwie i nie da się jednoznacznie ustalić, którego dotyczy. Brak treści opinii — od dawna nikt nie komentował pracy w tej firmie.</span></div>
-        <a class="gw-more" href="https://www.gowork.pl/opinie_czytaj,158763,3" target="_blank" rel="noopener">Zobacz profil Galderma Polska →</a>
+        <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div><span class="gw-stars">★★★<span class="empty">☆☆</span></span><div class="gw-score">3,0<span>/5</span></div><div class="gw-count">· 1 opinia</div></div>
+        <a class="gw-more" href="https://www.gowork.pl/opinie_czytaj,158763,3" target="_blank" rel="noopener">Zobacz pracodawcę na GoWork →</a>
+      </div>
+      <div class="fb" artifact-sync>
+        <div class="fb-row">
+          <span class="fb-q">Trafiona propozycja?</span>
+          <button type="button" class="fb-v" data-v="up" aria-pressed="false" onclick="fbVote(this)">👍</button>
+          <button type="button" class="fb-v" data-v="down" aria-pressed="false" onclick="fbVote(this)">👎</button>
+        </div>
+        <div class="fb-why" data-for="up" hidden>
+          <span class="fb-q">Co konkretnie pasuje?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">zakres roli</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
+        <div class="fb-why" data-for="down" hidden>
+          <span class="fb-q">Co nie gra?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">nie ta branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">nie ten poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">nie ta rola</button>
+          <button type="button" class="fb-r" data-r="widelki" aria-pressed="false" onclick="fbWhy(this)">widełki</button>
+          <button type="button" class="fb-r" data-r="lokalizacja" aria-pressed="false" onclick="fbWhy(this)">lokalizacja</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
       </div>
     </div>
 
@@ -971,10 +1182,7 @@
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
       <p class="reason">
-        Dokładne trafienie tytułem (Brand Manager) w rozpoznawalnej, dużej firmie FMCG (Beiersdorf —
-        Nivea, Eucerin). Branża to kosmetyki/dermokosmetyki, nie napoje, więc nie trafia w segment top
-        match, ale to wciąż solidne FMCG z realnym brand ownership. Widełki i informacja o aucie
-        nieznane z alertu.
+        Dokładne trafienie tytułem w dużym, rozpoznawalnym FMCG — Beiersdorf daje realne brand ownership na markach Nivea i Eucerin. Kategoria to dermokosmetyki, nie napoje.
       </p>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4427861262/" target="_blank" rel="noopener">Zobacz ofertę →</a>
@@ -983,9 +1191,30 @@
       <div class="cv-note">CV wyróżnia strategiczne zarządzanie marką i kampanie 360° — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
       <div class="gw">
         <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div></div>
-        <p class="gw-nodata">Dla warszawskiego biura Beiersdorf/NIVEA profil na GoWork istnieje, ale nie ma przy nim potwierdzonej oceny gwiazdkowej ani liczby opinii.</p>
-        <div class="gw-warn"><span>⚠️</span><span>Opinie widoczne w wyszukiwarce dotyczą zakładów w Poznaniu (Beiersdorf Manufacturing, Beiersdorf Shared Services) — to inne spółki i inne lokalizacje niż warszawskie biuro marketingu, w którym jest ta oferta. Nie traktuj ich jako opinii o tym stanowisku.</span></div>
-        <a class="gw-more" href="https://www.gowork.pl/opinie_czytaj,32" target="_blank" rel="noopener">Zobacz profil Nivea Beiersdorf Warszawa →</a>
+        <a class="gw-more" href="https://www.gowork.pl/opinie_czytaj,32" target="_blank" rel="noopener">Zobacz pracodawcę na GoWork →</a>
+      </div>
+      <div class="fb" artifact-sync>
+        <div class="fb-row">
+          <span class="fb-q">Trafiona propozycja?</span>
+          <button type="button" class="fb-v" data-v="up" aria-pressed="false" onclick="fbVote(this)">👍</button>
+          <button type="button" class="fb-v" data-v="down" aria-pressed="false" onclick="fbVote(this)">👎</button>
+        </div>
+        <div class="fb-why" data-for="up" hidden>
+          <span class="fb-q">Co konkretnie pasuje?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">zakres roli</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
+        <div class="fb-why" data-for="down" hidden>
+          <span class="fb-q">Co nie gra?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">nie ta branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">nie ten poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">nie ta rola</button>
+          <button type="button" class="fb-r" data-r="widelki" aria-pressed="false" onclick="fbWhy(this)">widełki</button>
+          <button type="button" class="fb-r" data-r="lokalizacja" aria-pressed="false" onclick="fbWhy(this)">lokalizacja</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
       </div>
     </div>
 
@@ -1004,11 +1233,7 @@
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
       <p class="reason">
-        Tytuł stanowiska to dokładne trafienie w pierwszą preferencję z profilu (Brand Manager),
-        lokalizacja pasuje (Warszawa). Jednak EuroMatch Group nie jest firmą FMCG-napojową — to,
-        wraz z brakiem informacji o widełkach, branży dokładnej kategorii produktowej i aucie
-        służbowym w samym alercie LinkedIn, sprowadza to do segmentu "warto rozważyć" zamiast top
-        matcha. Zdecydowanie warto otworzyć ofertę i sprawdzić szczegóły przed decyzją o aplikacji.
+        Tytuł trafia dokładnie w pierwszą preferencję, a lokalizacja się zgadza. EuroMatch nie jest jednak firmą FMCG-napojową i alert nie mówi nic o kategorii produktowej ani widełkach.
       </p>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4452245439/" target="_blank" rel="noopener">Zobacz ofertę →</a>
@@ -1017,9 +1242,30 @@
       <div class="cv-note">CV wyróżnia Twoje doświadczenie w brand managemencie i uruchomieniach produktów — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
       <div class="gw">
         <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div></div>
-        <p class="gw-nodata">Profil istnieje tylko jako pusta wizytówka wygenerowana z rejestrów — bez oceny, bez liczby opinii i bez treści. Firma jest prawdopodobnie zbyt mała lub zbyt nowa, żeby zebrać opinie.</p>
-        <div class="gw-warn"><span>⚠️</span><span>Uwaga na firmy o mylnie podobnych nazwach, które NIE są tym pracodawcą: Euromatch Polska (branża IT), Euromatch z Bystrzycy Kłodzkiej (w likwidacji) oraz holenderska agencja pracy „EU MATCH”, która ma opinie negatywne. Nie przypisuj ich tej ofercie.</span></div>
-        <a class="gw-more" href="https://www.gowork.pl/euromatch-group-sp.-z-o.o.,26854576/praca-i-zarobki" target="_blank" rel="noopener">Zobacz profil na GoWork →</a>
+        <a class="gw-more" href="https://www.gowork.pl/euromatch-group-sp.-z-o.o.,26854576/praca-i-zarobki" target="_blank" rel="noopener">Zobacz pracodawcę na GoWork →</a>
+      </div>
+      <div class="fb" artifact-sync>
+        <div class="fb-row">
+          <span class="fb-q">Trafiona propozycja?</span>
+          <button type="button" class="fb-v" data-v="up" aria-pressed="false" onclick="fbVote(this)">👍</button>
+          <button type="button" class="fb-v" data-v="down" aria-pressed="false" onclick="fbVote(this)">👎</button>
+        </div>
+        <div class="fb-why" data-for="up" hidden>
+          <span class="fb-q">Co konkretnie pasuje?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">zakres roli</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
+        <div class="fb-why" data-for="down" hidden>
+          <span class="fb-q">Co nie gra?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">nie ta branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">nie ten poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">nie ta rola</button>
+          <button type="button" class="fb-r" data-r="widelki" aria-pressed="false" onclick="fbWhy(this)">widełki</button>
+          <button type="button" class="fb-r" data-r="lokalizacja" aria-pressed="false" onclick="fbWhy(this)">lokalizacja</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
       </div>
     </div>
 
@@ -1038,10 +1284,7 @@
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
       <p class="reason">
-        Trafny tytuł (Brand Manager) w dużej firmie farmaceutycznej — masz już doświadczenie w
-        marketingu pharma z Neo-Vinci, więc kompetencje przenoszą się dobrze. W profilu branża pharma
-        jest niżej priorytetowo niż FMCG-napoje, stąd segment "warto rozważyć". Widełki i informacja o
-        aucie nieznane z alertu.
+        Trafny tytuł w dużej firmie farmaceutycznej, a kompetencje z Neo-Vinci przenoszą się tu wprost. Pharma jest jednak w Twoim profilu niżej priorytetowo niż FMCG napojowe.
       </p>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4451267893/" target="_blank" rel="noopener">Zobacz ofertę →</a>
@@ -1049,9 +1292,31 @@
       </div>
       <div class="cv-note">CV wyróżnia doświadczenie pharma-marketingowe z Neo-Vinci i stakeholder management — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
       <div class="gw">
-        <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div><div class="gw-count">199 opinii · brak oceny gwiazdkowej</div></div>
-        <p class="gw-summary">Powtarzają się zarzuty o słabą atmosferę pracy i problematyczne zarządzanie, którego nie rekompensują warunki zatrudnienia. Pracownicy piszą, że przełożeni nie akceptują samodzielnych opinii ani odmiennego podejścia do pracy. Wraca też wątek wynagrodzeń — brak podwyżek i odchodzenie najlepszych ludzi.</p>
-        <a class="gw-more" href="https://www.gowork.pl/opinie_czytaj,63444,4" target="_blank" rel="noopener">Czytaj więcej na GoWork →</a>
+        <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div><div class="gw-count">199 opinii</div></div>
+        <a class="gw-more" href="https://www.gowork.pl/opinie_czytaj,63444,4" target="_blank" rel="noopener">Zobacz pracodawcę na GoWork →</a>
+      </div>
+      <div class="fb" artifact-sync>
+        <div class="fb-row">
+          <span class="fb-q">Trafiona propozycja?</span>
+          <button type="button" class="fb-v" data-v="up" aria-pressed="false" onclick="fbVote(this)">👍</button>
+          <button type="button" class="fb-v" data-v="down" aria-pressed="false" onclick="fbVote(this)">👎</button>
+        </div>
+        <div class="fb-why" data-for="up" hidden>
+          <span class="fb-q">Co konkretnie pasuje?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">zakres roli</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
+        <div class="fb-why" data-for="down" hidden>
+          <span class="fb-q">Co nie gra?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">nie ta branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">nie ten poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">nie ta rola</button>
+          <button type="button" class="fb-r" data-r="widelki" aria-pressed="false" onclick="fbWhy(this)">widełki</button>
+          <button type="button" class="fb-r" data-r="lokalizacja" aria-pressed="false" onclick="fbWhy(this)">lokalizacja</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
       </div>
     </div>
 
@@ -1070,9 +1335,7 @@
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
       <p class="reason">
-        Ten sam profil dopasowania co pozycja Neurology w Novartis (inny obszar terapeutyczny, ta sama
-        firma) — trafny tytuł, pharma niżej priorytetowo niż FMCG-napoje. Widełki i informacja o aucie
-        nieznane z alertu.
+        Ten sam profil dopasowania co pozycja Neurology — inny obszar terapeutyczny, ta sama firma i ten sam trafny tytuł. Pharma pozostaje niżej priorytetowo niż napoje.
       </p>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4451290632/" target="_blank" rel="noopener">Zobacz ofertę →</a>
@@ -1080,9 +1343,31 @@
       </div>
       <div class="cv-note">CV wyróżnia doświadczenie pharma-marketingowe z Neo-Vinci i stakeholder management — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
       <div class="gw">
-        <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div><div class="gw-count">199 opinii · brak oceny gwiazdkowej</div></div>
-        <p class="gw-summary">Powtarzają się zarzuty o słabą atmosferę pracy i problematyczne zarządzanie, którego nie rekompensują warunki zatrudnienia. Pracownicy piszą, że przełożeni nie akceptują samodzielnych opinii ani odmiennego podejścia do pracy. Wraca też wątek wynagrodzeń — brak podwyżek i odchodzenie najlepszych ludzi.</p>
-        <a class="gw-more" href="https://www.gowork.pl/opinie_czytaj,63444,4" target="_blank" rel="noopener">Czytaj więcej na GoWork →</a>
+        <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div><div class="gw-count">199 opinii</div></div>
+        <a class="gw-more" href="https://www.gowork.pl/opinie_czytaj,63444,4" target="_blank" rel="noopener">Zobacz pracodawcę na GoWork →</a>
+      </div>
+      <div class="fb" artifact-sync>
+        <div class="fb-row">
+          <span class="fb-q">Trafiona propozycja?</span>
+          <button type="button" class="fb-v" data-v="up" aria-pressed="false" onclick="fbVote(this)">👍</button>
+          <button type="button" class="fb-v" data-v="down" aria-pressed="false" onclick="fbVote(this)">👎</button>
+        </div>
+        <div class="fb-why" data-for="up" hidden>
+          <span class="fb-q">Co konkretnie pasuje?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">zakres roli</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
+        <div class="fb-why" data-for="down" hidden>
+          <span class="fb-q">Co nie gra?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">nie ta branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">nie ten poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">nie ta rola</button>
+          <button type="button" class="fb-r" data-r="widelki" aria-pressed="false" onclick="fbWhy(this)">widełki</button>
+          <button type="button" class="fb-r" data-r="lokalizacja" aria-pressed="false" onclick="fbWhy(this)">lokalizacja</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
       </div>
     </div>
 
@@ -1101,9 +1386,7 @@
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
       <p class="reason">
-        Trafny tytuł, Orbico to duży dystrybutor FMCG (beauty/kosmetyki) na rynku polskim. Branża beauty
-        zamiast napojowej obniża to do segmentu "warto rozważyć". Widełki i informacja o aucie nieznane
-        z alertu.
+        Trafny tytuł u dużego dystrybutora FMCG na rynku polskim, z realnym portfelem marek beauty. Kategoria kosmetyczna zamiast napojowej obniża dopasowanie.
       </p>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4452225436/" target="_blank" rel="noopener">Zobacz ofertę →</a>
@@ -1112,9 +1395,30 @@
       <div class="cv-note">CV wyróżnia influencer marketing i kampanie 360° — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
       <div class="gw">
         <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div></div>
-        <p class="gw-nodata">Dla warszawskiej centrali Orbico nie znaleziono strony z opiniami ani oceny liczbowej.</p>
-        <div class="gw-warn"><span>⚠️</span><span>Opinie o zarobkach i benefitach, które pojawiają się w wyszukiwarce, dotyczą głównie magazynu NAVO PGD w Nadarzynie oraz innych spółek z grupy — nie warszawskiego biura, w którym jest ta oferta.</span></div>
-        <a class="gw-more" href="https://www.gowork.pl/orbico-sp.-z-o.o.,1038538/praca-i-zarobki" target="_blank" rel="noopener">Zobacz profil Orbico na GoWork →</a>
+        <a class="gw-more" href="https://www.gowork.pl/" target="_blank" rel="noopener">Zobacz pracodawcę na GoWork →</a>
+      </div>
+      <div class="fb" artifact-sync>
+        <div class="fb-row">
+          <span class="fb-q">Trafiona propozycja?</span>
+          <button type="button" class="fb-v" data-v="up" aria-pressed="false" onclick="fbVote(this)">👍</button>
+          <button type="button" class="fb-v" data-v="down" aria-pressed="false" onclick="fbVote(this)">👎</button>
+        </div>
+        <div class="fb-why" data-for="up" hidden>
+          <span class="fb-q">Co konkretnie pasuje?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">zakres roli</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
+        <div class="fb-why" data-for="down" hidden>
+          <span class="fb-q">Co nie gra?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">nie ta branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">nie ten poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">nie ta rola</button>
+          <button type="button" class="fb-r" data-r="widelki" aria-pressed="false" onclick="fbWhy(this)">widełki</button>
+          <button type="button" class="fb-r" data-r="lokalizacja" aria-pressed="false" onclick="fbWhy(this)">lokalizacja</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
       </div>
     </div>
 
@@ -1133,13 +1437,7 @@
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
       <p class="reason">
-        Dokładne trafienie tytułem (Brand Manager) w obszarze ginekologii — czyli marketing
-        farmaceutyczny, w którym masz realne doświadczenie z Neo-Vinci (Pierre Fabre, Novo Nordisk,
-        Glenmark, Stada, Filofarm). To ten sam poziom dopasowania co role Brand Managera w Novartisie,
-        stąd identyczny wynik 58/100: tytuł się zgadza, ale pharma jest w Twoim profilu niżej
-        priorytetowo niż FMCG napojowe. Dwie rzeczy do sprawdzenia przed aplikacją: ogłoszenie wystawia
-        agencja HRK, więc nie wiadomo, kto jest docelowym pracodawcą, a lokalizacja „Warszawa i okolice"
-        nie precyzuje, czy praca jest w mieście.
+        Trafny tytuł w obszarze ginekologii, czyli marketing farmaceutyczny, w którym masz doświadczenie z Neo-Vinci. Ogłoszenie wystawia agencja, więc nie wiadomo, kto jest docelowym pracodawcą.
       </p>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4456491307/" target="_blank" rel="noopener">Zobacz ofertę →</a>
@@ -1148,9 +1446,30 @@
       <div class="cv-note">CV wysuwa na przód tło farmaceutyczne z Neo-Vinci i stakeholder management — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
       <div class="gw">
         <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div></div>
-        <p class="gw-nodata">Ogłoszenie wystawia agencja rekrutacyjna HRK S.A., a nie docelowy pracodawca — dopóki nie wiadomo, dla kogo jest ta rola, nie ma czyich opinii sprawdzać.</p>
-        <div class="gw-warn"><span>⚠️</span><span>Opinie o samym HRK dotyczyłyby pracy w agencji rekrutacyjnej, a nie u pracodawcy, do którego trafisz. Zapytaj rekrutera o nazwę firmy na pierwszym kontakcie — dopiero wtedy da się cokolwiek sprawdzić.</span></div>
-        <a class="gw-more" href="https://www.gowork.pl/" target="_blank" rel="noopener">Szukaj pracodawcy na GoWork →</a>
+        <a class="gw-more" href="https://www.gowork.pl/" target="_blank" rel="noopener">Zobacz pracodawcę na GoWork →</a>
+      </div>
+      <div class="fb" artifact-sync>
+        <div class="fb-row">
+          <span class="fb-q">Trafiona propozycja?</span>
+          <button type="button" class="fb-v" data-v="up" aria-pressed="false" onclick="fbVote(this)">👍</button>
+          <button type="button" class="fb-v" data-v="down" aria-pressed="false" onclick="fbVote(this)">👎</button>
+        </div>
+        <div class="fb-why" data-for="up" hidden>
+          <span class="fb-q">Co konkretnie pasuje?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">zakres roli</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
+        <div class="fb-why" data-for="down" hidden>
+          <span class="fb-q">Co nie gra?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">nie ta branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">nie ten poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">nie ta rola</button>
+          <button type="button" class="fb-r" data-r="widelki" aria-pressed="false" onclick="fbWhy(this)">widełki</button>
+          <button type="button" class="fb-r" data-r="lokalizacja" aria-pressed="false" onclick="fbWhy(this)">lokalizacja</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
       </div>
     </div>
 
@@ -1169,11 +1488,7 @@
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
       <p class="reason">
-        Nestlé WINIARY to duża, rozpoznawalna marka FMCG spożywcze (dokładnie kategoria akceptowalna
-        w profilu, choć nie napojowa) — silny sygnał firmy. Sam tytuł stanowiska ("Digital Ecosystem
-        &amp; Performance Lead") jest jednak bardziej wyspecjalizowaną rolą digital/performance niż
-        klasycznym brand managementem z pełnym P&amp;L, stąd umiarkowany fit score mimo świetnej marki.
-        Widełki i informacja o aucie nieznane z alertu.
+        Nestlé to duże FMCG spożywcze, a WINIARY to marka z realnym budżetem i zasięgiem. Rola jest jednak wąsko digitalowa, nie pełne zarządzanie marką.
       </p>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4455348022/" target="_blank" rel="noopener">Zobacz ofertę →</a>
@@ -1181,10 +1496,31 @@
       </div>
       <div class="cv-note">CV wyróżnia doświadczenie digital/influencer i zarządzanie budżetem kampanii — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
       <div class="gw">
-        <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div><div class="gw-count">760 opinii · brak potwierdzonej oceny</div></div>
-        <p class="gw-summary">Najczęściej wraca temat wynagrodzeń: długoletni pracownicy zarabiają mniej niż nowo zatrudniani, brakuje podwyżek i dobrzy ludzie odchodzą. Drugi powtarzalny wątek to kultura korporacyjna — „zysk za wszelką cenę” i rozmijanie się komunikacji firmowej z rzeczywistością. Pojawiają się też głosy neutralne: warunki pracy „OK, ale mogłoby być lepiej”, rekrutacja miła, choć z opóźnieniami.</p>
-        <div class="gw-warn"><span>⚠️</span><span>Profil agreguje opinie z całej Nestlé Polska, w tym z fabryk — nie tylko z warszawskiej centrali marketingowej, w której jest ta oferta.</span></div>
-        <a class="gw-more" href="https://www.gowork.pl/opinie_czytaj,35251,7" target="_blank" rel="noopener">Czytaj więcej na GoWork →</a>
+        <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div><div class="gw-count">760 opinii</div></div>
+        <a class="gw-more" href="https://www.gowork.pl/opinie_czytaj,35251,7" target="_blank" rel="noopener">Zobacz pracodawcę na GoWork →</a>
+      </div>
+      <div class="fb" artifact-sync>
+        <div class="fb-row">
+          <span class="fb-q">Trafiona propozycja?</span>
+          <button type="button" class="fb-v" data-v="up" aria-pressed="false" onclick="fbVote(this)">👍</button>
+          <button type="button" class="fb-v" data-v="down" aria-pressed="false" onclick="fbVote(this)">👎</button>
+        </div>
+        <div class="fb-why" data-for="up" hidden>
+          <span class="fb-q">Co konkretnie pasuje?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">zakres roli</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
+        <div class="fb-why" data-for="down" hidden>
+          <span class="fb-q">Co nie gra?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">nie ta branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">nie ten poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">nie ta rola</button>
+          <button type="button" class="fb-r" data-r="widelki" aria-pressed="false" onclick="fbWhy(this)">widełki</button>
+          <button type="button" class="fb-r" data-r="lokalizacja" aria-pressed="false" onclick="fbWhy(this)">lokalizacja</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
       </div>
     </div>
 
@@ -1203,14 +1539,7 @@
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
       <p class="reason">
-        Branżowo i tytułem to trafienie niemal idealne: kawa to napoje, czyli Twoja najmocniejsza
-        kategoria, a Marketing Manager jest trzeci na liście preferowanych ról. I tu jedyny, ale bardzo
-        konkretny problem — <strong>widełki</strong>. Ogłoszenie podaje 12 000–17 500 zł miesięcznie,
-        a Twoje minimum z profilu to 25 000 zł brutto. Nawet górna granica jest o jedną trzecią za
-        niska, więc mimo świetnego dopasowania merytorycznego oferta nie spełnia najtwardszego
-        kryterium finansowego. Zostawiam ją na dashboardzie zamiast w archiwum, bo połączenie
-        branża + tytuł jest rzadkie i jeśli widełki są negocjowalne albo dochodzi do nich premia, jest
-        o czym rozmawiać — ale wchodź w to z otwartymi oczami.
+        Kawa i tytuł Marketing Managera to trafienie niemal idealne branżowo. Widełki 12 000–17 500 zł są jednak wyraźnie poniżej Twojego progu 25 000 zł — pokazuję ją, bo takie połączenie branży i tytułu trafia się rzadko.
       </p>
       <div class="card-actions">
         <a class="apply" href="https://pracuj.pl/praca/marketing-manager-warszawa-stanislawa-bodycha-39,oferta,1005009758" target="_blank" rel="noopener">Zobacz ofertę →</a>
@@ -1219,9 +1548,30 @@
       <div class="cv-note">CV stawia kategorię napojową na pierwszym planie — XL Energy, OSHEE, launch pierwszego naturalnego izotoniku i energetyka COMBU — bez zmyślania nowych umiejętności, tylko inny dobór/kolejność tego, co już masz.</div>
       <div class="gw">
         <div class="gw-head"><div class="gw-label">Opinie o pracodawcy · GoWork</div></div>
-        <p class="gw-nodata">Dla Coffee Plant sp. z o.o. nie udało się potwierdzić profilu pracodawcy na GoWork.</p>
-        <div class="gw-warn"><span>⚠️</span><span>Brak opinii przy firmie tej wielkości nie jest sam w sobie sygnałem ostrzegawczym, ale w połączeniu z widełkami poniżej Twojego progu oznacza, że o realnych warunkach i skali działu dowiesz się dopiero na rozmowie.</span></div>
-        <a class="gw-more" href="https://www.gowork.pl/" target="_blank" rel="noopener">Szukaj pracodawcy na GoWork →</a>
+        <a class="gw-more" href="https://www.gowork.pl/" target="_blank" rel="noopener">Zobacz pracodawcę na GoWork →</a>
+      </div>
+      <div class="fb" artifact-sync>
+        <div class="fb-row">
+          <span class="fb-q">Trafiona propozycja?</span>
+          <button type="button" class="fb-v" data-v="up" aria-pressed="false" onclick="fbVote(this)">👍</button>
+          <button type="button" class="fb-v" data-v="down" aria-pressed="false" onclick="fbVote(this)">👎</button>
+        </div>
+        <div class="fb-why" data-for="up" hidden>
+          <span class="fb-q">Co konkretnie pasuje?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">zakres roli</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
+        <div class="fb-why" data-for="down" hidden>
+          <span class="fb-q">Co nie gra?</span>
+          <button type="button" class="fb-r" data-r="branza" aria-pressed="false" onclick="fbWhy(this)">nie ta branża</button>
+          <button type="button" class="fb-r" data-r="poziom" aria-pressed="false" onclick="fbWhy(this)">nie ten poziom</button>
+          <button type="button" class="fb-r" data-r="rola" aria-pressed="false" onclick="fbWhy(this)">nie ta rola</button>
+          <button type="button" class="fb-r" data-r="widelki" aria-pressed="false" onclick="fbWhy(this)">widełki</button>
+          <button type="button" class="fb-r" data-r="lokalizacja" aria-pressed="false" onclick="fbWhy(this)">lokalizacja</button>
+          <button type="button" class="fb-r" data-r="firma" aria-pressed="false" onclick="fbWhy(this)">firma</button>
+        </div>
       </div>
     </div>
   </section>
@@ -1341,7 +1691,7 @@
     </div>
   </details>
 
-  <footer>Wybierz Swoją Robotę by GF · wygenerowano przez pipeline na żądanie · źródła ofert: alerty mailowe LinkedIn, pracuj.pl i Michael Page + bezpośrednie odezwy rekruterów · opinie o pracodawcach: GoWork, stan na 21.08.2026 — dane z wyszukiwarki, nieodświeżane automatycznie</footer>
+  <footer>Wybierz Swoją Robotę by GF · wygenerowano przez pipeline na żądanie · źródła ofert: alerty mailowe LinkedIn, pracuj.pl i Michael Page + bezpośrednie odezwy rekruterów · oceny 👍/👎 przy ofertach wracają do pipeline'u i zmieniają kryteria w profile.md</footer>
 </div>
 
 <div class="cv-modal-backdrop" id="cv-modal-backdrop" hidden>
@@ -1868,6 +2218,43 @@
   return { buildDocx: buildDocx, buildPdf: buildPdf, slug: slug, _zip: zip };
 });
 
+</script>
+<script>
+  /* Feedback zapisywany przez capability "artifact": każda zmiana atrybutu
+     wewnątrz <div class="fb" artifact-sync> trafia do dokumentu i wraca do
+     mnie przy kolejnym uruchomieniu pipeline'u. Dlatego handlery ruszają
+     WYŁĄCZNIE atrybuty istniejących w HTML elementów (aria-pressed, hidden)
+     — treść regionu nie może być renderowana z JS, bo wtedy nic się nie zapisze. */
+  (function () {
+    window.fbVote = function (btn) {
+      var fb = btn.closest(".fb");
+      var v = btn.getAttribute("data-v");
+      var on = btn.getAttribute("aria-pressed") !== "true";
+      fb.querySelectorAll(".fb-v").forEach(function (b) {
+        b.setAttribute("aria-pressed", b === btn && on ? "true" : "false");
+      });
+      fb.querySelectorAll(".fb-why").forEach(function (w) {
+        w.hidden = !(on && w.getAttribute("data-for") === v);
+      });
+      if (!on) {
+        fb.querySelectorAll(".fb-r").forEach(function (r) { r.setAttribute("aria-pressed", "false"); });
+      }
+    };
+
+    window.fbWhy = function (btn) {
+      btn.setAttribute("aria-pressed", btn.getAttribute("aria-pressed") === "true" ? "false" : "true");
+    };
+
+    // Widok bez prawa zapisu — powiedz to wprost, zamiast udawać, że zapisano.
+    document.addEventListener("claude:sync-off", function (e) {
+      var fb = e.target.closest ? e.target.closest(".fb") : null;
+      if (!fb || fb.querySelector(".fb-note")) return;
+      var n = document.createElement("div");
+      n.className = "fb-note";
+      n.textContent = "Ten widok nie zapisuje ocen — otwórz dashboard jako właściciel.";
+      fb.appendChild(n);
+    }, true);
+  })();
 </script>
 <script>
   (function () {

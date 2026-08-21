@@ -150,6 +150,46 @@ Dotyczy to też maili Michael Page: temat jest zawsze identyczny
 temacie NIE da się odróżnić maila z 1 ofertą od maila z 3 — zawsze otwieraj
 treść.
 
+## 1.5. Odczytaj oceny użytkownika z dashboardu (przed oceną nowych ofert)
+
+Każda karta na dashboardzie ma sekcję feedbacku w regionie
+`<div class="fb" artifact-sync>`. Kliknięcia użytkownika (👍/👎 i powody)
+zapisują się w opublikowanym Artifakcie i **wracają do Ciebie** — to jedyny
+kanał, którym użytkownik uczy pipeline swoich preferencji.
+
+**Odczyt:** `WebFetch` na URL z `data/artifact_url.txt`. Dla każdej karty:
+- głos: `.fb-v[aria-pressed="true"]` → `data-v` = `up` albo `down`
+- powody: `.fb-why[data-for="<głos>"] .fb-r[aria-pressed="true"]` → `data-r`
+  (`branza`, `poziom`, `rola`, `widelki`, `lokalizacja`, `firma`)
+
+Powody powtarzają się w obu wierszach (👍 i 👎), więc **zawsze czytaj je
+z wiersza pasującego do głosu** — inaczej pomylisz „branża pasuje" z „nie ta
+branża".
+
+**Zapis:** dopisz nowe oceny do `data/feedback_log.json` (`id`, `vote`,
+`reasons[]`, `title`, `company`, `fit_score`, `ts`). Nie nadpisuj historii —
+wartość tego pliku rośnie z czasem.
+
+**Zastosowanie — to jest sedno.** Pojedyncza ocena to szum; **wzorzec to
+sygnał**. Po dopisaniu nowych ocen przejrzyj cały log i szukaj powtórzeń:
+
+- 2+ razy 👎 z powodem `branza` w tej samej branży → ta branża wypada
+  z akceptowalnych. Zaktualizuj sekcję „Branża" w `profile.md` i **napisz
+  użytkownikowi, co zmieniłeś** — to jego kryteria, nie Twoje.
+- 2+ razy 👎 `poziom` przy podobnym seniority → dociągnij próg w dół lub
+  w górę w sekcji „Dealbreakery".
+- 2+ razy 👎 `widelki` przy ofertach powyżej progu → próg jest za niski.
+- 👍 `branza` w branży dziś opisanej jako „rozważyć" → awansuj ją.
+- 👎 przy ofercie z wysokim fit score → Twoje wagi są złe dla tego wymiaru;
+  opisz to w uzasadnieniu przy następnej podobnej ofercie.
+
+Powody mapują się 1:1 na wymiary fit score, więc log jest jednocześnie
+materiałem na „suwaki" (wagi wymiarów), o które prosił użytkownik.
+
+**Nie zmieniaj `profile.md` na podstawie jednej oceny** i nigdy nie zmieniaj
+go po cichu — każda zmiana kryteriów ma trafić do podsumowania dla
+użytkownika.
+
 ## 2. Wyodrębnij pojedyncze oferty z maili
 
 Każdy mail-alert może zawierać wiele ofert. Dla każdej wyodrębnij:
@@ -305,8 +345,17 @@ pominiętych — nadal zapisz, żeby nie oceniać ich ponownie jutro).
 
 ## 7. Opublikuj i wyślij
 
+- **UWAGA: publikacja nadpisuje HTML, więc może skasować oceny.** Zanim
+  opublikujesz, przenieś odczytane w kroku 1.5 głosy do nowego HTML-a: dla
+  ofert, które zostają na dashboardzie, ustaw w źródle
+  `aria-pressed="true"` na odpowiednim `.fb-v` i na wybranych `.fb-r`, oraz
+  zdejmij `hidden` z właściwego `.fb-why`. Bez tego użytkownik zobaczy swoje
+  oceny wyczyszczone i przestanie ufać temu mechanizmowi. Oceny ofert, które
+  wypadły z dashboardu, i tak zostają w `data/feedback_log.json`.
 - Opublikuj/zaktualizuj dashboard jako Artifact (użyj `Artifact` tool,
-  `file_path` = `dashboard/index.html`, `capabilities: {downloads: true}` —
+  `file_path` = `dashboard/index.html`,
+  `capabilities: {artifact: {}, downloads: true}` — `artifact` jest wymagane,
+  żeby oceny 👍/👎 w ogóle się zapisywały, `downloads` —
   wymagane dla przycisków "Dostosuj CV", patrz krok 5b). Jeśli
   `data/artifact_url.txt` już zawiera URL, zaktualizuj TEN SAM artifact
   (parametr `url`) zamiast tworzyć nowy — PRZED tym zawsze najpierw
