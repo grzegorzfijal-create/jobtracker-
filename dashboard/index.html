@@ -287,11 +287,35 @@
     font-variant-numeric: tabular-nums;
   }
 
-  .card p.reason {
-    line-height: 1.55;
-    color: var(--ink);
-    margin: 10px 0 16px;
+  .card ul.reason {
+    list-style: none;
+    margin: 12px 0 16px;
+    padding: 0;
+    display: grid;
+    gap: 6px;
   }
+
+  .card ul.reason li {
+    position: relative;
+    padding-left: 22px;
+    line-height: 1.45;
+    color: var(--ink);
+    font-size: 0.94rem;
+  }
+
+  .card ul.reason li::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 700;
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+
+  .card ul.reason li.r-y::before { content: "✓"; color: var(--good); }
+  .card ul.reason li.r-n::before { content: "✗"; color: var(--warn); }
+  .card ul.reason li.r-q::before { content: "?"; color: var(--ink-soft); }
+  .card ul.reason li.r-q { color: var(--ink-soft); }
 
   .card-actions {
     display: flex;
@@ -641,7 +665,7 @@
     <div class="wordmark">Wybierz Swoją <span>Robotę</span><span class="byline">by GF</span></div>
     <div class="meta-line">Brand &amp; Marketing · FMCG / Napoje</div>
   </header>
-  <div class="meta-line" style="margin-bottom: 4px;">Aktualizacja: 21 sierpnia 2026, 19:25</div>
+  <div class="meta-line" style="margin-bottom: 4px;">Aktualizacja: 21 sierpnia 2026, 20:05</div>
 
   <div class="stat-row">
     <div class="stat"><div class="n">2</div><div class="l">Idealnie dopasowane</div></div>
@@ -667,9 +691,11 @@
         <span class="src">🔗 LinkedIn</span>
         <span class="pill good">🎯 idealnie dopasowane</span>
       </div>
-      <p class="reason">
-        Coca-Cola to czołowa firma FMCG-napojowa — dokładnie ta branża, w której zbudowałeś dorobek w OSHEE i XL Energy, a rola dotyczy marki Cappy na poziomie Senior Directora. To naturalny krok w górę ze ścieżki Brand/Senior Brand Manager i najlepsze dotychczasowe trafienie.
-      </p>
+      <ul class="reason">
+        <li class="r-y">Napoje FMCG — dokładnie Twoja kategoria (OSHEE, XL Energy)</li>
+        <li class="r-y">Senior Director — krok w górę ze ścieżki Senior Brand Managera</li>
+        <li class="r-q">Widełki i auto służbowe nieznane z alertu</li>
+      </ul>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4454315607/" target="_blank" rel="noopener">Zobacz ofertę →</a>
         <button type="button" class="cv-btn" data-job-id="linkedin:4454315607" onclick="openCvPreview(this)">🧬 Wygeneruj CV</button>
@@ -718,9 +744,11 @@
         <span class="src">🔗 LinkedIn</span>
         <span class="pill good">🎯 idealnie dopasowane</span>
       </div>
-      <p class="reason">
-        Kategoria Cough, Cold &amp; Pain to OTC sprzedawane w aptekach i handlu masowym — budowanie marki konsumenckiej, ATL/BTL i NPD, czyli mechanika bliższa FMCG niż marketingowi leków receptowych. Do tego zasięg europejski zamiast jednorynkowego, a tło farmaceutyczne masz z Neo-Vinci.
-      </p>
+      <ul class="reason">
+        <li class="r-y">OTC/consumer health — mechanika marki bliższa FMCG niż lekom Rx</li>
+        <li class="r-y">Zasięg europejski zamiast jednego rynku</li>
+        <li class="r-y">Tło pharma z Neo-Vinci: Pierre Fabre, Novo Nordisk, Stada</li>
+      </ul>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4434485007/" target="_blank" rel="noopener">Zobacz ofertę →</a>
         <button type="button" class="cv-btn" data-job-id="linkedin:4434485007" onclick="openCvPreview(this)">🧬 Wygeneruj CV</button>
@@ -773,9 +801,11 @@
         <span class="src">🔗 LinkedIn</span>
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
-      <p class="reason">
-        Kawa to napoje, czyli Twoja najmocniejsza kategoria, a tytuł trafia dokładnie w preferencje. Ogłoszenie jest jednak skąpe — lokalizacja brzmi „Warszawa, Włochy”, a firma wygląda na dużo mniejszą niż Twoi dotychczasowi pracodawcy.
-      </p>
+      <ul class="reason">
+        <li class="r-y">Kawa to napoje — Twoja najmocniejsza kategoria</li>
+        <li class="r-y">Marketing / Brand Manager — pierwsza preferencja z profilu</li>
+        <li class="r-q">Lokalizacja niejasna („Warszawa, Włochy”), firma mała</li>
+      </ul>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4453457246/" target="_blank" rel="noopener">Zobacz ofertę →</a>
         <button type="button" class="cv-btn" data-job-id="linkedin:4453457246" onclick="openCvPreview(this)">🧬 Wygeneruj CV</button>
@@ -824,9 +854,11 @@
         <span class="src">🔗 pracuj.pl</span>
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
-      <p class="reason">
-        „Kierownik Marki” to po prostu Brand Manager, a Dr Gerard to klasyczne FMCG spożywcze — ta sama półka w Biedronce i Żabce, na której pracowałeś w OSHEE. Brakuje tylko kategorii napojowej i widełek, żeby to było trafienie idealne.
-      </p>
+      <ul class="reason">
+        <li class="r-y">FMCG spożywcze — ta sama półka co w OSHEE (Żabka, Biedronka)</li>
+        <li class="r-y">„Kierownik Marki” to po prostu Brand Manager</li>
+        <li class="r-n">Spożywka, nie napoje; brak widełek</li>
+      </ul>
       <div class="card-actions">
         <a class="apply" href="https://pracuj.pl/praca/kierownik-kierowniczka-marki-warszawa,oferta,1005001298" target="_blank" rel="noopener">Zobacz ofertę →</a>
         <button type="button" class="cv-btn" data-job-id="pracuj:1005001298" onclick="openCvPreview(this)">🧬 Wygeneruj CV</button>
@@ -875,9 +907,11 @@
         <span class="src">🔗 LinkedIn</span>
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
-      <p class="reason">
-        Vichy to dermokosmetyki L'Oréala sprzedawane w aptekach — styk FMCG i pharmy, czyli obu obszarów, które masz w CV. „Brand Business Leader” sugeruje odpowiedzialność za markę wraz z wynikiem, a P&amp;L prowadzisz dziś w XL Energy.
-      </p>
+      <ul class="reason">
+        <li class="r-y">Styk FMCG i pharmy — oba obszary masz w CV</li>
+        <li class="r-y">Odpowiedzialność za markę wraz z P&amp;L, jak dziś w XL Energy</li>
+        <li class="r-n">Dermokosmetyki, nie napoje</li>
+      </ul>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4446054292/" target="_blank" rel="noopener">Zobacz ofertę →</a>
         <button type="button" class="cv-btn" data-job-id="linkedin:4446054292" onclick="openCvPreview(this)">🧬 Wygeneruj CV</button>
@@ -926,9 +960,11 @@
         <span class="src">🔗 pracuj.pl</span>
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
-      <p class="reason">
-        Firma działa na styku żywności i produktów medycznych, gdzie schodzą się naraz trzy Twoje doświadczenia: Olimp, napoje funkcjonalne i pharma z Neo-Vinci. Tytuł trafia dokładnie, ale firma jest mała i nie podaje widełek ani zakresu.
-      </p>
+      <ul class="reason">
+        <li class="r-y">Żywność + produkty medyczne — Olimp i Neo-Vinci naraz</li>
+        <li class="r-y">Brand Manager — pierwsza preferencja z profilu</li>
+        <li class="r-q">Mała firma, brak widełek i opisu zakresu</li>
+      </ul>
       <div class="card-actions">
         <a class="apply" href="https://pracuj.pl/praca/brand-manager-warszawa-ostrobramska-101-a,oferta,1004997138" target="_blank" rel="noopener">Zobacz ofertę →</a>
         <button type="button" class="cv-btn" data-job-id="pracuj:1004997138" onclick="openCvPreview(this)">🧬 Wygeneruj CV</button>
@@ -977,9 +1013,11 @@
         <span class="src">🔗 pracuj.pl</span>
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
-      <p class="reason">
-        Weleda to naturalne kosmetyki i produkty lecznicze w kanale aptecznym — znów styk FMCG i pharmy. Rola łączy komunikację z zarządzaniem marką, czyli dokładnie to, co robisz w XL Energy przy kampaniach 360° i influencerskich.
-      </p>
+      <ul class="reason">
+        <li class="r-y">Kanał apteczny — znów styk FMCG i pharmy</li>
+        <li class="r-y">Komunikacja 360° + marka, czyli Twój zakres z XL Energy</li>
+        <li class="r-n">Kosmetyki, nie napoje</li>
+      </ul>
       <div class="card-actions">
         <a class="apply" href="https://pracuj.pl/praca/communication-brand-manager-warszawa-pabianicka-12,oferta,1004982984" target="_blank" rel="noopener">Zobacz ofertę →</a>
         <button type="button" class="cv-btn" data-job-id="pracuj:1004982984" onclick="openCvPreview(this)">🧬 Wygeneruj CV</button>
@@ -1028,9 +1066,11 @@
         <span class="src">🔗 LinkedIn</span>
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
-      <p class="reason">
-        „Group Brand Manager” to poziom bliski Twojemu obecnemu, a Beiersdorf to duże, rozpoznawalne FMCG z realnym brand ownership. Kategoria to jednak kosmetyki, nie napoje.
-      </p>
+      <ul class="reason">
+        <li class="r-y">Group Brand Manager — poziom bliski Twojemu obecnemu</li>
+        <li class="r-y">Duże FMCG z realnym brand ownership</li>
+        <li class="r-n">Kosmetyki, nie napoje</li>
+      </ul>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4436611231/" target="_blank" rel="noopener">Zobacz ofertę →</a>
         <button type="button" class="cv-btn" data-job-id="linkedin:4436611231" onclick="openCvPreview(this)">🧬 Wygeneruj CV</button>
@@ -1079,9 +1119,11 @@
         <span class="src">🔗 LinkedIn</span>
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
-      <p class="reason">
-        NIVEA to jedna z najsilniejszych marek FMCG na świecie, a zakres bałtycki pasuje do Twojego doświadczenia na rynkach międzynarodowych. Kategoria to kosmetyki, nie napoje.
-      </p>
+      <ul class="reason">
+        <li class="r-y">NIVEA — jedna z najsilniejszych marek FMCG na świecie</li>
+        <li class="r-y">Zakres bałtycki pasuje do Twojego doświadczenia międzynarodowego</li>
+        <li class="r-n">Kosmetyki, nie napoje</li>
+      </ul>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4435612095/" target="_blank" rel="noopener">Zobacz ofertę →</a>
         <button type="button" class="cv-btn" data-job-id="linkedin:4435612095" onclick="openCvPreview(this)">🧬 Wygeneruj CV</button>
@@ -1130,9 +1172,11 @@
         <span class="src">🔗 LinkedIn</span>
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
-      <p class="reason">
-        Trafny tytuł w wyspecjalizowanej firmie dermatologicznej, blisko Twojego doświadczenia pharma-marketingowego z Neo-Vinci. Branża dermo/pharma jest w Twoim profilu niżej niż FMCG napojowe.
-      </p>
+      <ul class="reason">
+        <li class="r-y">Brand Manager — pierwsza preferencja z profilu</li>
+        <li class="r-y">Dermatologia blisko Twojego doświadczenia z Neo-Vinci</li>
+        <li class="r-n">Pharma jest w Twoim profilu niżej niż napoje</li>
+      </ul>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4455320597/" target="_blank" rel="noopener">Zobacz ofertę →</a>
         <button type="button" class="cv-btn" data-job-id="linkedin:4455320597" onclick="openCvPreview(this)">🧬 Wygeneruj CV</button>
@@ -1181,9 +1225,11 @@
         <span class="src">🔗 LinkedIn</span>
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
-      <p class="reason">
-        Dokładne trafienie tytułem w dużym, rozpoznawalnym FMCG — Beiersdorf daje realne brand ownership na markach Nivea i Eucerin. Kategoria to dermokosmetyki, nie napoje.
-      </p>
+      <ul class="reason">
+        <li class="r-y">Brand Manager w dużym, rozpoznawalnym FMCG</li>
+        <li class="r-y">Realne brand ownership na markach Nivea i Eucerin</li>
+        <li class="r-n">Dermokosmetyki, nie napoje</li>
+      </ul>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4427861262/" target="_blank" rel="noopener">Zobacz ofertę →</a>
         <button type="button" class="cv-btn" data-job-id="linkedin:4427861262" onclick="openCvPreview(this)">🧬 Wygeneruj CV</button>
@@ -1232,9 +1278,11 @@
         <span class="src">🔗 LinkedIn</span>
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
-      <p class="reason">
-        Tytuł trafia dokładnie w pierwszą preferencję, a lokalizacja się zgadza. EuroMatch nie jest jednak firmą FMCG-napojową i alert nie mówi nic o kategorii produktowej ani widełkach.
-      </p>
+      <ul class="reason">
+        <li class="r-y">Brand Manager — pierwsza preferencja z profilu</li>
+        <li class="r-y">Warszawa</li>
+        <li class="r-q">Nieznana branża i kategoria produktowa firmy</li>
+      </ul>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4452245439/" target="_blank" rel="noopener">Zobacz ofertę →</a>
         <button type="button" class="cv-btn" data-job-id="linkedin:4452245439" onclick="openCvPreview(this)">🧬 Wygeneruj CV</button>
@@ -1283,9 +1331,11 @@
         <span class="src">🔗 LinkedIn</span>
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
-      <p class="reason">
-        Trafny tytuł w dużej firmie farmaceutycznej, a kompetencje z Neo-Vinci przenoszą się tu wprost. Pharma jest jednak w Twoim profilu niżej priorytetowo niż FMCG napojowe.
-      </p>
+      <ul class="reason">
+        <li class="r-y">Brand Manager — pierwsza preferencja z profilu</li>
+        <li class="r-y">Kompetencje z Neo-Vinci przenoszą się tu wprost</li>
+        <li class="r-n">Leki receptowe — branża niżej w Twoim profilu</li>
+      </ul>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4451267893/" target="_blank" rel="noopener">Zobacz ofertę →</a>
         <button type="button" class="cv-btn" data-job-id="linkedin:4451267893" onclick="openCvPreview(this)">🧬 Wygeneruj CV</button>
@@ -1334,9 +1384,11 @@
         <span class="src">🔗 LinkedIn</span>
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
-      <p class="reason">
-        Ten sam profil dopasowania co pozycja Neurology — inny obszar terapeutyczny, ta sama firma i ten sam trafny tytuł. Pharma pozostaje niżej priorytetowo niż napoje.
-      </p>
+      <ul class="reason">
+        <li class="r-y">Brand Manager — pierwsza preferencja z profilu</li>
+        <li class="r-y">Ta sama firma co pozycja Neurology, inny obszar terapeutyczny</li>
+        <li class="r-n">Leki receptowe — branża niżej w Twoim profilu</li>
+      </ul>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4451290632/" target="_blank" rel="noopener">Zobacz ofertę →</a>
         <button type="button" class="cv-btn" data-job-id="linkedin:4451290632" onclick="openCvPreview(this)">🧬 Wygeneruj CV</button>
@@ -1385,9 +1437,11 @@
         <span class="src">🔗 LinkedIn</span>
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
-      <p class="reason">
-        Trafny tytuł u dużego dystrybutora FMCG na rynku polskim, z realnym portfelem marek beauty. Kategoria kosmetyczna zamiast napojowej obniża dopasowanie.
-      </p>
+      <ul class="reason">
+        <li class="r-y">Brand Manager u dużego dystrybutora FMCG w Polsce</li>
+        <li class="r-y">Realny portfel marek do prowadzenia</li>
+        <li class="r-n">Kategoria beauty zamiast napojowej</li>
+      </ul>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4452225436/" target="_blank" rel="noopener">Zobacz ofertę →</a>
         <button type="button" class="cv-btn" data-job-id="linkedin:4452225436" onclick="openCvPreview(this)">🧬 Wygeneruj CV</button>
@@ -1436,9 +1490,11 @@
         <span class="src">🔗 LinkedIn</span>
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
-      <p class="reason">
-        Trafny tytuł w obszarze ginekologii, czyli marketing farmaceutyczny, w którym masz doświadczenie z Neo-Vinci. Ogłoszenie wystawia agencja, więc nie wiadomo, kto jest docelowym pracodawcą.
-      </p>
+      <ul class="reason">
+        <li class="r-y">Brand Manager — pierwsza preferencja z profilu</li>
+        <li class="r-y">Pharma, w której masz doświadczenie z Neo-Vinci</li>
+        <li class="r-q">Ogłoszenie agencyjne — docelowy pracodawca nieznany</li>
+      </ul>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4456491307/" target="_blank" rel="noopener">Zobacz ofertę →</a>
         <button type="button" class="cv-btn" data-job-id="linkedin:4456491307" onclick="openCvPreview(this)">🧬 Wygeneruj CV</button>
@@ -1487,9 +1543,11 @@
         <span class="src">🔗 LinkedIn</span>
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
-      <p class="reason">
-        Nestlé to duże FMCG spożywcze, a WINIARY to marka z realnym budżetem i zasięgiem. Rola jest jednak wąsko digitalowa, nie pełne zarządzanie marką.
-      </p>
+      <ul class="reason">
+        <li class="r-y">Duże FMCG spożywcze, marka z realnym budżetem</li>
+        <li class="r-y">Digital i influencer — Twój codzienny zakres w XL Energy</li>
+        <li class="r-n">Rola wąsko digitalowa, nie pełne zarządzanie marką</li>
+      </ul>
       <div class="card-actions">
         <a class="apply" href="https://www.linkedin.com/jobs/view/4455348022/" target="_blank" rel="noopener">Zobacz ofertę →</a>
         <button type="button" class="cv-btn" data-job-id="linkedin:4455348022" onclick="openCvPreview(this)">🧬 Wygeneruj CV</button>
@@ -1538,9 +1596,11 @@
         <span class="src">🔗 pracuj.pl</span>
         <span class="pill consider">👀 warto rozważyć</span>
       </div>
-      <p class="reason">
-        Kawa i tytuł Marketing Managera to trafienie niemal idealne branżowo. Widełki 12 000–17 500 zł są jednak wyraźnie poniżej Twojego progu 25 000 zł — pokazuję ją, bo takie połączenie branży i tytułu trafia się rzadko.
-      </p>
+      <ul class="reason">
+        <li class="r-y">Kawa to napoje — Twoja kategoria</li>
+        <li class="r-y">Marketing Manager — trzecia preferencja z profilu</li>
+        <li class="r-n">12 000–17 500 zł, przy Twoim progu 25 000 zł</li>
+      </ul>
       <div class="card-actions">
         <a class="apply" href="https://pracuj.pl/praca/marketing-manager-warszawa-stanislawa-bodycha-39,oferta,1005009758" target="_blank" rel="noopener">Zobacz ofertę →</a>
         <button type="button" class="cv-btn" data-job-id="pracuj:1005009758" onclick="openCvPreview(this)">🧬 Wygeneruj CV</button>

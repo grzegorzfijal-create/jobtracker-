@@ -263,8 +263,14 @@ zewnętrznych, działa lokalnie i jako Artifact):
   - **znacznik źródła** w wierszu tagów (np. „🔗 LinkedIn", „🔗 Michael Page",
     „🔗 rekruter bezpośrednio") — użytkownik ma widzieć, z którego kanału
     przyszła oferta
-  - **kilkuzdaniowe podsumowanie/uzasadnienie** (co pasuje, co nie, co
-    nieznane) — nie skracaj do jednego zdania
+  - **maksymalnie 3 punkty** w `<ul class="reason">` — nie proza. Każdy
+    punkt wiąże konkret z oferty z konkretem z CV kandydata i ma się mieścić
+    w jednej linijce (do ~65 znaków). Klasy nadają znacznik i kolor:
+    `r-y` (✓ pasuje), `r-n` (✗ nie pasuje), `r-q` (? nieznane). Dobry punkt
+    to „Napoje FMCG — dokładnie Twoja kategoria (OSHEE, XL Energy)", zły to
+    „Firma działa w branży napojowej" — bez odniesienia do CV punkt nie
+    odpowiada na pytanie, dlaczego ta oferta jest przed użytkownikiem.
+    Kolejność: najpierw to, co pasuje, na końcu zastrzeżenie
   - przycisk **"👁️ Podgląd i dostosowanie CV"** (patrz krok 5b) — otwiera
     NAJPIERW podgląd dostosowanego CV w modalu, a dopiero na dole podglądu
     użytkownik wybiera format do pobrania: **Word (.docx) lub PDF**. Nigdy
