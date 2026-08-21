@@ -539,5 +539,395 @@
     "flag": "⚪",
     "sent": false,
     "duplicate_of": "linkedin:4455284646"
+  },
+  {
+    "id": "pracuj:1005001298",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Kierownik / Kierowniczka Marki",
+    "company": "Dr Gerard",
+    "source": "pracuj",
+    "fit_score": 72,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "pracuj:1004997138",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Brand Manager",
+    "company": "MEDIFOODS",
+    "source": "pracuj",
+    "fit_score": 70,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "pracuj:1004982984",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Communication & Brand Manager",
+    "company": "Weleda Polska",
+    "source": "pracuj",
+    "fit_score": 64,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "pracuj:1005009758",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Marketing Manager",
+    "company": "Coffee Plant",
+    "source": "pracuj",
+    "fit_score": 56,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "pracuj:1004991618",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Brand Manager/ka",
+    "company": "WK Sp. z o.o.",
+    "source": "pracuj",
+    "fit_score": 52,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004982951",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Manager ds. Marki Własnej (Private Label)",
+    "company": "P6 PHARMA",
+    "source": "pracuj",
+    "fit_score": 52,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004985836",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Marketing Manager",
+    "company": "Ceramstic",
+    "source": "pracuj",
+    "fit_score": 48,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004982375",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Dyrektor Marketingu (k/m/n)",
+    "company": "Omnipack",
+    "source": "pracuj",
+    "fit_score": 48,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004989986",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Marketing Project Leader",
+    "company": "Michael Page",
+    "source": "pracuj",
+    "fit_score": 42,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004983877",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Kierownik Marketingu – car care & detailing",
+    "company": "Hays Poland",
+    "source": "pracuj",
+    "fit_score": 40,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005007410",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Koordynator / Koordynatorka ds. Marketingu",
+    "company": "Egis Polska",
+    "source": "pracuj",
+    "fit_score": 38,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005011483",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Kierownik marketingu w firmie deweloperskiej",
+    "company": "REAL INVEST OFFICE",
+    "source": "pracuj",
+    "fit_score": 35,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005003685",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Koordynatorka / Koordynator ds. marketingu",
+    "company": "HEBE (Jeronimo Martins)",
+    "source": "pracuj",
+    "fit_score": 35,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004995011",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Marketing Manager (f/m/x)",
+    "company": "Polonia Warszawa",
+    "source": "pracuj",
+    "fit_score": 34,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004991122",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Kierownik / Kierowniczka ds. Trade Marketingu i Komunikacji",
+    "company": "CASTORAMA POLSKA",
+    "source": "pracuj",
+    "fit_score": 33,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004990256",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Marketing Manager / Performance Marketing Manager",
+    "company": "Salomon Legal Bar",
+    "source": "pracuj",
+    "fit_score": 32,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004988767",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Senior PR & Communications Manager",
+    "company": "Devire",
+    "source": "pracuj",
+    "fit_score": 30,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005001134",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Manager / Managerka ds. Komunikacji",
+    "company": "CHROBRY S.A.",
+    "source": "pracuj",
+    "fit_score": 28,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004982792",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Kierownik / Kierowniczka Działu Komunikacji i Promocji",
+    "company": "Filmoteka Narodowa",
+    "source": "pracuj",
+    "fit_score": 25,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005011308",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Kierownik / Kierowniczka Komunikacji i Promocji",
+    "company": "Instytut Rozwoju Języka Polskiego",
+    "source": "pracuj",
+    "fit_score": 24,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005001493",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Koordynator / Koordynatorka Marketingu",
+    "company": "CENTRUM SAMOCHODOWE NIVETTE",
+    "source": "pracuj",
+    "fit_score": 22,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004998756",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Marketing Specialist",
+    "company": "Coffee Plant",
+    "source": "pracuj",
+    "fit_score": 20,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005004331",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Specjalista ds. Marketingu (k/m)",
+    "company": "SANTE",
+    "source": "pracuj",
+    "fit_score": 20,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004982689",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Junior Brand Manager",
+    "company": "ONLYBIO.LIFE",
+    "source": "pracuj",
+    "fit_score": 18,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004989777",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Performance & Social Media Specialist",
+    "company": "Neo-Vinci",
+    "source": "pracuj",
+    "fit_score": 18,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004982965",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Starszy specjalista ds. komunikacji i promocji",
+    "company": "Filmoteka Narodowa",
+    "source": "pracuj",
+    "fit_score": 17,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004985731",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Specjalista / Specjalistka ds. Komunikacji i Wizerunku",
+    "company": "DESA UNICUM",
+    "source": "pracuj",
+    "fit_score": 16,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004990397",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Specjalista / Specjalistka ds. marketingu",
+    "company": "GOLD QUALITY",
+    "source": "pracuj",
+    "fit_score": 15,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004991748",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Specjalista / Specjalistka ds. marketingu i PR",
+    "company": "HSP Management",
+    "source": "pracuj",
+    "fit_score": 15,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004981281",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Marketing Specialist (mid/senior)",
+    "company": "NOVA Construction Services",
+    "source": "pracuj",
+    "fit_score": 14,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004982806",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Content Marketing Specialist",
+    "company": "ZEME",
+    "source": "pracuj",
+    "fit_score": 13,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004986065",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Specjalista / Specjalistka ds. marketingu",
+    "company": "POLITYKA",
+    "source": "pracuj",
+    "fit_score": 13,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004985383",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Specjalista ds. marketingu (B2B/Technologia)",
+    "company": "NOBELICA",
+    "source": "pracuj",
+    "fit_score": 12,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004983233",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Product & Market Coordinator",
+    "company": "EDITEL",
+    "source": "pracuj",
+    "fit_score": 12,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004983380",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Specjalista / Specjalistka ds. Marketingu",
+    "company": "Coface Poland Services",
+    "source": "pracuj",
+    "fit_score": 12,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004984014",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Koordynator/-ka Projektów w Zespole Marketingu",
+    "company": "Centrum Terapii Dialog",
+    "source": "pracuj",
+    "fit_score": 11,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004981397",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Marketing Manager",
+    "company": "MOAC",
+    "source": "pracuj",
+    "fit_score": 10,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004982918",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Specjalista / Specjalistka ds. Komunikacji Marketingowej",
+    "company": "Energylandia",
+    "source": "pracuj",
+    "fit_score": 8,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1004986054",
+    "first_seen": "2026-08-21T16:10:00Z",
+    "title": "Młodszy Specjalista ds. Zarządzania i Administracji",
+    "company": "PSE INWESTYCJE",
+    "source": "pracuj",
+    "fit_score": 5,
+    "flag": "⚪",
+    "sent": false
   }
 ]

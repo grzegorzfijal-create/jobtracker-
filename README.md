@@ -10,8 +10,11 @@ maili z ofertami, jakie trafiają do jego skrzynki.
 
 1. Ty ustawiasz szerokie alerty mailowe o nowych ofertach pracy (im szerzej,
    tym lepiej — selekcję robi pipeline, nie filtr portalu). Pipeline czyta
-   dziś trzy kanały:
+   dziś cztery kanały:
    - **LinkedIn Job Alerts** — główne źródło, kilka maili dziennie,
+   - **pracuj.pl** — rekomendacje z `rekomendacje@wysylka.pracuj.pl`, kilka
+     wysyłek dziennie po 1–15 ofert (mocno się nakładają — pipeline
+     deduplikuje po id oferty),
    - **Michael Page Poland** — „Nowe miejsca pracy dla: Marketing, Agency &
      Digital : Warsaw", ~2–4 maile miesięcznie,
    - **bezpośrednie odezwy rekruterów** (in-house i agencyjne, m.in. przez
@@ -19,9 +22,10 @@ maili z ofertami, jakie trafiają do jego skrzynki.
      samo jak oferta z alertu; potwierdzenia aplikacji i ustalanie terminów
      spotkań w trwających procesach są odfiltrowane.
 
-   **pracuj.pl** jest podpięty (4 aktywne zapisane wyszukiwania), ale
-   historycznie nie przysłał ani jednego alertu — do sprawdzenia w
-   ustawieniach powiadomień konta.
+   **pracuj.pl** długo nie przysyłał niczego mimo włączonych zgód —
+   odblokowała to dopiero zmiana adresu konta na alias `+pracuj`. Od
+   21.08.2026 sypie kilka wysyłek dziennie z `rekomendacje@wysylka.pracuj.pl`.
+   Szczegóły i lekcja na przyszłość: sekcja 1e w RUNBOOK-u.
 
    Lista źródeł jest odświeżana przy każdym uruchomieniu: pipeline puszcza
    jedno szerokie zapytanie kontrolne po nowych nadawcach-alertach i dopisuje
