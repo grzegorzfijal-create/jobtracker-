@@ -240,70 +240,60 @@ layout — to strona, którą użytkownik będzie oglądał na telefonie.
 Przy pisaniu HTML/Artifactu skorzystaj ze skilla `artifact-design` (dashboard
 to nowy typ treści w tej sesji, więc wczytaj go przed pisaniem znaczników).
 
-## 5b. Przygotuj dostosowane CV dla każdej oferty na dashboardzie
+## 5b. Przygotuj dopasowanie CV dla ofert na dashboardzie
 
-Dla KAŻDEJ oferty, która trafia na dashboard (oba segmenty, 🎯 i 👀),
-przygotuj dostosowaną wersję CV **z góry** (podczas tego samego uruchomienia
-pipeline'u), tak żeby przycisk "Podgląd i dostosowanie CV" w Artifakcie
-działał od razu, bez czekania na kolejne uruchomienie (Artifact jest stroną
-statyczną — nie ma w niej żywego backendu, więc generowanie "na klik" nie
-jest możliwe).
+**Nie generuj plików DOCX/PDF w pipelinie.** Do 21.08.2026 pipeline budował
+oba pliki z góry dla KAŻDEJ oferty i wklejał je jako base64 (~124 kB na
+ofertę). Przy 17 ofertach dashboard ważył 2,4 MB, w tym pliki dla ofert,
+których użytkownik nigdy nie otworzy. Teraz strona nosi tylko **opis
+dopasowania** (kilka kB na ofertę) i **jeden zsubsetowany font**, a plik
+powstaje w przeglądarce dopiero po kliknięciu — dashboard schudł do ~280 kB.
 
-Zasady dostosowania (twarde, nie do złamania):
+Dla KAŻDEJ oferty trafiającej na dashboard (🎯 i 👀) przygotuj wyłącznie
+**JSON dopasowania** — strukturę jak w `pipeline/cv_data/*.json`
+(`candidate`, `contact`, `targetRoleNote`, `about`, `skills[]`,
+`experience[]`, `education[]`, `additional[]`, `references[]`), zbudowaną
+wyłącznie z treści `data/cv_base.md`, dobranej pod tę ofertę. Zapisz do
+`pipeline/cv_data/<job-id-slug>.json` i wstaw do
+`<script type="application/json" id="cv-data">` jako `{ "<job-id>": { "cv": {...} } }`.
+
+Zasady dopasowania (twarde, nie do złamania):
 - Jedyne źródło treści to `data/cv_base.md`. NIE wolno dopisywać nowych
   umiejętności, osiągnięć, narzędzi, lat doświadczenia ani niczego, czego tam
-  nie ma — dostosowanie polega WYŁĄCZNIE na: zmianie kolejności punktów,
-  wyborze/skróceniu które punkty wyeksponować, przeformułowaniu nagłówka "O
-  mnie" pod kątem słownictwa z oferty, i doborze bulletów najbardziej
-  relewantnych dla danej roli/branży. Fakty (firmy, daty, liczby, wyniki)
-  zostają identyczne jak w `data/cv_base.md`.
+  nie ma — dopasowanie polega WYŁĄCZNIE na: zmianie kolejności punktów,
+  wyborze które punkty wyeksponować, przeformułowaniu nagłówka „O mnie" pod
+  kątem słownictwa z oferty, i doborze bulletów najbardziej relewantnych dla
+  danej roli/branży. Fakty (firmy, daty, liczby, wyniki) zostają identyczne.
+- **Zweryfikuj to programowo przed publikacją.** Znormalizuj `cv_base.md` i
+  każdy bullet/skill/firmę/datę z JSON-a, po czym sprawdź, że każde słowo
+  dłuższe niż 3 znaki występuje w bazie. W polu `about` dopuszczalne są
+  wyłącznie słowa-łączniki (`built`, `combined`, `where`…) — jakiekolwiek
+  nowe rzeczowniki branżowe to błąd do poprawienia, nie do zignorowania.
 
-Pipeline (użyj skryptów w `pipeline/scripts/`, `npm install` w tym katalogu
-jeśli `node_modules/docx` brakuje):
-1. Zbuduj JSON konfiguracyjny per oferta (struktura jak w
-   `pipeline/cv_data/*.json` — `candidate`, `contact`, `targetRoleNote`,
-   `about`, `skills[]`, `experience[]`, `education[]`, `additional[]`,
-   `references[]`) wyłącznie z treści `data/cv_base.md`, dobranej pod ofertę.
-   Zapisz do `pipeline/cv_data/<job-id-slug>.json`.
-2. `node pipeline/scripts/build_cv_docx.js <config.json> <out.docx>` — DOCX
-   (skill `docx` jako punkt odniesienia dla jakości, ale generacja idzie
-   przez ten skrypt/docx-js).
-3. `node pipeline/scripts/build_cv_print_html.js <config.json> <out.html>` →
-   `node pipeline/scripts/build_cv_pdf.js <out.html> <out.pdf>` — PDF przez
-   Playwright + preinstalowany Chromium (`/opt/pw-browsers/...`). NIE używaj
-   LibreOffice/`soffice` do PDF — w tym środowisku sandboxowym jest
-   niefunkcjonalne (`source file could not be loaded` nawet na trywialnym
-   pliku); Playwright działa niezawodnie.
-4. `node pipeline/scripts/build_cv_payload.js <config.json> <out.docx>
-   <out.pdf> <job-id> <slug>` — zwraca JSON `{ [job-id]: { cv, docxFilename,
-   docxBase64, pdfFilename, pdfBase64, mdFilename, mdText } }`. Pole `cv` to
-   ten sam config z kroku 1 — dashboard renderuje z niego podgląd w modalu.
-5. Scal payloady wszystkich ofert w jeden obiekt i osadź w
-   `dashboard/index.html` w `<script type="application/json" id="cv-data">`.
-   NIE wklejaj tego ręcznie do dużego stringa w edytorze (base64 potrafi się
-   uciąć) — zamiast tego wstaw placeholder `__CV_DATA_JSON__` w miejscu tego
-   scripta i podmień go programowo (np. `python3 -c "..."` czytające plik i
-   zapisujące z powrotem), tak jak w istniejącym `dashboard/index.html`.
-   Po podmianie ZAWSZE zweryfikuj round-trip: zdekoduj `docxBase64`/
-   `pdfBase64` z finalnego pliku i porównaj bajt-w-bajt z oryginalnym
-   `.docx`/`.pdf` na dysku.
-6. Przycisk na karcie oferty (`onclick="openCvPreview(this)"`) otwiera modal
-   z podglądem zbudowanym z pola `cv` (JS renderuje HTML z tokenów CSS
-   dashboardu — nie osadzaj osobnego zduplikowanego layoutu). W stopce
-   modala dwa przyciski: **"Pobierz Word (.docx)"** i **"Pobierz PDF"**,
-   każdy wywołuje `claude.use("downloads")` → `downloads.save({filename,
-   data})` po zdekodowaniu odpowiedniego base64 do `Uint8Array`. Zadeklaruj
-   `capabilities: {downloads: true}` przy publikacji Artifactu (patrz krok
-   7). Jeśli `save()` odrzuci z kodem `extension_not_enabled` (rozszerzenie
-   może nie być włączone w danym widoku), fallback na plik `.md` (zwykły
-   tekst) z pola `mdText`.
-- Jeśli oferta nie ma wystarczająco informacji (brak treści/JD w mailu, tylko
-  tytuł+firma), dostosuj mimo to na bazie tego, co wiadomo (tytuł, branża,
-  firma) — zaznacz w uzasadnieniu na dashboardzie, że dostosowanie jest
-  ogólne, bo mail nie zawierał pełnego opisu stanowiska.
-- To krok kosztowny (jeden DOCX + jeden PDF na ofertę) — ale liczba ofert na
-  dashboardzie jest z założenia mała (kilka dziennie), więc jest to
-  akceptowalne.
+Generowanie plików: `pipeline/scripts/cv_client.js` (wstawiony do strony
+inline) eksportuje `CVGEN.buildDocx(cv)` i `CVGEN.buildPdf(cv, font)`,
+zwracające `Uint8Array`. Font to zsubsetowany Liberation Sans (Regular +
+Bold) w blokach `#font-r`, `#font-b`, `#font-meta`, ładowany leniwie dopiero
+przy pierwszym pobraniu PDF-a. Subsetting odtworzysz przez `fontTools`
+(`pip install fonttools`) z `/usr/share/fonts/truetype/liberation/` —
+~29 kB na krój przy ~130 znakach (ASCII + polskie + typografia).
+
+Przycisk na karcie to **„🧬 Wygeneruj CV"** (`onclick="openCvPreview(this)"`).
+Otwiera modal z podglądem renderowanym z pola `cv` — to sam DOM, bez plików,
+więc jest natychmiastowy. Dopiero przyciski w stopce modala
+(**„Pobierz Word (.docx)"** / **„Pobierz PDF"**) budują bajty i wołają
+`claude.use("downloads")` → `downloads.save({filename, data})`. Zadeklaruj
+`capabilities: {downloads: true}` przy publikacji (krok 7).
+
+**PDF musi mieć mapę `ToUnicode`.** Bez niej tekst renderuje się poprawnie,
+ale kopiuje się jako śmieci i jest nieczytelny dla systemów ATS — czyli CV
+przechodzi przez człowieka, a wykłada się na filtrze. Po zmianach w
+generatorze zweryfikuj to: wygeneruj PDF i sprawdź `pdftotext`, czy wracają
+polskie znaki (`Grzegorz Fijał`, `Żabka`, `DOŚWIADCZENIE ZAWODOWE`).
+
+Jeśli oferta nie ma wystarczająco informacji (brak JD w mailu, tylko
+tytuł+firma), dopasuj mimo to na bazie tego, co wiadomo — i zaznacz
+w uzasadnieniu na dashboardzie, że dopasowanie jest ogólne.
 
 ## 6. Zaktualizuj ledger
 

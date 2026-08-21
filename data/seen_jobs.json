@@ -929,5 +929,145 @@
     "fit_score": 5,
     "flag": "⚪",
     "sent": false
+  },
+  {
+    "id": "linkedin:4456491307",
+    "first_seen": "2026-08-21T18:40:00Z",
+    "title": "Brand Manager, Gynecology (F/M/D)",
+    "company": "HRK S.A.",
+    "source": "linkedin",
+    "fit_score": 58,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4446061182",
+    "first_seen": "2026-08-21T18:40:00Z",
+    "title": "Portfolio & Strategy Manager Central & South Europe",
+    "company": "Sanofi",
+    "source": "linkedin",
+    "fit_score": 52,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4435650736",
+    "first_seen": "2026-08-21T18:40:00Z",
+    "title": "Product Manager EH, Poland",
+    "company": "Orion Pharma",
+    "source": "linkedin",
+    "fit_score": 50,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4456498808",
+    "first_seen": "2026-08-21T18:40:00Z",
+    "title": "Launch Lead Poland - Transplant",
+    "company": "Sanofi",
+    "source": "linkedin",
+    "fit_score": 45,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4453852231",
+    "first_seen": "2026-08-21T18:40:00Z",
+    "title": "Menedżer kategorii produktów",
+    "company": "Barel Poland",
+    "source": "linkedin",
+    "fit_score": 45,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4453857195",
+    "first_seen": "2026-08-21T18:40:00Z",
+    "title": "Marketing Manager",
+    "company": "Vollmart",
+    "source": "linkedin",
+    "fit_score": 44,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4408673296",
+    "first_seen": "2026-08-21T18:40:00Z",
+    "title": "Franchise Lead Oncology",
+    "company": "AstraZeneca",
+    "source": "linkedin",
+    "fit_score": 42,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4454103010",
+    "first_seen": "2026-08-21T18:40:00Z",
+    "title": "Senior Group Key Account Manager",
+    "company": "PepsiCo",
+    "source": "linkedin",
+    "fit_score": 40,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4455622663",
+    "first_seen": "2026-08-21T18:40:00Z",
+    "title": "MarTech / CRM Marketing Lead",
+    "company": "Huspy",
+    "source": "linkedin",
+    "fit_score": 30,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4456727161",
+    "first_seen": "2026-08-21T18:40:00Z",
+    "title": "Ekspert/ka ds. Zintegrowanej Komunikacji Marketingowej",
+    "company": "Castorama Polska",
+    "source": "linkedin",
+    "fit_score": 28,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4446070038",
+    "first_seen": "2026-08-21T18:40:00Z",
+    "title": "Operational Manager Partnerships",
+    "company": "Sanofi",
+    "source": "linkedin",
+    "fit_score": 25,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4456724285",
+    "first_seen": "2026-08-21T18:40:00Z",
+    "title": "Principal Product Manager",
+    "company": "Comarch",
+    "source": "linkedin",
+    "fit_score": 15,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4448883245",
+    "first_seen": "2026-08-21T18:40:00Z",
+    "title": "Product Manager BL Mobile e Power",
+    "company": "ABB",
+    "source": "linkedin",
+    "fit_score": 15,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4399645586",
+    "first_seen": "2026-08-21T18:40:00Z",
+    "title": "Graduate Development Program Intern - Brand Marketing",
+    "company": "Colgate-Palmolive",
+    "source": "linkedin",
+    "fit_score": 8,
+    "flag": "⚪",
+    "sent": false
   }
 ]

@@ -34,14 +34,17 @@ maili z ofertami, jakie trafiają do jego skrzynki.
    - czyta nowe maile z alertami z Twojej skrzynki Gmail,
    - wyciąga z nich pojedyncze oferty,
    - ocenia każdą względem kryteriów w [`profile.md`](./profile.md),
-   - przygotowuje dostosowane CV (Word + PDF, na bazie [`data/cv_base.md`](./data/cv_base.md)) dla każdej oferty widocznej na dashboardzie,
+   - przygotowuje opis dopasowania CV (na bazie [`data/cv_base.md`](./data/cv_base.md)) dla każdej oferty widocznej na dashboardzie,
    - aktualizuje dashboard (ten sam link co wyżej) o nowe trafienia,
    - wysyła Ci powiadomienie push, jeśli są nowe dobre dopasowania.
 
-Na dashboardzie każda oferta ma przycisk **"Podgląd i dostosowanie CV"** —
-otwiera podgląd dostosowanego CV, a Ty wybierasz format do pobrania (Word
-lub PDF). CV nigdy nie zawiera zmyślonych umiejętności — tylko inny
-dobór/kolejność tego, co już jest w `data/cv_base.md`.
+Na dashboardzie każda oferta ma przycisk **"🧬 Wygeneruj CV"** — otwiera
+podgląd CV dopasowanego do tej konkretnej oferty, a Ty wybierasz format do
+pobrania (Word lub PDF). **Plik powstaje dopiero po kliknięciu, w Twojej
+przeglądarce** — w stronie nie ma gotowych dokumentów dla ofert, których nie
+otworzysz. Dzięki temu dashboard waży ~280 kB zamiast 2,4 MB, a koszt nie
+rośnie z liczbą ofert. CV nigdy nie zawiera zmyślonych umiejętności — tylko
+inny dobór i kolejność tego, co już jest w `data/cv_base.md`.
 
 Pełna instrukcja dla agenta: [`pipeline/RUNBOOK.md`](./pipeline/RUNBOOK.md).
 
@@ -58,7 +61,7 @@ każdej zmianie HTML-a portalu.
 profile.md               — profil kandydata + kryteria dopasowania (edytuj wg potrzeb)
 data/cv_base.md          — bazowe CV, jedyne źródło treści dla dostosowanych CV
 pipeline/RUNBOOK.md      — instrukcja krok po kroku dla codziennego agenta
-pipeline/scripts/        — generatory CV (docx/pdf/payload) używane przez agenta
+pipeline/scripts/        — cv_client.js: generator DOCX/PDF działający w przeglądarce
 dashboard/index.html     — aktualny dashboard (nadpisywany co dzień)
 data/seen_jobs.json      — ledger już ocenionych ofert (deduplikacja)
 data/artifact_url.txt    — URL opublikowanego dashboardu (stały link)
