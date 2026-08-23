@@ -231,3 +231,24 @@ repo (`.gitignore` już wyklucza `*.docx`) — żyją tylko jako base64 wewnątr
   pipeline'u.
 - CV: nigdy nie zmyślaj umiejętności/osiągnięć spoza `data/cv_base.md` — to
   twardy wymóg użytkownika, nie sugestia.
+- **Automat wyłączony.** Dashboard aktualizujemy tylko na żądanie użytkownika
+  w rozmowie — nie odpalaj samodzielnie scheduled triggerów ani nie twórz
+  nowych bez wyraźnej prośby (poprzednia automatyzacja zdryfowała: zmieniała
+  nazwę narzędzia, przeszła na niewypchnięty branch i wygenerowała $154+
+  kosztu bez kontroli).
+- **Zanim nadpiszesz `dashboard/index.html`, PRZECZYTAJ NAJPIERW aktualny
+  stan opublikowanego Artifactu** (np. `Artifact` tool z `action: "read"`,
+  URL w `data/artifact_url.txt`). Użytkownik przenosi oferty między sekcjami
+  klikając 👍/👎 (patrz niżej) — te zmiany żyją w samym Artifakcie (capability
+  `artifact`, live-doc sync), NIE w tym repo. Jeśli opublikujesz nową wersję
+  wygenerowaną z gita bez uwzględnienia bieżącego stanu `#accepted-list` /
+  `#rejected-list`, nadpiszesz i skasujesz decyzje użytkownika. Przed
+  regeneracją wyciągnij z aktualnego Artifactu, które `data-job-id` są
+  obecnie w `#accepted-list` i `#rejected-list`, i odtwórz to samo
+  rozmieszczenie w nowej wersji.
+- **Sekcje ✅ Zaakceptowane / ❌ Odrzucone**: kliknięcie 👍 przenosi kartę do
+  `#accepted-list`, kliknięcie 👎 przenosi ją do `#rejected-list` (widoczne
+  tylko w archiwum, znika z głównego dashboardu). Logika JS: `fbVote()` w
+  drugim bloku `<script>`. Nowe oferty zawsze trafiają do `#great-list` /
+  `#consider-list` (nigdy bezpośrednio do accepted/rejected) — to decyzja
+  użytkownika, nie pipeline'u.
