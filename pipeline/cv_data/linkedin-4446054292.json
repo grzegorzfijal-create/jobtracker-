@@ -6,19 +6,18 @@
     "address": "Warszawa, ul. Sokołowska",
     "linkedin": "linkedin.com (bit.ly/48345d1)"
   },
-  "targetRoleNote": "CV dostosowane pod ofertę: Brand Manager, EuroMatch Group (Warszawa)",
-  "about": "Dynamic marketing leader with almost 10 years of experience driving growth for consumer goods brands. Proven track record in launching and managing FMCG products, with strong expertise in brand positioning, consumer behavior analysis, and in-store execution. Full ownership of marketing strategy, execution and performance (P&L), with hands-on experience across ATL/BTL/digital, NPD and go-to-market for retail-facing brands.",
+  "targetRoleNote": "CV dostosowane pod ofertę: Brand Business Leader - Vichy, L'Oréal (Warszawa)",
+  "about": "Dynamic marketing leader with almost 10 years of experience driving growth for consumer goods and pharma brands, including full ownership of marketing strategy, execution and performance (P&L) at Senior Brand Manager / Marketing Manager level. Proven track record in brand positioning, consumer behavior analysis and in-store execution, with pharma-channel experience gained while building strategies for Pierre Fabre, Novo Nordisk, Glenmark, Stada and Filofarm. Experienced in leading marketing teams and integrated ATL/BTL/Digital campaigns in competitive retail environments.",
   "skills": [
-    "Strategic brand management across multiple FMCG categories",
     "Full ownership of marketing strategy, execution, and performance (P&L responsibility)",
+    "Strategic brand management across multiple FMCG categories",
+    "Leading with empathy, clarity and strategic direction — low turnover, high team morale",
     "Integrated 360° campaign leadership (ATL/BTL/Digital)",
-    "Product launch and go-to-market strategy development",
+    "Influencer marketing, branded content & social media campaign development",
     "Deep expertise in consumer behavior, shopper insights, and segmentation",
-    "Innovation leadership: trend analysis, NPD process, and brand innovation pipeline",
     "Stakeholder management: C-level, agencies, sales, media, R&D",
     "Data-driven planning, forecasting and budget management",
-    "Influencer marketing, branded content & social media campaign development",
-    "Leading with empathy, clarity and strategic direction — low turnover, high team morale"
+    "Innovation leadership: trend analysis, NPD process, and brand innovation pipeline"
   ],
   "experience": [
     {
@@ -35,12 +34,31 @@
       ],
       "bullets": [
         "Held full responsibility for 360° marketing activities in Poland across energy drink and mocktail categories",
-        "Led NPD (New Product Development) projects from insight to launch, aligning with brand strategy and market trends",
         "Managed a team of 4 marketers, providing leadership, mentorship and performance accountability",
-        "Designed and executed high-impact social media and influencer campaigns, reaching 100M+ views and engaging over 80 influencers",
-        "Oversaw integrated communication across digital, retail, trade and media channels; collaborated cross-functionally with sales, trade marketing, R&D and external agencies",
-        "Monitored campaign KPIs using Nielsen, Google Analytics, Power BI and internal sales data; ensured budget management, cost control and ROI optimization",
+        "Designed and executed high-impact social media and influencer campaigns, including #RealBlastChallenge and #DropnijBlasta, reaching 100M+ views and engaging over 80 influencers",
+        "Ensured effective budget management, cost control and ROI optimization across all campaigns",
+        "Oversaw integrated communication across digital, retail, trade and media channels",
+        "Monitored campaign KPIs using Nielsen, Google Analytics, Power BI and internal sales data",
         "Reported directly to the CEO and founder, providing strategic recommendations and performance updates"
+      ]
+    },
+    {
+      "company": "Neo-Vinci Pharma Marketing",
+      "roles": [
+        {
+          "title": "Head of Strategy and New Business",
+          "dates": "09.2022–03.2024"
+        },
+        {
+          "title": "Marketing and Sales Manager",
+          "dates": "10.2019–09.2022"
+        }
+      ],
+      "bullets": [
+        "Independently developed strategies and solutions for clients including Pierre Fabre, Novo Nordisk, Glenmark, Sanprobi, Stada and Filofarm",
+        "Introduced a project profitability planning framework, significantly improving margin contribution across key service segments",
+        "Developed and rolled out a new commercial policy, resulting in nearly 50% growth in new customer acquisition",
+        "Defined and implemented a new operating-model and agency structure, resulting in a 34% reduction of customer's turnover"
       ]
     },
     {
@@ -54,8 +72,6 @@
       "bullets": [
         "Co-designed the ambassador contract with Robert and Anna Lewandowski, resulting in significant market share gains in sports drinks and vitamin water",
         "Launched the first all-natural isotonic drink on the market; planned and implemented a fully integrated marketing campaign with Robert Lewandowski",
-        "Launched an innovative COMBU beer-flavoured energy drink, including planning and implementation of promotional activities",
-        "Conducted effective product presentations for retail chains such as Żabka and Biedronka",
         "Carried out promotional activities with brand ambassadors, influencers and sponsorship contracts (PZPN, Joanna Jędrzejczyk, KSW, Ekstraklasa)"
       ]
     },
@@ -72,28 +88,9 @@
         }
       ],
       "bullets": [
-        "Developed the Olimp Store stationary network from 5 to 16 points in 2 years",
         "Managed a group of Olimp Sport Nutrition brand ambassadors, doubled their number and grew brand-channel content",
         "Ran the Olimp Sport Nutrition Facebook fanpage — largest reach in the category at the time",
-        "Initiated and implemented the launch of the Olimp Premium Club loyalty programme"
-      ]
-    },
-    {
-      "company": "Neo-Vinci Pharma Marketing",
-      "roles": [
-        {
-          "title": "Head of Strategy and New Business",
-          "dates": "09.2022–03.2024"
-        },
-        {
-          "title": "Marketing and Sales Manager",
-          "dates": "10.2019–09.2022"
-        }
-      ],
-      "bullets": [
-        "Defined and implemented a new operating-model and agency structure, resulting in a 34% reduction of customer's turnover",
-        "Developed and rolled out a new commercial policy, resulting in nearly 50% growth in new customer acquisition",
-        "Independently developed strategies and solutions for clients including Pierre Fabre, Novo Nordisk, Glenmark, Sanprobi, Stada and Filofarm"
+        "Developed the Olimp Store stationary network from 5 to 16 points in 2 years"
       ]
     }
   ],
@@ -104,9 +101,9 @@
   ],
   "additional": [
     "Polski — native language, Angielski — C1",
-    "Prawo jazdy: A, B",
-    "Hard skills: budget planning, pricing strategy, forecasting, category management, agency briefing, data-driven decision making, stakeholder communication",
-    "Narzędzia: Nielsen, GfK, Meta Business Suite, TikTok Ads, Google Analytics 4, Power BI, Jira, Asana, Canva, Brand24, Senuto"
+    "Hard skills: budget planning, pricing strategy, forecasting, category management, customer journey mapping, agency briefing, influencer & content marketing, stakeholder communication",
+    "Narzędzia: Nielsen, GfK, Meta Business Suite, TikTok Ads, Google Analytics 4, Power BI, Jira, Asana, Canva, Brand24, Senuto",
+    "Prawo jazdy: A, B"
   ],
   "references": [
     "Artur Konefał — CEO & Founder, Neo-Vinci — 792 850 530",

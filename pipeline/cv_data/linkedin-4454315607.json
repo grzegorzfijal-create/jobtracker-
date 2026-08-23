@@ -24,8 +24,14 @@
     {
       "company": "XL Energy Marketing",
       "roles": [
-        { "title": "Senior Brand Manager / Marketing Manager", "dates": "04.2025–now" },
-        { "title": "Brand Manager", "dates": "04.2024–03.2025" }
+        {
+          "title": "Senior Brand Manager / Marketing Manager",
+          "dates": "04.2025–now"
+        },
+        {
+          "title": "Brand Manager",
+          "dates": "04.2024–03.2025"
+        }
       ],
       "bullets": [
         "Held full responsibility for 360° marketing activities in Poland across energy drink and mocktail categories",
@@ -39,7 +45,12 @@
     },
     {
       "company": "OSHEE",
-      "roles": [{ "title": "Brand Manager", "dates": "12.2017–10.2019" }],
+      "roles": [
+        {
+          "title": "Brand Manager",
+          "dates": "12.2017–10.2019"
+        }
+      ],
       "bullets": [
         "Co-designed the ambassador contract with Robert and Anna Lewandowski, resulting in significant market share gains in sports drinks and vitamin water",
         "Launched the first all-natural isotonic drink on the market; planned and implemented a fully integrated marketing campaign with Robert Lewandowski",
@@ -51,8 +62,14 @@
     {
       "company": "Olimp Laboratories",
       "roles": [
-        { "title": "Brand Manager", "dates": "08.2019–10.2019" },
-        { "title": "Marketing Specialist", "dates": "12.2017–08.2019" }
+        {
+          "title": "Brand Manager",
+          "dates": "08.2019–10.2019"
+        },
+        {
+          "title": "Marketing Specialist",
+          "dates": "12.2017–08.2019"
+        }
       ],
       "bullets": [
         "Developed the Olimp Store stationary network from 5 to 16 points in 2 years",
@@ -64,8 +81,14 @@
     {
       "company": "Neo-Vinci Pharma Marketing",
       "roles": [
-        { "title": "Head of Strategy and New Business", "dates": "09.2022–03.2024" },
-        { "title": "Marketing and Sales Manager", "dates": "10.2019–09.2022" }
+        {
+          "title": "Head of Strategy and New Business",
+          "dates": "09.2022–03.2024"
+        },
+        {
+          "title": "Marketing and Sales Manager",
+          "dates": "10.2019–09.2022"
+        }
       ],
       "bullets": [
         "Defined and implemented a new operating-model and agency structure, resulting in a 34% reduction of customer's turnover",
