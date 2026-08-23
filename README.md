@@ -1,6 +1,6 @@
-# Wybierz Swoją Robotę by GF
+# JOB FINDER by GF
 
-Codzienne narzędzie, które selekcjonuje oferty pracy dla Grzegorza Fijała
+Narzędzie, które selekcjonuje oferty pracy dla Grzegorza Fijała
 (Brand/Marketing Manager, FMCG — najchętniej napoje) na podstawie alertów
 mailowych z pracuj.pl i LinkedIn.
 
@@ -11,13 +11,21 @@ mailowych z pracuj.pl i LinkedIn.
 1. Ty ustawiasz na pracuj.pl i LinkedIn zwykłe, szerokie alerty mailowe o
    nowych ofertach pracy (im szerzej, tym lepiej — selekcję robi pipeline,
    nie filtr portalu).
-2. Codziennie o zaplanowanej porze uruchamia się agent Claude, który:
+2. Na Twoje żądanie ("zaktualizuj oferty") agent Claude:
    - czyta nowe maile z alertami z Twojej skrzynki Gmail,
    - wyciąga z nich pojedyncze oferty,
    - ocenia każdą względem kryteriów w [`profile.md`](./profile.md),
    - przygotowuje dostosowane CV (Word + PDF, na bazie [`data/cv_base.md`](./data/cv_base.md)) dla każdej oferty widocznej na dashboardzie,
-   - aktualizuje dashboard (ten sam link co wyżej) o nowe trafienia,
-   - wysyła Ci powiadomienie push, jeśli są nowe dobre dopasowania.
+   - aktualizuje dashboard (ten sam link co wyżej) o nowe trafienia.
+
+   Automatyczny, cykliczny trigger jest wyłączony — aktualizacje odbywają się
+   wyłącznie na żądanie, żeby uniknąć niekontrolowanego dryfu i kosztów.
+
+Na dashboardzie każda oferta ma przyciski 👍/👎 ("Trafiona propozycja?") —
+👍 przenosi ofertę do sekcji **✅ Zaakceptowane**, 👎 przenosi ją do
+**Archiwum → ❌ Odrzucone przez Ciebie** i znika z głównego widoku. Stan
+zapisuje się w samym Artifakcie (capability `artifact`, region `artifact-sync`)
+i przechodzi między urządzeniami/wyświetleniami.
 
 Na dashboardzie każda oferta ma przycisk **"Podgląd i dostosowanie CV"** —
 otwiera podgląd dostosowanego CV, a Ty wybierasz format do pobrania (Word
