@@ -1546,5 +1546,527 @@
     "fit_score": 42,
     "flag": "⚪",
     "sent": false
+  },
+  {
+    "id": "linkedin:4441973361",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Brand Manager – Żywiec Zdrój Mocny Gaz",
+    "company": "Danone",
+    "fit_score": 80,
+    "flag": "🎯",
+    "sent": true
+  },
+  {
+    "id": "pracuj:1005018018",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Brand Manager (Żubrówka)",
+    "company": "CEDC International",
+    "fit_score": 78,
+    "flag": "🎯",
+    "sent": true
+  },
+  {
+    "id": "pracuj:1005043949",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Brand Manager (k/m)",
+    "company": "Hortex",
+    "fit_score": 76,
+    "flag": "🎯",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4459884084",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Brand Manager (k/m/n)",
+    "company": "Ferrero",
+    "fit_score": 72,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4459158645",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Group Brand Manager CEE (FMCG)",
+    "company": "Goldman Recruitment (dla klienta FMCG)",
+    "fit_score": 72,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4459158610",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Brand Manager (FMCG)",
+    "company": "Goldman Recruitment (dla klienta FMCG)",
+    "fit_score": 68,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4448281459",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Brand Manager (La Roche Posay)",
+    "company": "L'Oréal",
+    "fit_score": 68,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4448043286",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Brand Manager NIVEA",
+    "company": "Beiersdorf",
+    "fit_score": 66,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4448200315",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Senior Brand Manager, Neurology",
+    "company": "AbbVie",
+    "fit_score": 66,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "pracuj:1005040710",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Integrated Media & Communications Manager, Eastern Europe",
+    "company": "Wella Poland",
+    "fit_score": 60,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "pracuj:1005031959",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Kierownik / Kierowniczka Marki w dziale Ginekologii",
+    "company": "NUTROPHARMA",
+    "fit_score": 60,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "pracuj:1005055130",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Brand Manager",
+    "company": "Qpharma",
+    "fit_score": 60,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4419643217",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Brand Manager | Immunology",
+    "company": "Novartis Poland",
+    "fit_score": 62,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "pracuj:1005036081",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Brand Manager",
+    "company": "Dax Cosmetics",
+    "fit_score": 58,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4439264389",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Media Planning Manager",
+    "company": "Procter & Gamble",
+    "fit_score": 58,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4459690283",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Commercial Manager – Central Europe (Warsaw)",
+    "company": "Hinch Distillery",
+    "fit_score": 58,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "pracuj:1005012455",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Manager / Managerka ds. Rozwoju Portfolio i Innowacji",
+    "company": "URGO",
+    "fit_score": 55,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4460355347",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Category Manager (K/M/X)",
+    "company": "Hasco-Lek",
+    "fit_score": 55,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4449900075",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Shopper Marketing Manager",
+    "company": "Opella",
+    "fit_score": 55,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "pracuj:1005047300",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Senior Marketing Manager",
+    "company": "Oshee Polska S.A.",
+    "fit_score": 55,
+    "flag": "👀",
+    "sent": true
+  },
+  {
+    "id": "linkedin:4458422218",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "RGM Commercial Integration Sr Manager",
+    "company": "PepsiCo",
+    "fit_score": 48,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4458096769",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Manager Market Segment (FOOD SECTION)",
+    "company": "DöhlerGroup",
+    "fit_score": 35,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4449794589",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Consumer Experience Strategy Junior Manager",
+    "company": "BAT",
+    "fit_score": 35,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4450725746",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Marketing Specialist",
+    "company": "Hilton",
+    "fit_score": 30,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4449625412",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Multichannel Engagement & Data Manager",
+    "company": "Opella",
+    "fit_score": 50,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4460364107",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Creative Project Manager - Warsaw",
+    "company": "Oliver Wyman",
+    "fit_score": 30,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4458089792",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Marketing Specialist EMEA",
+    "company": "Angel Aligner",
+    "fit_score": 35,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4459809588",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Principal Integrated Marketing Specialist",
+    "company": "Medtronic",
+    "fit_score": 38,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4457780054",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Menedżer ds. marketingu",
+    "company": "Tao Tao SPA",
+    "fit_score": 35,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4459806419",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Head of Revenue Growth & Pricing",
+    "company": "Your KAYA",
+    "fit_score": 38,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4459625010",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Marketing Specialist (F/M)",
+    "company": "Reynaers Group",
+    "fit_score": 32,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4457269068",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Senior Product Manager",
+    "company": "GSK",
+    "fit_score": 52,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4448839463",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Ekspert(-ka) ds. Doświadczenia Marki",
+    "company": "Erste Bank Polska",
+    "fit_score": 42,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4459148628",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Główny Specjalista ds. Marketingu i Rozwoju Biznesu",
+    "company": "Łukasiewicz - ILOT",
+    "fit_score": 30,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4437657637",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Creative Strategist, Central and Eastern Europe",
+    "company": "Meta",
+    "fit_score": 45,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4447559492",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Customer Excellence Manager - CVS Portfolio - Kardiologia",
+    "company": "Teva Pharmaceuticals",
+    "fit_score": 45,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4458731986",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Brand Director",
+    "company": "GoMining",
+    "fit_score": 48,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4457467949",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Mobile App Head of Growth & Monetization (Remote)",
+    "company": "Arise App",
+    "fit_score": 35,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4444125315",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Dyrektor | Dyrektorka Sprzedaży i Marketingu",
+    "company": "VINCI Immobilier Polska",
+    "fit_score": 45,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4456525790",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Commercial/DX Lead Central EU",
+    "company": "PepsiCo",
+    "fit_score": 52,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4456909478",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Creative Strategy Manager",
+    "company": "Mastercard",
+    "fit_score": 42,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4456575313",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Marketing Engagement Lead – Digital 1st portfolio",
+    "company": "Takeda",
+    "fit_score": 48,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4457462754",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Director of Marketing",
+    "company": "Jobgether",
+    "fit_score": 35,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4455878411",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Marketing Director",
+    "company": "IS-Wireless",
+    "fit_score": 35,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4456887911",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Head of Growth (Remote) @GO Health",
+    "company": "Kilo",
+    "fit_score": 40,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "linkedin:4455844072",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Specjalista ds. międzynarodowych targów i konferencji naukowych",
+    "company": "SVANTEK",
+    "fit_score": 28,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005033786",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Brand Partnership Manager",
+    "company": "Superauto.pl",
+    "fit_score": 30,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005042754",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Trade Marketing Manager",
+    "company": "LEDVANCE",
+    "fit_score": 40,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005042194",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Kierownik Marketingu (m/k)",
+    "company": "ADBL",
+    "fit_score": 35,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005045129",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Senior Brand Manager CE",
+    "company": "Michael Page",
+    "fit_score": 80,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005026966",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Trade Marketing Manager",
+    "company": "Nuvadis",
+    "fit_score": 48,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005028425",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Marketing Specialist",
+    "company": "Sandoz Polska",
+    "fit_score": 42,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005026139",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Manager ds. Trade Marketingu",
+    "company": "TACTICA Pharmaceuticals",
+    "fit_score": 50,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005022026",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Kierowniczka/Kierownik ds. Mediów i Sprzedaży On-line",
+    "company": "Benefit Systems (Fitness)",
+    "fit_score": 35,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005009243",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Product Manager - Brand Manager",
+    "company": "BRANDCLINIC",
+    "fit_score": 48,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005023967",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Kierownik Marketingu – Crop Solutions (K/M)",
+    "company": "ICB Pharma",
+    "fit_score": 30,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005022612",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Koordynator ds. Marketingu Promocyjnego (m/k)",
+    "company": "Biedronka (Jeronimo Martins)",
+    "fit_score": 48,
+    "flag": "⚪",
+    "sent": false
+  },
+  {
+    "id": "pracuj:1005048872",
+    "first_seen": "2026-08-30T08:21:45Z",
+    "title": "Brand Manager (k/m)",
+    "company": "Klient Pracuj.pl (nieujawniony)",
+    "fit_score": 45,
+    "flag": "⚪",
+    "sent": false
   }
 ]
