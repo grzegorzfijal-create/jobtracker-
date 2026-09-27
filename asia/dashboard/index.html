@@ -1,0 +1,871 @@
+<title>The Edit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+<style>
+  :root {
+    --paper: #ece9e1;
+    --surface: #fbfaf7;
+    --surface-2: #f2efe8;
+    --ink: #1a1a1e;
+    --ink-soft: #6b6860;
+    --ink-faint: #96917f;
+    --line: #d9d4c8;
+    --line-strong: #c4bda9;
+    --accent: #9c7a2e;
+    --accent-ink: #7a5f22;
+    --track-core: #3a4a55;
+    --track-core-bg: #e2e7e6;
+    --track-ai: #5b4b8a;
+    --track-ai-bg: #e8e4f2;
+    --track-moda: #7a2331;
+    --track-moda-bg: #f2e2e2;
+    --good: #2f6b4a;
+    --good-bg: #e0ebe2;
+    --warn: #8a5a12;
+    --warn-bg: #f2e6d0;
+    --shadow: 0 1px 2px rgba(26, 26, 30, 0.06), 0 10px 28px -16px rgba(26, 26, 30, 0.28);
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #16171a;
+      --surface: #1e1f23;
+      --surface-2: #26272c;
+      --ink: #ede9e1;
+      --ink-soft: #a6a294;
+      --ink-faint: #726e60;
+      --line: #34353a;
+      --line-strong: #45464c;
+      --accent: #d3ab5a;
+      --accent-ink: #e6c079;
+      --track-core: #9db3bd;
+      --track-core-bg: #232c30;
+      --track-ai: #b3a2e0;
+      --track-ai-bg: #29243a;
+      --track-moda: #e08a97;
+      --track-moda-bg: #332025;
+      --good: #7fc79e;
+      --good-bg: #1e2f24;
+      --warn: #e0b366;
+      --warn-bg: #332a17;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 28px -16px rgba(0, 0, 0, 0.6);
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #16171a;
+    --surface: #1e1f23;
+    --surface-2: #26272c;
+    --ink: #ede9e1;
+    --ink-soft: #a6a294;
+    --ink-faint: #726e60;
+    --line: #34353a;
+    --line-strong: #45464c;
+    --accent: #d3ab5a;
+    --accent-ink: #e6c079;
+    --track-core: #9db3bd;
+    --track-core-bg: #232c30;
+    --track-ai: #b3a2e0;
+    --track-ai-bg: #29243a;
+    --track-moda: #e08a97;
+    --track-moda-bg: #332025;
+    --good: #7fc79e;
+    --good-bg: #1e2f24;
+    --warn: #e0b366;
+    --warn-bg: #332a17;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 28px -16px rgba(0, 0, 0, 0.6);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Archivo", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: clamp(20px, 5vw, 56px) clamp(16px, 4vw, 28px) 72px;
+  }
+
+  /* ---------- Masthead ---------- */
+
+  header.masthead {
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 18px;
+    margin-bottom: 22px;
+  }
+
+  .masthead-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .wordmark {
+    font-family: "Fraunces", Georgia, serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: italic;
+    font-size: clamp(2.1rem, 7vw, 3.1rem);
+    letter-spacing: -0.01em;
+    line-height: 0.95;
+  }
+
+  .issue-line {
+    font-family: "Space Mono", monospace;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: right;
+  }
+
+  .dossier-line {
+    font-family: "Space Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 10px;
+  }
+
+  .dossier-line b { color: var(--ink); font-weight: 700; }
+
+  /* ---------- Setup notice ---------- */
+
+  .setup-notice {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 14px 16px;
+    font-size: 0.86rem;
+    line-height: 1.55;
+    margin: 22px 0 8px;
+  }
+
+  .setup-notice .icon { font-size: 1.1rem; line-height: 1.4; }
+  .setup-notice strong { color: var(--ink); }
+
+  /* ---------- Section (track) ---------- */
+
+  section.track {
+    margin-top: 44px;
+  }
+
+  .track-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 10px;
+    margin-bottom: 4px;
+  }
+
+  .track-name {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .track-index {
+    font-family: "Space Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+  }
+
+  .track-title {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: -0.005em;
+  }
+
+  .track-desc {
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    margin: 6px 0 16px;
+    line-height: 1.5;
+  }
+
+  .track-stats {
+    display: flex;
+    gap: 18px;
+    font-family: "Space Mono", monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-soft);
+  }
+
+  .track-stats b {
+    font-size: 0.95rem;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    margin-right: 4px;
+  }
+
+  .track[data-track="core"] .track-title { color: var(--track-core); }
+  .track[data-track="ai"] .track-title { color: var(--track-ai); }
+  .track[data-track="moda"] .track-title { color: var(--track-moda); }
+
+  .empty-track {
+    border: 1px dashed var(--line-strong);
+    border-radius: 8px;
+    padding: 16px 18px;
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    margin: 14px 0;
+    line-height: 1.5;
+  }
+
+  /* ---------- Card ---------- */
+
+  .card-list {
+    display: grid;
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+
+  .card[data-example="true"]::before {
+    content: "PRZYKŁAD";
+    position: absolute;
+    top: 0;
+    right: 18px;
+    transform: translateY(-50%);
+    background: var(--ink);
+    color: var(--surface);
+    font-family: "Space Mono", monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    padding: 3px 9px;
+    border-radius: 3px;
+  }
+
+  .tagrow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+    font-family: "Space Mono", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.03em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .tagrow span {
+    border: 1px solid var(--line-strong);
+    border-radius: 3px;
+    padding: 2px 7px;
+  }
+
+  .tagrow .sub-badge {
+    font-weight: 700;
+  }
+
+  .track[data-track="core"] .tagrow .sub-badge { color: var(--track-core); border-color: var(--track-core); }
+  .track[data-track="ai"] .tagrow .sub-badge { color: var(--track-ai); border-color: var(--track-ai); }
+  .track[data-track="moda"] .tagrow .sub-badge { color: var(--track-moda); border-color: var(--track-moda); }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .card h3 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.28rem;
+    margin: 0 0 2px;
+    letter-spacing: -0.005em;
+    line-height: 1.15;
+  }
+
+  .card .company {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .score {
+    text-align: right;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .score .score-n {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .score .score-n span {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--ink-soft);
+  }
+
+  .score .score-l {
+    font-family: "Space Mono", monospace;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: "Space Mono", monospace;
+    font-size: 0.66rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 3px 9px;
+    border-radius: 999px;
+    margin-top: 6px;
+  }
+
+  .pill.good { background: var(--good-bg); color: var(--good); }
+  .pill.consider { background: var(--surface-2); color: var(--ink-soft); border: 1px solid var(--line-strong); }
+
+  .card p.reason {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 12px 0 14px;
+  }
+
+  .card .caveat {
+    font-size: 0.8rem;
+    color: var(--warn);
+    background: var(--warn-bg);
+    border-radius: 4px;
+    padding: 7px 10px;
+    margin: -4px 0 14px;
+    line-height: 1.45;
+  }
+
+  .card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    align-items: center;
+    padding-top: 4px;
+    border-top: 1px dashed var(--line);
+  }
+
+  .card-actions {
+    margin-top: 4px;
+    padding-top: 12px;
+  }
+
+  .card a.apply {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--accent-ink);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 1px;
+  }
+
+  button.cv-btn {
+    font: inherit;
+    font-family: "Archivo", sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    color: var(--surface);
+    background: var(--ink);
+    border: none;
+    border-radius: 999px;
+    padding: 7px 15px;
+    cursor: pointer;
+  }
+
+  button.cv-btn:hover { opacity: 0.86; }
+  button.cv-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* ---------- Archive ---------- */
+
+  details.archive {
+    margin-top: 20px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--surface);
+  }
+
+  details.archive summary {
+    cursor: pointer;
+    padding: 12px 16px;
+    font-family: "Space Mono", monospace;
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-soft);
+  }
+
+  .archive-body {
+    padding: 2px 16px 16px;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  /* ---------- Modal ---------- */
+
+  .cv-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 20, 22, 0.6);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 4vh 16px;
+    z-index: 1000;
+  }
+
+  .cv-modal-backdrop[hidden] { display: none; }
+
+  .cv-modal {
+    background: var(--surface);
+    color: var(--ink);
+    border-radius: 8px;
+    max-width: 640px;
+    width: 100%;
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .cv-modal-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .cv-modal-head h2 {
+    font-family: "Space Mono", monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0;
+    color: var(--ink-soft);
+  }
+
+  .cv-modal-close {
+    font: inherit;
+    font-size: 1.2rem;
+    line-height: 1;
+    background: none;
+    border: none;
+    color: var(--ink-soft);
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
+
+  .cv-modal-close:hover { background: var(--surface-2); color: var(--ink); }
+
+  .cv-modal-body {
+    padding: 20px 24px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .cv-modal-body h1.cv-name {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.7rem;
+    margin: 0 0 2px;
+  }
+
+  .cv-modal-body .cv-contact {
+    font-family: "Space Mono", monospace;
+    font-size: 0.74rem;
+    color: var(--ink-soft);
+    margin: 0 0 4px;
+  }
+
+  .cv-modal-body .cv-target-note {
+    font-size: 0.82rem;
+    color: var(--accent-ink);
+    font-style: italic;
+    margin: 8px 0 16px;
+  }
+
+  .cv-modal-body h3.cv-section {
+    font-family: "Space Mono", monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent-ink);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 4px;
+    margin: 18px 0 8px;
+  }
+
+  .cv-modal-body ul { margin: 4px 0 0; padding-left: 20px; }
+  .cv-modal-body li { margin-bottom: 4px; }
+  .cv-modal-body .cv-job { margin-bottom: 12px; }
+  .cv-modal-body .cv-job h4 { font-size: 0.94rem; margin: 12px 0 2px; font-family: "Fraunces", Georgia, serif; }
+  .cv-modal-body .cv-role { font-size: 0.8rem; color: var(--ink-soft); margin-bottom: 2px; }
+  .cv-modal-body .cv-role b { color: var(--ink); font-weight: 600; }
+
+  .cv-modal-foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 20px;
+    border-top: 1px solid var(--line);
+    background: var(--surface-2);
+  }
+
+  .cv-modal-foot .hint {
+    width: 100%;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    margin: 0 0 2px;
+  }
+
+  footer {
+    margin-top: 48px;
+    font-family: "Space Mono", monospace;
+    font-size: 0.68rem;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+  }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="wordmark">The Edit</div>
+      <div class="issue-line">Dossier zawodowy<br>Vol. 1 — konfiguracja</div>
+    </div>
+    <div class="dossier-line">Prowadzone dla: <b>Joanna Fijał</b> · Warszawa · trzy tory kariery: CORE / AI / MODA</div>
+  </header>
+
+  <div class="setup-notice">
+    <span class="icon">✂️</span>
+    <div>
+      <strong>Ten dashboard jest w fazie konfiguracji.</strong> Karty poniżej są
+      <strong>przykładami</strong> pokazującymi układ i sposób oceny — nie są to
+      prawdziwe oferty pracy. Prawdziwe dopasowania zaczną się pojawiać, gdy
+      alerty LinkedIn/pracuj.pl na skrzynce Joanny zostaną podłączone do
+      pipeline'u. Do tego czasu traktuj tę stronę jako makietę docelowego
+      wyglądu i mechaniki.
+    </div>
+  </div>
+
+  <section class="track" data-track="core">
+    <div class="track-head">
+      <div class="track-name">
+        <span class="track-index">01</span>
+        <span class="track-title">Core</span>
+      </div>
+    </div>
+    <p class="track-desc">Naturalna kontynuacja: delivery, automatyzacja, doskonałość
+      procesowa — tam, gdzie jest dziś, tylko wyżej.</p>
+    <div class="track-stats"><span><b>1</b>🎯</span><span><b>0</b>👀</span><span><b>0</b>przeanalizowane</span></div>
+    <div class="card-list">
+      <div class="card" data-example="true">
+        <div class="tagrow">
+          <span>📍 Warszawa / hybrydowo</span>
+          <span>💰 widełki nieznane</span>
+          <span>🔗 LinkedIn</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>Head of Automation</h3>
+            <p class="company">globalna firma z branży life sciences (przykład)</p>
+          </div>
+          <div class="score"><div class="score-n">82<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill good">🎯 idealnie dopasowane</span>
+        <p class="reason">Rola na szczycie preferencji toru CORE — bezpośrednia kontynuacja
+          obecnej odpowiedzialności za portfolio RPA/Power Platform/Process Mining, tylko
+          na wyższym poziomie organizacyjnym. Branża life sciences to dokładnie jej
+          środowisko (AstraZeneca). Lokalizacja i tryb pracy zgodne z preferencją.</p>
+        <div class="card-actions">
+          <a class="apply" href="#" onclick="return false;">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="example:core-1" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="track" data-track="ai">
+    <div class="track-head">
+      <div class="track-name">
+        <span class="track-index">02</span>
+        <span class="track-title">AI</span>
+      </div>
+    </div>
+    <p class="track-desc">Rozszerzenie automatyzacji w stronę AI adoption — dowożenie
+      wdrożeń, nie budowa modeli.</p>
+    <div class="track-stats"><span><b>1</b>🎯</span><span><b>0</b>👀</span><span><b>0</b>przeanalizowane</span></div>
+    <div class="card-list">
+      <div class="card" data-example="true">
+        <div class="tagrow">
+          <span>📍 Zdalnie / Warszawa</span>
+          <span>💰 widełki nieznane</span>
+          <span>🔗 LinkedIn</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>AI Transformation Manager</h3>
+            <p class="company">międzynarodowy koncern farmaceutyczny (przykład)</p>
+          </div>
+          <div class="score"><div class="score-n">79<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill good">🎯 idealnie dopasowane</span>
+        <p class="reason">Dokładnie ten sam zestaw kompetencji co w RPA (delivery governance,
+          zarządzanie zespołem, stakeholder management), przeniesiony na obszar AI adoption.
+          Nie wymaga hands-on data science — dokładnie tak, jak ustalone w profilu.
+          Branża pharma, zgodna z jej doświadczeniem.</p>
+        <div class="card-actions">
+          <a class="apply" href="#" onclick="return false;">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="example:ai-1" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="track" data-track="moda">
+    <div class="track-head">
+      <div class="track-name">
+        <span class="track-index">03</span>
+        <span class="track-title">Moda</span>
+      </div>
+    </div>
+    <p class="track-desc">Marzenie o branży modowej — mostek operacyjny (3a, osiągalny
+      od zaraz) i czyste role projektowe (3b, cel odległy).</p>
+    <div class="track-stats"><span><b>1</b>🎯</span><span><b>1</b>👀</span><span><b>0</b>przeanalizowane</span></div>
+    <div class="card-list">
+      <div class="card" data-example="true">
+        <div class="tagrow">
+          <span class="sub-badge">3a · mostek</span>
+          <span>📍 Warszawa</span>
+          <span>💰 widełki nieznane</span>
+          <span>🔗 pracuj.pl</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>Fashion Operations Manager</h3>
+            <p class="company">polski dom mody (przykład)</p>
+          </div>
+          <div class="score"><div class="score-n">77<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill good">🎯 idealnie dopasowane</span>
+        <p class="reason">To nie jest skok kompetencyjny, tylko zmiana branży: te same
+          umiejętności delivery/operacyjne co w torze CORE, przeniesione do domu mody.
+          Wysoki fit score mimo braku wykształcenia projektowego, bo rola nie wymaga
+          projektowania — wymaga dowożenia operacji.</p>
+        <div class="card-actions">
+          <a class="apply" href="#" onclick="return false;">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="example:moda-1" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+      <div class="card" data-example="true">
+        <div class="tagrow">
+          <span class="sub-badge">3b · marzenie</span>
+          <span>📍 Warszawa / zdalnie</span>
+          <span>💰 widełki nieznane</span>
+          <span>🔗 LinkedIn</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>Trend Researcher</h3>
+            <p class="company">agencja prognozowania trendów (przykład)</p>
+          </div>
+          <div class="score"><div class="score-n">61<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill consider">👀 warto rozważyć</span>
+        <p class="caveat">⚠ Wymaga portfolio/wykształcenia projektowego — nie potwierdzone
+          w profilu Joanny. Obniża score, ale nie dyskwalifikuje automatycznie.</p>
+        <p class="reason">Rola bliżej researchu i analizy niż czystego projektowania — mniej
+          zależna od portfolio niż stanowisko designerskie sensu stricto. Warto rozważyć
+          jako pierwszy krok w stronę mody, ale ogłoszenie nie precyzuje wymagań
+          wykształceniowych, więc realna szansa jest niepewna.</p>
+        <div class="card-actions">
+          <a class="apply" href="#" onclick="return false;">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="example:moda-2" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <details class="archive">
+    <summary>Pominięte przez pipeline (0 ofert, fit score &lt; 55)</summary>
+    <div class="archive-body">Pipeline jeszcze nie uruchomiony na prawdziwych danych — ta
+      sekcja wypełni się po podłączeniu skrzynki Joanny.</div>
+  </details>
+
+  <footer>The Edit · dossier zawodowy · Joanna Fijał · aktualizacja: 27 września 2026, 22:15</footer>
+</div>
+
+<div class="cv-modal-backdrop" id="cv-modal-backdrop" hidden>
+  <div class="cv-modal" role="dialog" aria-modal="true" aria-label="Podgląd CV">
+    <div class="cv-modal-head">
+      <h2>Podgląd dostosowanego CV</h2>
+      <button type="button" class="cv-modal-close" onclick="closeCvPreview()" aria-label="Zamknij">✕</button>
+    </div>
+    <div class="cv-modal-body" id="cv-modal-body"></div>
+    <div class="cv-modal-foot">
+      <div class="hint">Word/PDF pojawią się razem z uruchomieniem pipeline'u na
+        prawdziwych ofertach — na razie dostępny jest podgląd i eksport Markdown.</div>
+      <button type="button" class="cv-btn" id="cv-download-md">Pobierz jako Markdown (.md)</button>
+    </div>
+  </div>
+</div>
+
+<script type="application/json" id="cv-data">
+{
+  "example:core-1": { "cv": { "candidate": "Joanna Fijał", "contact": { "phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838" }, "targetRoleNote": "CV dostosowane pod ofertę: Head of Automation (przykład, tor CORE)", "about": "10 lat w projektach IT, 15 lat w branży farmaceutycznej. Strategiczna, zorientowana na wyniki liderka automatyzacji. Udokumentowane doświadczenie w prowadzeniu globalnych zespołów, zarządzaniu złożonymi portfolio automatyzacji i dostarczaniu inicjatyw transformacji cyfrowej z użyciem RPA, MS Power Platform i technologii low-code/no-code.", "skills": ["Przywództwo w automatyzacji: portfolio RPA, MS Power Platform i Process Mining na poziomie globalnym", "Zarządzanie dostawą (delivery governance): raportowanie, mitygacja ryzyka, zgodność z celami biznesowymi", "Zarządzanie rozproszonymi zespołami wysokiej wydajności (hybrid/remote)", "Ciągłe doskonalenie w metodyce Agile", "Partnerstwo z liderami biznesowymi przy priorytetyzacji inicjatyw automatyzacji", "Zbieranie wymagań, projektowanie rozwiązań, testy, change management"], "experience": [ { "company": "AstraZeneca", "roles": [ {"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"}, {"title": "RPA Senior Process Analyst", "dates": "gru 2021–wrz 2023"} ], "bullets": ["Prowadzenie strategicznych inicjatyw automatyzacji w wielu jednostkach biznesowych, nadzór nad pipeline'em i dostawą RPA/Power Platform/Process Mining", "Zapewnianie delivery governance, mitygacji ryzyka i zgodności z celami biznesowymi", "Zarządzanie globalnie rozproszonymi zespołami w trybie hybrydowym i wirtualnym", "Uznana w ocenach 360° za empatyczny i wzmacniający styl przywództwa"] }, { "company": "AstraZeneca — Clinical Operations Enablement Lead", "roles": [ {"title": "Clinical Operations Enablement Lead", "dates": "gru 2016–cze 2020"} ], "bullets": ["Przywództwo i zarządzanie cyklem życia systemu IRT", "Koordynacja zespołu ekspertów odpowiedzialnych za deliverables regulacyjne"] } ], "education": ["SGH Warsaw School of Economics — studia podyplomowe, kompetencje psychologiczne i negocjacyjne", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Rosyjski — podstawowy", "Regulatory Affairs, GCP (potwierdzone)"], "references": ["(do uzupełnienia)"] } },
+  "example:ai-1": { "cv": { "candidate": "Joanna Fijał", "contact": { "phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838" }, "targetRoleNote": "CV dostosowane pod ofertę: AI Transformation Manager (przykład, tor AI)", "about": "Liderka automatyzacji i transformacji cyfrowej z 12+ latami w AstraZeneca. Prowadzi wdrożenia RPA/Power Platform/Process Mining z pełną odpowiedzialnością za delivery governance — dokładnie ten sam zakres kompetencji, który dziś napędza wdrożenia AI adoption w dużych organizacjach: zarządzanie portfolio, zespołem i interesariuszami, nie hands-on modelowanie.", "skills": ["Przywództwo w automatyzacji i transformacji cyfrowej", "Delivery governance i zarządzanie ryzykiem programów technologicznych", "Zarządzanie globalnie rozproszonymi zespołami", "Partnerstwo ze stakeholderami biznesowymi i IT przy priorytetyzacji inicjatyw", "Agile ways of working", "Change management i redesign procesów"], "experience": [ { "company": "AstraZeneca", "roles": [ {"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"} ], "bullets": ["Prowadzenie strategicznych inicjatyw automatyzacji, nadzór nad pipeline'em możliwości i dostawą rozwiązań", "Delivery governance i mitygacja ryzyka poprzez ustrukturyzowane raportowanie", "Zarządzanie zespołami wysokiej wydajności w trybie hybrydowym"] } ], "education": ["SGH Warsaw School of Economics — studia podyplomowe", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "RPA, MS Power Platform, Process Mining"], "references": ["(do uzupełnienia)"] } },
+  "example:moda-1": { "cv": { "candidate": "Joanna Fijał", "contact": { "phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838" }, "targetRoleNote": "CV dostosowane pod ofertę: Fashion Operations Manager (przykład, tor MODA 3a)", "about": "Liderka delivery i operacji z 12+ latami doświadczenia w prowadzeniu złożonych, globalnie rozproszonych zespołów i programów transformacyjnych. Doświadczenie w zarządzaniu dostawą, governance i ciągłym doskonaleniu procesów — kompetencje w pełni transferowalne do operacji w domu mody, niezależnie od branży, z której pochodzą.", "skills": ["Zarządzanie dostawą i operacjami: governance, raportowanie, mitygacja ryzyka", "Prowadzenie zespołów wysokiej wydajności w trybie hybrydowym/zdalnym", "Ciągłe doskonalenie procesów (Agile, continuous improvement)", "Partnerstwo z interesariuszami biznesowymi przy priorytetyzacji inicjatyw", "Zarządzanie zmianą i redesign procesów operacyjnych"], "experience": [ { "company": "AstraZeneca", "roles": [ {"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"} ], "bullets": ["Nadzór nad pipeline'em możliwości i dostawą rozwiązań w wielu jednostkach biznesowych", "Delivery governance i zgodność z celami biznesowymi poprzez ustrukturyzowane raportowanie", "Zarządzanie globalnie rozproszonymi zespołami"] } ], "education": ["SGH Warsaw School of Economics — studia podyplomowe", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1"], "references": ["(do uzupełnienia)"] } },
+  "example:moda-2": { "cv": { "candidate": "Joanna Fijał", "contact": { "phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838" }, "targetRoleNote": "CV dostosowane pod ofertę: Trend Researcher (przykład, tor MODA 3b) — UWAGA: prezentuje kompetencje transferowalne (analiza, delivery), nie portfolio projektowe, którego Joanna jeszcze nie potwierdziła.", "about": "Analityczka i liderka delivery z doświadczeniem w rozpoznawaniu wzorców, ocenie procesów i strukturyzowanym raportowaniu na poziomie globalnym. Zainteresowana przeniesieniem tych kompetencji analitycznych w stronę researchu trendów w branży modowej.", "skills": ["Analiza procesów i identyfikacja wzorców na dużą skalę (portfolio automatyzacji)", "Ustrukturyzowane raportowanie i synteza informacji dla interesariuszy", "Praca w metodyce Agile — iteracyjne testowanie hipotez", "Zarządzanie projektami badawczymi/wdrożeniowymi od koncepcji do dostawy"], "experience": [ { "company": "AstraZeneca", "roles": [ {"title": "RPA Senior Process Analyst", "dates": "gru 2021–wrz 2023"} ], "bullets": ["Identyfikacja i ocena możliwości automatyzacji na bazie analizy procesów biznesowych", "Zbieranie wymagań i projektowanie rozwiązań we współpracy z SME", "Prowadzenie testów i zarządzania zmianą"] } ], "education": ["SGH Warsaw School of Economics — studia podyplomowe", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Brak potwierdzonego portfolio/wykształcenia projektowego — do uzupełnienia, jeśli Joanna chce realnie celować w role designerskie"], "references": ["(do uzupełnienia)"] } }
+}
+</script>
+
+<script>
+  (function () {
+    function esc(s) {
+      const d = document.createElement("div");
+      d.textContent = s == null ? "" : String(s);
+      return d.innerHTML;
+    }
+
+    let cvData = {};
+    try { cvData = JSON.parse(document.getElementById("cv-data").textContent); } catch (e) { cvData = {}; }
+
+    let currentJobId = null;
+    const backdrop = document.getElementById("cv-modal-backdrop");
+    const body = document.getElementById("cv-modal-body");
+
+    function renderPreview(cv) {
+      const li = (a) => (a || []).map((x) => `<li>${esc(x)}</li>`).join("");
+      const experience = (cv.experience || []).map((job) => {
+        const roles = (job.roles || []).map((r) => `<div class="cv-role"><b>${esc(r.title)}</b> — ${esc(r.dates)}</div>`).join("");
+        return `<div class="cv-job"><h4>${esc(job.company)}</h4>${roles}<ul>${li(job.bullets)}</ul></div>`;
+      }).join("");
+      body.innerHTML = `
+        <h1 class="cv-name">${esc(cv.candidate)}</h1>
+        <p class="cv-contact">${esc(cv.contact.address)} · ${esc(cv.contact.phone)} · ${esc(cv.contact.email)} · ${esc(cv.contact.linkedin)}</p>
+        ${cv.targetRoleNote ? `<p class="cv-target-note">${esc(cv.targetRoleNote)}</p>` : ""}
+        <h3 class="cv-section">O mnie</h3><p>${esc(cv.about)}</p>
+        <h3 class="cv-section">Kluczowe kompetencje</h3><ul>${li(cv.skills)}</ul>
+        <h3 class="cv-section">Doświadczenie zawodowe</h3>${experience}
+        <h3 class="cv-section">Wykształcenie</h3><ul>${li(cv.education)}</ul>
+        <h3 class="cv-section">Dodatkowe umiejętności i języki</h3><ul>${li(cv.additional)}</ul>
+      `;
+    }
+
+    window.openCvPreview = function (btn) {
+      const jobId = btn.getAttribute("data-job-id");
+      const entry = cvData[jobId];
+      if (!entry) return;
+      currentJobId = jobId;
+      renderPreview(entry.cv);
+      backdrop.hidden = false;
+      body.scrollTop = 0;
+    };
+    window.closeCvPreview = function () { backdrop.hidden = true; currentJobId = null; };
+    backdrop.addEventListener("click", function (e) { if (e.target === backdrop) window.closeCvPreview(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !backdrop.hidden) window.closeCvPreview(); });
+
+    function mdFor(cv) {
+      const lines = [];
+      lines.push(`# ${cv.candidate}`);
+      lines.push(`${cv.contact.address} · ${cv.contact.phone} · ${cv.contact.email} · ${cv.contact.linkedin}`);
+      if (cv.targetRoleNote) lines.push(`\n_${cv.targetRoleNote}_`);
+      lines.push(`\n## O mnie\n${cv.about}`);
+      lines.push(`\n## Kluczowe kompetencje`);
+      (cv.skills || []).forEach((s) => lines.push(`- ${s}`));
+      lines.push(`\n## Doświadczenie zawodowe`);
+      (cv.experience || []).forEach((job) => {
+        lines.push(`\n**${job.company}**`);
+        (job.roles || []).forEach((r) => lines.push(`${r.title} — ${r.dates}`));
+        (job.bullets || []).forEach((b) => lines.push(`- ${b}`));
+      });
+      lines.push(`\n## Wykształcenie`);
+      (cv.education || []).forEach((e) => lines.push(`- ${e}`));
+      lines.push(`\n## Dodatkowe umiejętności i języki`);
+      (cv.additional || []).forEach((a) => lines.push(`- ${a}`));
+      return lines.join("\n");
+    }
+
+    document.getElementById("cv-download-md").addEventListener("click", async function () {
+      const entry = cvData[currentJobId];
+      if (!entry) return;
+      const btn = this;
+      const label = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = "Zapisuję…";
+      try {
+        const downloads = window.claude && window.claude.use ? await window.claude.use("downloads") : null;
+        const text = mdFor(entry.cv);
+        if (!downloads) {
+          alert("Pobieranie plików nie jest dostępne w tym widoku.");
+          return;
+        }
+        const bytes = new TextEncoder().encode(text);
+        const filename = "CV_Joanna_Fijal_" + currentJobId.replace(/[^a-z0-9]+/gi, "_") + ".md";
+        try {
+          await downloads.save({ filename: filename, data: bytes });
+        } catch (err) {
+          if (err && err.code === "extension_not_enabled") {
+            alert("Zapis pliku jest wyłączony w tym widoku. Otwórz dashboard w przeglądarce i spróbuj ponownie.");
+          } else if (err && err.code !== "declined") {
+            alert("Nie udało się zapisać pliku.");
+          }
+        }
+      } finally {
+        btn.disabled = false;
+        btn.textContent = label;
+      }
+    });
+  })();
+</script>
