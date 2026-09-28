@@ -1,0 +1,655 @@
+<title>Ankieta The Edit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+<style>
+  /* Layout: masthead + numbered question sections on paper card stock, ending in a
+     live-compiled "Twoje odpowiedzi" summary the reader copies out by hand — no
+     server, no account, works for any link recipient regardless of access level. */
+  :root {
+    --paper: #ece9e1;
+    --surface: #fbfaf7;
+    --surface-2: #f2efe8;
+    --ink: #1a1a1e;
+    --ink-soft: #6b6860;
+    --ink-faint: #96917f;
+    --line: #d9d4c8;
+    --line-strong: #c4bda9;
+    --accent: #9c7a2e;
+    --accent-ink: #7a5f22;
+    --accent-bg: #f2e9d4;
+    --good: #2f6b4a;
+    --good-bg: #e0ebe2;
+    --shadow: 0 1px 2px rgba(26, 26, 30, 0.06), 0 10px 28px -16px rgba(26, 26, 30, 0.28);
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #16171a;
+      --surface: #1e1f23;
+      --surface-2: #26272c;
+      --ink: #ede9e1;
+      --ink-soft: #a6a294;
+      --ink-faint: #726e60;
+      --line: #34353a;
+      --line-strong: #45464c;
+      --accent: #d3ab5a;
+      --accent-ink: #e6c079;
+      --accent-bg: #2c2717;
+      --good: #7fc79e;
+      --good-bg: #1e2f24;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 28px -16px rgba(0, 0, 0, 0.6);
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #16171a;
+    --surface: #1e1f23;
+    --surface-2: #26272c;
+    --ink: #ede9e1;
+    --ink-soft: #a6a294;
+    --ink-faint: #726e60;
+    --line: #34353a;
+    --line-strong: #45464c;
+    --accent: #d3ab5a;
+    --accent-ink: #e6c079;
+    --accent-bg: #2c2717;
+    --good: #7fc79e;
+    --good-bg: #1e2f24;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 28px -16px rgba(0, 0, 0, 0.6);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Archivo", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: clamp(20px, 5vw, 56px) clamp(16px, 4vw, 28px) 72px;
+  }
+
+  header.masthead {
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 18px;
+    margin-bottom: 8px;
+  }
+
+  .wordmark {
+    font-family: "Fraunces", Georgia, serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: italic;
+    font-size: clamp(1.9rem, 6vw, 2.6rem);
+    letter-spacing: -0.01em;
+    line-height: 0.95;
+  }
+
+  .issue-line {
+    font-family: "Space Mono", monospace;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 6px;
+  }
+
+  .intro {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 22px 0 8px;
+  }
+
+  .intro b { color: var(--accent-ink); }
+
+  .draft-note {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 12px 14px;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin: 18px 0 36px;
+  }
+
+  section.q-section {
+    margin-top: 40px;
+  }
+
+  .q-section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+  }
+
+  .q-index {
+    font-family: "Space Mono", monospace;
+    font-size: 0.76rem;
+    color: var(--accent-ink);
+    font-weight: 700;
+  }
+
+  .q-section-title {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.24rem;
+    letter-spacing: -0.005em;
+  }
+
+  .q {
+    margin-bottom: 24px;
+  }
+
+  .q label.q-text {
+    display: block;
+    font-weight: 600;
+    font-size: 0.94rem;
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+
+  .q .q-help {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    margin: 0 0 10px;
+    line-height: 1.5;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .opt {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    transition: border-color 0.12s ease;
+  }
+
+  .opt:hover { border-color: var(--line-strong); }
+
+  .opt input { margin-top: 2px; accent-color: var(--accent); flex-shrink: 0; }
+
+  .opt:has(input:checked) {
+    border-color: var(--accent);
+    background: var(--accent-bg);
+  }
+
+  input[type="text"], textarea {
+    width: 100%;
+    font: inherit;
+    font-family: "Archivo", sans-serif;
+    font-size: 0.9rem;
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+    border-radius: 6px;
+    padding: 9px 12px;
+    line-height: 1.5;
+  }
+
+  input[type="text"]:focus, textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+
+  textarea { min-height: 64px; resize: vertical; }
+
+  .sub-field {
+    margin-top: 8px;
+    padding-left: 4px;
+  }
+
+  .sub-field[hidden] { display: none !important; }
+
+  /* ---------- Summary ---------- */
+
+  .summary-wrap {
+    margin-top: 48px;
+    border-top: 3px solid var(--ink);
+    padding-top: 24px;
+  }
+
+  .summary-head {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+  }
+
+  .summary-help {
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin: 0 0 16px;
+  }
+
+  #summary-box {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px 18px;
+    font-family: "Space Mono", monospace;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    color: var(--ink);
+    max-height: 44vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow);
+  }
+
+  .copy-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  button.copy-btn {
+    font: inherit;
+    font-family: "Archivo", sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--surface);
+    background: var(--ink);
+    border: none;
+    border-radius: 999px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  button.copy-btn:hover { opacity: 0.88; }
+  button.copy-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .copy-status {
+    font-family: "Space Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--good);
+  }
+
+  .copy-status[hidden] { display: none !important; }
+
+  footer {
+    margin-top: 48px;
+    font-family: "Space Mono", monospace;
+    font-size: 0.68rem;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+  }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <div class="wordmark">The Edit</div>
+    <div class="issue-line">Ankieta · dostrajanie oceny ofert</div>
+  </header>
+
+  <p class="intro">Te pytania pomogą lepiej dopasować <b>fit score</b> na Twoim dashboardzie —
+    im dokładniejsze odpowiedzi, tym trafniejsze oceny ofert w torach CORE, AI i MODA.
+    Odpowiadaj tak szczegółowo, jak chcesz — puste pola też są odpowiedzią (zostają
+    tak, jak jest teraz ustalone).</p>
+
+  <div class="draft-note">
+    <span>💾</span>
+    <div>Odpowiedzi zapisują się automatycznie w tej przeglądarce, więc możesz wrócić
+      później. Na końcu ankiety znajdziesz przycisk <b>„Kopiuj odpowiedzi”</b> — to on
+      przekazuje je dalej: wklej wynik w wiadomości do Grzegorza (WhatsApp, SMS,
+      e-mail — cokolwiek), a on wprowadzi je do <code>profile.md</code>.</div>
+  </div>
+
+  <form id="survey">
+    <section class="q-section">
+      <div class="q-section-head"><span class="q-index">01</span><span class="q-section-title">Dane kontaktowe</span></div>
+
+      <div class="q">
+        <label class="q-text" for="q_phone">Numer telefonu (do CV)</label>
+        <input type="text" id="q_phone" name="q_phone" placeholder="np. 600 000 000">
+      </div>
+      <div class="q">
+        <label class="q-text" for="q_email">E-mail do kontaktu ws. ofert (jeśli inny niż adres na wp.pl)</label>
+        <input type="text" id="q_email" name="q_email" placeholder="np. joanna@...">
+      </div>
+    </section>
+
+    <section class="q-section">
+      <div class="q-section-head"><span class="q-index">02</span><span class="q-section-title">Widełki i forma zatrudnienia</span></div>
+
+      <div class="q">
+        <label class="q-text">Czy 20 000 zł brutto/mies. to nadal Twoje minimum dla ról CORE/AI i „mostka” w modzie (3a)?</label>
+        <div class="options" data-group="q_salary">
+          <label class="opt"><input type="radio" name="q_salary" value="Tak, to nadal minimum">Tak, to nadal minimum</label>
+          <label class="opt"><input type="radio" name="q_salary" value="Chcę wyżej">Chcę wyżej</label>
+          <label class="opt"><input type="radio" name="q_salary" value="Mogę zejść niżej dla właściwej roli">Mogę zejść niżej dla właściwej roli</label>
+          <label class="opt"><input type="radio" name="q_salary" value="Jeszcze nie wiem">Jeszcze nie wiem</label>
+        </div>
+        <div class="sub-field" id="sub_salary" hidden>
+          <input type="text" id="q_salary_amount" name="q_salary_amount" placeholder="Podaj kwotę (zł brutto/mies.)">
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-text">Forma zatrudnienia</label>
+        <div class="options" data-group="q_employment">
+          <label class="opt"><input type="radio" name="q_employment" value="Tylko umowa o pracę (UoP)">Tylko umowa o pracę (UoP)</label>
+          <label class="opt"><input type="radio" name="q_employment" value="Wolę UoP, ale B2B przy dobrym dopasowaniu OK">Wolę UoP, ale B2B przy dobrym dopasowaniu OK</label>
+          <label class="opt"><input type="radio" name="q_employment" value="Bez znaczenia">Bez znaczenia</label>
+        </div>
+      </div>
+    </section>
+
+    <section class="q-section">
+      <div class="q-section-head"><span class="q-index">03</span><span class="q-section-title">Lokalizacja</span></div>
+
+      <div class="q">
+        <label class="q-text">Oprócz Warszawy (biuro/hybrydowo) i pełnego home office — czy weźmiesz pod uwagę dojazd lub relokację do innego miasta w Polsce?</label>
+        <div class="options" data-group="q_relocation_pl">
+          <label class="opt"><input type="radio" name="q_relocation_pl" value="Nie">Nie</label>
+          <label class="opt"><input type="radio" name="q_relocation_pl" value="Tak">Tak</label>
+        </div>
+        <div class="sub-field" id="sub_relocation_pl" hidden>
+          <input type="text" id="q_relocation_pl_city" name="q_relocation_pl_city" placeholder="Jakiego miasta?">
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-text">Dla ról „marzenie” w modzie (3b) — czy realnie rozważyłabyś przeprowadzkę za granicę (Londyn, Paryż, Mediolan)?</label>
+        <div class="options" data-group="q_relocation_intl">
+          <label class="opt"><input type="radio" name="q_relocation_intl" value="Tak, poważnie">Tak, poważnie</label>
+          <label class="opt"><input type="radio" name="q_relocation_intl" value="Może, w przyszłości">Może, w przyszłości</label>
+          <label class="opt"><input type="radio" name="q_relocation_intl" value="Nie, to tylko ciekawostka na dashboardzie">Nie, to tylko ciekawostka na dashboardzie</label>
+        </div>
+      </div>
+    </section>
+
+    <section class="q-section">
+      <div class="q-section-head"><span class="q-index">04</span><span class="q-section-title">Tor CORE — priorytety</span></div>
+      <div class="q">
+        <label class="q-text">Z listy poniżej zaznacz 3–5 tytułów, które najbardziej Cię interesują</label>
+        <p class="q-help">Kolejność jak w profilu — im wyżej, tym bliżej obecnej roli.</p>
+        <div class="options" data-group="q_core_titles">
+          <label class="opt"><input type="checkbox" name="q_core_titles" value="Senior Delivery Manager / Head of Delivery">Senior Delivery Manager / Head of Delivery</label>
+          <label class="opt"><input type="checkbox" name="q_core_titles" value="Head of Automation / Director of Intelligent Automation">Head of Automation / Director of Intelligent Automation</label>
+          <label class="opt"><input type="checkbox" name="q_core_titles" value="Intelligent Automation Manager / Lead">Intelligent Automation Manager / Lead</label>
+          <label class="opt"><input type="checkbox" name="q_core_titles" value="RPA Program Manager / RPA Delivery Lead">RPA Program Manager / RPA Delivery Lead</label>
+          <label class="opt"><input type="checkbox" name="q_core_titles" value="Process Automation Manager / Business Process Automation Lead">Process Automation Manager / Business Process Automation Lead</label>
+          <label class="opt"><input type="checkbox" name="q_core_titles" value="Head of Process Excellence / Process Excellence Manager">Head of Process Excellence / Process Excellence Manager</label>
+          <label class="opt"><input type="checkbox" name="q_core_titles" value="Continuous Improvement Manager / Operational Excellence Manager">Continuous Improvement Manager / Operational Excellence Manager</label>
+          <label class="opt"><input type="checkbox" name="q_core_titles" value="Digital Transformation Manager / Lead">Digital Transformation Manager / Lead</label>
+          <label class="opt"><input type="checkbox" name="q_core_titles" value="Program Manager (Digital/Automation) / Automation Portfolio Manager">Program Manager (Digital/Automation) / Automation Portfolio Manager</label>
+          <label class="opt"><input type="checkbox" name="q_core_titles" value="Center of Excellence (CoE) Lead — Automation">Center of Excellence (CoE) Lead — Automation</label>
+        </div>
+      </div>
+    </section>
+
+    <section class="q-section">
+      <div class="q-section-head"><span class="q-index">05</span><span class="q-section-title">Tor AI</span></div>
+
+      <div class="q">
+        <label class="q-text">Czy temat AI adoption/transformacji faktycznie Cię interesuje jako kierunek rozwoju?</label>
+        <div class="options" data-group="q_ai_interest">
+          <label class="opt"><input type="radio" name="q_ai_interest" value="Tak, bardzo">Tak, bardzo</label>
+          <label class="opt"><input type="radio" name="q_ai_interest" value="Trochę — warto sprawdzać, co się trafi">Trochę — warto sprawdzać, co się trafi</label>
+          <label class="opt"><input type="radio" name="q_ai_interest" value="Nie — skup się na CORE i modzie">Nie — skup się na CORE i modzie</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-text">Jeśli tak — co bardziej Cię ciągnie?</label>
+        <div class="options" data-group="q_ai_focus">
+          <label class="opt"><input type="radio" name="q_ai_focus" value="Governance i wdrożenia (zespół, dostawa, nie modele)">Governance i wdrożenia (zespół, dostawa, nie modele)</label>
+          <label class="opt"><input type="radio" name="q_ai_focus" value="Bliska współpraca z zespołami data science/ML">Bliska współpraca z zespołami data science/ML</label>
+          <label class="opt"><input type="radio" name="q_ai_focus" value="Oba, zależy od roli">Oba, zależy od roli</label>
+        </div>
+      </div>
+    </section>
+
+    <section class="q-section">
+      <div class="q-section-head"><span class="q-index">06</span><span class="q-section-title">Moda</span></div>
+
+      <div class="q">
+        <label class="q-text" for="q_moda_portfolio">Masz jakiekolwiek realne doświadczenie/portfolio związane z modą lub projektowaniem?</label>
+        <p class="q-help">Kursy, hobby, blog, stylizacje, szycie, cokolwiek — nawet drobne. To bezpośrednio
+          wpływa na to, czy pipeline może pokazywać wyżej oceniane oferty w torze 3b (role czysto
+          projektowe) — bez tej informacji zakładamy, że portfolio jeszcze nie ma.</p>
+        <textarea id="q_moda_portfolio" name="q_moda_portfolio" placeholder="Opisz swoimi słowami, albo zostaw puste, jeśli na razie brak"></textarea>
+      </div>
+
+      <div class="q">
+        <label class="q-text">Czy tor 3a (operacje/delivery w firmie modowej) to coś, czego aktywnie teraz szukasz?</label>
+        <div class="options" data-group="q_moda_3a_priority">
+          <label class="opt"><input type="radio" name="q_moda_3a_priority" value="Tak, aktywnie">Tak, aktywnie</label>
+          <label class="opt"><input type="radio" name="q_moda_3a_priority" value="Tak, ale nie priorytet">Tak, ale nie priorytet</label>
+          <label class="opt"><input type="radio" name="q_moda_3a_priority" value="Nie, to był pomysł na przyszłość">Nie, to był pomysł na przyszłość</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-text">Które segmenty mody Cię interesują? (zaznacz wszystkie pasujące)</label>
+        <div class="options" data-group="q_moda_segments">
+          <label class="opt"><input type="checkbox" name="q_moda_segments" value="Luksusowa">Luksusowa</label>
+          <label class="opt"><input type="checkbox" name="q_moda_segments" value="Fast fashion">Fast fashion</label>
+          <label class="opt"><input type="checkbox" name="q_moda_segments" value="Zrównoważona / sustainable">Zrównoważona / sustainable</label>
+          <label class="opt"><input type="checkbox" name="q_moda_segments" value="Dodatki i biżuteria">Dodatki i biżuteria</label>
+          <label class="opt"><input type="checkbox" name="q_moda_segments" value="Obuwie">Obuwie</label>
+        </div>
+        <div class="sub-field" style="margin-top:10px;">
+          <input type="text" id="q_moda_segments_other" name="q_moda_segments_other" placeholder="Inne (wpisz)">
+        </div>
+      </div>
+    </section>
+
+    <section class="q-section">
+      <div class="q-section-head"><span class="q-index">07</span><span class="q-section-title">Firmy i wykluczenia</span></div>
+
+      <div class="q">
+        <label class="q-text" for="q_exclude_companies">Firmy lub branże, których NIE chcesz widzieć na liście</label>
+        <textarea id="q_exclude_companies" name="q_exclude_companies" placeholder="np. konkurencja, były pracodawca, cokolwiek innego"></textarea>
+      </div>
+
+      <div class="q">
+        <label class="q-text" for="q_exclude_other">Dodatkowe twarde wykluczenia (poza już ustalonymi: rola sprzedażowa, hands-on programowanie)</label>
+        <textarea id="q_exclude_other" name="q_exclude_other" placeholder="Zostaw puste, jeśli nic więcej nie przychodzi Ci do głowy"></textarea>
+      </div>
+    </section>
+
+    <section class="q-section">
+      <div class="q-section-head"><span class="q-index">08</span><span class="q-section-title">Pilność</span></div>
+      <div class="q">
+        <label class="q-text">Jak bardzo aktywnie teraz szukasz?</label>
+        <div class="options" data-group="q_urgency">
+          <label class="opt"><input type="radio" name="q_urgency" value="Aktywnie aplikuję">Aktywnie aplikuję</label>
+          <label class="opt"><input type="radio" name="q_urgency" value="Rozglądam się, gotowa na dobrą ofertę">Rozglądam się, gotowa na dobrą ofertę</label>
+          <label class="opt"><input type="radio" name="q_urgency" value="Pasywnie, na wszelki wypadek">Pasywnie, na wszelki wypadek</label>
+        </div>
+      </div>
+    </section>
+  </form>
+
+  <div class="summary-wrap">
+    <div class="summary-head">Twoje odpowiedzi</div>
+    <p class="summary-help">Ten blok aktualizuje się na bieżąco. Skopiuj go i wklej w wiadomości
+      do Grzegorza, żeby przekazać odpowiedzi dalej.</p>
+    <div id="summary-box"></div>
+    <div class="copy-row">
+      <button type="button" class="copy-btn" id="copy-btn">Kopiuj odpowiedzi</button>
+      <span class="copy-status" id="copy-status" hidden>Skopiowano ✓</span>
+    </div>
+  </div>
+
+  <footer>The Edit · ankieta preferencji · Joanna Fijał</footer>
+</div>
+
+<script>
+  (function () {
+    var form = document.getElementById("survey");
+    var STORAGE_KEY = "the-edit-ankieta-v1";
+
+    var sections = [
+      { title: "Dane kontaktowe", fields: ["q_phone", "q_email"] },
+      { title: "Widełki i forma zatrudnienia", fields: ["q_salary", "q_salary_amount", "q_employment"] },
+      { title: "Lokalizacja", fields: ["q_relocation_pl", "q_relocation_pl_city", "q_relocation_intl"] },
+      { title: "Tor CORE — priorytety", fields: ["q_core_titles"] },
+      { title: "Tor AI", fields: ["q_ai_interest", "q_ai_focus"] },
+      { title: "Moda", fields: ["q_moda_portfolio", "q_moda_3a_priority", "q_moda_segments", "q_moda_segments_other"] },
+      { title: "Firmy i wykluczenia", fields: ["q_exclude_companies", "q_exclude_other"] },
+      { title: "Pilność", fields: ["q_urgency"] }
+    ];
+
+    var labels = {
+      q_phone: "Telefon", q_email: "E-mail kontaktowy",
+      q_salary: "Widełki — minimum nadal aktualne?", q_salary_amount: "Podana kwota",
+      q_employment: "Forma zatrudnienia",
+      q_relocation_pl: "Relokacja w Polsce?", q_relocation_pl_city: "Miasto",
+      q_relocation_intl: "Relokacja za granicę (3b)?",
+      q_core_titles: "Priorytetowe tytuły CORE",
+      q_ai_interest: "Zainteresowanie torem AI", q_ai_focus: "Preferowany obszar AI",
+      q_moda_portfolio: "Doświadczenie/portfolio modowe", q_moda_3a_priority: "Priorytet toru 3a",
+      q_moda_segments: "Interesujące segmenty mody", q_moda_segments_other: "Inny segment",
+      q_exclude_companies: "Wykluczone firmy/branże", q_exclude_other: "Dodatkowe wykluczenia",
+      q_urgency: "Pilność poszukiwań"
+    };
+
+    function getValue(name) {
+      var els = form.querySelectorAll('[name="' + name + '"]');
+      if (!els.length) return "";
+      if (els[0].type === "checkbox") {
+        var vals = [];
+        els.forEach(function (el) { if (el.checked) vals.push(el.value); });
+        return vals.join(", ");
+      }
+      if (els[0].type === "radio") {
+        var checked = form.querySelector('[name="' + name + '"]:checked');
+        return checked ? checked.value : "";
+      }
+      return els[0].value || "";
+    }
+
+    function setValue(name, value) {
+      var els = form.querySelectorAll('[name="' + name + '"]');
+      if (!els.length) return;
+      if (els[0].type === "checkbox") {
+        var vals = (value || "").split(", ").filter(Boolean);
+        els.forEach(function (el) { el.checked = vals.indexOf(el.value) !== -1; });
+      } else if (els[0].type === "radio") {
+        els.forEach(function (el) { el.checked = el.value === value; });
+      } else {
+        els[0].value = value || "";
+      }
+    }
+
+    function allFieldNames() {
+      var names = [];
+      sections.forEach(function (s) { s.fields.forEach(function (f) { names.push(f); }); });
+      return names;
+    }
+
+    function saveDraft() {
+      try {
+        var data = {};
+        allFieldNames().forEach(function (n) { data[n] = getValue(n); });
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      } catch (e) { /* private mode / storage blocked — ignore */ }
+    }
+
+    function loadDraft() {
+      try {
+        var raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        var data = JSON.parse(raw);
+        Object.keys(data).forEach(function (n) { setValue(n, data[n]); });
+      } catch (e) { /* ignore */ }
+    }
+
+    function updateSubFields() {
+      var salary = getValue("q_salary");
+      document.getElementById("sub_salary").hidden = !(salary === "Chcę wyżej" || salary === "Mogę zejść niżej dla właściwej roli");
+      document.getElementById("sub_relocation_pl").hidden = getValue("q_relocation_pl") !== "Tak";
+    }
+
+    function renderSummary() {
+      var lines = [];
+      lines.push("ANKIETA THE EDIT — Joanna Fijał");
+      lines.push("");
+      sections.forEach(function (s) {
+        var any = s.fields.some(function (f) { return getValue(f); });
+        if (!any) return;
+        lines.push("== " + s.title + " ==");
+        s.fields.forEach(function (f) {
+          var v = getValue(f);
+          if (!v) return;
+          lines.push(labels[f] + ": " + v);
+        });
+        lines.push("");
+      });
+      if (lines.length <= 2) {
+        document.getElementById("summary-box").textContent = "Zacznij zaznaczać odpowiedzi powyżej — pojawią się tutaj.";
+      } else {
+        document.getElementById("summary-box").textContent = lines.join("\n").trim();
+      }
+    }
+
+    function refresh() {
+      updateSubFields();
+      renderSummary();
+      saveDraft();
+    }
+
+    form.addEventListener("input", refresh);
+    form.addEventListener("change", refresh);
+    form.addEventListener("submit", function (e) { e.preventDefault(); });
+
+    loadDraft();
+    refresh();
+
+    document.getElementById("copy-btn").addEventListener("click", async function () {
+      var text = document.getElementById("summary-box").textContent;
+      var status = document.getElementById("copy-status");
+      try {
+        await navigator.clipboard.writeText(text);
+        status.hidden = false;
+        setTimeout(function () { status.hidden = true; }, 2500);
+      } catch (e) {
+        var range = document.createRange();
+        range.selectNode(document.getElementById("summary-box"));
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        status.textContent = "Zaznaczono tekst — skopiuj ręcznie (Ctrl/Cmd+C)";
+        status.hidden = false;
+      }
+    });
+  })();
+</script>
