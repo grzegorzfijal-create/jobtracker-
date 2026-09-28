@@ -104,6 +104,30 @@ zarządcze, nie portfolio projektowe.
 Jak w głównym RUNBOOK, plus pole `track` (`core`/`ai`/`moda-3a`/`moda-3b`) przy
 każdym wpisie.
 
+## 6b. Aktualność ofert (termin przyjmowania CV)
+
+Pipeline **nie ma dostępu do rzeczywistego terminu składania aplikacji** —
+maile-alerty LinkedIn go nie podają, a odwiedzanie strony oferty wprost jest
+zabronione (patrz "Uwagi": ryzyko blokady konta). Zamiast zgadywać, stosuj
+prostą, jawną politykę:
+
+- Każdy wpis w `data/seen_jobs.json` ma pole `first_seen` (ISO timestamp z
+  momentu, kiedy oferta pierwszy raz pojawiła się w mailu). Dashboard pokazuje
+  tę datę na karcie jako „zauważona: DD miesiąc RRRR”.
+- Oferta, której `first_seen` jest starsze niż **30 dni** względem bieżącego
+  uruchomienia, **nie trafia na dashboard** (traktuj ją jako prawdopodobnie
+  nieaktualną — LinkedIn/pracuj.pl zwykle zamykają nabór dużo szybciej). Nadal
+  zostaje w ledgerze (nie usuwaj wpisu), tylko nie jest renderowana w żadnej
+  sekcji (ani 🎯/👀, ani archiwum ⚪) — to nie jest "pominięcie po ocenie", tylko
+  wygaśnięcie.
+- Jeśli w kolejnym uruchomieniu ta sama oferta (ten sam `id`) pojawi się
+  ponownie w nowym mailu-alercie, to jest sygnał, że nadal jest aktywna —
+  zaktualizuj `first_seen` na nowszą datę i wpuść ją z powrotem na dashboard
+  (tak jakby to była "odnowiona" oferta).
+- To przybliżenie, nie pewność — dashboard NIE twierdzi wprost "ta oferta
+  nadal przyjmuje CV", tylko pokazuje datę zauważenia, żeby Joanna sama mogła
+  ocenić ryzyko, że nabór już się zamknął.
+
 ## 7. Opublikuj i wyślij
 
 Jak w głównym RUNBOOK — najpierw odczytaj obecną opublikowaną wersję Artifactu

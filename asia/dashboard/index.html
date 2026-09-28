@@ -588,14 +588,15 @@
   </header>
 
   <div class="setup-notice">
-    <span class="icon">✂️</span>
+    <span class="icon">📬</span>
     <div>
-      <strong>Ten dashboard jest w fazie konfiguracji.</strong> Karty poniżej są
-      <strong>przykładami</strong> pokazującymi układ i sposób oceny — nie są to
-      prawdziwe oferty pracy. Prawdziwe dopasowania zaczną się pojawiać, gdy
-      alerty LinkedIn/pracuj.pl na skrzynce Joanny zostaną podłączone do
-      pipeline'u. Do tego czasu traktuj tę stronę jako makietę docelowego
-      wyglądu i mechaniki.
+      <strong>Pierwsza prawdziwa runda ofert</strong> — 10 alertów LinkedIn z
+      28 września 2026, zdeduplikowanych i ocenionych wg <code>profile.md</code>.
+      Pipeline nie ma dostępu do rzeczywistego terminu przyjmowania CV (LinkedIn
+      go nie podaje w mailu-alercie, a przeglądanie strony oferty jest celowo
+      wyłączone) — każda karta pokazuje datę, kiedy oferta została zauważona;
+      oferty starsze niż 30 dni bez ponownego potwierdzenia automatycznie znikają
+      z dashboardu (patrz <code>pipeline/RUNBOOK.md</code>, krok 6b).
     </div>
   </div>
 
@@ -608,29 +609,342 @@
     </div>
     <p class="track-desc">Naturalna kontynuacja: delivery, automatyzacja, doskonałość
       procesowa — tam, gdzie jest dziś, tylko wyżej.</p>
-    <div class="track-stats"><span><b>1</b>🎯</span><span><b>0</b>👀</span><span><b>0</b>przeanalizowane</span></div>
+    <div class="track-stats"><span><b>4</b>🎯</span><span><b>12</b>👀</span><span><b>23</b>przeanalizowane</span></div>
     <div class="card-list">
-      <div class="card" data-example="true">
+      <div class="card">
         <div class="tagrow">
-          <span>📍 Warszawa / hybrydowo</span>
+          <span>📍 Warszawa</span>
           <span>💰 widełki nieznane</span>
+          <span>🕒 zauważona: 28 września 2026</span>
           <span>🔗 LinkedIn</span>
         </div>
         <div class="card-top">
           <div>
-            <h3>Head of Automation</h3>
-            <p class="company">globalna firma z branży life sciences (przykład)</p>
+            <h3>Senior Project Manager - Pharma and Regulatory Affairs (f/m/x)</h3>
+            <p class="company">Sii Poland</p>
           </div>
-          <div class="score"><div class="score-n">82<span>/100</span></div><div class="score-l">Fit score</div></div>
+          <div class="score"><div class="score-n">80<span>/100</span></div><div class="score-l">Fit score</div></div>
         </div>
         <span class="pill good">🎯 idealnie dopasowane</span>
-        <p class="reason">Rola na szczycie preferencji toru CORE — bezpośrednia kontynuacja
-          obecnej odpowiedzialności za portfolio RPA/Power Platform/Process Mining, tylko
-          na wyższym poziomie organizacyjnym. Branża life sciences to dokładnie jej
-          środowisko (AstraZeneca). Lokalizacja i tryb pracy zgodne z preferencją.</p>
+        <p class="reason">Rzadkie połączenie project managementu z Regulatory Affairs — dokładnie jej wcześniejsza specjalizacja (The Office for Registration of Medicinal Products) plus obecne kompetencje delivery z AstraZeneca. Branża pharma, lokalizacja Warszawa — silny naturalny most między jej dwoma poprzednimi rolami zawodowymi.</p>
         <div class="card-actions">
-          <a class="apply" href="#" onclick="return false;">Zobacz ofertę →</a>
-          <button type="button" class="cv-btn" data-job-id="example:core-1" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+          <a class="apply" href="https://www.linkedin.com/jobs/view/4468989341/" target="_blank" rel="noopener">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="linkedin:4468989341" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tagrow">
+          <span>📍 Warszawa</span>
+          <span>💰 widełki nieznane</span>
+          <span>🕒 zauważona: 28 września 2026</span>
+          <span>🔗 LinkedIn</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>Delivery Manager</h3>
+            <p class="company">FABRITY</p>
+          </div>
+          <div class="score"><div class="score-n">78<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill good">🎯 idealnie dopasowane</span>
+        <p class="reason">Dokładne trafienie tytułu — „Delivery Manager” to bezpośrednia kontynuacja obecnej roli (Pipeline &amp; Delivery Manager). FABRITY to firma technologiczna, nie pharma, więc mniej znana sieć kontaktów niż w life sciences, ale lokalizacja i poziom są idealnie zgodne z profilem.</p>
+        <div class="card-actions">
+          <a class="apply" href="https://www.linkedin.com/jobs/view/4470404302/" target="_blank" rel="noopener">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="linkedin:4470404302" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tagrow">
+          <span>📍 Warszawa</span>
+          <span>💰 widełki nieznane</span>
+          <span>🕒 zauważona: 28 września 2026</span>
+          <span>🔗 LinkedIn</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>Regulatory Manager / Senior Regulatory Manager</h3>
+            <p class="company">Precision Medicine Group</p>
+          </div>
+          <div class="score"><div class="score-n">77<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill good">🎯 idealnie dopasowane</span>
+        <p class="reason">Bezpośredni powrót do jej pierwotnej specjalizacji regulacyjnej (Regulatory Affairs Specialist, 2010–2014) na poziomie senior manager, w firmie z branży life sciences. Silny fit kompetencyjny, choć to inny kierunek niż delivery/automatyzacja — warto rozważyć jako alternatywną ścieżkę rozwoju.</p>
+        <div class="card-actions">
+          <a class="apply" href="https://www.linkedin.com/jobs/view/4468776295/" target="_blank" rel="noopener">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="linkedin:4468776295" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tagrow">
+          <span>📍 Polska (zdalnie)</span>
+          <span>💰 widełki nieznane</span>
+          <span>🕒 zauważona: 28 września 2026</span>
+          <span>🔗 LinkedIn</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>Global Lead Project Manager (FSP), Poland (Remote)</h3>
+            <p class="company">Thermo Fisher Scientific</p>
+          </div>
+          <div class="score"><div class="score-n">76<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill good">🎯 idealnie dopasowane</span>
+        <p class="reason">Senior project management w Thermo Fisher (CRO/pharma) z opcją pełnego trybu zdalnego — spełnia kryterium lokalizacyjne z zapasem. Tytuł „Global Lead” sugeruje odpowiedzialność zbliżoną skalą do obecnej roli w AstraZeneca.</p>
+        <div class="card-actions">
+          <a class="apply" href="https://www.linkedin.com/jobs/view/4459278029/" target="_blank" rel="noopener">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="linkedin:4459278029" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tagrow">
+          <span>📍 Warszawa</span>
+          <span>💰 widełki nieznane</span>
+          <span>🕒 zauważona: 28 września 2026</span>
+          <span>🔗 LinkedIn</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>Head of Delivery Team (Engineering) | f/m/d</h3>
+            <p class="company">ERGO</p>
+          </div>
+          <div class="score"><div class="score-n">74<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill consider">👀 warto rozważyć</span>
+        <p class="reason">Tytuł „Head of Delivery” to trafienie w górną część preferencji toru CORE, ale branża to ubezpieczenia/engineering, nie pharma — mniej znane środowisko niż jej dotychczasowa sieć kontaktów. Tuż pod progiem 🎯 wyłącznie z powodu różnicy branżowej.</p>
+        <div class="card-actions">
+          <a class="apply" href="https://www.linkedin.com/jobs/view/4470698300/" target="_blank" rel="noopener">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="linkedin:4470698300" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tagrow">
+          <span>📍 Warszawa</span>
+          <span>💰 widełki nieznane</span>
+          <span>🕒 zauważona: 28 września 2026</span>
+          <span>🔗 LinkedIn</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>Project Manager, MDRIM &amp; Document Mgmt.</h3>
+            <p class="company">Johnson &amp; Johnson MedTech</p>
+          </div>
+          <div class="score"><div class="score-n">72<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill consider">👀 warto rozważyć</span>
+        <p class="reason">MDRIM (Medical Device Regulatory Information Management) to obszar bezpośrednio powiązany z jej doświadczeniem regulacyjnym, w firmie MedTech. Sam tytuł „Project Manager” (bez „Senior”) sugeruje niższy poziom stanowiska niż jej obecna rola, stąd niepełny wynik.</p>
+        <div class="card-actions">
+          <a class="apply" href="https://www.linkedin.com/jobs/view/4468514283/" target="_blank" rel="noopener">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="linkedin:4468514283" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tagrow">
+          <span>📍 Polska</span>
+          <span>💰 widełki nieznane</span>
+          <span>🕒 zauważona: 28 września 2026</span>
+          <span>🔗 LinkedIn</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>Project Manager - Early Development Services</h3>
+            <p class="company">Thermo Fisher Scientific</p>
+          </div>
+          <div class="score"><div class="score-n">70<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill consider">👀 warto rozważyć</span>
+        <p class="reason">Pharma/CRO — zgodna branża, ale tytuł „Project Manager” bez przedrostka senior/lead sugeruje niższy poziom stanowiska niż jej obecna rola. Lokalizacja podana ogólnie jako „Poland”, bez doprecyzowania miasta.</p>
+        <div class="card-actions">
+          <a class="apply" href="https://www.linkedin.com/jobs/view/4468988058/" target="_blank" rel="noopener">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="linkedin:4468988058" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tagrow">
+          <span>📍 Warszawa</span>
+          <span>💰 widełki nieznane</span>
+          <span>🕒 zauważona: 28 września 2026</span>
+          <span>🔗 LinkedIn</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>Senior Project Manager - Clinical Trials</h3>
+            <p class="company">Precision For Medicine</p>
+          </div>
+          <div class="score"><div class="score-n">70<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill consider">👀 warto rozważyć</span>
+        <p class="reason">Senior PM w CRO prowadzącym badania kliniczne — zgodna branża i poziom senioralności. Skupienie na Clinical Trials to węższa specjalizacja niż jej obecny, szeroki zakres delivery/automatyzacji.</p>
+        <div class="card-actions">
+          <a class="apply" href="https://www.linkedin.com/jobs/view/4375332937/" target="_blank" rel="noopener">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="linkedin:4375332937" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tagrow">
+          <span>📍 Kraków</span>
+          <span>💰 widełki nieznane</span>
+          <span>🕒 zauważona: 28 września 2026</span>
+          <span>🔗 LinkedIn</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>Senior Project Manager</h3>
+            <p class="company">TalentHawk</p>
+          </div>
+          <div class="score"><div class="score-n">68<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill consider">👀 warto rozważyć</span>
+        <p class="reason">TalentHawk to agencja rekrutacyjna — nieznana firma docelowa, branża niesprecyzowana w ogłoszeniu. Kraków zamiast Warszawy oznacza potencjalną relokację lub pracę zdalną (nieprecyzowane w mailu).</p>
+        <div class="card-actions">
+          <a class="apply" href="https://www.linkedin.com/jobs/view/4469011272/" target="_blank" rel="noopener">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="linkedin:4469011272" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tagrow">
+          <span>📍 Warszawa</span>
+          <span>💰 widełki nieznane</span>
+          <span>🕒 zauważona: 28 września 2026</span>
+          <span>🔗 LinkedIn</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>Solution Delivery Competence Leader</h3>
+            <p class="company">DOU Polska</p>
+          </div>
+          <div class="score"><div class="score-n">66<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill consider">👀 warto rozważyć</span>
+        <p class="reason">Tytuł zawiera „Delivery” i „Leader” — dobrze zgodny kierunkowo, ale DOU Polska to mniej rozpoznawalna firma o niejasnej branży. Warszawa zgodna z preferencją lokalizacyjną.</p>
+        <div class="card-actions">
+          <a class="apply" href="https://www.linkedin.com/jobs/view/4469317570/" target="_blank" rel="noopener">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="linkedin:4469317570" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tagrow">
+          <span>📍 Warszawa</span>
+          <span>💰 widełki nieznane</span>
+          <span>🕒 zauważona: 28 września 2026</span>
+          <span>🔗 LinkedIn</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>Senior Manager, Insights &amp; Innovation (I&amp;I) – Trial Analytics, Insights &amp; Planning (TAIP)</h3>
+            <p class="company">Bristol Myers Squibb</p>
+          </div>
+          <div class="score"><div class="score-n">65<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill consider">👀 warto rozważyć</span>
+        <p class="reason">Pharma (BMS), poziom senior manager zgodny z jej obecnym, ale obszar Insights &amp; Innovation/Trial Analytics jest bliżej analityki danych niż klasycznego delivery/PM — częściowe dopasowanie kompetencyjne.</p>
+        <div class="card-actions">
+          <a class="apply" href="https://www.linkedin.com/jobs/view/4472246789/" target="_blank" rel="noopener">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="linkedin:4472246789" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tagrow">
+          <span>📍 Kraków</span>
+          <span>💰 widełki nieznane</span>
+          <span>🕒 zauważona: 28 września 2026</span>
+          <span>🔗 LinkedIn</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>Fund Order Services Project Team Manager, Vice President</h3>
+            <p class="company">State Street</p>
+          </div>
+          <div class="score"><div class="score-n">65<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill consider">👀 warto rozważyć</span>
+        <p class="reason">Project management na poziomie VP, ale branża finansowa (fundusze inwestycyjne) zamiast pharma, i lokalizacja Kraków zamiast Warszawy. Tytuł sugeruje realny zakres zarządzania zespołem projektowym.</p>
+        <div class="card-actions">
+          <a class="apply" href="https://www.linkedin.com/jobs/view/4470413714/" target="_blank" rel="noopener">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="linkedin:4470413714" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tagrow">
+          <span>📍 Warszawa</span>
+          <span>💰 widełki nieznane</span>
+          <span>🕒 zauważona: 28 września 2026</span>
+          <span>🔗 LinkedIn</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>Case Processing Manager, Team Lead (PV Manager)</h3>
+            <p class="company">PrimeVigilance</p>
+          </div>
+          <div class="score"><div class="score-n">60<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill consider">👀 warto rozważyć</span>
+        <p class="reason">Pharmakowigilancja (PV) to obszar pokrewny doświadczeniu regulacyjnemu Joanny, ale rola jest bardziej operacyjna/proceduralna niż delivery/automatyzacja portfolio. Warszawa — zgodna lokalizacja.</p>
+        <div class="card-actions">
+          <a class="apply" href="https://www.linkedin.com/jobs/view/4467630210/" target="_blank" rel="noopener">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="linkedin:4467630210" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tagrow">
+          <span>📍 Warszawa</span>
+          <span>💰 widełki nieznane</span>
+          <span>🕒 zauważona: 28 września 2026</span>
+          <span>🔗 LinkedIn</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>Manager, Insights &amp; Innovation (I&amp;I) – Trial Analytics, Insights &amp; Planning (TAIP)</h3>
+            <p class="company">Bristol Myers Squibb</p>
+          </div>
+          <div class="score"><div class="score-n">58<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill consider">👀 warto rozważyć</span>
+        <p class="reason">Ta sama rodzina stanowisk co pozycja Senior Manager I&amp;I TAIP powyżej (prawdopodobnie inny poziom tego samego zespołu w BMS) — niższy tytuł „Manager” sugeruje mniejszy zakres odpowiedzialności niż jej obecna rola.</p>
+        <div class="card-actions">
+          <a class="apply" href="https://www.linkedin.com/jobs/view/4471621924/" target="_blank" rel="noopener">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="linkedin:4471621924" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tagrow">
+          <span>📍 Warszawa</span>
+          <span>💰 widełki nieznane</span>
+          <span>🕒 zauważona: 28 września 2026</span>
+          <span>🔗 LinkedIn</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>Launch Manager - Execution Framework</h3>
+            <p class="company">Appfire</p>
+          </div>
+          <div class="score"><div class="score-n">56<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill consider">👀 warto rozważyć</span>
+        <p class="reason">Tytuł „Launch Manager” jest funkcjonalnie zbliżony do program/delivery managementu, ale Appfire to mała firma software’owa, nie pharma — nieznane środowisko i skala organizacji.</p>
+        <div class="card-actions">
+          <a class="apply" href="https://www.linkedin.com/jobs/view/4471885834/" target="_blank" rel="noopener">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="linkedin:4471885834" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tagrow">
+          <span>📍 Warszawa</span>
+          <span>💰 widełki nieznane</span>
+          <span>🕒 zauważona: 28 września 2026</span>
+          <span>🔗 LinkedIn</span>
+        </div>
+        <div class="card-top">
+          <div>
+            <h3>Project Manager - Warszawa (Mazowieckie), Polska K/M</h3>
+            <p class="company">Astek</p>
+          </div>
+          <div class="score"><div class="score-n">55<span>/100</span></div><div class="score-l">Fit score</div></div>
+        </div>
+        <span class="pill consider">👀 warto rozważyć</span>
+        <p class="reason">Ogłoszenie agencyjne (Astek to firma konsultingowo-staffingowa) bez wskazania branży klienta końcowego ani poziomu senioralności — generyczny tytuł PM, tuż nad progiem odrzucenia.</p>
+        <div class="card-actions">
+          <a class="apply" href="https://www.linkedin.com/jobs/view/4470159992/" target="_blank" rel="noopener">Zobacz ofertę →</a>
+          <button type="button" class="cv-btn" data-job-id="linkedin:4470159992" onclick="openCvPreview(this)">📎 Podgląd CV</button>
         </div>
       </div>
     </div>
@@ -645,32 +959,11 @@
     </div>
     <p class="track-desc">Rozszerzenie automatyzacji w stronę AI adoption — dowożenie
       wdrożeń, nie budowa modeli.</p>
-    <div class="track-stats"><span><b>1</b>🎯</span><span><b>0</b>👀</span><span><b>0</b>przeanalizowane</span></div>
-    <div class="card-list">
-      <div class="card" data-example="true">
-        <div class="tagrow">
-          <span>📍 Zdalnie / Warszawa</span>
-          <span>💰 widełki nieznane</span>
-          <span>🔗 LinkedIn</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>AI Transformation Manager</h3>
-            <p class="company">międzynarodowy koncern farmaceutyczny (przykład)</p>
-          </div>
-          <div class="score"><div class="score-n">79<span>/100</span></div><div class="score-l">Fit score</div></div>
-        </div>
-        <span class="pill good">🎯 idealnie dopasowane</span>
-        <p class="reason">Dokładnie ten sam zestaw kompetencji co w RPA (delivery governance,
-          zarządzanie zespołem, stakeholder management), przeniesiony na obszar AI adoption.
-          Nie wymaga hands-on data science — dokładnie tak, jak ustalone w profilu.
-          Branża pharma, zgodna z jej doświadczeniem.</p>
-        <div class="card-actions">
-          <a class="apply" href="#" onclick="return false;">Zobacz ofertę →</a>
-          <button type="button" class="cv-btn" data-job-id="example:ai-1" onclick="openCvPreview(this)">📎 Podgląd CV</button>
-        </div>
-      </div>
-    </div>
+    <div class="track-stats"><span><b>0</b>🎯</span><span><b>0</b>👀</span><span><b>0</b>przeanalizowane</span></div>
+    <div class="empty-track">Żaden z alertów sprawdzonych w tym uruchomieniu nie był
+      ukierunkowany na tor AI (Joanna ma jak dotąd alerty na role delivery/PM oraz
+      moda/trend) — brak ofert do oceny. Warto rozważyć założenie osobnego alertu
+      LinkedIn na tytuły z tego toru (patrz `profile.md`).</div>
   </section>
 
   <section class="track" data-track="moda">
@@ -682,68 +975,37 @@
     </div>
     <p class="track-desc">Marzenie o branży modowej — mostek operacyjny (3a, osiągalny
       od zaraz) i czyste role projektowe (3b, cel odległy).</p>
-    <div class="track-stats"><span><b>1</b>🎯</span><span><b>1</b>👀</span><span><b>0</b>przeanalizowane</span></div>
-    <div class="card-list">
-      <div class="card" data-example="true">
-        <div class="tagrow">
-          <span class="sub-badge">3a · mostek</span>
-          <span>📍 Warszawa</span>
-          <span>💰 widełki nieznane</span>
-          <span>🔗 pracuj.pl</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>Fashion Operations Manager</h3>
-            <p class="company">polski dom mody (przykład)</p>
-          </div>
-          <div class="score"><div class="score-n">77<span>/100</span></div><div class="score-l">Fit score</div></div>
-        </div>
-        <span class="pill good">🎯 idealnie dopasowane</span>
-        <p class="reason">To nie jest skok kompetencyjny, tylko zmiana branży: te same
-          umiejętności delivery/operacyjne co w torze CORE, przeniesione do domu mody.
-          Wysoki fit score mimo braku wykształcenia projektowego, bo rola nie wymaga
-          projektowania — wymaga dowożenia operacji.</p>
-        <div class="card-actions">
-          <a class="apply" href="#" onclick="return false;">Zobacz ofertę →</a>
-          <button type="button" class="cv-btn" data-job-id="example:moda-1" onclick="openCvPreview(this)">📎 Podgląd CV</button>
-        </div>
-      </div>
-      <div class="card" data-example="true">
-        <div class="tagrow">
-          <span class="sub-badge">3b · marzenie</span>
-          <span>📍 Warszawa / zdalnie</span>
-          <span>💰 widełki nieznane</span>
-          <span>🔗 LinkedIn</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>Trend Researcher</h3>
-            <p class="company">agencja prognozowania trendów (przykład)</p>
-          </div>
-          <div class="score"><div class="score-n">61<span>/100</span></div><div class="score-l">Fit score</div></div>
-        </div>
-        <span class="pill consider">👀 warto rozważyć</span>
-        <p class="caveat">⚠ Wymaga portfolio/wykształcenia projektowego — nie potwierdzone
-          w profilu Joanny. Obniża score, ale nie dyskwalifikuje automatycznie.</p>
-        <p class="reason">Rola bliżej researchu i analizy niż czystego projektowania — mniej
-          zależna od portfolio niż stanowisko designerskie sensu stricto. Warto rozważyć
-          jako pierwszy krok w stronę mody, ale ogłoszenie nie precyzuje wymagań
-          wykształceniowych, więc realna szansa jest niepewna.</p>
-        <div class="card-actions">
-          <a class="apply" href="#" onclick="return false;">Zobacz ofertę →</a>
-          <button type="button" class="cv-btn" data-job-id="example:moda-2" onclick="openCvPreview(this)">📎 Podgląd CV</button>
-        </div>
-      </div>
-    </div>
+    <div class="track-stats"><span><b>0</b>🎯</span><span><b>0</b>👀</span><span><b>9</b>przeanalizowane</span></div>
+    <div class="empty-track">Alerty „Fashion Stylist” i „Trend Researcher” zwróciły w
+      tym uruchomieniu wyłącznie role sklepowe/juniorskie (doradca klienta, visual
+      merchandiser) lub analityczne niezwiązane z modą — żadna nie osiągnęła progu
+      55/100 (patrz archiwum niżej). Żadna nie pasuje ani do 3a (mostek operacyjny w
+      firmie modowej), ani do 3b (rola projektowa) na jej poziomie senioralności.</div>
   </section>
 
   <details class="archive">
-    <summary>Pominięte przez pipeline (0 ofert, fit score &lt; 55)</summary>
-    <div class="archive-body">Pipeline jeszcze nie uruchomiony na prawdziwych danych — ta
-      sekcja wypełni się po podłączeniu skrzynki Joanny.</div>
+    <summary>Pominięte przez pipeline (16 ofert, fit score &lt; 55)</summary>
+    <div class="archive-body">
+<div>• <a href="https://www.linkedin.com/jobs/view/4471880515/" target="_blank" rel="noopener">Global Order &amp; Distribution Team Lead — LEO Pharma</a> (Gdańsk, 45/100) — [CORE] Pharma, ale rola dot. dystrybucji/łańcucha dostaw, nie delivery/PM; Gdańsk bez wskazanej opcji zdalnej.</div>
+<div>• <a href="https://www.linkedin.com/jobs/view/4458705987/" target="_blank" rel="noopener">TECHNICAL DIRECTOR- PROJECT MANAGER — KALE Recruitment</a> (Polska, 50/100) — [CORE] Ogłoszenie agencyjne, niejasny zakres (dyrektor techniczny + PM); branża i lokalizacja nieokreślone.</div>
+<div>• <a href="https://www.linkedin.com/jobs/view/4469957276/" target="_blank" rel="noopener">Senior Director, Microsoft 365 Platforms &amp; Strategy — BeOne Medicines</a> (Warszawa, 48/100) — [CORE] Pharma, ale rola typowo IT-infrastrukturalna (Microsoft 365), nie delivery/automatyzacja.</div>
+<div>• <a href="https://www.linkedin.com/jobs/view/4471675003/" target="_blank" rel="noopener">Global Install Project Manager — GE HealthCare</a> (Kraków, 40/100) — [CORE] PM, ale dot. instalacji technicznych urządzeń medycznych — inny profil kompetencyjny niż delivery/automatyzacja procesowa.</div>
+<div>• <a href="https://www.linkedin.com/jobs/view/4469624558/" target="_blank" rel="noopener">Director, gTech Ads Solutions, YouTube+ COE — Google</a> (Warszawa, 30/100) — [CORE] Rola z obszaru reklamy/ads, poza zakresem kompetencji i profilu kandydatki.</div>
+<div>• <a href="https://www.linkedin.com/jobs/view/4461784066/" target="_blank" rel="noopener">Shift Lead — Sandoz Polska</a> (Warszawa, 15/100) — [CORE] Rola operacyjna niskiego szczebla (kierownik zmiany), znacznie poniżej poziomu seniority.</div>
+<div>• <a href="https://www.linkedin.com/jobs/view/4468777241/" target="_blank" rel="noopener">National Sales Manager — AstraZeneca</a> (Warszawa, 10/100) — [CORE] Rola sprzedażowa bez elementu delivery — dealbreaker wg profilu.</div>
+<div>• <a href="https://www.linkedin.com/jobs/view/4472083423/" target="_blank" rel="noopener">Specjalistka / Specjalista ds. Analizy Produktów i Składników — Praca.pl</a> (Warszawa, 25/100) — [MODA] Rola analityczna dot. składników produktowych, nie mody/trendów; niejasny poziom senioralności.</div>
+<div>• <a href="https://www.linkedin.com/jobs/view/4469858013/" target="_blank" rel="noopener">Visual Merchandiser 40h — COS</a> (Warszawa, 20/100) — [MODA] Rola sklepowa (visual merchandising), znacznie poniżej poziomu senior manager; brak elementu operacyjnego/zarządczego.</div>
+<div>• <a href="https://www.linkedin.com/jobs/view/4470275871/" target="_blank" rel="noopener">COS Visual Merchandiser 40h — BoF Careers</a> (Warszawa, 20/100) — [MODA] Duplikat profilu roli sklepowej co wyżej (inny agregator ogłoszeń).</div>
+<div>• <a href="https://www.linkedin.com/jobs/view/4470608636/" target="_blank" rel="noopener">Research &amp; Insights Specialist | Mid-Senior | B2B Team — Nord Security</a> (Polska, 20/100) — [MODA] Research rynkowy w firmie cyberbezpieczeństwa, nie mody; rola specjalisty, nie managerska.</div>
+<div>• <a href="https://www.linkedin.com/jobs/view/4461585173/" target="_blank" rel="noopener">Dekorator / Dekoratorka - Visual Merchandiser — H&amp;M</a> (Częstochowa, 15/100) — [MODA] Rola sklepowa/dekoratorska, poza Warszawą, znaczne niedopasowanie poziomu.</div>
+<div>• <a href="https://www.linkedin.com/jobs/view/4469944345/" target="_blank" rel="noopener">Research &amp; Insights Analyst F/M (Advanced Quant &amp; Data Integration) — Lyreco Group</a> (Gdańsk, 15/100) — [MODA] Rola analityka (junior/mid), poza Warszawą, brak związku z modą.</div>
+<div>• <a href="https://www.linkedin.com/jobs/view/4469017382/" target="_blank" rel="noopener">Market Research Specialist (Evidence Lab) — UBS</a> (Kraków, 15/100) — [MODA] Research rynkowy w banku, nie mody; rola specjalisty w Krakowie.</div>
+<div>• <a href="https://www.linkedin.com/jobs/view/4469604522/" target="_blank" rel="noopener">Doradca Klienta (m/k/n) Tommy Hilfiger Piaseczno Designer Outlet — PVH Corp.</a> (Piaseczno, 10/100) — [MODA] Stanowisko sprzedawcy w outlecie — rola juniorska, duże niedopasowanie poziomu.</div>
+<div>• <a href="https://www.linkedin.com/jobs/view/4469615169/" target="_blank" rel="noopener">Doradca Klienta (m/k/n) Calvin Klein Piaseczno Designer Outlet — PVH Corp.</a> (Piaseczno, 10/100) — [MODA] Jak wyżej — sprzedaż w outlecie, rola juniorska.</div>
+    </div>
   </details>
 
-  <footer>The Edit · dossier zawodowy · Joanna Fijał · aktualizacja: 27 września 2026, 22:15</footer>
+  <footer>The Edit · dossier zawodowy · Joanna Fijał · aktualizacja: 28 września 2026, 20:10</footer>
 </div>
 
 <div class="cv-modal-backdrop" id="cv-modal-backdrop" hidden>
@@ -762,12 +1024,7 @@
 </div>
 
 <script type="application/json" id="cv-data">
-{
-  "example:core-1": { "cv": { "candidate": "Joanna Fijał", "contact": { "phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838" }, "targetRoleNote": "CV dostosowane pod ofertę: Head of Automation (przykład, tor CORE)", "about": "10 lat w projektach IT, 15 lat w branży farmaceutycznej. Strategiczna, zorientowana na wyniki liderka automatyzacji. Udokumentowane doświadczenie w prowadzeniu globalnych zespołów, zarządzaniu złożonymi portfolio automatyzacji i dostarczaniu inicjatyw transformacji cyfrowej z użyciem RPA, MS Power Platform i technologii low-code/no-code.", "skills": ["Przywództwo w automatyzacji: portfolio RPA, MS Power Platform i Process Mining na poziomie globalnym", "Zarządzanie dostawą (delivery governance): raportowanie, mitygacja ryzyka, zgodność z celami biznesowymi", "Zarządzanie rozproszonymi zespołami wysokiej wydajności (hybrid/remote)", "Ciągłe doskonalenie w metodyce Agile", "Partnerstwo z liderami biznesowymi przy priorytetyzacji inicjatyw automatyzacji", "Zbieranie wymagań, projektowanie rozwiązań, testy, change management"], "experience": [ { "company": "AstraZeneca", "roles": [ {"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"}, {"title": "RPA Senior Process Analyst", "dates": "gru 2021–wrz 2023"} ], "bullets": ["Prowadzenie strategicznych inicjatyw automatyzacji w wielu jednostkach biznesowych, nadzór nad pipeline'em i dostawą RPA/Power Platform/Process Mining", "Zapewnianie delivery governance, mitygacji ryzyka i zgodności z celami biznesowymi", "Zarządzanie globalnie rozproszonymi zespołami w trybie hybrydowym i wirtualnym", "Uznana w ocenach 360° za empatyczny i wzmacniający styl przywództwa"] }, { "company": "AstraZeneca — Clinical Operations Enablement Lead", "roles": [ {"title": "Clinical Operations Enablement Lead", "dates": "gru 2016–cze 2020"} ], "bullets": ["Przywództwo i zarządzanie cyklem życia systemu IRT", "Koordynacja zespołu ekspertów odpowiedzialnych za deliverables regulacyjne"] } ], "education": ["SGH Warsaw School of Economics — studia podyplomowe, kompetencje psychologiczne i negocjacyjne", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Rosyjski — podstawowy", "Regulatory Affairs, GCP (potwierdzone)"], "references": ["(do uzupełnienia)"] } },
-  "example:ai-1": { "cv": { "candidate": "Joanna Fijał", "contact": { "phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838" }, "targetRoleNote": "CV dostosowane pod ofertę: AI Transformation Manager (przykład, tor AI)", "about": "Liderka automatyzacji i transformacji cyfrowej z 12+ latami w AstraZeneca. Prowadzi wdrożenia RPA/Power Platform/Process Mining z pełną odpowiedzialnością za delivery governance — dokładnie ten sam zakres kompetencji, który dziś napędza wdrożenia AI adoption w dużych organizacjach: zarządzanie portfolio, zespołem i interesariuszami, nie hands-on modelowanie.", "skills": ["Przywództwo w automatyzacji i transformacji cyfrowej", "Delivery governance i zarządzanie ryzykiem programów technologicznych", "Zarządzanie globalnie rozproszonymi zespołami", "Partnerstwo ze stakeholderami biznesowymi i IT przy priorytetyzacji inicjatyw", "Agile ways of working", "Change management i redesign procesów"], "experience": [ { "company": "AstraZeneca", "roles": [ {"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"} ], "bullets": ["Prowadzenie strategicznych inicjatyw automatyzacji, nadzór nad pipeline'em możliwości i dostawą rozwiązań", "Delivery governance i mitygacja ryzyka poprzez ustrukturyzowane raportowanie", "Zarządzanie zespołami wysokiej wydajności w trybie hybrydowym"] } ], "education": ["SGH Warsaw School of Economics — studia podyplomowe", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "RPA, MS Power Platform, Process Mining"], "references": ["(do uzupełnienia)"] } },
-  "example:moda-1": { "cv": { "candidate": "Joanna Fijał", "contact": { "phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838" }, "targetRoleNote": "CV dostosowane pod ofertę: Fashion Operations Manager (przykład, tor MODA 3a)", "about": "Liderka delivery i operacji z 12+ latami doświadczenia w prowadzeniu złożonych, globalnie rozproszonych zespołów i programów transformacyjnych. Doświadczenie w zarządzaniu dostawą, governance i ciągłym doskonaleniu procesów — kompetencje w pełni transferowalne do operacji w domu mody, niezależnie od branży, z której pochodzą.", "skills": ["Zarządzanie dostawą i operacjami: governance, raportowanie, mitygacja ryzyka", "Prowadzenie zespołów wysokiej wydajności w trybie hybrydowym/zdalnym", "Ciągłe doskonalenie procesów (Agile, continuous improvement)", "Partnerstwo z interesariuszami biznesowymi przy priorytetyzacji inicjatyw", "Zarządzanie zmianą i redesign procesów operacyjnych"], "experience": [ { "company": "AstraZeneca", "roles": [ {"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"} ], "bullets": ["Nadzór nad pipeline'em możliwości i dostawą rozwiązań w wielu jednostkach biznesowych", "Delivery governance i zgodność z celami biznesowymi poprzez ustrukturyzowane raportowanie", "Zarządzanie globalnie rozproszonymi zespołami"] } ], "education": ["SGH Warsaw School of Economics — studia podyplomowe", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1"], "references": ["(do uzupełnienia)"] } },
-  "example:moda-2": { "cv": { "candidate": "Joanna Fijał", "contact": { "phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838" }, "targetRoleNote": "CV dostosowane pod ofertę: Trend Researcher (przykład, tor MODA 3b) — UWAGA: prezentuje kompetencje transferowalne (analiza, delivery), nie portfolio projektowe, którego Joanna jeszcze nie potwierdziła.", "about": "Analityczka i liderka delivery z doświadczeniem w rozpoznawaniu wzorców, ocenie procesów i strukturyzowanym raportowaniu na poziomie globalnym. Zainteresowana przeniesieniem tych kompetencji analitycznych w stronę researchu trendów w branży modowej.", "skills": ["Analiza procesów i identyfikacja wzorców na dużą skalę (portfolio automatyzacji)", "Ustrukturyzowane raportowanie i synteza informacji dla interesariuszy", "Praca w metodyce Agile — iteracyjne testowanie hipotez", "Zarządzanie projektami badawczymi/wdrożeniowymi od koncepcji do dostawy"], "experience": [ { "company": "AstraZeneca", "roles": [ {"title": "RPA Senior Process Analyst", "dates": "gru 2021–wrz 2023"} ], "bullets": ["Identyfikacja i ocena możliwości automatyzacji na bazie analizy procesów biznesowych", "Zbieranie wymagań i projektowanie rozwiązań we współpracy z SME", "Prowadzenie testów i zarządzania zmianą"] } ], "education": ["SGH Warsaw School of Economics — studia podyplomowe", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Brak potwierdzonego portfolio/wykształcenia projektowego — do uzupełnienia, jeśli Joanna chce realnie celować w role designerskie"], "references": ["(do uzupełnienia)"] } }
-}
+{"linkedin:4468989341": {"cv": {"candidate": "Joanna Fijał", "contact": {"phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838"}, "targetRoleNote": "CV dostosowane pod ofertę: Senior Project Manager - Pharma and Regulatory Affairs (f/m/x) (Sii Poland)", "about": "10 lat w projektach IT, 15 lat w branży farmaceutycznej — z czego pierwsze lata kariery w rejestracji produktów leczniczych (Regulatory Affairs). Łączy doświadczenie regulacyjne z późniejszą rolą delivery/automatyzacji: rozumie zarówno wymogi zgodności, jak i zarządzanie dostawą złożonych programów.", "skills": ["Regulatory Affairs: rejestracja produktów leczniczych, procedury MRP/DCP, współpraca z organami UE/EFTA", "GCP (Good Clinical Practice)", "Zarządzanie dostawą (delivery governance) i zgodność z celami biznesowymi", "Zarządzanie globalnie rozproszonymi zespołami", "Partnerstwo ze stakeholderami biznesowymi, IT i SME", "Change management i redesign procesów"], "experience": [{"company": "The Office for Registration of Medicinal Products, Medical Devices and Biocidal Products", "roles": [{"title": "Regulatory Affairs Specialist", "dates": "mar 2010–maj 2014"}], "bullets": ["Rejestracja produktów leczniczych, procedury MRP/DCP", "Współpraca z organami regulacyjnymi UE/EFTA"]}, {"company": "AstraZeneca", "roles": [{"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"}], "bullets": ["Nadzór nad pipeline'em możliwości i dostawą rozwiązań w wielu jednostkach biznesowych", "Delivery governance i zgodność z celami biznesowymi poprzez ustrukturyzowane raportowanie", "Zarządzanie globalnie rozproszonymi zespołami"]}], "education": ["SGH Warsaw School of Economics — studia podyplomowe, kompetencje psychologiczne i negocjacyjne", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Rosyjski — podstawowy", "Regulatory Affairs, GCP (potwierdzone na LinkedIn)"], "references": ["(do uzupełnienia)"]}}, "linkedin:4470404302": {"cv": {"candidate": "Joanna Fijał", "contact": {"phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838"}, "targetRoleNote": "CV dostosowane pod ofertę: Delivery Manager (FABRITY)", "about": "10 lat w projektach IT, 15 lat w branży farmaceutycznej. Liderka delivery i automatyzacji z udokumentowanym doświadczeniem w prowadzeniu globalnych zespołów, zarządzaniu złożonymi portfolio automatyzacji (RPA/MS Power Platform/Process Mining) i dostarczaniu inicjatyw transformacji cyfrowej zgodnie z governance i celami biznesowymi.", "skills": ["Zarządzanie dostawą (delivery governance): raportowanie, mitygacja ryzyka, zgodność z celami biznesowymi", "Przywództwo w automatyzacji: portfolio RPA, MS Power Platform i Process Mining na poziomie globalnym", "Zarządzanie rozproszonymi zespołami wysokiej wydajności (hybrid/remote)", "Agile ways of working i ciągłe doskonalenie procesów", "Partnerstwo z liderami biznesowymi przy priorytetyzacji inicjatyw", "Zbieranie wymagań, projektowanie rozwiązań, testy, change management"], "experience": [{"company": "AstraZeneca", "roles": [{"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"}, {"title": "RPA Senior Process Analyst", "dates": "gru 2021–wrz 2023"}], "bullets": ["Prowadzenie strategicznych inicjatyw automatyzacji w wielu jednostkach biznesowych, nadzór nad pipeline'em i dostawą RPA/Power Platform/Process Mining", "Zapewnianie delivery governance, mitygacji ryzyka i zgodności z celami biznesowymi", "Zarządzanie globalnie rozproszonymi zespołami w trybie hybrydowym i wirtualnym", "Uznana w ocenach 360° za empatyczny i wzmacniający styl przywództwa"]}, {"company": "AstraZeneca", "roles": [{"title": "Clinical Operations Enablement Lead", "dates": "gru 2016–cze 2020"}], "bullets": ["Przywództwo i zarządzanie cyklem życia systemu IRT", "Koordynacja zespołu ekspertów odpowiedzialnych za deliverables regulacyjne"]}], "education": ["SGH Warsaw School of Economics — studia podyplomowe, kompetencje psychologiczne i negocjacyjne", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Rosyjski — podstawowy"], "references": ["(do uzupełnienia)"]}}, "linkedin:4468776295": {"cv": {"candidate": "Joanna Fijał", "contact": {"phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838"}, "targetRoleNote": "CV dostosowane pod ofertę: Regulatory Manager / Senior Regulatory Manager (Precision Medicine Group)", "about": "10 lat w projektach IT, 15 lat w branży farmaceutycznej — z czego pierwsze lata kariery w rejestracji produktów leczniczych (Regulatory Affairs). Łączy doświadczenie regulacyjne z późniejszą rolą delivery/automatyzacji: rozumie zarówno wymogi zgodności, jak i zarządzanie dostawą złożonych programów.", "skills": ["Regulatory Affairs: rejestracja produktów leczniczych, procedury MRP/DCP, współpraca z organami UE/EFTA", "GCP (Good Clinical Practice)", "Zarządzanie dostawą (delivery governance) i zgodność z celami biznesowymi", "Zarządzanie globalnie rozproszonymi zespołami", "Partnerstwo ze stakeholderami biznesowymi, IT i SME", "Change management i redesign procesów"], "experience": [{"company": "The Office for Registration of Medicinal Products, Medical Devices and Biocidal Products", "roles": [{"title": "Regulatory Affairs Specialist", "dates": "mar 2010–maj 2014"}], "bullets": ["Rejestracja produktów leczniczych, procedury MRP/DCP", "Współpraca z organami regulacyjnymi UE/EFTA"]}, {"company": "AstraZeneca", "roles": [{"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"}], "bullets": ["Nadzór nad pipeline'em możliwości i dostawą rozwiązań w wielu jednostkach biznesowych", "Delivery governance i zgodność z celami biznesowymi poprzez ustrukturyzowane raportowanie", "Zarządzanie globalnie rozproszonymi zespołami"]}], "education": ["SGH Warsaw School of Economics — studia podyplomowe, kompetencje psychologiczne i negocjacyjne", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Rosyjski — podstawowy", "Regulatory Affairs, GCP (potwierdzone na LinkedIn)"], "references": ["(do uzupełnienia)"]}}, "linkedin:4459278029": {"cv": {"candidate": "Joanna Fijał", "contact": {"phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838"}, "targetRoleNote": "CV dostosowane pod ofertę: Global Lead Project Manager (FSP), Poland (Remote) (Thermo Fisher Scientific)", "about": "10 lat w projektach IT, 15 lat w branży farmaceutycznej. Liderka delivery i automatyzacji z udokumentowanym doświadczeniem w prowadzeniu globalnych zespołów, zarządzaniu złożonymi portfolio automatyzacji (RPA/MS Power Platform/Process Mining) i dostarczaniu inicjatyw transformacji cyfrowej zgodnie z governance i celami biznesowymi.", "skills": ["Zarządzanie dostawą (delivery governance): raportowanie, mitygacja ryzyka, zgodność z celami biznesowymi", "Przywództwo w automatyzacji: portfolio RPA, MS Power Platform i Process Mining na poziomie globalnym", "Zarządzanie rozproszonymi zespołami wysokiej wydajności (hybrid/remote)", "Agile ways of working i ciągłe doskonalenie procesów", "Partnerstwo z liderami biznesowymi przy priorytetyzacji inicjatyw", "Zbieranie wymagań, projektowanie rozwiązań, testy, change management"], "experience": [{"company": "AstraZeneca", "roles": [{"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"}, {"title": "RPA Senior Process Analyst", "dates": "gru 2021–wrz 2023"}], "bullets": ["Prowadzenie strategicznych inicjatyw automatyzacji w wielu jednostkach biznesowych, nadzór nad pipeline'em i dostawą RPA/Power Platform/Process Mining", "Zapewnianie delivery governance, mitygacji ryzyka i zgodności z celami biznesowymi", "Zarządzanie globalnie rozproszonymi zespołami w trybie hybrydowym i wirtualnym", "Uznana w ocenach 360° za empatyczny i wzmacniający styl przywództwa"]}, {"company": "AstraZeneca", "roles": [{"title": "Clinical Operations Enablement Lead", "dates": "gru 2016–cze 2020"}], "bullets": ["Przywództwo i zarządzanie cyklem życia systemu IRT", "Koordynacja zespołu ekspertów odpowiedzialnych za deliverables regulacyjne"]}], "education": ["SGH Warsaw School of Economics — studia podyplomowe, kompetencje psychologiczne i negocjacyjne", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Rosyjski — podstawowy"], "references": ["(do uzupełnienia)"]}}, "linkedin:4470698300": {"cv": {"candidate": "Joanna Fijał", "contact": {"phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838"}, "targetRoleNote": "CV dostosowane pod ofertę: Head of Delivery Team (Engineering) | f/m/d (ERGO)", "about": "10 lat w projektach IT, 15 lat w branży farmaceutycznej. Liderka delivery i automatyzacji z udokumentowanym doświadczeniem w prowadzeniu globalnych zespołów, zarządzaniu złożonymi portfolio automatyzacji (RPA/MS Power Platform/Process Mining) i dostarczaniu inicjatyw transformacji cyfrowej zgodnie z governance i celami biznesowymi.", "skills": ["Zarządzanie dostawą (delivery governance): raportowanie, mitygacja ryzyka, zgodność z celami biznesowymi", "Przywództwo w automatyzacji: portfolio RPA, MS Power Platform i Process Mining na poziomie globalnym", "Zarządzanie rozproszonymi zespołami wysokiej wydajności (hybrid/remote)", "Agile ways of working i ciągłe doskonalenie procesów", "Partnerstwo z liderami biznesowymi przy priorytetyzacji inicjatyw", "Zbieranie wymagań, projektowanie rozwiązań, testy, change management"], "experience": [{"company": "AstraZeneca", "roles": [{"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"}, {"title": "RPA Senior Process Analyst", "dates": "gru 2021–wrz 2023"}], "bullets": ["Prowadzenie strategicznych inicjatyw automatyzacji w wielu jednostkach biznesowych, nadzór nad pipeline'em i dostawą RPA/Power Platform/Process Mining", "Zapewnianie delivery governance, mitygacji ryzyka i zgodności z celami biznesowymi", "Zarządzanie globalnie rozproszonymi zespołami w trybie hybrydowym i wirtualnym", "Uznana w ocenach 360° za empatyczny i wzmacniający styl przywództwa"]}, {"company": "AstraZeneca", "roles": [{"title": "Clinical Operations Enablement Lead", "dates": "gru 2016–cze 2020"}], "bullets": ["Przywództwo i zarządzanie cyklem życia systemu IRT", "Koordynacja zespołu ekspertów odpowiedzialnych za deliverables regulacyjne"]}], "education": ["SGH Warsaw School of Economics — studia podyplomowe, kompetencje psychologiczne i negocjacyjne", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Rosyjski — podstawowy"], "references": ["(do uzupełnienia)"]}}, "linkedin:4468514283": {"cv": {"candidate": "Joanna Fijał", "contact": {"phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838"}, "targetRoleNote": "CV dostosowane pod ofertę: Project Manager, MDRIM & Document Mgmt. (Johnson & Johnson MedTech)", "about": "10 lat w projektach IT, 15 lat w branży farmaceutycznej — z czego pierwsze lata kariery w rejestracji produktów leczniczych (Regulatory Affairs). Łączy doświadczenie regulacyjne z późniejszą rolą delivery/automatyzacji: rozumie zarówno wymogi zgodności, jak i zarządzanie dostawą złożonych programów.", "skills": ["Regulatory Affairs: rejestracja produktów leczniczych, procedury MRP/DCP, współpraca z organami UE/EFTA", "GCP (Good Clinical Practice)", "Zarządzanie dostawą (delivery governance) i zgodność z celami biznesowymi", "Zarządzanie globalnie rozproszonymi zespołami", "Partnerstwo ze stakeholderami biznesowymi, IT i SME", "Change management i redesign procesów"], "experience": [{"company": "The Office for Registration of Medicinal Products, Medical Devices and Biocidal Products", "roles": [{"title": "Regulatory Affairs Specialist", "dates": "mar 2010–maj 2014"}], "bullets": ["Rejestracja produktów leczniczych, procedury MRP/DCP", "Współpraca z organami regulacyjnymi UE/EFTA"]}, {"company": "AstraZeneca", "roles": [{"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"}], "bullets": ["Nadzór nad pipeline'em możliwości i dostawą rozwiązań w wielu jednostkach biznesowych", "Delivery governance i zgodność z celami biznesowymi poprzez ustrukturyzowane raportowanie", "Zarządzanie globalnie rozproszonymi zespołami"]}], "education": ["SGH Warsaw School of Economics — studia podyplomowe, kompetencje psychologiczne i negocjacyjne", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Rosyjski — podstawowy", "Regulatory Affairs, GCP (potwierdzone na LinkedIn)"], "references": ["(do uzupełnienia)"]}}, "linkedin:4468988058": {"cv": {"candidate": "Joanna Fijał", "contact": {"phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838"}, "targetRoleNote": "CV dostosowane pod ofertę: Project Manager - Early Development Services (Thermo Fisher Scientific)", "about": "10 lat w projektach IT, 15 lat w branży farmaceutycznej. Liderka delivery i automatyzacji z udokumentowanym doświadczeniem w prowadzeniu globalnych zespołów, zarządzaniu złożonymi portfolio automatyzacji (RPA/MS Power Platform/Process Mining) i dostarczaniu inicjatyw transformacji cyfrowej zgodnie z governance i celami biznesowymi.", "skills": ["Zarządzanie dostawą (delivery governance): raportowanie, mitygacja ryzyka, zgodność z celami biznesowymi", "Przywództwo w automatyzacji: portfolio RPA, MS Power Platform i Process Mining na poziomie globalnym", "Zarządzanie rozproszonymi zespołami wysokiej wydajności (hybrid/remote)", "Agile ways of working i ciągłe doskonalenie procesów", "Partnerstwo z liderami biznesowymi przy priorytetyzacji inicjatyw", "Zbieranie wymagań, projektowanie rozwiązań, testy, change management"], "experience": [{"company": "AstraZeneca", "roles": [{"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"}, {"title": "RPA Senior Process Analyst", "dates": "gru 2021–wrz 2023"}], "bullets": ["Prowadzenie strategicznych inicjatyw automatyzacji w wielu jednostkach biznesowych, nadzór nad pipeline'em i dostawą RPA/Power Platform/Process Mining", "Zapewnianie delivery governance, mitygacji ryzyka i zgodności z celami biznesowymi", "Zarządzanie globalnie rozproszonymi zespołami w trybie hybrydowym i wirtualnym", "Uznana w ocenach 360° za empatyczny i wzmacniający styl przywództwa"]}, {"company": "AstraZeneca", "roles": [{"title": "Clinical Operations Enablement Lead", "dates": "gru 2016–cze 2020"}], "bullets": ["Przywództwo i zarządzanie cyklem życia systemu IRT", "Koordynacja zespołu ekspertów odpowiedzialnych za deliverables regulacyjne"]}], "education": ["SGH Warsaw School of Economics — studia podyplomowe, kompetencje psychologiczne i negocjacyjne", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Rosyjski — podstawowy"], "references": ["(do uzupełnienia)"]}}, "linkedin:4375332937": {"cv": {"candidate": "Joanna Fijał", "contact": {"phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838"}, "targetRoleNote": "CV dostosowane pod ofertę: Senior Project Manager - Clinical Trials (Precision For Medicine)", "about": "10 lat w projektach IT, 15 lat w branży farmaceutycznej. Liderka delivery i automatyzacji z udokumentowanym doświadczeniem w prowadzeniu globalnych zespołów, zarządzaniu złożonymi portfolio automatyzacji (RPA/MS Power Platform/Process Mining) i dostarczaniu inicjatyw transformacji cyfrowej zgodnie z governance i celami biznesowymi.", "skills": ["Zarządzanie dostawą (delivery governance): raportowanie, mitygacja ryzyka, zgodność z celami biznesowymi", "Przywództwo w automatyzacji: portfolio RPA, MS Power Platform i Process Mining na poziomie globalnym", "Zarządzanie rozproszonymi zespołami wysokiej wydajności (hybrid/remote)", "Agile ways of working i ciągłe doskonalenie procesów", "Partnerstwo z liderami biznesowymi przy priorytetyzacji inicjatyw", "Zbieranie wymagań, projektowanie rozwiązań, testy, change management"], "experience": [{"company": "AstraZeneca", "roles": [{"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"}, {"title": "RPA Senior Process Analyst", "dates": "gru 2021–wrz 2023"}], "bullets": ["Prowadzenie strategicznych inicjatyw automatyzacji w wielu jednostkach biznesowych, nadzór nad pipeline'em i dostawą RPA/Power Platform/Process Mining", "Zapewnianie delivery governance, mitygacji ryzyka i zgodności z celami biznesowymi", "Zarządzanie globalnie rozproszonymi zespołami w trybie hybrydowym i wirtualnym", "Uznana w ocenach 360° za empatyczny i wzmacniający styl przywództwa"]}, {"company": "AstraZeneca", "roles": [{"title": "Clinical Operations Enablement Lead", "dates": "gru 2016–cze 2020"}], "bullets": ["Przywództwo i zarządzanie cyklem życia systemu IRT", "Koordynacja zespołu ekspertów odpowiedzialnych za deliverables regulacyjne"]}], "education": ["SGH Warsaw School of Economics — studia podyplomowe, kompetencje psychologiczne i negocjacyjne", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Rosyjski — podstawowy"], "references": ["(do uzupełnienia)"]}}, "linkedin:4469011272": {"cv": {"candidate": "Joanna Fijał", "contact": {"phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838"}, "targetRoleNote": "CV dostosowane pod ofertę: Senior Project Manager (TalentHawk)", "about": "10 lat w projektach IT, 15 lat w branży farmaceutycznej. Liderka delivery i automatyzacji z udokumentowanym doświadczeniem w prowadzeniu globalnych zespołów, zarządzaniu złożonymi portfolio automatyzacji (RPA/MS Power Platform/Process Mining) i dostarczaniu inicjatyw transformacji cyfrowej zgodnie z governance i celami biznesowymi.", "skills": ["Zarządzanie dostawą (delivery governance): raportowanie, mitygacja ryzyka, zgodność z celami biznesowymi", "Przywództwo w automatyzacji: portfolio RPA, MS Power Platform i Process Mining na poziomie globalnym", "Zarządzanie rozproszonymi zespołami wysokiej wydajności (hybrid/remote)", "Agile ways of working i ciągłe doskonalenie procesów", "Partnerstwo z liderami biznesowymi przy priorytetyzacji inicjatyw", "Zbieranie wymagań, projektowanie rozwiązań, testy, change management"], "experience": [{"company": "AstraZeneca", "roles": [{"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"}, {"title": "RPA Senior Process Analyst", "dates": "gru 2021–wrz 2023"}], "bullets": ["Prowadzenie strategicznych inicjatyw automatyzacji w wielu jednostkach biznesowych, nadzór nad pipeline'em i dostawą RPA/Power Platform/Process Mining", "Zapewnianie delivery governance, mitygacji ryzyka i zgodności z celami biznesowymi", "Zarządzanie globalnie rozproszonymi zespołami w trybie hybrydowym i wirtualnym", "Uznana w ocenach 360° za empatyczny i wzmacniający styl przywództwa"]}, {"company": "AstraZeneca", "roles": [{"title": "Clinical Operations Enablement Lead", "dates": "gru 2016–cze 2020"}], "bullets": ["Przywództwo i zarządzanie cyklem życia systemu IRT", "Koordynacja zespołu ekspertów odpowiedzialnych za deliverables regulacyjne"]}], "education": ["SGH Warsaw School of Economics — studia podyplomowe, kompetencje psychologiczne i negocjacyjne", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Rosyjski — podstawowy"], "references": ["(do uzupełnienia)"]}}, "linkedin:4469317570": {"cv": {"candidate": "Joanna Fijał", "contact": {"phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838"}, "targetRoleNote": "CV dostosowane pod ofertę: Solution Delivery Competence Leader (DOU Polska)", "about": "10 lat w projektach IT, 15 lat w branży farmaceutycznej. Liderka delivery i automatyzacji z udokumentowanym doświadczeniem w prowadzeniu globalnych zespołów, zarządzaniu złożonymi portfolio automatyzacji (RPA/MS Power Platform/Process Mining) i dostarczaniu inicjatyw transformacji cyfrowej zgodnie z governance i celami biznesowymi.", "skills": ["Zarządzanie dostawą (delivery governance): raportowanie, mitygacja ryzyka, zgodność z celami biznesowymi", "Przywództwo w automatyzacji: portfolio RPA, MS Power Platform i Process Mining na poziomie globalnym", "Zarządzanie rozproszonymi zespołami wysokiej wydajności (hybrid/remote)", "Agile ways of working i ciągłe doskonalenie procesów", "Partnerstwo z liderami biznesowymi przy priorytetyzacji inicjatyw", "Zbieranie wymagań, projektowanie rozwiązań, testy, change management"], "experience": [{"company": "AstraZeneca", "roles": [{"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"}, {"title": "RPA Senior Process Analyst", "dates": "gru 2021–wrz 2023"}], "bullets": ["Prowadzenie strategicznych inicjatyw automatyzacji w wielu jednostkach biznesowych, nadzór nad pipeline'em i dostawą RPA/Power Platform/Process Mining", "Zapewnianie delivery governance, mitygacji ryzyka i zgodności z celami biznesowymi", "Zarządzanie globalnie rozproszonymi zespołami w trybie hybrydowym i wirtualnym", "Uznana w ocenach 360° za empatyczny i wzmacniający styl przywództwa"]}, {"company": "AstraZeneca", "roles": [{"title": "Clinical Operations Enablement Lead", "dates": "gru 2016–cze 2020"}], "bullets": ["Przywództwo i zarządzanie cyklem życia systemu IRT", "Koordynacja zespołu ekspertów odpowiedzialnych za deliverables regulacyjne"]}], "education": ["SGH Warsaw School of Economics — studia podyplomowe, kompetencje psychologiczne i negocjacyjne", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Rosyjski — podstawowy"], "references": ["(do uzupełnienia)"]}}, "linkedin:4472246789": {"cv": {"candidate": "Joanna Fijał", "contact": {"phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838"}, "targetRoleNote": "CV dostosowane pod ofertę: Senior Manager, Insights & Innovation (I&I) – Trial Analytics, Insights & Planning (TAIP) (Bristol Myers Squibb)", "about": "10 lat w projektach IT, 15 lat w branży farmaceutycznej. Doświadczenie w analizie procesów i identyfikacji możliwości na dużą skalę (portfolio automatyzacji), połączone z zarządzaniem dostawą i governance — kompetencje przekładalne na obszary insights/analytics wspierające decyzje biznesowe.", "skills": ["Analiza procesów i identyfikacja wzorców/możliwości na dużą skalę", "Ustrukturyzowane raportowanie i synteza informacji dla interesariuszy", "Zarządzanie dostawą (delivery governance) i mitygacja ryzyka", "Praca w metodyce Agile — iteracyjne testowanie hipotez", "Zarządzanie globalnie rozproszonymi zespołami"], "experience": [{"company": "AstraZeneca", "roles": [{"title": "RPA Senior Process Analyst", "dates": "gru 2021–wrz 2023"}], "bullets": ["Identyfikacja i ocena możliwości automatyzacji na bazie analizy procesów biznesowych", "Zbieranie wymagań i projektowanie rozwiązań we współpracy z SME", "Prowadzenie testów i zarządzania zmianą"]}, {"company": "AstraZeneca", "roles": [{"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"}], "bullets": ["Nadzór nad pipeline'em możliwości i dostawą rozwiązań w wielu jednostkach biznesowych", "Delivery governance poprzez ustrukturyzowane raportowanie"]}], "education": ["SGH Warsaw School of Economics — studia podyplomowe, kompetencje psychologiczne i negocjacyjne", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Rosyjski — podstawowy"], "references": ["(do uzupełnienia)"]}}, "linkedin:4470413714": {"cv": {"candidate": "Joanna Fijał", "contact": {"phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838"}, "targetRoleNote": "CV dostosowane pod ofertę: Fund Order Services Project Team Manager, Vice President (State Street)", "about": "10 lat w projektach IT, 15 lat w branży farmaceutycznej. Liderka delivery i automatyzacji z udokumentowanym doświadczeniem w prowadzeniu globalnych zespołów, zarządzaniu złożonymi portfolio automatyzacji (RPA/MS Power Platform/Process Mining) i dostarczaniu inicjatyw transformacji cyfrowej zgodnie z governance i celami biznesowymi.", "skills": ["Zarządzanie dostawą (delivery governance): raportowanie, mitygacja ryzyka, zgodność z celami biznesowymi", "Przywództwo w automatyzacji: portfolio RPA, MS Power Platform i Process Mining na poziomie globalnym", "Zarządzanie rozproszonymi zespołami wysokiej wydajności (hybrid/remote)", "Agile ways of working i ciągłe doskonalenie procesów", "Partnerstwo z liderami biznesowymi przy priorytetyzacji inicjatyw", "Zbieranie wymagań, projektowanie rozwiązań, testy, change management"], "experience": [{"company": "AstraZeneca", "roles": [{"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"}, {"title": "RPA Senior Process Analyst", "dates": "gru 2021–wrz 2023"}], "bullets": ["Prowadzenie strategicznych inicjatyw automatyzacji w wielu jednostkach biznesowych, nadzór nad pipeline'em i dostawą RPA/Power Platform/Process Mining", "Zapewnianie delivery governance, mitygacji ryzyka i zgodności z celami biznesowymi", "Zarządzanie globalnie rozproszonymi zespołami w trybie hybrydowym i wirtualnym", "Uznana w ocenach 360° za empatyczny i wzmacniający styl przywództwa"]}, {"company": "AstraZeneca", "roles": [{"title": "Clinical Operations Enablement Lead", "dates": "gru 2016–cze 2020"}], "bullets": ["Przywództwo i zarządzanie cyklem życia systemu IRT", "Koordynacja zespołu ekspertów odpowiedzialnych za deliverables regulacyjne"]}], "education": ["SGH Warsaw School of Economics — studia podyplomowe, kompetencje psychologiczne i negocjacyjne", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Rosyjski — podstawowy"], "references": ["(do uzupełnienia)"]}}, "linkedin:4467630210": {"cv": {"candidate": "Joanna Fijał", "contact": {"phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838"}, "targetRoleNote": "CV dostosowane pod ofertę: Case Processing Manager, Team Lead (PV Manager) (PrimeVigilance)", "about": "10 lat w projektach IT, 15 lat w branży farmaceutycznej — z czego pierwsze lata kariery w rejestracji produktów leczniczych (Regulatory Affairs). Łączy doświadczenie regulacyjne z późniejszą rolą delivery/automatyzacji: rozumie zarówno wymogi zgodności, jak i zarządzanie dostawą złożonych programów.", "skills": ["Regulatory Affairs: rejestracja produktów leczniczych, procedury MRP/DCP, współpraca z organami UE/EFTA", "GCP (Good Clinical Practice)", "Zarządzanie dostawą (delivery governance) i zgodność z celami biznesowymi", "Zarządzanie globalnie rozproszonymi zespołami", "Partnerstwo ze stakeholderami biznesowymi, IT i SME", "Change management i redesign procesów"], "experience": [{"company": "The Office for Registration of Medicinal Products, Medical Devices and Biocidal Products", "roles": [{"title": "Regulatory Affairs Specialist", "dates": "mar 2010–maj 2014"}], "bullets": ["Rejestracja produktów leczniczych, procedury MRP/DCP", "Współpraca z organami regulacyjnymi UE/EFTA"]}, {"company": "AstraZeneca", "roles": [{"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"}], "bullets": ["Nadzór nad pipeline'em możliwości i dostawą rozwiązań w wielu jednostkach biznesowych", "Delivery governance i zgodność z celami biznesowymi poprzez ustrukturyzowane raportowanie", "Zarządzanie globalnie rozproszonymi zespołami"]}], "education": ["SGH Warsaw School of Economics — studia podyplomowe, kompetencje psychologiczne i negocjacyjne", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Rosyjski — podstawowy", "Regulatory Affairs, GCP (potwierdzone na LinkedIn)"], "references": ["(do uzupełnienia)"]}}, "linkedin:4471621924": {"cv": {"candidate": "Joanna Fijał", "contact": {"phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838"}, "targetRoleNote": "CV dostosowane pod ofertę: Manager, Insights & Innovation (I&I) – Trial Analytics, Insights & Planning (TAIP) (Bristol Myers Squibb)", "about": "10 lat w projektach IT, 15 lat w branży farmaceutycznej. Doświadczenie w analizie procesów i identyfikacji możliwości na dużą skalę (portfolio automatyzacji), połączone z zarządzaniem dostawą i governance — kompetencje przekładalne na obszary insights/analytics wspierające decyzje biznesowe.", "skills": ["Analiza procesów i identyfikacja wzorców/możliwości na dużą skalę", "Ustrukturyzowane raportowanie i synteza informacji dla interesariuszy", "Zarządzanie dostawą (delivery governance) i mitygacja ryzyka", "Praca w metodyce Agile — iteracyjne testowanie hipotez", "Zarządzanie globalnie rozproszonymi zespołami"], "experience": [{"company": "AstraZeneca", "roles": [{"title": "RPA Senior Process Analyst", "dates": "gru 2021–wrz 2023"}], "bullets": ["Identyfikacja i ocena możliwości automatyzacji na bazie analizy procesów biznesowych", "Zbieranie wymagań i projektowanie rozwiązań we współpracy z SME", "Prowadzenie testów i zarządzania zmianą"]}, {"company": "AstraZeneca", "roles": [{"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"}], "bullets": ["Nadzór nad pipeline'em możliwości i dostawą rozwiązań w wielu jednostkach biznesowych", "Delivery governance poprzez ustrukturyzowane raportowanie"]}], "education": ["SGH Warsaw School of Economics — studia podyplomowe, kompetencje psychologiczne i negocjacyjne", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Rosyjski — podstawowy"], "references": ["(do uzupełnienia)"]}}, "linkedin:4471885834": {"cv": {"candidate": "Joanna Fijał", "contact": {"phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838"}, "targetRoleNote": "CV dostosowane pod ofertę: Launch Manager - Execution Framework (Appfire)", "about": "10 lat w projektach IT, 15 lat w branży farmaceutycznej. Liderka delivery i automatyzacji z udokumentowanym doświadczeniem w prowadzeniu globalnych zespołów, zarządzaniu złożonymi portfolio automatyzacji (RPA/MS Power Platform/Process Mining) i dostarczaniu inicjatyw transformacji cyfrowej zgodnie z governance i celami biznesowymi.", "skills": ["Zarządzanie dostawą (delivery governance): raportowanie, mitygacja ryzyka, zgodność z celami biznesowymi", "Przywództwo w automatyzacji: portfolio RPA, MS Power Platform i Process Mining na poziomie globalnym", "Zarządzanie rozproszonymi zespołami wysokiej wydajności (hybrid/remote)", "Agile ways of working i ciągłe doskonalenie procesów", "Partnerstwo z liderami biznesowymi przy priorytetyzacji inicjatyw", "Zbieranie wymagań, projektowanie rozwiązań, testy, change management"], "experience": [{"company": "AstraZeneca", "roles": [{"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"}, {"title": "RPA Senior Process Analyst", "dates": "gru 2021–wrz 2023"}], "bullets": ["Prowadzenie strategicznych inicjatyw automatyzacji w wielu jednostkach biznesowych, nadzór nad pipeline'em i dostawą RPA/Power Platform/Process Mining", "Zapewnianie delivery governance, mitygacji ryzyka i zgodności z celami biznesowymi", "Zarządzanie globalnie rozproszonymi zespołami w trybie hybrydowym i wirtualnym", "Uznana w ocenach 360° za empatyczny i wzmacniający styl przywództwa"]}, {"company": "AstraZeneca", "roles": [{"title": "Clinical Operations Enablement Lead", "dates": "gru 2016–cze 2020"}], "bullets": ["Przywództwo i zarządzanie cyklem życia systemu IRT", "Koordynacja zespołu ekspertów odpowiedzialnych za deliverables regulacyjne"]}], "education": ["SGH Warsaw School of Economics — studia podyplomowe, kompetencje psychologiczne i negocjacyjne", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Rosyjski — podstawowy"], "references": ["(do uzupełnienia)"]}}, "linkedin:4470159992": {"cv": {"candidate": "Joanna Fijał", "contact": {"phone": "(do uzupełnienia)", "email": "(do uzupełnienia)", "address": "Warszawa", "linkedin": "linkedin.com/in/joanna-fijal-901a3838"}, "targetRoleNote": "CV dostosowane pod ofertę: Project Manager - Warszawa (Mazowieckie), Polska K/M (Astek)", "about": "10 lat w projektach IT, 15 lat w branży farmaceutycznej. Liderka delivery i automatyzacji z udokumentowanym doświadczeniem w prowadzeniu globalnych zespołów, zarządzaniu złożonymi portfolio automatyzacji (RPA/MS Power Platform/Process Mining) i dostarczaniu inicjatyw transformacji cyfrowej zgodnie z governance i celami biznesowymi.", "skills": ["Zarządzanie dostawą (delivery governance): raportowanie, mitygacja ryzyka, zgodność z celami biznesowymi", "Przywództwo w automatyzacji: portfolio RPA, MS Power Platform i Process Mining na poziomie globalnym", "Zarządzanie rozproszonymi zespołami wysokiej wydajności (hybrid/remote)", "Agile ways of working i ciągłe doskonalenie procesów", "Partnerstwo z liderami biznesowymi przy priorytetyzacji inicjatyw", "Zbieranie wymagań, projektowanie rozwiązań, testy, change management"], "experience": [{"company": "AstraZeneca", "roles": [{"title": "Pipeline & Delivery Manager", "dates": "wrz 2023–obecnie"}, {"title": "RPA Senior Process Analyst", "dates": "gru 2021–wrz 2023"}], "bullets": ["Prowadzenie strategicznych inicjatyw automatyzacji w wielu jednostkach biznesowych, nadzór nad pipeline'em i dostawą RPA/Power Platform/Process Mining", "Zapewnianie delivery governance, mitygacji ryzyka i zgodności z celami biznesowymi", "Zarządzanie globalnie rozproszonymi zespołami w trybie hybrydowym i wirtualnym", "Uznana w ocenach 360° za empatyczny i wzmacniający styl przywództwa"]}, {"company": "AstraZeneca", "roles": [{"title": "Clinical Operations Enablement Lead", "dates": "gru 2016–cze 2020"}], "bullets": ["Przywództwo i zarządzanie cyklem życia systemu IRT", "Koordynacja zespołu ekspertów odpowiedzialnych za deliverables regulacyjne"]}], "education": ["SGH Warsaw School of Economics — studia podyplomowe, kompetencje psychologiczne i negocjacyjne", "Uniwersytet Warszawski — magister, Administracja"], "additional": ["Polski — native", "Angielski — C1", "Rosyjski — podstawowy"], "references": ["(do uzupełnienia)"]}}}
 </script>
 
 <script>
