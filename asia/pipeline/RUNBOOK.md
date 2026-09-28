@@ -20,13 +20,40 @@ uzasadnieniu — nie przerywaj pipeline'u.
 
 ## 1. Zbierz surowe oferty z Gmaila
 
-**STATUS: zablokowane do czasu podania adresu e-mail Joanny i skonfigurowania
-dostępu Gmail dla tej sesji/konta.** Gdy dostęp będzie gotowy: użyj tych samych
-zasad co w głównym `jobtracker-/pipeline/RUNBOOK.md` (wyszukiwanie po nadawcy
-`jobalerts-noreply@linkedin.com` / `jobs-noreply@linkedin.com` /
-`rekomendacje@wysylka.pracuj.pl` itp., zawsze pełna treść przez `get_message`/
-`get_thread` z `PLAIN_TEXT`, nigdy nie ufaj samemu tematowi maila — patrz sekcja
-6 dokumentu `JOB_FINDER_by_GF_architecture_summary.md`).
+**Konfiguracja skrzynki (ustalona i potwierdzona aktywna 2026-09-28):** Joanna
+ma techniczną skrzynkę `AdresTechniczny88@wp.pl`. Przekierowanie na wp.pl jest
+**aktywne** ("Zapisaliśmy przekierowanie", kopia zostaje też na koncie WP) i
+kieruje na **`grzegorz.fijal+asia@gmail.com`** — alias działający w ramach
+konta `grzegorz.fijal@gmail.com` (Gmail ignoruje `+asia` przy doręczaniu, ale
+zachowuje go w nagłówku odbiorcy, więc jest w pełni wyszukiwalny).
+
+**Do zweryfikowania przed pierwszym uruchomieniem:** czy `adrestechniczny88@
+wp.pl` jest faktycznie adresem, na który LinkedIn/pracuj.pl wysyłają alerty
+Joanny (ustawienia powiadomień na jej kontach LinkedIn/pracuj.pl) — samo
+przekierowanie niczego nie generuje, tylko relayuje to, co tam wpłynie. Sprawdź
+`to:grzegorz.fijal+asia@gmail.com` w Gmailu — jak pierwszy alert przyleci,
+pipeline można odpalić.
+
+**Dlaczego wyszukujemy po odbiorcy, nie po nadawcy wp.pl:** zwykłe
+przekierowanie serwerowe zachowuje oryginalne nagłówki "Od" (nadal
+`jobalerts-noreply@linkedin.com` itp.), więc filtrowanie po
+`from:adrestechniczny88@wp.pl` by nie zadziałało. Zawsze łącz oba warunki:
+
+```
+to:grzegorz.fijal+asia@gmail.com (from:jobalerts-noreply@linkedin.com OR from:jobs-noreply@linkedin.com OR from:rekomendacje@wysylka.pracuj.pl OR from:noreply@pracuj.pl)
+```
+
+(dokładne adresy nadawców LinkedIn/pracuj.pl zweryfikuj tak jak w głównym
+`jobtracker-/pipeline/RUNBOOK.md` — mogą się zmieniać). Zawsze pełna treść
+przez `get_message`/`get_thread` z `PLAIN_TEXT`, nigdy nie ufaj samemu tematowi
+maila — patrz sekcja 6 dokumentu `JOB_FINDER_by_GF_architecture_summary.md`.
+
+W Gmailu istnieje etykieta **„Asia - oferty"** (utworzona 2026-09-28) do
+ręcznego porządkowania — filtr Gmaila stosujący ją automatycznie na bazie
+`to:grzegorz.fijal+asia@gmail.com` konfiguruje użytkownik ręcznie w
+Ustawieniach Gmaila (brak narzędzia do tworzenia trwałych filtrów w tej
+sesji). Pipeline i tak wyszukuje bezpośrednio przez zapytanie wyżej,
+niezależnie od tego, czy etykieta jest ustawiona.
 
 Adresy alertów, które warto założyć na koncie Joanny (na bazie listy stanowisk
 uzgodnionej z użytkownikiem — patrz też `profile.md`):
