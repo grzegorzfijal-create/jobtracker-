@@ -5,13 +5,19 @@ priorytety CORE/AI, portfolio i segmenty mody, wykluczenia, pilność, a także
 głębsze pytania o zainteresowania/styl pracy: co daje energię, zarządzanie
 ludźmi vs. IC, wielkość firmy, podróże, własna definicja "pracy marzeń",
 wymarzone firmy, kierunek rozwoju, priorytety przy wyborze oferty,
-strategiczna vs. operacyjna rola).
+strategiczna vs. operacyjna rola) i kończy się otwartym polem "czego
+zabrakło" na wypadek, gdyby lista pytań czegoś nie objęła.
+
+Pierwsza strona ankiety to intro wyjaśniające cel: że odpowiedzi są
+potrzebne, żeby pipeline mógł skutecznie selekcjonować i dostarczać jej
+trafne oferty pracy (zamiast oceniać po ogólnych założeniach).
 
 - **Link do wypełnienia (wyślij Joannie):** https://www.surveymonkey.com/r/FGXXZ58
 - `survey_id`: `423745717`
-- `page_id` (domyślna strona, wszystkie 28 pytań): `79466035`
+- `intro_page_id` (strona z celem ankiety, bez pytań): `79622977`
+- `page_id` (strona z pytaniami 1–29): `79466035`
 - `collector_id` (weblink): `441147839`
-- Liczba pytań: 28
+- Liczba pytań: 29 (ostatnie — "czego zabrakło" — otwarte, do przejrzenia ręcznie)
 
 ## Jak odczytać odpowiedzi
 
