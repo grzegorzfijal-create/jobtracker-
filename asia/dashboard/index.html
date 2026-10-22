@@ -418,6 +418,118 @@
   button.cv-btn:hover { opacity: 0.86; }
   button.cv-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
+  /* ---------- Feedback (👍/👎) ---------- */
+
+  .fb-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+  }
+
+  button.fb-btn {
+    font: inherit;
+    font-family: "Archivo", sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    background: var(--surface-2);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 6px 13px;
+    cursor: pointer;
+  }
+
+  button.fb-btn:hover { border-color: var(--ink-soft); }
+  button.fb-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  button.fb-btn[data-active="true"][data-dir="up"] {
+    background: var(--good-bg);
+    color: var(--good);
+    border-color: var(--good);
+  }
+
+  button.fb-btn[data-active="true"][data-dir="down"] {
+    background: var(--warn-bg);
+    color: var(--warn);
+    border-color: var(--warn);
+  }
+
+  .card[data-verdict="up"] { border-left: 3px solid var(--good); }
+  .card[data-verdict="down"] { border-left: 3px solid var(--warn); opacity: 0.82; }
+
+  .fb-note {
+    display: none;
+    margin-top: 10px;
+  }
+
+  .fb-note[data-shown="true"] { display: block; }
+
+  .fb-note input[type="text"] {
+    width: 100%;
+    font: inherit;
+    font-family: "Archivo", sans-serif;
+    font-size: 0.82rem;
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+    border-radius: 6px;
+    padding: 7px 10px;
+  }
+
+  /* ---------- Feedback summary (bottom of page) ---------- */
+
+  .fb-summary-wrap {
+    margin-top: 40px;
+    border-top: 3px solid var(--ink);
+    padding-top: 22px;
+  }
+
+  .fb-summary-head {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+  }
+
+  .fb-summary-help {
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin: 0 0 16px;
+  }
+
+  #fb-summary-box {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px 18px;
+    font-family: "Space Mono", monospace;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    color: var(--ink);
+    max-height: 40vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow);
+  }
+
+  .fb-copy-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .fb-copy-status {
+    font-family: "Space Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--good);
+  }
+
+  .fb-copy-status[hidden] { display: none !important; }
+
   /* ---------- Archive ---------- */
 
   details.archive {
@@ -632,6 +744,13 @@
         <div class="card-actions">
           <a class="apply" href="https://www.linkedin.com/jobs/view/4468989341/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4468989341" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+          <div class="fb-row">
+            <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4468989341" onclick="setVerdict(this)">👍 Pasuje</button>
+            <button type="button" class="fb-btn" data-dir="down" data-job-id="linkedin:4468989341" onclick="setVerdict(this)">👎 Nie pasuje</button>
+          </div>
+        </div>
+        <div class="fb-note" id="fb-note-linkedin-4468989341" data-job-id="linkedin:4468989341">
+          <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4468989341">
         </div>
       </div>
       <div class="card">
@@ -653,6 +772,13 @@
         <div class="card-actions">
           <a class="apply" href="https://www.linkedin.com/jobs/view/4470404302/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4470404302" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+          <div class="fb-row">
+            <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4470404302" onclick="setVerdict(this)">👍 Pasuje</button>
+            <button type="button" class="fb-btn" data-dir="down" data-job-id="linkedin:4470404302" onclick="setVerdict(this)">👎 Nie pasuje</button>
+          </div>
+        </div>
+        <div class="fb-note" id="fb-note-linkedin-4470404302" data-job-id="linkedin:4470404302">
+          <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4470404302">
         </div>
       </div>
       <div class="card">
@@ -674,6 +800,13 @@
         <div class="card-actions">
           <a class="apply" href="https://www.linkedin.com/jobs/view/4468776295/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4468776295" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+          <div class="fb-row">
+            <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4468776295" onclick="setVerdict(this)">👍 Pasuje</button>
+            <button type="button" class="fb-btn" data-dir="down" data-job-id="linkedin:4468776295" onclick="setVerdict(this)">👎 Nie pasuje</button>
+          </div>
+        </div>
+        <div class="fb-note" id="fb-note-linkedin-4468776295" data-job-id="linkedin:4468776295">
+          <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4468776295">
         </div>
       </div>
       <div class="card">
@@ -695,6 +828,13 @@
         <div class="card-actions">
           <a class="apply" href="https://www.linkedin.com/jobs/view/4459278029/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4459278029" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+          <div class="fb-row">
+            <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4459278029" onclick="setVerdict(this)">👍 Pasuje</button>
+            <button type="button" class="fb-btn" data-dir="down" data-job-id="linkedin:4459278029" onclick="setVerdict(this)">👎 Nie pasuje</button>
+          </div>
+        </div>
+        <div class="fb-note" id="fb-note-linkedin-4459278029" data-job-id="linkedin:4459278029">
+          <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4459278029">
         </div>
       </div>
       <div class="card">
@@ -716,6 +856,13 @@
         <div class="card-actions">
           <a class="apply" href="https://www.linkedin.com/jobs/view/4470698300/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4470698300" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+          <div class="fb-row">
+            <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4470698300" onclick="setVerdict(this)">👍 Pasuje</button>
+            <button type="button" class="fb-btn" data-dir="down" data-job-id="linkedin:4470698300" onclick="setVerdict(this)">👎 Nie pasuje</button>
+          </div>
+        </div>
+        <div class="fb-note" id="fb-note-linkedin-4470698300" data-job-id="linkedin:4470698300">
+          <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4470698300">
         </div>
       </div>
       <div class="card">
@@ -737,6 +884,13 @@
         <div class="card-actions">
           <a class="apply" href="https://www.linkedin.com/jobs/view/4468514283/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4468514283" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+          <div class="fb-row">
+            <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4468514283" onclick="setVerdict(this)">👍 Pasuje</button>
+            <button type="button" class="fb-btn" data-dir="down" data-job-id="linkedin:4468514283" onclick="setVerdict(this)">👎 Nie pasuje</button>
+          </div>
+        </div>
+        <div class="fb-note" id="fb-note-linkedin-4468514283" data-job-id="linkedin:4468514283">
+          <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4468514283">
         </div>
       </div>
       <div class="card">
@@ -758,6 +912,13 @@
         <div class="card-actions">
           <a class="apply" href="https://www.linkedin.com/jobs/view/4469011272/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4469011272" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+          <div class="fb-row">
+            <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4469011272" onclick="setVerdict(this)">👍 Pasuje</button>
+            <button type="button" class="fb-btn" data-dir="down" data-job-id="linkedin:4469011272" onclick="setVerdict(this)">👎 Nie pasuje</button>
+          </div>
+        </div>
+        <div class="fb-note" id="fb-note-linkedin-4469011272" data-job-id="linkedin:4469011272">
+          <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4469011272">
         </div>
       </div>
       <div class="card">
@@ -779,6 +940,13 @@
         <div class="card-actions">
           <a class="apply" href="https://www.linkedin.com/jobs/view/4468988058/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4468988058" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+          <div class="fb-row">
+            <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4468988058" onclick="setVerdict(this)">👍 Pasuje</button>
+            <button type="button" class="fb-btn" data-dir="down" data-job-id="linkedin:4468988058" onclick="setVerdict(this)">👎 Nie pasuje</button>
+          </div>
+        </div>
+        <div class="fb-note" id="fb-note-linkedin-4468988058" data-job-id="linkedin:4468988058">
+          <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4468988058">
         </div>
       </div>
       <div class="card">
@@ -800,6 +968,13 @@
         <div class="card-actions">
           <a class="apply" href="https://www.linkedin.com/jobs/view/4375332937/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4375332937" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+          <div class="fb-row">
+            <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4375332937" onclick="setVerdict(this)">👍 Pasuje</button>
+            <button type="button" class="fb-btn" data-dir="down" data-job-id="linkedin:4375332937" onclick="setVerdict(this)">👎 Nie pasuje</button>
+          </div>
+        </div>
+        <div class="fb-note" id="fb-note-linkedin-4375332937" data-job-id="linkedin:4375332937">
+          <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4375332937">
         </div>
       </div>
       <div class="card">
@@ -821,6 +996,13 @@
         <div class="card-actions">
           <a class="apply" href="https://www.linkedin.com/jobs/view/4470413714/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4470413714" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+          <div class="fb-row">
+            <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4470413714" onclick="setVerdict(this)">👍 Pasuje</button>
+            <button type="button" class="fb-btn" data-dir="down" data-job-id="linkedin:4470413714" onclick="setVerdict(this)">👎 Nie pasuje</button>
+          </div>
+        </div>
+        <div class="fb-note" id="fb-note-linkedin-4470413714" data-job-id="linkedin:4470413714">
+          <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4470413714">
         </div>
       </div>
       <div class="card">
@@ -842,6 +1024,13 @@
         <div class="card-actions">
           <a class="apply" href="https://www.linkedin.com/jobs/view/4469317570/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4469317570" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+          <div class="fb-row">
+            <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4469317570" onclick="setVerdict(this)">👍 Pasuje</button>
+            <button type="button" class="fb-btn" data-dir="down" data-job-id="linkedin:4469317570" onclick="setVerdict(this)">👎 Nie pasuje</button>
+          </div>
+        </div>
+        <div class="fb-note" id="fb-note-linkedin-4469317570" data-job-id="linkedin:4469317570">
+          <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4469317570">
         </div>
       </div>
       <div class="card">
@@ -863,6 +1052,13 @@
         <div class="card-actions">
           <a class="apply" href="https://www.linkedin.com/jobs/view/4472246789/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4472246789" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+          <div class="fb-row">
+            <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4472246789" onclick="setVerdict(this)">👍 Pasuje</button>
+            <button type="button" class="fb-btn" data-dir="down" data-job-id="linkedin:4472246789" onclick="setVerdict(this)">👎 Nie pasuje</button>
+          </div>
+        </div>
+        <div class="fb-note" id="fb-note-linkedin-4472246789" data-job-id="linkedin:4472246789">
+          <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4472246789">
         </div>
       </div>
       <div class="card">
@@ -884,6 +1080,13 @@
         <div class="card-actions">
           <a class="apply" href="https://www.linkedin.com/jobs/view/4467630210/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4467630210" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+          <div class="fb-row">
+            <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4467630210" onclick="setVerdict(this)">👍 Pasuje</button>
+            <button type="button" class="fb-btn" data-dir="down" data-job-id="linkedin:4467630210" onclick="setVerdict(this)">👎 Nie pasuje</button>
+          </div>
+        </div>
+        <div class="fb-note" id="fb-note-linkedin-4467630210" data-job-id="linkedin:4467630210">
+          <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4467630210">
         </div>
       </div>
       <div class="card">
@@ -905,6 +1108,13 @@
         <div class="card-actions">
           <a class="apply" href="https://www.linkedin.com/jobs/view/4471621924/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4471621924" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+          <div class="fb-row">
+            <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4471621924" onclick="setVerdict(this)">👍 Pasuje</button>
+            <button type="button" class="fb-btn" data-dir="down" data-job-id="linkedin:4471621924" onclick="setVerdict(this)">👎 Nie pasuje</button>
+          </div>
+        </div>
+        <div class="fb-note" id="fb-note-linkedin-4471621924" data-job-id="linkedin:4471621924">
+          <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4471621924">
         </div>
       </div>
       <div class="card">
@@ -926,6 +1136,13 @@
         <div class="card-actions">
           <a class="apply" href="https://www.linkedin.com/jobs/view/4471885834/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4471885834" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+          <div class="fb-row">
+            <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4471885834" onclick="setVerdict(this)">👍 Pasuje</button>
+            <button type="button" class="fb-btn" data-dir="down" data-job-id="linkedin:4471885834" onclick="setVerdict(this)">👎 Nie pasuje</button>
+          </div>
+        </div>
+        <div class="fb-note" id="fb-note-linkedin-4471885834" data-job-id="linkedin:4471885834">
+          <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4471885834">
         </div>
       </div>
       <div class="card">
@@ -947,6 +1164,13 @@
         <div class="card-actions">
           <a class="apply" href="https://www.linkedin.com/jobs/view/4470159992/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4470159992" onclick="openCvPreview(this)">📎 Podgląd CV</button>
+          <div class="fb-row">
+            <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4470159992" onclick="setVerdict(this)">👍 Pasuje</button>
+            <button type="button" class="fb-btn" data-dir="down" data-job-id="linkedin:4470159992" onclick="setVerdict(this)">👎 Nie pasuje</button>
+          </div>
+        </div>
+        <div class="fb-note" id="fb-note-linkedin-4470159992" data-job-id="linkedin:4470159992">
+          <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4470159992">
         </div>
       </div>
     </div>
@@ -1011,7 +1235,21 @@
     </div>
   </details>
 
-  <footer>The Edit · dossier zawodowy · Joanna Fijał · aktualizacja: 22 października 2026, 14:05</footer>
+  <div class="fb-summary-wrap">
+    <div class="fb-summary-head">Twoje oceny ofert</div>
+    <p class="fb-summary-help">Klikaj 👍/👎 przy ofertach powyżej — Twoje oceny zapisują się
+      w tej przeglądarce, więc nic nie zginie, jeśli zamkniesz kartę. Co jakiś czas skopiuj
+      je przyciskiem poniżej i wyślij Grzegorzowi (WhatsApp/SMS/mail) — na tej podstawie
+      dopracujemy dalej kryteria dopasowania.</p>
+    <div id="fb-summary-box">Nie oceniłaś jeszcze żadnej oferty — kliknij 👍 lub 👎 przy
+      dowolnej karcie powyżej, a pojawi się tutaj.</div>
+    <div class="fb-copy-row">
+      <button type="button" class="copy-btn" id="fb-copy-btn" style="font-family:'Archivo',sans-serif;font-weight:600;font-size:0.88rem;color:var(--surface);background:var(--ink);border:none;border-radius:999px;padding:10px 20px;cursor:pointer;">Kopiuj moje oceny</button>
+      <span class="fb-copy-status" id="fb-copy-status" hidden>Skopiowano ✓</span>
+    </div>
+  </div>
+
+  <footer>The Edit · dossier zawodowy · Joanna Fijał · aktualizacja: 22 października 2026, 16:30</footer>
 </div>
 
 <div class="cv-modal-backdrop" id="cv-modal-backdrop" hidden>
@@ -1130,5 +1368,117 @@
         btn.textContent = label;
       }
     });
+
+    // ---------- Feedback (👍/👎) ----------
+    var FB_KEY = "the-edit-verdicts-v1";
+    var fbState = {};
+    try {
+      var raw = localStorage.getItem(FB_KEY);
+      if (raw) fbState = JSON.parse(raw) || {};
+    } catch (e) { fbState = {}; }
+
+    function fbSave() {
+      try { localStorage.setItem(FB_KEY, JSON.stringify(fbState)); } catch (e) { /* ignore */ }
+    }
+
+    function fbCardInfo(jobId) {
+      var btn = document.querySelector('.fb-btn[data-job-id="' + CSS.escape(jobId) + '"]');
+      var card = btn ? btn.closest(".card") : null;
+      if (!card) return { title: jobId, company: "" };
+      var h3 = card.querySelector("h3");
+      var co = card.querySelector(".company");
+      return { title: h3 ? h3.textContent : jobId, company: co ? co.textContent : "" };
+    }
+
+    function fbApplyVisual(jobId) {
+      var entry = fbState[jobId];
+      var dir = entry ? entry.dir : null;
+      var buttons = document.querySelectorAll('.fb-btn[data-job-id="' + CSS.escape(jobId) + '"]');
+      buttons.forEach(function (b) {
+        b.setAttribute("data-active", String(b.getAttribute("data-dir") === dir));
+      });
+      var card = buttons.length ? buttons[0].closest(".card") : null;
+      if (card) {
+        if (dir) card.setAttribute("data-verdict", dir);
+        else card.removeAttribute("data-verdict");
+      }
+      var noteBox = document.getElementById("fb-note-" + jobId.replace(":", "-"));
+      if (noteBox) {
+        noteBox.setAttribute("data-shown", String(!!dir));
+        var input = noteBox.querySelector("input");
+        if (input && entry && typeof entry.note === "string") input.value = entry.note;
+      }
+    }
+
+    window.setVerdict = function (btn) {
+      var jobId = btn.getAttribute("data-job-id");
+      var dir = btn.getAttribute("data-dir");
+      var current = fbState[jobId];
+      if (current && current.dir === dir) {
+        delete fbState[jobId];
+      } else {
+        var info = fbCardInfo(jobId);
+        fbState[jobId] = {
+          dir: dir,
+          note: current && current.note ? current.note : "",
+          title: info.title,
+          company: info.company
+        };
+      }
+      fbSave();
+      fbApplyVisual(jobId);
+      fbRenderSummary();
+    };
+
+    window.setNote = function (input) {
+      var jobId = input.getAttribute("data-job-id");
+      if (!fbState[jobId]) return;
+      fbState[jobId].note = input.value;
+      fbSave();
+      fbRenderSummary();
+    };
+
+    function fbRenderSummary() {
+      var box = document.getElementById("fb-summary-box");
+      if (!box) return;
+      var ids = Object.keys(fbState);
+      if (!ids.length) {
+        box.textContent = "Nie oceniłaś jeszcze żadnej oferty — kliknij 👍 lub 👎 przy dowolnej karcie powyżej, a pojawi się tutaj.";
+        return;
+      }
+      var lines = ["OCENY OFERT — THE EDIT", ""];
+      ids.forEach(function (jobId) {
+        var e = fbState[jobId];
+        var mark = e.dir === "up" ? "👍 PASUJE" : "👎 NIE PASUJE";
+        lines.push(mark + " — " + e.title + " (" + e.company + ")");
+        if (e.note) lines.push("    uwaga: " + e.note);
+      });
+      box.textContent = lines.join("\n");
+    }
+
+    // Restore saved verdicts on load
+    Object.keys(fbState).forEach(fbApplyVisual);
+    fbRenderSummary();
+
+    var fbCopyBtn = document.getElementById("fb-copy-btn");
+    if (fbCopyBtn) {
+      fbCopyBtn.addEventListener("click", async function () {
+        var text = document.getElementById("fb-summary-box").textContent;
+        var status = document.getElementById("fb-copy-status");
+        try {
+          await navigator.clipboard.writeText(text);
+          status.hidden = false;
+          setTimeout(function () { status.hidden = true; }, 2500);
+        } catch (e) {
+          var range = document.createRange();
+          range.selectNode(document.getElementById("fb-summary-box"));
+          var sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+          status.textContent = "Zaznaczono tekst — skopiuj ręcznie (Ctrl/Cmd+C)";
+          status.hidden = false;
+        }
+      });
+    }
   })();
 </script>

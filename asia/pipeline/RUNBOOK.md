@@ -91,6 +91,26 @@ Reszta zasad jak w głównym RUNBOOK: dokładna data+godzina aktualizacji przy
 KAŻDYM uruchomieniu, bez banneru "brak nowych ofert", klikalne linki, kilkuzdaniowe
 uzasadnienie na kartę, zwinięte archiwum ⚪ z linkiem i powodem dla każdej pozycji.
 
+### 5a. Przyciski oceny 👍/👎 (feedback od Joanny) — NIE USUWAJ przy regeneracji
+
+Każda karta oferty na dashboardzie ma (od 22 października 2026) blok oceny:
+dwa przyciski `.fb-btn[data-dir="up"/"down"]` wewnątrz `.card-actions` (ten sam
+`data-job-id` co przycisk CV, `onclick="setVerdict(this)"`) oraz pole na krótką
+notatkę `.fb-note` z inputem `oninput="setNote(this)"` tuż pod `.card-actions`,
+wewnątrz tego samego `.card`. Przy KAŻDEJ regeneracji dashboardu (nowa runda
+pipeline'u) odtwórz dokładnie ten sam znacznik na nowych kartach — wzorzec do
+skopiowania jest w istniejącym pliku, szukaj `class="fb-row"` i `class="fb-note"`.
+
+Mechanizm działa **lokalnie w przeglądarce Joanny** (localStorage, klucz
+`the-edit-verdicts-v1`) — jej oceny NIE są zapisane w samym pliku HTML/Artifakcie,
+więc nadpisanie dashboardu nową wersją nie kasuje jej ocen na jej urządzeniu (nie
+trzeba ich "zachowywać" przy regeneracji, w przeciwieństwie do ✅/❌ w głównym
+projekcie). Na dole strony jest sekcja "Twoje oceny ofert" z przyciskiem
+"Kopiuj moje oceny" — Joanna wysyła ten tekst Grzegorzowi, a on przekazuje go
+dalej do agenta, który na tej podstawie aktualizuje `profile.md`/`seen_jobs.json`
+(np. dopisuje pole `feedback: "up"/"down"` + notatkę przy odpowiednim wpisie w
+ledgerze i koryguje kryteria/priorytety na przyszłość).
+
 ## 5b. Przygotuj CV z góry dla każdej oferty na dashboardzie
 
 Jak w głównym pipeline — ale pamiętaj o notatce w `cv_base.md`: dla ofert z toru
