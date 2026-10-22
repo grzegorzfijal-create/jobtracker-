@@ -3,16 +3,20 @@
 > Źródło prawdy dla generowania dostosowanych CV przez pipeline. NIE dodawaj tu
 > umiejętności/osiągnięć, których nie ma w tym pliku — dostosowanie oferty polega
 > wyłącznie na przestawianiu akcentów i doborze/kolejności istniejących punktów,
-> nigdy na wymyślaniu nowych. W szczególności: NIE dopisuj kompetencji
-> projektowych/designerskich (mimo że branża modowa jest jednym z celowanych
-> kierunków — patrz `profile.md`) — dopóki Joanna sama nie doda ich tutaj, dobór
-> pod oferty modowe opiera się wyłącznie na realnych umiejętnościach operacyjnych/
-> projektowo-wdrożeniowych poniżej.
+> nigdy na wymyślaniu nowych. **Aktualizacja październik 2026**: Joanna
+> potwierdziła w ankiecie preferencji ukończony kurs projektowania odzieży oraz
+> hobby stylizacji (patrz sekcja "Kwalifikacje — moda" niżej) — to jedyne
+> projektowe/designerskie elementy dopuszczalne w CV. Nie rozszerzaj ich dalej
+> (żadnego dyplomu wyższego z projektowania, żadnego zawodowego doświadczenia
+> projektowego, żadnych konkretnych zrealizowanych kolekcji) — dopóki Joanna
+> sama nie doda więcej. Dobór pod oferty modowe poza tymi dwoma punktami nadal
+> opiera się wyłącznie na realnych umiejętnościach operacyjnych/wdrożeniowych
+> poniżej.
 
 ## Dane kontaktowe
 
-- Mob: _(do uzupełnienia)_
-- E-mail: _(do uzupełnienia — potrzebny do integracji z alertami Gmail)_
+- Mob: 505 483 488
+- E-mail: joanna_tobiasz@onet.eu
 - Adres: Warszawa
 - LinkedIn: https://www.linkedin.com/in/joanna-fijal-901a3838/
 
@@ -134,27 +138,37 @@ Zakres:
 - Narzędzia/obszary z doświadczenia zawodowego: RPA, MS Power Platform, Process
   Mining, systemy IRT, zarządzanie zmianą, Agile/Scrum, eCTD
 
+## Kwalifikacje — moda (potwierdzone w ankiecie, październik 2026)
+
+- Ukończony kurs projektowania odzieży
+- Stylizacja — aktywnie praktykowane hobby
+
 ## Referencje
 
 - _(do uzupełnienia przez Joannę — LinkedIn nie ujawnia referencji z rekomendacji)_
 
 ## Zainteresowania
 
-- _(do uzupełnienia)_
+- Stylizacja i trendy modowe (hobby, patrz też "Kwalifikacje — moda" wyżej)
+- Rozwój ludzi / mentoring
+- Nowości i zmiana — najbardziej energetyzuje ją różnorodność zadań i nowe
+  tematy (potwierdzone w ankiecie preferencji)
 
 ---
 
 ## Uwaga dot. celu "branża modowa / projektantka"
 
 Joanna wskazała markę modowo-projektową jako kierunek marzeń (patrz `profile.md`,
-tor "MODA"). Powyższe CV bazowe **nie zawiera** umiejętności projektowych/
-designerskich, bo LinkedIn i dotychczasowa rozmowa ich nie potwierdzają — zgodnie
-z twardą zasadą tego pliku, nic nie zostało dopisane. Dopasowanie CV pod oferty z
-toru MODA polega więc na **przeformułowaniu tych samych, realnych kompetencji**
-(zarządzanie dostawą, procesami, zespołami, transformacją) pod język branży
-modowej (np. "delivery/operations w domu mody", "zarządzanie wdrożeniem
-systemów PLM/3D w firmie odzieżowej"), NIE na udawaniu kompetencji projektowych.
-Jeśli Joanna chce faktycznie aplikować na czyste stanowiska projektowe
-(Fashion Designer, Textile Designer itp.), powinna sama uzupełnić ten plik o
-realne osiągnięcia projektowe/portfolio, zanim pipeline zacznie je uwzględniać
-w CV.
+tor "MODA"). Od października 2026 CV bazowe zawiera **dwa potwierdzone,
+projektowe/stylistyczne elementy** — ukończony kurs projektowania odzieży i
+hobby stylizacji (sekcja "Kwalifikacje — moda" wyżej) — ale nic ponad to: brak
+dyplomu wyższego z projektowania, brak zawodowego doświadczenia projektowego,
+brak udokumentowanego portfolio zrealizowanych kolekcji. Dopasowanie CV pod
+oferty z toru MODA-3a nadal polega głównie na **przeformułowaniu realnych
+kompetencji operacyjnych** (zarządzanie dostawą, procesami, zespołami,
+transformacją) pod język branży modowej. Dla toru MODA-3b (szczególnie role
+stylistyczne) CV może teraz wprost przywołać kurs i hobby stylizacji jako
+realny, choć skromny, punkt wyjścia — ale bez udawania zawodowego doświadczenia
+projektowego, którego Joanna nie ma. Jeśli zechce aplikować na role wymagające
+formalnego wykształcenia projektowego, powinna sama uzupełnić ten plik o
+dodatkowe osiągnięcia/portfolio, zanim pipeline zacznie je uwzględniać w CV.

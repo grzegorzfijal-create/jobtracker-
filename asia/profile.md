@@ -18,10 +18,21 @@ wspólną listę):
 
 1. **CORE** — naturalna kontynuacja: delivery/automatyzacja/proces, coraz częściej
    z elementem AI.
-2. **MODA** — marzenie: praca w branży modowej. Realistycznie osiągalne od zaraz
-   przez role operacyjne/delivery **w firmach modowych** (transfer branży, nie
-   funkcji); czyste role projektowe (Fashion Designer itp.) to cel odległy/
-   stretch, bo brak potwierdzonego portfolio/wykształcenia projektowego.
+2. **MODA** — marzenie: praca w branży modowej. Mostek operacyjny (3a) jest
+   **aktywnie poszukiwany już teraz** (potwierdzone w ankiecie preferencji,
+   październik 2026). Czyste role projektowe (3b) mają teraz **potwierdzone,
+   choć skromne, podstawy** — Joanna ukończyła kurs projektowania odzieży i
+   hobbystycznie zajmuje się stylizacją (patrz `cv_base.md`) — więc nie są już
+   czystym stretchem bez żadnego pokrycia w realnych umiejętnościach, choć wciąż
+   brak formalnego dyplomu/doświadczenia zawodowego w projektowaniu.
+
+Dodatkowy, nieustrukturyzowany sygnał z ankiety: opisując "pracę marzeń"
+własnymi słowami, Joanna wymieniła obok koordynacji zespołu/stylistki także
+**pracę w organizacji niosącej pomoc** (NGO/charytatywnej). To nie jest osobny
+tor (za mało sygnału, żeby budować pod to osobną sekcję dashboardu), ale jeśli
+trafi się wyraźnie pasująca oferta kierownicza/delivery w organizacji
+pozarządowej lub non-profit, warto ją ocenić i odnotować w torze CORE z jasnym
+zaznaczeniem tego kontekstu w uzasadnieniu, zamiast pomijać.
 
 ## Doświadczenie (chronologicznie, od najnowszego)
 
@@ -56,22 +67,38 @@ Języki: polski (native), angielski (C1), rosyjski (podstawowy).
 ### Tory kariery (dashboard = 3 osobne sekcje, każda z własnym sortowaniem)
 
 #### Tor 1 — CORE (delivery / automatyzacja / proces)
-Szukane role, w kolejności preferencji:
+Szukane role, w kolejności preferencji. **Pierwsze 5 pozycji potwierdzone wprost
+przez Joannę w ankiecie preferencji (październik 2026) jako jej priorytet** —
+traktuj je jako górną granicę preferencji przy ocenie 🎯. Pozycje 6–10 nie
+zostały zaznaczone w ankiecie — nie odrzucaj ich, ale przy równym dopasowaniu
+reszty kryteriów preferuj tytuły z listy 1–5:
 1. Senior Delivery Manager / Head of Delivery
-2. Head of Automation / Director of Intelligent Automation
-3. Intelligent Automation Manager / Lead
-4. RPA Program Manager / RPA Delivery Lead
-5. Process Automation Manager / Business Process Automation Lead
-6. Head of Process Excellence / Process Excellence Manager
-7. Continuous Improvement Manager / Operational Excellence Manager
-8. Digital Transformation Manager / Lead
-9. Program Manager (Digital/Automation) / Automation Portfolio Manager
+2. Intelligent Automation Manager / Lead
+3. RPA Program Manager / RPA Delivery Lead
+4. Process Automation Manager / Business Process Automation Lead
+5. Program Manager (Digital/Automation) / Automation Portfolio Manager
+6. Head of Automation / Director of Intelligent Automation
+7. Head of Process Excellence / Process Excellence Manager
+8. Continuous Improvement Manager / Operational Excellence Manager
+9. Digital Transformation Manager / Lead
 10. Center of Excellence (CoE) Lead — Automation
 
 Branża: najchętniej pharma/life sciences (zna realia, ma sieć kontaktów), ale
 akceptowalna dowolna branża regulowana lub duża organizacja z dojrzałym
 programem automatyzacji (finanse, FMCG, produkcja). Rozważyć niżej w priorytecie:
 małe firmy bez ugruntowanego programu automatyzacji.
+
+**Preferencje stylu pracy z ankiety (stosuj jako miękki sygnał w uzasadnieniu,
+nie jako twardy filtr):**
+- Woli zarządzanie ludźmi niż rolę czysto ekspercką/IC — przy równym tytule
+  preferuj oferty z jasnym elementem zarządzania zespołem.
+- Woli role operacyjne (wykonanie, dowożenie) niż czysto strategiczne/wizyjne —
+  stanowiska Director/VP skupione wyłącznie na strategii bez elementu delivery
+  oceniaj nieco niżej niż tytuły "Manager/Lead" o podobnym zakresie.
+- Energetyzuje ją nowość/różnorodność zadań; męczy ją szczegółowa, żmudna
+  dokumentacja wymagań (np. User Requirements Specification) jako główny
+  zakres obowiązków — jeśli opis oferty sugeruje, że to dominująca część roli,
+  odnotuj to jako minus w uzasadnieniu (nie dealbreaker, ale warte wspomnienia).
 
 #### Tor 2 — AI (naturalne rozszerzenie automatyzacji)
 Szukane role, w kolejności preferencji:
@@ -89,12 +116,22 @@ umiejętności data science/ML engineering — jej wartość to *dowożenie* wdr
 (governance, zespół, stakeholderzy), nie budowa modeli. Oferty wymagające
 hands-on ML/data science są dealbreakerem (nie ten profil).
 
+**Priorytet (ankieta preferencji, październik 2026):** potwierdzony jako
+zainteresowanie **drugorzędne** względem CORE i MODA-3a — "trochę, warto
+sprawdzać, co się trafi", nie aktywny priorytet. Oceniaj i pokazuj oferty z
+tego toru normalnie, ale przy pisaniu uzasadnienia nie sugeruj, że to jej
+główny kierunek poszukiwań. Konkretnie bardziej interesuje ją strona
+governance/wdrożeń niż bliska współpraca z zespołami data science/ML — to
+potwierdza i wzmacnia regułę o dealbreakerze hands-on ML powyżej.
+
 #### Tor 3 — MODA (marzenie o branży modowej)
 Dwie podkategorie w tym torze, oceniane różnie:
 
 **3a. Mostek (realistyczne, od zaraz)** — role operacyjne/delivery/projektowe
 (w sensie project management, nie designu) w firmach modowych/domach mody/
-markach odzieżowych:
+markach odzieżowych. **Aktywnie poszukiwane już teraz** (ankieta preferencji,
+październik 2026: "tak, aktywnie") — traktuj z priorytetem porównywalnym do
+toru CORE, nie jako dalszy plan:
 1. Fashion Operations Manager / Fashion Production Manager
 2. Fashion Program Manager / Fashion Project Manager
 3. Fashion Supply Chain Manager
@@ -109,48 +146,79 @@ to branża (firma modowa/odzieżowa/lifestyle zamiast pharma). Wysoki fit score
 możliwy (🎯), bo to nie stretch kompetencyjny, tylko zmiana branży dla tych samych
 umiejętności.
 
-**3b. Marzenie (stretch, wymaga portfolio)** — czyste role projektowe:
-1. Fashion Designer / Junior Fashion Designer / Assistant Fashion Designer
-2. Design Assistant / Fashion Design Intern
-3. Textile Designer / Fashion Illustrator
-4. Trend Forecaster / Trend Researcher
-5. Product Developer (Fashion)
+Segmenty mody, które ją interesują (z ankiety) — przy równym dopasowaniu reszty
+kryteriów, lekko premiuj oferty w tych segmentach: **luksusowa, fast fashion,
+zrównoważona/sustainable**. Dodatki/biżuteria i obuwie nie zostały zaznaczone —
+nie odrzucaj ofert z tych segmentów, po prostu nie premiuj.
 
-Oceniaj z jawnym zastrzeżeniem: brak potwierdzonego portfolio/wykształcenia
-projektowego w `cv_base.md` (patrz notatka na końcu tego pliku) obniża fit score,
-ale **nie odrzucaj automatycznie** — jeśli oferta nie wymaga formalnego
-portfolio/dyplomu (np. rekrutuje na researchera trendów albo asystenta bez
-twardych wymagań), oceń wyżej i zaznacz to w uzasadnieniu. Jeśli oferta jawnie
-wymaga portfolio/dyplomu projektowego, oznacz to wprost jako brakujący warunek
-("wymaga portfolio, nieznane/niepotwierdzone") i licz to jako istotny minus, ale
-wciąż licz resztę kryteriów (lokalizacja, poziom, itd.) — dokładnie tak jak przy
-brakujących widełkach w innych torach (nie odrzucaj automatycznie z powodu
-brakującej informacji).
+**3b. Marzenie** — czyste role projektowe/stylistyczne. **Zmiana od października
+2026**: Joanna potwierdziła w ankiecie ukończony kurs projektowania odzieży i
+hobbystyczne doświadczenie w stylizacji (patrz `cv_base.md`) — to nie jest już
+tor bez żadnego pokrycia kompetencyjnego, tylko realny, choć skromny (kurs +
+hobby, nie dyplom ani doświadczenie zawodowe) punkt wyjścia:
+1. Stylist / Fashion Stylist / Personal Stylist — **najmocniejsze dopasowanie
+   w tej podkategorii**, bo stylizacja to jej aktywne hobby, nie tylko
+   zainteresowanie
+2. Fashion Designer / Junior Fashion Designer / Assistant Fashion Designer
+3. Design Assistant / Fashion Design Intern
+4. Textile Designer / Fashion Illustrator
+5. Trend Forecaster / Trend Researcher
+6. Product Developer (Fashion)
+
+Zasady oceny portfolio/wykształcenia (zaktualizowane):
+- Jeśli oferta **nie wymaga formalnego dyplomu projektowego ani lat
+  doświadczenia zawodowego** (np. stylista, asystent/ka, researcher trendów,
+  rola juniorska) — ukończony kurs projektowania odzieży + hobby stylizacja
+  **wystarczają jako pokrycie kompetencyjne**; nie stosuj już automatycznej
+  obniżki za "brak portfolio" w takich przypadkach, oceniaj normalnie jak
+  pozostałe tory.
+- Jeśli oferta **jawnie wymaga formalnego wykształcenia projektowego
+  (dyplom/licencjat z projektowania mody) lub udokumentowanego doświadczenia
+  zawodowego w projektowaniu** — to wciąż przewyższa to, co ma Joanna (kurs,
+  nie dyplom; hobby, nie praca zawodowa). Oznacz to wprost jako brakujący
+  warunek w uzasadnieniu i licz to jako istotny minus, ale **nie odrzucaj
+  automatycznie** — licz resztę kryteriów tak jak przy brakujących widełkach.
+- Nigdy nie dopisuj do CV więcej niż ukończony kurs + hobby stylizacja — to
+  twardy limit z `cv_base.md`, nie rozszerzaj go mimo wyższego teraz fit score.
 
 ### Lokalizacja
 - Warszawa (biuro/hybrydowo)
 - Praca zdalna (pełny remote) — również akceptowalna, szczególnie dla torów
   AI/MODA gdzie rynek jest mniej lokalny
-- Odrzucaj oferty wymagające stałej relokacji do innego miasta bez opcji zdalnej/
-  hybrydowej — **z wyjątkiem** toru 3b (marzenie), gdzie relokacja do
-  europejskiej stolicy mody (Londyn, Paryż, Mediolan) może być warta
-  odnotowania jako opcja do rozważenia, a nie automatycznego odrzucenia — zawsze
-  z jasnym zaznaczeniem w uzasadnieniu, że wymaga relokacji.
+- **Kraków i Gdańsk** — potwierdzone w ankiecie preferencji jako miasta, do
+  których weźmie pod uwagę dojazd/relokację (nie tylko Warszawa/remote).
+  Traktuj oferty z tych dwóch miast tak samo jak warszawskie, bez odnotowywania
+  "wymaga relokacji" jako minusu.
+- Odrzucaj oferty wymagające stałej relokacji do **innego** miasta (poza
+  Warszawą/Krakowem/Gdańskiem) bez opcji zdalnej/hybrydowej — **z wyjątkiem**
+  toru 3b (marzenie), gdzie relokacja do europejskiej stolicy mody (Londyn,
+  Paryż, Mediolan) jest **realną, poważnie rozważaną opcją** (potwierdzone
+  wprost w ankiecie: "tak, poważnie") — nie tylko ciekawostką do odnotowania.
+  Oceniaj takie oferty normalnie wg reszty kryteriów 3b, zawsze z jasnym
+  zaznaczeniem w uzasadnieniu, że wymaga relokacji za granicę.
 
 ### Widełki wynagrodzenia
-- Minimum dla torów CORE/AI: **20 000 zł brutto/miesiąc** (senior manager w dużej
-  organizacji, ale niższy próg niż stanowiska C-level)
-- Minimum dla toru MODA/3a (mostek operacyjny): jak wyżej, 20 000 zł brutto/mies.
-- Tor 3b (marzenie, role juniorskie/asystenckie projektowe): brak twardego progu
-  — to świadomy kompromis finansowy za wejście w nową branżę; nie odrzucaj po
-  widełkach, tylko odnotuj w uzasadnieniu
+**Zaktualizowane w ankiecie preferencji (październik 2026):** "mogę zejść niżej
+dla właściwej roli — dla AI nie zejdę niżej, dla mody tak, nawet 10 000".
+- Minimum dla torów CORE/AI: **20 000 zł brutto/miesiąc** — twardo potwierdzone,
+  bez ustępstw (senior manager w dużej organizacji, niższy próg niż C-level)
+- Minimum dla toru MODA (3a i 3b): **elastyczne, docelowo 20 000 zł, ale akceptuje
+  nawet 10 000 zł brutto/mies. dla właściwej/ekscytującej roli** — nie odrzucaj
+  ofert modowych z niższymi widełkami tak długo, jak są ≥ ok. 10 000 zł; poniżej
+  tego poziomu nadal nie odrzucaj automatycznie, tylko wyraźnie odnotuj w
+  uzasadnieniu jako świadomy kompromis finansowy za wejście w nową branżę
+- **Najważniejszy pojedynczy czynnik wyboru oferty wg Joanny: wynagrodzenie**
+  (wybrane w ankiecie jako priorytet nr 1, przed elastycznością/rozwojem/misją/
+  stabilnością) — przy dwóch ofertach o podobnym fit score w tym samym torze,
+  wyżej oceniaj tę z lepszymi/wyższymi widełkami
 - Oferty **bez podanych widełek** — NIE odrzucaj automatycznie, oznacz jako
   "widełki nieznane" i oceniaj po pozostałych kryteriach
 
 ### Forma zatrudnienia
-- Preferowana: umowa o pracę (UoP)
-- B2B/inne formy: nie odrzucaj automatycznie, ale obniż priorytet względem ofert
-  na UoP przy podobnym dopasowaniu
+- Preferowana: umowa o pracę (UoP) — potwierdzone w ankiecie
+- B2B/inne formy: potwierdzone jako akceptowalne "przy dobrym dopasowaniu" — nie
+  odrzucaj automatycznie, ale obniż priorytet względem ofert na UoP przy
+  podobnym dopasowaniu
 
 ### Dealbreakery (odrzucaj automatycznie)
 - Tor CORE/AI: rola wymagająca hands-on programowania/data science/ML engineering
@@ -158,11 +226,28 @@ brakującej informacji).
   zarządzanie dostawą, nie budowa modeli)
 - Wszystkie tory: rola wyraźnie sprzedażowa (Sales/Account Manager) bez elementu
   delivery/operacyjnego
+- Wszystkie tory: **AstraZeneca** (obecny pracodawca) — wykluczaj automatycznie
+  oferty tej firmy niezależnie od toru/dopasowania (potwierdzone w ankiecie
+  preferencji)
 - Tor MODA/3a: rola czysto projektowa (patrz 3b) pomylona z operacyjną — jeśli
   ogłoszenie de facto wymaga umiejętności projektowania ubioru mimo tytułu
   "Operations", potraktuj jako 3b, nie 3a
-- Wymagana relokacja poza Warszawę bez trybu zdalnego/hybrydowego — z wyjątkiem
-  zaznaczonym w sekcji "Lokalizacja" dla toru 3b
+- Wymagana relokacja poza Warszawę/Kraków/Gdańsk bez trybu zdalnego/hybrydowego —
+  z wyjątkiem zaznaczonym w sekcji "Lokalizacja" dla toru 3b
+
+### Firmy priorytetowe (z ankiety preferencji)
+
+Joanna wymieniła wprost firmy, w których marzy o pracy (dowolny tor/branża):
+LPP, Takeda, Moderna, NTT Data, mBank, Mennica Polska, Coca-Cola Poland
+Services, Booksy, Google, Oracle, Elanco, Standard Chartered, GATX, VISA,
+Erste Bank, Storck, Grupa Pracuj, Mars Polska, E.Wedel, BMW Group Polska,
+L'Oréal Polska, Procter & Gamble (P&G), PepsiCo Polska.
+
+Jeśli oferta pochodzi od jednej z powyższych firm, **podnieś fit score** (nawet
+jeśli branża/tytuł nie są idealnym trafieniem) i jawnie zaznacz w uzasadnieniu
+"firma z Twojej listy priorytetowej". Zwróć szczególną uwagę na **LPP**
+(polski gigant modowy — silne możliwe dopasowanie do toru MODA/3a) i
+**L'Oréal Polska** (branża beauty/lifestyle, blisko MODA).
 
 ## Format oceny
 
