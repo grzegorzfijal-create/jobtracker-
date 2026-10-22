@@ -33,3 +33,31 @@ SurveyMonkey (nie w tym repo) i odczytywalne przez narzędzia MCP:
 
 Po przeczytaniu odpowiedzi zaktualizuj `asia/profile.md` (widełki, priorytety
 torów, wykluczenia) i `asia/data/cv_base.md` (telefon/e-mail, jeśli podane).
+
+**Status: wypełniona.** Odpowiedź z 2026-10-15 (1 respondent) przeczytana
+2026-10-22 i wbudowana w `profile.md`/`cv_base.md` — patrz commit
+`298bfc1` ("Incorporate Joanna's survey answers..."). Kluczowe: ukończony
+kurs projektowania odzieży + hobby stylizacja (odblokowuje tor MODA-3b),
+widełki elastyczne w dół do 10k dla mody, Kraków/Gdańsk akceptowalne,
+wykluczenie AstraZeneca, lista firm priorytetowych (LPP, L'Oréal i inne).
+
+---
+
+# Ankieta feedbacku po pierwszym dashboardzie — SurveyMonkey
+
+Druga, krótsza ankieta (10 pytań) — nie o preferencjach zawodowych, tylko o
+samym narzędziu: czy oferty na dashboardzie są trafne, czy segmentacja
+🎯/👀 ma sens, czy wygląd/czytelność odpowiada, czy przycisk podglądu CV
+działa dobrze i czego mu brakuje (np. Word/PDF), jak często chce dostawać
+nowe oferty, ogólna ocena 1–10, i otwarte pole na dalsze uwagi. Pierwsza
+strona wyjaśnia cel: zbieramy to, żeby dalej dopracowywać narzędzie.
+
+- **Link do wypełnienia (wyślij Joannie razem z linkiem do dashboardu):**
+  https://www.surveymonkey.com/r/DMLC2XB
+- `survey_id`: `423871506`
+- `intro_page_id`: `79798961`
+- `page_id` (strona z 10 pytaniami): `79798959`
+- `collector_id` (weblink): `441220458`
+
+Odczyt odpowiedzi: te same wzorce co wyżej, tylko z `survey_id=423871506`
+(`get_response_count`, `get_response_summary`, `get_responses`).
