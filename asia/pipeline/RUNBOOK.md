@@ -20,33 +20,61 @@ uzasadnieniu — nie przerywaj pipeline'u.
 
 ## 1. Zbierz surowe oferty z Gmaila
 
-**Konfiguracja skrzynki (ustalona i potwierdzona aktywna 2026-09-28):** Joanna
-ma techniczną skrzynkę `AdresTechniczny88@wp.pl`. Przekierowanie na wp.pl jest
-**aktywne** ("Zapisaliśmy przekierowanie", kopia zostaje też na koncie WP) i
-kieruje na **`grzegorz.fijal+asia@gmail.com`** — alias działający w ramach
-konta `grzegorz.fijal@gmail.com` (Gmail ignoruje `+asia` przy doręczaniu, ale
-zachowuje go w nagłówku odbiorcy, więc jest w pełni wyszukiwalny).
+**Konfiguracja skrzynki — zweryfikowana 2026-10-24, łańcuch INNY niż pierwotnie
+ustalono.** Prawdziwa droga maila to **trzy ogniwa, DWA Z NICH RĘCZNE**:
 
-**Do zweryfikowania przed pierwszym uruchomieniem:** czy `adrestechniczny88@
+```
+LinkedIn/pracuj.pl → AdresTechniczny88@wp.pl
+                     → (Asia ręcznie przekazuje z WP) → kobidowola@gmail.com
+                     → (Asia ręcznie przekazuje stamtąd) → grzegorz.fijal+asia@gmail.com
+```
+
+`kobidowola@gmail.com` to **osobista skrzynka Asi** (potwierdzone przez
+użytkownika). Rozpoznaj ten wzorzec po podwójnym prefiksie w temacie — „**Pd:**
+Joanna: your job alert..." (wp.pl→kobidowola), potem „**Fwd: Pd:**..."
+(kobidowola→alias) — to ślad ręcznego przekazywania w kliencie pocztowym, NIE
+automatycznego przekierowania serwerowego (które nie dodaje prefiksów i
+zachowuje oryginalny nagłówek nadawcy). Pipeline widzi wyłącznie to, co
+wyląduje pod `to:grzegorz.fijal+asia@gmail.com` — nie ma wglądu w `wp.pl` ani
+w `kobidowola@gmail.com`, więc nie da się stąd odróżnić "LinkedIn nic nie
+wysłał" od "Asia nie przekazała ręcznie".
+
+**Ryzyko tego ustawienia:** ponieważ dwa z trzech ogniw są ręczne, pipeline
+**nie jest samonapędzający się** — jeśli Asia nie powtórzy ręcznego
+przekazania, dashboard nigdy się nie odświeży, niezależnie od tego, ile
+realnych alertów czeka w jej skrzynkach. Cisza od 28 września 2026 (pierwszy i
+jedyny ręczny batch) jest w pełni zgodna z tym, że po prostu nie powtórzyła
+kroku ręcznego, a nie że coś technicznie padło. **Zalecenie dla użytkownika**:
+albo Asia robi to ręcznie cyklicznie (np. raz w tygodniu), albo ustawia
+automatyczną regułę przekierowania w Gmailu na `kobidowola@gmail.com`
+(Ustawienia → Filtry i zablokowane adresy → nowy filtr od `wp.pl` → Prześlij
+dalej na `grzegorz.fijal+asia@gmail.com`), co zamieniłoby ten odcinek na
+w pełni automatyczny.
+
+**Do zweryfikowania przed każdym uruchomieniem:** czy `adrestechniczny88@
 wp.pl` jest faktycznie adresem, na który LinkedIn/pracuj.pl wysyłają alerty
 Joanny (ustawienia powiadomień na jej kontach LinkedIn/pracuj.pl) — samo
 przekierowanie niczego nie generuje, tylko relayuje to, co tam wpłynie. Sprawdź
 `to:grzegorz.fijal+asia@gmail.com` w Gmailu — jak pierwszy alert przyleci,
 pipeline można odpalić.
 
-**Dlaczego wyszukujemy po odbiorcy, nie po nadawcy wp.pl:** zwykłe
-przekierowanie serwerowe zachowuje oryginalne nagłówki "Od" (nadal
-`jobalerts-noreply@linkedin.com` itp.), więc filtrowanie po
-`from:adrestechniczny88@wp.pl` by nie zadziałało. Zawsze łącz oba warunki:
+**Dlaczego wyszukujemy WYŁĄCZNIE po odbiorcy, bez żadnego `from:`:** nadawca
+widoczny w nagłówku Gmaila to zawsze `kobidowola@gmail.com` (ostatnie ręczne
+ogniwo) — nigdy `adrestechniczny88@wp.pl` ani oryginalny
+`jobalerts-noreply@linkedin.com` (te adresy pojawiają się wyłącznie w
+zacytowanej treści przekazanej wiadomości, nie w nagłówku `From`, więc operator
+`from:` ich nie widzi). Filtrowanie po `from:adrestechniczny88@wp.pl` LUB po
+adresach LinkedIn/pracuj.pl **nie zwróci niczego, nawet gdy wszystko działa**
+(zweryfikowane 2026-10-24: zero wyników nawet dla znanych, poprawnych wątków z
+28 września). Jedyne poprawne zapytanie to:
 
 ```
-to:grzegorz.fijal+asia@gmail.com (from:jobalerts-noreply@linkedin.com OR from:jobs-noreply@linkedin.com OR from:rekomendacje@wysylka.pracuj.pl OR from:noreply@pracuj.pl)
+to:grzegorz.fijal+asia@gmail.com
 ```
 
-(dokładne adresy nadawców LinkedIn/pracuj.pl zweryfikuj tak jak w głównym
-`jobtracker-/pipeline/RUNBOOK.md` — mogą się zmieniać). Zawsze pełna treść
-przez `get_message`/`get_thread` z `PLAIN_TEXT`, nigdy nie ufaj samemu tematowi
-maila — patrz sekcja 6 dokumentu `JOB_FINDER_by_GF_architecture_summary.md`.
+Zawsze pełna treść przez `get_message`/`get_thread` z `PLAIN_TEXT`, nigdy nie
+ufaj samemu tematowi maila — patrz sekcja 6 dokumentu
+`JOB_FINDER_by_GF_architecture_summary.md`.
 
 W Gmailu istnieje etykieta **„Asia - oferty"** (utworzona 2026-09-28) do
 ręcznego porządkowania — filtr Gmaila stosujący ją automatycznie na bazie
