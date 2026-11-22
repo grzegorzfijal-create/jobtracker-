@@ -223,6 +223,47 @@
     margin-right: 4px;
   }
 
+  .sort-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0 4px;
+  }
+
+  .sort-bar .sort-label {
+    font-family: "Space Mono", monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-faint);
+  }
+
+  .sort-bar button {
+    font-family: "Space Mono", monospace;
+    font-size: 0.72rem;
+    background: var(--surface-2);
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 12px;
+    cursor: pointer;
+  }
+
+  .sort-bar button.active {
+    background: var(--ink);
+    color: var(--surface);
+    border-color: var(--ink);
+  }
+
+  .no-fresh-msg {
+    border: 1px dashed var(--line-strong);
+    border-radius: 8px;
+    padding: 16px 18px;
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
   .track[data-track="core"] .track-title { color: var(--track-core); }
   .track[data-track="ai"] .track-title { color: var(--track-ai); }
   .track[data-track="moda"] .track-title { color: var(--track-moda); }
@@ -709,8 +750,15 @@
     <p class="track-desc">Naturalna kontynuacja: delivery, automatyzacja, doskonałość
       procesowa — tam, gdzie jest dziś, tylko wyżej.</p>
     <div class="track-stats"><span><b>4</b>🎯</span><span><b>12</b>👀</span><span><b>23</b>przeanalizowane</span></div>
+    <div class="sort-bar" hidden>
+      <span class="sort-label">Sortuj:</span>
+      <button type="button" class="active" data-sort="score">Najlepiej dopasowane</button>
+      <button type="button" data-sort="newest">Najnowsze</button>
+    </div>
+    <div class="no-fresh-msg" hidden>Brak aktualnych ofert w tym torze — wszystkie starsze niż 30 dni
+      zostały ukryte (patrz zasada w <code>pipeline/RUNBOOK.md</code>, krok 6b). Czekamy na nowe alerty.</div>
     <div class="card-list">
-      <div class="card">
+      <div class="card" data-first-seen="2026-09-28">
         <div class="tagrow">
           <span>📍 Warszawa</span>
           <span>💰 widełki nieznane</span>
@@ -739,7 +787,7 @@
           <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4468989341">
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-first-seen="2026-09-28">
         <div class="tagrow">
           <span>📍 Warszawa</span>
           <span>💰 widełki nieznane</span>
@@ -768,7 +816,7 @@
           <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4470404302">
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-first-seen="2026-09-28">
         <div class="tagrow">
           <span>📍 Warszawa</span>
           <span>💰 widełki nieznane</span>
@@ -797,7 +845,7 @@
           <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4468776295">
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-first-seen="2026-09-28">
         <div class="tagrow">
           <span>📍 Polska (zdalnie)</span>
           <span>💰 widełki nieznane</span>
@@ -826,7 +874,7 @@
           <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4459278029">
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-first-seen="2026-09-28">
         <div class="tagrow">
           <span>📍 Warszawa</span>
           <span>💰 widełki nieznane</span>
@@ -855,7 +903,7 @@
           <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4470698300">
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-first-seen="2026-09-28">
         <div class="tagrow">
           <span>📍 Warszawa</span>
           <span>💰 widełki nieznane</span>
@@ -884,7 +932,7 @@
           <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4468514283">
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-first-seen="2026-09-28">
         <div class="tagrow">
           <span>📍 Kraków</span>
           <span>💰 widełki nieznane</span>
@@ -913,7 +961,7 @@
           <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4469011272">
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-first-seen="2026-09-28">
         <div class="tagrow">
           <span>📍 Polska</span>
           <span>💰 widełki nieznane</span>
@@ -942,7 +990,7 @@
           <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4468988058">
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-first-seen="2026-09-28">
         <div class="tagrow">
           <span>📍 Warszawa</span>
           <span>💰 widełki nieznane</span>
@@ -971,7 +1019,7 @@
           <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4375332937">
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-first-seen="2026-09-28">
         <div class="tagrow">
           <span>📍 Kraków</span>
           <span>💰 widełki nieznane</span>
@@ -1000,7 +1048,7 @@
           <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4470413714">
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-first-seen="2026-09-28">
         <div class="tagrow">
           <span>📍 Warszawa</span>
           <span>💰 widełki nieznane</span>
@@ -1029,7 +1077,7 @@
           <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4469317570">
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-first-seen="2026-09-28">
         <div class="tagrow">
           <span>📍 Warszawa</span>
           <span>💰 widełki nieznane</span>
@@ -1058,7 +1106,7 @@
           <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4472246789">
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-first-seen="2026-09-28">
         <div class="tagrow">
           <span>📍 Warszawa</span>
           <span>💰 widełki nieznane</span>
@@ -1087,7 +1135,7 @@
           <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4467630210">
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-first-seen="2026-09-28">
         <div class="tagrow">
           <span>📍 Warszawa</span>
           <span>💰 widełki nieznane</span>
@@ -1116,7 +1164,7 @@
           <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4471621924">
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-first-seen="2026-09-28">
         <div class="tagrow">
           <span>📍 Warszawa</span>
           <span>💰 widełki nieznane</span>
@@ -1145,7 +1193,7 @@
           <input type="text" placeholder="Opcjonalnie: dlaczego? (np. zbyt daleko, zły poziom)" oninput="setNote(this)" data-job-id="linkedin:4471885834">
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-first-seen="2026-09-28">
         <div class="tagrow">
           <span>📍 Warszawa</span>
           <span>💰 widełki nieznane</span>
@@ -1479,5 +1527,67 @@
         }
       });
     }
+    // ---------- Freshness filter (hide offers older than 30 days) + sorting ----------
+    var MAX_AGE_DAYS = 30;
+    var today = new Date();
+
+    function cardDate(card) {
+      var iso = card.getAttribute("data-first-seen");
+      if (!iso) return null;
+      var d = new Date(iso + "T00:00:00");
+      return isNaN(d.getTime()) ? null : d;
+    }
+
+    function cardScore(card) {
+      var el = card.querySelector(".score-n");
+      if (!el) return 0;
+      var n = parseInt(el.textContent, 10);
+      return isNaN(n) ? 0 : n;
+    }
+
+    function applyFreshnessFilter() {
+      document.querySelectorAll(".track").forEach(function (track) {
+        var list = track.querySelector(".card-list");
+        if (!list) return;
+        var cards = Array.prototype.slice.call(list.querySelectorAll(".card"));
+        var visibleCount = 0;
+        cards.forEach(function (card) {
+          var d = cardDate(card);
+          var ageDays = d ? Math.floor((today - d) / 86400000) : null;
+          var stale = ageDays !== null && ageDays > MAX_AGE_DAYS;
+          card.hidden = stale;
+          if (!stale) visibleCount++;
+        });
+        var noFreshMsg = track.querySelector(".no-fresh-msg");
+        if (noFreshMsg) noFreshMsg.hidden = cards.length === 0 || visibleCount > 0;
+        var sortBar = track.querySelector(".sort-bar");
+        if (sortBar) sortBar.hidden = visibleCount === 0;
+      });
+    }
+
+    function sortTrackCards(track, mode) {
+      var list = track.querySelector(".card-list");
+      if (!list) return;
+      var cards = Array.prototype.slice.call(list.querySelectorAll(".card"));
+      cards.sort(function (a, b) {
+        if (mode === "newest") {
+          var da = cardDate(a), db = cardDate(b);
+          return (db ? db.getTime() : 0) - (da ? da.getTime() : 0);
+        }
+        return cardScore(b) - cardScore(a);
+      });
+      cards.forEach(function (card) { list.appendChild(card); });
+    }
+
+    document.querySelectorAll(".sort-bar button").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var track = btn.closest(".track");
+        track.querySelectorAll(".sort-bar button").forEach(function (b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        sortTrackCards(track, btn.getAttribute("data-sort"));
+      });
+    });
+
+    applyFreshnessFilter();
   })();
 </script>
