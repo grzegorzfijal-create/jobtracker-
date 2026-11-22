@@ -20,53 +20,50 @@ uzasadnieniu — nie przerywaj pipeline'u.
 
 ## 1. Zbierz surowe oferty z Gmaila
 
-**Konfiguracja skrzynki — zweryfikowana 2026-10-24, łańcuch INNY niż pierwotnie
-ustalono.** Prawdziwa droga maila to **trzy ogniwa, DWA Z NICH RĘCZNE**:
+**Konfiguracja skrzynki — NAPRAWIONA 2026-11-22, łańcuch w pełni automatyczny.**
+Stary łańcuch (`LinkedIn → AdresTechniczny88@wp.pl → ręczne przekazanie →
+kobidowola@gmail.com → ręczne przekazanie → alias`) przestał działać ok.
+2 miesiące wcześniej, bo oba ręczne ogniwa wymagały od Asi powtarzania kroku,
+czego przestała robić. WP i Onet (oba wypróbowane jako alternatywy) blokują
+automatyczne przekierowanie poczty za darmowym kontem — wymagają płatnego planu
+("Poczta bez reklam" / "Onet Poczta Plus"). Rozwiązanie: **ominięcie obu
+darmowych webmaili w ogóle**, przez zmianę głównego adresu powiadomień w samym
+LinkedIn.
+
+Nowy, w pełni automatyczny i darmowy łańcuch:
 
 ```
-LinkedIn/pracuj.pl → AdresTechniczny88@wp.pl
-                     → (Asia ręcznie przekazuje z WP) → kobidowola@gmail.com
-                     → (Asia ręcznie przekazuje stamtąd) → grzegorz.fijal+asia@gmail.com
+LinkedIn (adres główny: kobidowola@gmail.com)
+   → automatyczne przekazywanie Gmaila (natywna, darmowa funkcja)
+   → grzegorz.fijal+asia@gmail.com
 ```
 
-`kobidowola@gmail.com` to **osobista skrzynka Asi** (potwierdzone przez
-użytkownika). Rozpoznaj ten wzorzec po podwójnym prefiksie w temacie — „**Pd:**
-Joanna: your job alert..." (wp.pl→kobidowola), potem „**Fwd: Pd:**..."
-(kobidowola→alias) — to ślad ręcznego przekazywania w kliencie pocztowym, NIE
-automatycznego przekierowania serwerowego (które nie dodaje prefiksów i
-zachowuje oryginalny nagłówek nadawcy). Pipeline widzi wyłącznie to, co
-wyląduje pod `to:grzegorz.fijal+asia@gmail.com` — nie ma wglądu w `wp.pl` ani
-w `kobidowola@gmail.com`, więc nie da się stąd odróżnić "LinkedIn nic nie
-wysłał" od "Asia nie przekazała ręcznie".
+Konfiguracja (2026-11-22):
+- W LinkedIn → Ustawienia → Logowanie i zabezpieczenia → Adresy e-mail:
+  `kobidowola@gmail.com` jest teraz adresem **głównym (primary)**.
+  `joanna_tobiasz@onet.eu` zostaje jako drugi/zapasowy adres. Stary
+  `AdresTechniczny88@wp.pl` został usunięty z listy (nie jest już używany).
+- Na koncie Gmail `kobidowola@gmail.com` (osobista skrzynka Asi) w
+  Ustawienia → Przekazywanie i POP/IMAP włączone jest automatyczne
+  przekazywanie całej przychodzącej poczty na `grzegorz.fijal+asia@gmail.com`,
+  z zachowaniem kopii w skrzynce `kobidowola` (Asia nadal widzi alerty u
+  siebie).
+- To przekazywanie jest **natywną funkcją Gmaila** (Gmail→Gmail), więc jest
+  w pełni darmowe i nie wymaga żadnego płatnego planu — w przeciwieństwie do
+  WP/Onet.
 
-**Ryzyko tego ustawienia:** ponieważ dwa z trzech ogniw są ręczne, pipeline
-**nie jest samonapędzający się** — jeśli Asia nie powtórzy ręcznego
-przekazania, dashboard nigdy się nie odświeży, niezależnie od tego, ile
-realnych alertów czeka w jej skrzynkach. Cisza od 28 września 2026 (pierwszy i
-jedyny ręczny batch) jest w pełni zgodna z tym, że po prostu nie powtórzyła
-kroku ręcznego, a nie że coś technicznie padło. **Zalecenie dla użytkownika**:
-albo Asia robi to ręcznie cyklicznie (np. raz w tygodniu), albo ustawia
-automatyczną regułę przekierowania w Gmailu na `kobidowola@gmail.com`
-(Ustawienia → Filtry i zablokowane adresy → nowy filtr od `wp.pl` → Prześlij
-dalej na `grzegorz.fijal+asia@gmail.com`), co zamieniłoby ten odcinek na
-w pełni automatyczny.
+**Ważne:** stare maile z `AdresTechniczny88@wp.pl` (duży zaległy backlog, w
+tym m.in. oferta "Projektant/Projektantka odzieży w marce Mohito at LPP S.A."
+— trafiona pod MODA-3a) **nie zostaną automatycznie przesłane** — przekazanie
+dotyczy wyłącznie nowej poczty od 2026-11-22. Jeśli Asia chce odzyskać coś z
+tego backlogu, musi przejrzeć skrzynkę WP ręcznie i przekazać wybrane maile
+osobno (jednorazowo).
 
-**Do zweryfikowania przed każdym uruchomieniem:** czy `adrestechniczny88@
-wp.pl` jest faktycznie adresem, na który LinkedIn/pracuj.pl wysyłają alerty
-Joanny (ustawienia powiadomień na jej kontach LinkedIn/pracuj.pl) — samo
-przekierowanie niczego nie generuje, tylko relayuje to, co tam wpłynie. Sprawdź
-`to:grzegorz.fijal+asia@gmail.com` w Gmailu — jak pierwszy alert przyleci,
-pipeline można odpalić.
-
-**Dlaczego wyszukujemy WYŁĄCZNIE po odbiorcy, bez żadnego `from:`:** nadawca
-widoczny w nagłówku Gmaila to zawsze `kobidowola@gmail.com` (ostatnie ręczne
-ogniwo) — nigdy `adrestechniczny88@wp.pl` ani oryginalny
-`jobalerts-noreply@linkedin.com` (te adresy pojawiają się wyłącznie w
-zacytowanej treści przekazanej wiadomości, nie w nagłówku `From`, więc operator
-`from:` ich nie widzi). Filtrowanie po `from:adrestechniczny88@wp.pl` LUB po
-adresach LinkedIn/pracuj.pl **nie zwróci niczego, nawet gdy wszystko działa**
-(zweryfikowane 2026-10-24: zero wyników nawet dla znanych, poprawnych wątków z
-28 września). Jedyne poprawne zapytanie to:
+Nadawca widoczny w nagłówku Gmaila na nowych mailach to teraz
+`kobidowola@gmail.com` (tak jak poprzednio) — oryginalny
+`jobalerts-noreply@linkedin.com` nadal pojawia się tylko w zacytowanej treści,
+nie w nagłówku `From`. Jedyne poprawne zapytanie do wyszukiwania pozostaje bez
+zmian:
 
 ```
 to:grzegorz.fijal+asia@gmail.com
