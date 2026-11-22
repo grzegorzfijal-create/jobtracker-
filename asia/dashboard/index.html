@@ -1,82 +1,87 @@
-<title>The Edit</title>
+<title>Przeszukani</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
 <style>
+  /* Layout: single-column case-file — fixed masthead, numbered track sections, dense data rows */
   :root {
-    --paper: #ece9e1;
-    --surface: #fbfaf7;
-    --surface-2: #f2efe8;
-    --ink: #1a1a1e;
-    --ink-soft: #6b6860;
-    --ink-faint: #96917f;
-    --line: #d9d4c8;
-    --line-strong: #c4bda9;
-    --accent: #9c7a2e;
-    --accent-ink: #7a5f22;
-    --track-core: #3a4a55;
-    --track-core-bg: #e2e7e6;
-    --track-ai: #5b4b8a;
-    --track-ai-bg: #e8e4f2;
-    --track-moda: #7a2331;
-    --track-moda-bg: #f2e2e2;
-    --good: #2f6b4a;
-    --good-bg: #e0ebe2;
-    --warn: #8a5a12;
-    --warn-bg: #f2e6d0;
-    --shadow: 0 1px 2px rgba(26, 26, 30, 0.06), 0 10px 28px -16px rgba(26, 26, 30, 0.28);
+    --paper: #f3f4f7;
+    --surface: #ffffff;
+    --surface-2: #e9ebf0;
+    --ink: #11141b;
+    --ink-soft: #545b6a;
+    --ink-faint: #868d9c;
+    --line: #dde0e7;
+    --line-strong: #c3c8d3;
+    --accent: #2c3fd6;
+    --accent-ink: #1f2da3;
+    --track-core: #1c6b63;
+    --track-core-bg: #e2f0ee;
+    --track-ai: #5b3fb0;
+    --track-ai-bg: #ebe6f8;
+    --track-moda: #a1264a;
+    --track-moda-bg: #f8e5eb;
+    --good: #1c7a4c;
+    --good-bg: #e1f2e8;
+    --warn: #93650f;
+    --warn-bg: #f7ecd4;
+    --font-display: "Space Grotesk", system-ui, sans-serif;
+    --font-body: "Inter", system-ui, sans-serif;
+    --font-mono: "Space Mono", ui-monospace, monospace;
+    --shadow: 0 1px 2px rgba(17, 20, 27, 0.05), 0 10px 28px -16px rgba(17, 20, 27, 0.22);
     color-scheme: light;
   }
 
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --paper: #16171a;
-      --surface: #1e1f23;
-      --surface-2: #26272c;
-      --ink: #ede9e1;
-      --ink-soft: #a6a294;
-      --ink-faint: #726e60;
-      --line: #34353a;
-      --line-strong: #45464c;
-      --accent: #d3ab5a;
-      --accent-ink: #e6c079;
-      --track-core: #9db3bd;
-      --track-core-bg: #232c30;
-      --track-ai: #b3a2e0;
-      --track-ai-bg: #29243a;
-      --track-moda: #e08a97;
-      --track-moda-bg: #332025;
-      --good: #7fc79e;
-      --good-bg: #1e2f24;
-      --warn: #e0b366;
-      --warn-bg: #332a17;
+      --paper: #0e1015;
+      --surface: #16181f;
+      --surface-2: #1d2029;
+      --ink: #eef0f4;
+      --ink-soft: #9aa0ae;
+      --ink-faint: #666c7a;
+      --line: #272a33;
+      --line-strong: #373b47;
+      --accent: #7589ff;
+      --accent-ink: #9aa6ff;
+      --track-core: #7fcec4;
+      --track-core-bg: #15302c;
+      --track-ai: #b7a4ec;
+      --track-ai-bg: #231c38;
+      --track-moda: #ea8ba6;
+      --track-moda-bg: #351b24;
+      --good: #85d8ab;
+      --good-bg: #163123;
+      --warn: #e2b361;
+      --warn-bg: #352a12;
       --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 28px -16px rgba(0, 0, 0, 0.6);
       color-scheme: dark;
     }
   }
 
   :root[data-theme="dark"] {
-    --paper: #16171a;
-    --surface: #1e1f23;
-    --surface-2: #26272c;
-    --ink: #ede9e1;
-    --ink-soft: #a6a294;
-    --ink-faint: #726e60;
-    --line: #34353a;
-    --line-strong: #45464c;
-    --accent: #d3ab5a;
-    --accent-ink: #e6c079;
-    --track-core: #9db3bd;
-    --track-core-bg: #232c30;
-    --track-ai: #b3a2e0;
-    --track-ai-bg: #29243a;
-    --track-moda: #e08a97;
-    --track-moda-bg: #332025;
-    --good: #7fc79e;
-    --good-bg: #1e2f24;
-    --warn: #e0b366;
-    --warn-bg: #332a17;
+    --paper: #0e1015;
+    --surface: #16181f;
+    --surface-2: #1d2029;
+    --ink: #eef0f4;
+    --ink-soft: #9aa0ae;
+    --ink-faint: #666c7a;
+    --line: #272a33;
+    --line-strong: #373b47;
+    --accent: #7589ff;
+    --accent-ink: #9aa6ff;
+    --track-core: #7fcec4;
+    --track-core-bg: #15302c;
+    --track-ai: #b7a4ec;
+    --track-ai-bg: #231c38;
+    --track-moda: #ea8ba6;
+    --track-moda-bg: #351b24;
+    --good: #85d8ab;
+    --good-bg: #163123;
+    --warn: #e2b361;
+    --warn-bg: #352a12;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 28px -16px rgba(0, 0, 0, 0.6);
     color-scheme: dark;
   }
@@ -87,7 +92,7 @@
     margin: 0;
     background: var(--paper);
     color: var(--ink);
-    font-family: "Archivo", system-ui, sans-serif;
+    font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
   }
 
@@ -114,17 +119,16 @@
   }
 
   .wordmark {
-    font-family: "Fraunces", Georgia, serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: italic;
-    font-size: clamp(2.1rem, 7vw, 3.1rem);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.7rem, 6vw, 2.5rem);
     letter-spacing: -0.01em;
-    line-height: 0.95;
+    line-height: 1;
+    text-transform: uppercase;
   }
 
   .issue-line {
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.72rem;
     color: var(--ink-soft);
     text-transform: uppercase;
@@ -133,7 +137,7 @@
   }
 
   .dossier-line {
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.78rem;
     color: var(--ink-soft);
     text-transform: uppercase;
@@ -186,13 +190,13 @@
   }
 
   .track-index {
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.78rem;
     color: var(--ink-faint);
   }
 
   .track-title {
-    font-family: "Fraunces", Georgia, serif;
+    font-family: var(--font-display);
     font-weight: 600;
     font-size: 1.5rem;
     letter-spacing: -0.005em;
@@ -209,7 +213,7 @@
   .track-stats {
     display: flex;
     gap: 18px;
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -231,7 +235,7 @@
   }
 
   .sort-bar .sort-label {
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -239,7 +243,7 @@
   }
 
   .sort-bar button {
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.72rem;
     background: var(--surface-2);
     color: var(--ink-soft);
@@ -303,7 +307,7 @@
     transform: translateY(-50%);
     background: var(--ink);
     color: var(--surface);
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.62rem;
     letter-spacing: 0.08em;
     padding: 3px 9px;
@@ -314,7 +318,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 6px 10px;
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.68rem;
     letter-spacing: 0.03em;
     color: var(--ink-soft);
@@ -344,7 +348,7 @@
   }
 
   .card h3 {
-    font-family: "Fraunces", Georgia, serif;
+    font-family: var(--font-display);
     font-weight: 600;
     font-size: 1.28rem;
     margin: 0 0 2px;
@@ -365,7 +369,7 @@
   }
 
   .score .score-n {
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     font-weight: 700;
     font-size: 1.3rem;
     color: var(--ink);
@@ -379,7 +383,7 @@
   }
 
   .score .score-l {
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -390,7 +394,7 @@
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.66rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -445,7 +449,7 @@
 
   button.cv-btn {
     font: inherit;
-    font-family: "Archivo", sans-serif;
+    font-family: var(--font-body);
     font-weight: 600;
     font-size: 0.82rem;
     color: var(--surface);
@@ -470,7 +474,7 @@
 
   button.fb-btn {
     font: inherit;
-    font-family: "Archivo", sans-serif;
+    font-family: var(--font-body);
     font-weight: 600;
     font-size: 0.82rem;
     color: var(--ink-soft);
@@ -509,7 +513,7 @@
   .fb-note input[type="text"] {
     width: 100%;
     font: inherit;
-    font-family: "Archivo", sans-serif;
+    font-family: var(--font-body);
     font-size: 0.82rem;
     background: var(--surface);
     color: var(--ink);
@@ -527,7 +531,7 @@
   }
 
   .fb-summary-head {
-    font-family: "Fraunces", Georgia, serif;
+    font-family: var(--font-display);
     font-weight: 600;
     font-size: 1.4rem;
     margin-bottom: 6px;
@@ -545,7 +549,7 @@
     border: 1px solid var(--line);
     border-radius: 8px;
     padding: 16px 18px;
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.78rem;
     line-height: 1.7;
     white-space: pre-wrap;
@@ -564,7 +568,7 @@
   }
 
   .fb-copy-status {
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.78rem;
     color: var(--good);
   }
@@ -583,7 +587,7 @@
   details.archive summary {
     cursor: pointer;
     padding: 12px 16px;
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.74rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -635,7 +639,7 @@
   }
 
   .cv-modal-head h2 {
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -665,14 +669,14 @@
   }
 
   .cv-modal-body h1.cv-name {
-    font-family: "Fraunces", Georgia, serif;
+    font-family: var(--font-display);
     font-weight: 600;
     font-size: 1.7rem;
     margin: 0 0 2px;
   }
 
   .cv-modal-body .cv-contact {
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.74rem;
     color: var(--ink-soft);
     margin: 0 0 4px;
@@ -686,7 +690,7 @@
   }
 
   .cv-modal-body h3.cv-section {
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -699,7 +703,7 @@
   .cv-modal-body ul { margin: 4px 0 0; padding-left: 20px; }
   .cv-modal-body li { margin-bottom: 4px; }
   .cv-modal-body .cv-job { margin-bottom: 12px; }
-  .cv-modal-body .cv-job h4 { font-size: 0.94rem; margin: 12px 0 2px; font-family: "Fraunces", Georgia, serif; }
+  .cv-modal-body .cv-job h4 { font-size: 0.94rem; margin: 12px 0 2px; font-family: var(--font-display); }
   .cv-modal-body .cv-role { font-size: 0.8rem; color: var(--ink-soft); margin-bottom: 2px; }
   .cv-modal-body .cv-role b { color: var(--ink); font-weight: 600; }
 
@@ -721,7 +725,7 @@
 
   footer {
     margin-top: 48px;
-    font-family: "Space Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.68rem;
     color: var(--ink-faint);
     text-transform: uppercase;
@@ -734,8 +738,8 @@
 <div class="wrap">
   <header class="masthead">
     <div class="masthead-top">
-      <div class="wordmark">The Edit</div>
-      <div class="issue-line">Dossier zawodowy<br>Vol. 1 — konfiguracja</div>
+      <div class="wordmark">Przeszukani</div>
+      <div class="issue-line">Raport dopasowania ofert<br>Aktualizacja bieżąca</div>
     </div>
     <div class="dossier-line">Prowadzone dla: <b>Joanna Fijał</b> · Warszawa · trzy tory kariery: CORE / AI / MODA</div>
   </header>
@@ -1291,12 +1295,12 @@
     <div id="fb-summary-box">Nie oceniłaś jeszcze żadnej oferty — kliknij 👍 lub 👎 przy
       dowolnej karcie powyżej, a pojawi się tutaj.</div>
     <div class="fb-copy-row">
-      <button type="button" class="copy-btn" id="fb-copy-btn" style="font-family:'Archivo',sans-serif;font-weight:600;font-size:0.88rem;color:var(--surface);background:var(--ink);border:none;border-radius:999px;padding:10px 20px;cursor:pointer;">Kopiuj moje oceny</button>
+      <button type="button" class="copy-btn" id="fb-copy-btn" style="font-family:var(--font-body);font-weight:600;font-size:0.88rem;color:var(--surface);background:var(--ink);border:none;border-radius:999px;padding:10px 20px;cursor:pointer;">Kopiuj moje oceny</button>
       <span class="fb-copy-status" id="fb-copy-status" hidden>Skopiowano ✓</span>
     </div>
   </div>
 
-  <footer>The Edit · dossier zawodowy · Joanna Fijał · aktualizacja: 22 listopada 2026, 20:15 — przekazywanie poczty naprawione, czekamy na pierwsze świeże alerty</footer>
+  <footer>Przeszukani · raport dopasowania ofert · Joanna Fijał · aktualizacja: 22 listopada 2026, 20:15 — przekazywanie poczty naprawione, czekamy na pierwsze świeże alerty</footer>
 </div>
 
 <div class="cv-modal-backdrop" id="cv-modal-backdrop" hidden>
