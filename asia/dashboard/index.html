@@ -230,33 +230,29 @@
   .sort-bar {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin: 10px 0 4px;
+    gap: 22px;
+    margin: 14px 0 0;
+    border-bottom: 1px solid var(--line);
   }
 
-  .sort-bar .sort-label {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--ink-faint);
-  }
+  .sort-bar .sort-label { display: none; }
 
   .sort-bar button {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    background: var(--surface-2);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.86rem;
+    background: none;
     color: var(--ink-soft);
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    padding: 5px 12px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    padding: 10px 1px;
     cursor: pointer;
   }
 
   .sort-bar button.active {
-    background: var(--ink);
-    color: var(--surface);
-    border-color: var(--ink);
+    color: var(--accent-ink);
+    border-bottom-color: var(--accent);
   }
 
   .no-fresh-msg {
@@ -285,19 +281,26 @@
   /* ---------- Card ---------- */
 
   .card-list {
-    display: grid;
-    gap: 14px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
     margin-top: 16px;
+    overflow: hidden;
   }
 
   .card {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 6px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
     padding: 18px 20px;
-    box-shadow: var(--shadow);
     position: relative;
+    transition: background 0.1s ease;
   }
+
+  .card:hover { background: var(--surface-2); }
+  .card:last-of-type { border-bottom: none; }
 
   .card[data-example="true"]::before {
     content: "PRZYKŁAD";
@@ -340,26 +343,67 @@
   .track[data-track="ai"] .tagrow .sub-badge { color: var(--track-ai); border-color: var(--track-ai); }
   .track[data-track="moda"] .tagrow .sub-badge { color: var(--track-moda); border-color: var(--track-moda); }
 
-  .card-top {
+  .offer-main {
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
     gap: 14px;
+  }
+
+  .org-mark {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.92rem;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+  }
+
+  .track[data-track="core"] .org-mark { color: var(--track-core); border-color: var(--track-core); }
+  .track[data-track="ai"] .org-mark { color: var(--track-ai); border-color: var(--track-ai); }
+  .track[data-track="moda"] .org-mark { color: var(--track-moda); border-color: var(--track-moda); }
+
+  .offer-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .offer-title-line {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 10px;
   }
 
   .card h3 {
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 1.28rem;
-    margin: 0 0 2px;
+    font-size: 1.1rem;
+    margin: 0;
     letter-spacing: -0.005em;
-    line-height: 1.15;
+    line-height: 1.3;
   }
+
+  a.offer-title {
+    color: var(--accent-ink);
+    text-decoration: none;
+  }
+
+  a.offer-title:hover { text-decoration: underline; }
+
+  .offer-title-line .pill { margin-top: 0; }
 
   .card .company {
     color: var(--ink-soft);
-    font-size: 0.9rem;
-    margin: 0;
+    font-size: 0.88rem;
+    margin: 3px 0 0;
   }
 
   .score {
@@ -388,6 +432,11 @@
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--ink-faint);
+  }
+
+  @media (max-width: 480px) {
+    .offer-main { flex-wrap: wrap; }
+    .score { text-align: left; margin-left: 58px; }
   }
 
   .pill {
@@ -500,8 +549,8 @@
     border-color: var(--warn);
   }
 
-  .card[data-verdict="up"] { border-left: 3px solid var(--good); }
-  .card[data-verdict="down"] { border-left: 3px solid var(--warn); opacity: 0.82; }
+  .card[data-verdict="up"] { border-left: 3px solid var(--good); padding-left: 17px; }
+  .card[data-verdict="down"] { border-left: 3px solid var(--warn); padding-left: 17px; opacity: 0.82; }
 
   .fb-note {
     display: none;
@@ -763,24 +812,24 @@
       zostały ukryte (patrz zasada w <code>pipeline/RUNBOOK.md</code>, krok 6b). Czekamy na nowe alerty.</div>
     <div class="card-list">
       <div class="card" data-first-seen="2026-09-28">
-        <div class="tagrow">
-          <span>📍 Warszawa</span>
-          <span>💰 widełki nieznane</span>
-          <span>🕒 zauważona: 28 września 2026</span>
-          <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
-          <span>🔗 LinkedIn</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>Senior Project Manager - Pharma and Regulatory Affairs (f/m/x)</h3>
-            <p class="company">Sii Poland</p>
+        <div class="offer-main">
+          <div class="org-mark" aria-hidden="true">SP</div>
+          <div class="offer-body">
+            <div class="offer-title-line">
+              <h3><a class="offer-title" href="https://www.linkedin.com/jobs/view/4468989341/" target="_blank" rel="noopener">Senior Project Manager - Pharma and Regulatory Affairs (f/m/x)</a></h3>
+              <span class="pill good">🎯 idealnie dopasowane</span>
+            </div>
+            <p class="company">Sii Poland · Warszawa</p>
+            <p class="reason">Rzadkie połączenie project managementu z Regulatory Affairs — dokładnie jej wcześniejsza specjalizacja (The Office for Registration of Medicinal Products) plus obecne kompetencje delivery z AstraZeneca. Branża pharma, lokalizacja Warszawa — silny naturalny most między jej dwoma poprzednimi rolami zawodowymi.</p>
+            <div class="tagrow">
+              <span>🕒 zauważona: 28 września 2026</span>
+              <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
+              <span>🔗 LinkedIn</span>
+            </div>
           </div>
           <div class="score"><div class="score-n">80<span>/100</span></div><div class="score-l">Fit score</div></div>
         </div>
-        <span class="pill good">🎯 idealnie dopasowane</span>
-        <p class="reason">Rzadkie połączenie project managementu z Regulatory Affairs — dokładnie jej wcześniejsza specjalizacja (The Office for Registration of Medicinal Products) plus obecne kompetencje delivery z AstraZeneca. Branża pharma, lokalizacja Warszawa — silny naturalny most między jej dwoma poprzednimi rolami zawodowymi.</p>
         <div class="card-actions">
-          <a class="apply" href="https://www.linkedin.com/jobs/view/4468989341/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4468989341" onclick="openCvPreview(this)">📎 Podgląd CV</button>
           <div class="fb-row">
             <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4468989341" onclick="setVerdict(this)">👍 Pasuje</button>
@@ -792,24 +841,24 @@
         </div>
       </div>
       <div class="card" data-first-seen="2026-09-28">
-        <div class="tagrow">
-          <span>📍 Warszawa</span>
-          <span>💰 widełki nieznane</span>
-          <span>🕒 zauważona: 28 września 2026</span>
-          <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
-          <span>🔗 LinkedIn</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>Delivery Manager</h3>
-            <p class="company">FABRITY</p>
+        <div class="offer-main">
+          <div class="org-mark" aria-hidden="true">F</div>
+          <div class="offer-body">
+            <div class="offer-title-line">
+              <h3><a class="offer-title" href="https://www.linkedin.com/jobs/view/4470404302/" target="_blank" rel="noopener">Delivery Manager</a></h3>
+              <span class="pill good">🎯 idealnie dopasowane</span>
+            </div>
+            <p class="company">FABRITY · Warszawa</p>
+            <p class="reason">Dokładne trafienie tytułu — „Delivery Manager” to bezpośrednia kontynuacja obecnej roli (Pipeline &amp; Delivery Manager). FABRITY to firma technologiczna, nie pharma, więc mniej znana sieć kontaktów niż w life sciences, ale lokalizacja i poziom są idealnie zgodne z profilem.</p>
+            <div class="tagrow">
+              <span>🕒 zauważona: 28 września 2026</span>
+              <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
+              <span>🔗 LinkedIn</span>
+            </div>
           </div>
           <div class="score"><div class="score-n">78<span>/100</span></div><div class="score-l">Fit score</div></div>
         </div>
-        <span class="pill good">🎯 idealnie dopasowane</span>
-        <p class="reason">Dokładne trafienie tytułu — „Delivery Manager” to bezpośrednia kontynuacja obecnej roli (Pipeline &amp; Delivery Manager). FABRITY to firma technologiczna, nie pharma, więc mniej znana sieć kontaktów niż w life sciences, ale lokalizacja i poziom są idealnie zgodne z profilem.</p>
         <div class="card-actions">
-          <a class="apply" href="https://www.linkedin.com/jobs/view/4470404302/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4470404302" onclick="openCvPreview(this)">📎 Podgląd CV</button>
           <div class="fb-row">
             <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4470404302" onclick="setVerdict(this)">👍 Pasuje</button>
@@ -821,24 +870,24 @@
         </div>
       </div>
       <div class="card" data-first-seen="2026-09-28">
-        <div class="tagrow">
-          <span>📍 Warszawa</span>
-          <span>💰 widełki nieznane</span>
-          <span>🕒 zauważona: 28 września 2026</span>
-          <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
-          <span>🔗 LinkedIn</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>Regulatory Manager / Senior Regulatory Manager</h3>
-            <p class="company">Precision Medicine Group</p>
+        <div class="offer-main">
+          <div class="org-mark" aria-hidden="true">PM</div>
+          <div class="offer-body">
+            <div class="offer-title-line">
+              <h3><a class="offer-title" href="https://www.linkedin.com/jobs/view/4468776295/" target="_blank" rel="noopener">Regulatory Manager / Senior Regulatory Manager</a></h3>
+              <span class="pill good">🎯 idealnie dopasowane</span>
+            </div>
+            <p class="company">Precision Medicine Group · Warszawa</p>
+            <p class="reason">Bezpośredni powrót do jej pierwotnej specjalizacji regulacyjnej (Regulatory Affairs Specialist, 2010–2014) na poziomie senior manager, w firmie z branży life sciences. Silny fit kompetencyjny, choć to inny kierunek niż delivery/automatyzacja — warto rozważyć jako alternatywną ścieżkę rozwoju.</p>
+            <div class="tagrow">
+              <span>🕒 zauważona: 28 września 2026</span>
+              <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
+              <span>🔗 LinkedIn</span>
+            </div>
           </div>
           <div class="score"><div class="score-n">77<span>/100</span></div><div class="score-l">Fit score</div></div>
         </div>
-        <span class="pill good">🎯 idealnie dopasowane</span>
-        <p class="reason">Bezpośredni powrót do jej pierwotnej specjalizacji regulacyjnej (Regulatory Affairs Specialist, 2010–2014) na poziomie senior manager, w firmie z branży life sciences. Silny fit kompetencyjny, choć to inny kierunek niż delivery/automatyzacja — warto rozważyć jako alternatywną ścieżkę rozwoju.</p>
         <div class="card-actions">
-          <a class="apply" href="https://www.linkedin.com/jobs/view/4468776295/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4468776295" onclick="openCvPreview(this)">📎 Podgląd CV</button>
           <div class="fb-row">
             <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4468776295" onclick="setVerdict(this)">👍 Pasuje</button>
@@ -850,24 +899,24 @@
         </div>
       </div>
       <div class="card" data-first-seen="2026-09-28">
-        <div class="tagrow">
-          <span>📍 Polska (zdalnie)</span>
-          <span>💰 widełki nieznane</span>
-          <span>🕒 zauważona: 28 września 2026</span>
-          <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
-          <span>🔗 LinkedIn</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>Global Lead Project Manager (FSP), Poland (Remote)</h3>
-            <p class="company">Thermo Fisher Scientific</p>
+        <div class="offer-main">
+          <div class="org-mark" aria-hidden="true">TF</div>
+          <div class="offer-body">
+            <div class="offer-title-line">
+              <h3><a class="offer-title" href="https://www.linkedin.com/jobs/view/4459278029/" target="_blank" rel="noopener">Global Lead Project Manager (FSP), Poland (Remote)</a></h3>
+              <span class="pill good">🎯 idealnie dopasowane</span>
+            </div>
+            <p class="company">Thermo Fisher Scientific · Polska (zdalnie)</p>
+            <p class="reason">Senior project management w Thermo Fisher (CRO/pharma) z opcją pełnego trybu zdalnego — spełnia kryterium lokalizacyjne z zapasem. Tytuł „Global Lead” sugeruje odpowiedzialność zbliżoną skalą do obecnej roli w AstraZeneca.</p>
+            <div class="tagrow">
+              <span>🕒 zauważona: 28 września 2026</span>
+              <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
+              <span>🔗 LinkedIn</span>
+            </div>
           </div>
           <div class="score"><div class="score-n">76<span>/100</span></div><div class="score-l">Fit score</div></div>
         </div>
-        <span class="pill good">🎯 idealnie dopasowane</span>
-        <p class="reason">Senior project management w Thermo Fisher (CRO/pharma) z opcją pełnego trybu zdalnego — spełnia kryterium lokalizacyjne z zapasem. Tytuł „Global Lead” sugeruje odpowiedzialność zbliżoną skalą do obecnej roli w AstraZeneca.</p>
         <div class="card-actions">
-          <a class="apply" href="https://www.linkedin.com/jobs/view/4459278029/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4459278029" onclick="openCvPreview(this)">📎 Podgląd CV</button>
           <div class="fb-row">
             <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4459278029" onclick="setVerdict(this)">👍 Pasuje</button>
@@ -879,24 +928,24 @@
         </div>
       </div>
       <div class="card" data-first-seen="2026-09-28">
-        <div class="tagrow">
-          <span>📍 Warszawa</span>
-          <span>💰 widełki nieznane</span>
-          <span>🕒 zauważona: 28 września 2026</span>
-          <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
-          <span>🔗 LinkedIn</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>Head of Delivery Team (Engineering) | f/m/d</h3>
-            <p class="company">ERGO</p>
+        <div class="offer-main">
+          <div class="org-mark" aria-hidden="true">E</div>
+          <div class="offer-body">
+            <div class="offer-title-line">
+              <h3><a class="offer-title" href="https://www.linkedin.com/jobs/view/4470698300/" target="_blank" rel="noopener">Head of Delivery Team (Engineering) | f/m/d</a></h3>
+              <span class="pill consider">👀 warto rozważyć</span>
+            </div>
+            <p class="company">ERGO · Warszawa</p>
+            <p class="reason">Tytuł „Head of Delivery” to trafienie w górną część preferencji toru CORE, ale branża to ubezpieczenia/engineering, nie pharma — mniej znane środowisko niż jej dotychczasowa sieć kontaktów. Tuż pod progiem 🎯 wyłącznie z powodu różnicy branżowej.</p>
+            <div class="tagrow">
+              <span>🕒 zauważona: 28 września 2026</span>
+              <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
+              <span>🔗 LinkedIn</span>
+            </div>
           </div>
           <div class="score"><div class="score-n">74<span>/100</span></div><div class="score-l">Fit score</div></div>
         </div>
-        <span class="pill consider">👀 warto rozważyć</span>
-        <p class="reason">Tytuł „Head of Delivery” to trafienie w górną część preferencji toru CORE, ale branża to ubezpieczenia/engineering, nie pharma — mniej znane środowisko niż jej dotychczasowa sieć kontaktów. Tuż pod progiem 🎯 wyłącznie z powodu różnicy branżowej.</p>
         <div class="card-actions">
-          <a class="apply" href="https://www.linkedin.com/jobs/view/4470698300/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4470698300" onclick="openCvPreview(this)">📎 Podgląd CV</button>
           <div class="fb-row">
             <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4470698300" onclick="setVerdict(this)">👍 Pasuje</button>
@@ -908,24 +957,24 @@
         </div>
       </div>
       <div class="card" data-first-seen="2026-09-28">
-        <div class="tagrow">
-          <span>📍 Warszawa</span>
-          <span>💰 widełki nieznane</span>
-          <span>🕒 zauważona: 28 września 2026</span>
-          <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
-          <span>🔗 LinkedIn</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>Project Manager, MDRIM &amp; Document Mgmt.</h3>
-            <p class="company">Johnson &amp; Johnson MedTech</p>
+        <div class="offer-main">
+          <div class="org-mark" aria-hidden="true">JJ</div>
+          <div class="offer-body">
+            <div class="offer-title-line">
+              <h3><a class="offer-title" href="https://www.linkedin.com/jobs/view/4468514283/" target="_blank" rel="noopener">Project Manager, MDRIM &amp; Document Mgmt.</a></h3>
+              <span class="pill consider">👀 warto rozważyć</span>
+            </div>
+            <p class="company">Johnson &amp; Johnson MedTech · Warszawa</p>
+            <p class="reason">MDRIM (Medical Device Regulatory Information Management) to obszar bezpośrednio powiązany z jej doświadczeniem regulacyjnym, w firmie MedTech. Sam tytuł „Project Manager” (bez „Senior”) sugeruje niższy poziom stanowiska niż jej obecna rola, stąd niepełny wynik.</p>
+            <div class="tagrow">
+              <span>🕒 zauważona: 28 września 2026</span>
+              <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
+              <span>🔗 LinkedIn</span>
+            </div>
           </div>
           <div class="score"><div class="score-n">72<span>/100</span></div><div class="score-l">Fit score</div></div>
         </div>
-        <span class="pill consider">👀 warto rozważyć</span>
-        <p class="reason">MDRIM (Medical Device Regulatory Information Management) to obszar bezpośrednio powiązany z jej doświadczeniem regulacyjnym, w firmie MedTech. Sam tytuł „Project Manager” (bez „Senior”) sugeruje niższy poziom stanowiska niż jej obecna rola, stąd niepełny wynik.</p>
         <div class="card-actions">
-          <a class="apply" href="https://www.linkedin.com/jobs/view/4468514283/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4468514283" onclick="openCvPreview(this)">📎 Podgląd CV</button>
           <div class="fb-row">
             <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4468514283" onclick="setVerdict(this)">👍 Pasuje</button>
@@ -937,24 +986,24 @@
         </div>
       </div>
       <div class="card" data-first-seen="2026-09-28">
-        <div class="tagrow">
-          <span>📍 Kraków</span>
-          <span>💰 widełki nieznane</span>
-          <span>🕒 zauważona: 28 września 2026</span>
-          <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
-          <span>🔗 LinkedIn</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>Senior Project Manager</h3>
-            <p class="company">TalentHawk</p>
+        <div class="offer-main">
+          <div class="org-mark" aria-hidden="true">T</div>
+          <div class="offer-body">
+            <div class="offer-title-line">
+              <h3><a class="offer-title" href="https://www.linkedin.com/jobs/view/4469011272/" target="_blank" rel="noopener">Senior Project Manager</a></h3>
+              <span class="pill consider">👀 warto rozważyć</span>
+            </div>
+            <p class="company">TalentHawk · Kraków</p>
+            <p class="reason">Kraków — potwierdzone w ankiecie preferencji jako akceptowalna lokalizacja, więc bez minusa za relokację. TalentHawk to agencja rekrutacyjna — nieznana firma docelowa i branża niesprecyzowana w ogłoszeniu, stąd nadal 👀 zamiast 🎯.</p>
+            <div class="tagrow">
+              <span>🕒 zauważona: 28 września 2026</span>
+              <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
+              <span>🔗 LinkedIn</span>
+            </div>
           </div>
           <div class="score"><div class="score-n">72<span>/100</span></div><div class="score-l">Fit score</div></div>
         </div>
-        <span class="pill consider">👀 warto rozważyć</span>
-        <p class="reason">Kraków — potwierdzone w ankiecie preferencji jako akceptowalna lokalizacja, więc bez minusa za relokację. TalentHawk to agencja rekrutacyjna — nieznana firma docelowa i branża niesprecyzowana w ogłoszeniu, stąd nadal 👀 zamiast 🎯.</p>
         <div class="card-actions">
-          <a class="apply" href="https://www.linkedin.com/jobs/view/4469011272/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4469011272" onclick="openCvPreview(this)">📎 Podgląd CV</button>
           <div class="fb-row">
             <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4469011272" onclick="setVerdict(this)">👍 Pasuje</button>
@@ -966,24 +1015,24 @@
         </div>
       </div>
       <div class="card" data-first-seen="2026-09-28">
-        <div class="tagrow">
-          <span>📍 Polska</span>
-          <span>💰 widełki nieznane</span>
-          <span>🕒 zauważona: 28 września 2026</span>
-          <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
-          <span>🔗 LinkedIn</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>Project Manager - Early Development Services</h3>
-            <p class="company">Thermo Fisher Scientific</p>
+        <div class="offer-main">
+          <div class="org-mark" aria-hidden="true">TF</div>
+          <div class="offer-body">
+            <div class="offer-title-line">
+              <h3><a class="offer-title" href="https://www.linkedin.com/jobs/view/4468988058/" target="_blank" rel="noopener">Project Manager - Early Development Services</a></h3>
+              <span class="pill consider">👀 warto rozważyć</span>
+            </div>
+            <p class="company">Thermo Fisher Scientific · Polska</p>
+            <p class="reason">Pharma/CRO — zgodna branża, ale tytuł „Project Manager” bez przedrostka senior/lead sugeruje niższy poziom stanowiska niż jej obecna rola. Lokalizacja podana ogólnie jako „Poland”, bez doprecyzowania miasta.</p>
+            <div class="tagrow">
+              <span>🕒 zauważona: 28 września 2026</span>
+              <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
+              <span>🔗 LinkedIn</span>
+            </div>
           </div>
           <div class="score"><div class="score-n">70<span>/100</span></div><div class="score-l">Fit score</div></div>
         </div>
-        <span class="pill consider">👀 warto rozważyć</span>
-        <p class="reason">Pharma/CRO — zgodna branża, ale tytuł „Project Manager” bez przedrostka senior/lead sugeruje niższy poziom stanowiska niż jej obecna rola. Lokalizacja podana ogólnie jako „Poland”, bez doprecyzowania miasta.</p>
         <div class="card-actions">
-          <a class="apply" href="https://www.linkedin.com/jobs/view/4468988058/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4468988058" onclick="openCvPreview(this)">📎 Podgląd CV</button>
           <div class="fb-row">
             <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4468988058" onclick="setVerdict(this)">👍 Pasuje</button>
@@ -995,24 +1044,24 @@
         </div>
       </div>
       <div class="card" data-first-seen="2026-09-28">
-        <div class="tagrow">
-          <span>📍 Warszawa</span>
-          <span>💰 widełki nieznane</span>
-          <span>🕒 zauważona: 28 września 2026</span>
-          <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
-          <span>🔗 LinkedIn</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>Senior Project Manager - Clinical Trials</h3>
-            <p class="company">Precision For Medicine</p>
+        <div class="offer-main">
+          <div class="org-mark" aria-hidden="true">PF</div>
+          <div class="offer-body">
+            <div class="offer-title-line">
+              <h3><a class="offer-title" href="https://www.linkedin.com/jobs/view/4375332937/" target="_blank" rel="noopener">Senior Project Manager - Clinical Trials</a></h3>
+              <span class="pill consider">👀 warto rozważyć</span>
+            </div>
+            <p class="company">Precision For Medicine · Warszawa</p>
+            <p class="reason">Senior PM w CRO prowadzącym badania kliniczne — zgodna branża i poziom senioralności. Skupienie na Clinical Trials to węższa specjalizacja niż jej obecny, szeroki zakres delivery/automatyzacji.</p>
+            <div class="tagrow">
+              <span>🕒 zauważona: 28 września 2026</span>
+              <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
+              <span>🔗 LinkedIn</span>
+            </div>
           </div>
           <div class="score"><div class="score-n">70<span>/100</span></div><div class="score-l">Fit score</div></div>
         </div>
-        <span class="pill consider">👀 warto rozważyć</span>
-        <p class="reason">Senior PM w CRO prowadzącym badania kliniczne — zgodna branża i poziom senioralności. Skupienie na Clinical Trials to węższa specjalizacja niż jej obecny, szeroki zakres delivery/automatyzacji.</p>
         <div class="card-actions">
-          <a class="apply" href="https://www.linkedin.com/jobs/view/4375332937/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4375332937" onclick="openCvPreview(this)">📎 Podgląd CV</button>
           <div class="fb-row">
             <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4375332937" onclick="setVerdict(this)">👍 Pasuje</button>
@@ -1024,24 +1073,24 @@
         </div>
       </div>
       <div class="card" data-first-seen="2026-09-28">
-        <div class="tagrow">
-          <span>📍 Kraków</span>
-          <span>💰 widełki nieznane</span>
-          <span>🕒 zauważona: 28 września 2026</span>
-          <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
-          <span>🔗 LinkedIn</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>Fund Order Services Project Team Manager, Vice President</h3>
-            <p class="company">State Street</p>
+        <div class="offer-main">
+          <div class="org-mark" aria-hidden="true">SS</div>
+          <div class="offer-body">
+            <div class="offer-title-line">
+              <h3><a class="offer-title" href="https://www.linkedin.com/jobs/view/4470413714/" target="_blank" rel="noopener">Fund Order Services Project Team Manager, Vice President</a></h3>
+              <span class="pill consider">👀 warto rozważyć</span>
+            </div>
+            <p class="company">State Street · Kraków</p>
+            <p class="reason">Project management na poziomie VP z realnym zakresem zarządzania zespołem projektowym. Kraków — zgodna lokalizacja wg ankiety preferencji, bez minusa. Branża finansowa (fundusze inwestycyjne) zamiast pharma to jedyna różnica względem toru CORE.</p>
+            <div class="tagrow">
+              <span>🕒 zauważona: 28 września 2026</span>
+              <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
+              <span>🔗 LinkedIn</span>
+            </div>
           </div>
           <div class="score"><div class="score-n">69<span>/100</span></div><div class="score-l">Fit score</div></div>
         </div>
-        <span class="pill consider">👀 warto rozważyć</span>
-        <p class="reason">Project management na poziomie VP z realnym zakresem zarządzania zespołem projektowym. Kraków — zgodna lokalizacja wg ankiety preferencji, bez minusa. Branża finansowa (fundusze inwestycyjne) zamiast pharma to jedyna różnica względem toru CORE.</p>
         <div class="card-actions">
-          <a class="apply" href="https://www.linkedin.com/jobs/view/4470413714/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4470413714" onclick="openCvPreview(this)">📎 Podgląd CV</button>
           <div class="fb-row">
             <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4470413714" onclick="setVerdict(this)">👍 Pasuje</button>
@@ -1053,24 +1102,24 @@
         </div>
       </div>
       <div class="card" data-first-seen="2026-09-28">
-        <div class="tagrow">
-          <span>📍 Warszawa</span>
-          <span>💰 widełki nieznane</span>
-          <span>🕒 zauważona: 28 września 2026</span>
-          <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
-          <span>🔗 LinkedIn</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>Solution Delivery Competence Leader</h3>
-            <p class="company">DOU Polska</p>
+        <div class="offer-main">
+          <div class="org-mark" aria-hidden="true">DP</div>
+          <div class="offer-body">
+            <div class="offer-title-line">
+              <h3><a class="offer-title" href="https://www.linkedin.com/jobs/view/4469317570/" target="_blank" rel="noopener">Solution Delivery Competence Leader</a></h3>
+              <span class="pill consider">👀 warto rozważyć</span>
+            </div>
+            <p class="company">DOU Polska · Warszawa</p>
+            <p class="reason">Tytuł zawiera „Delivery” i „Leader” — dobrze zgodny kierunkowo, ale DOU Polska to mniej rozpoznawalna firma o niejasnej branży. Warszawa zgodna z preferencją lokalizacyjną.</p>
+            <div class="tagrow">
+              <span>🕒 zauważona: 28 września 2026</span>
+              <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
+              <span>🔗 LinkedIn</span>
+            </div>
           </div>
           <div class="score"><div class="score-n">66<span>/100</span></div><div class="score-l">Fit score</div></div>
         </div>
-        <span class="pill consider">👀 warto rozważyć</span>
-        <p class="reason">Tytuł zawiera „Delivery” i „Leader” — dobrze zgodny kierunkowo, ale DOU Polska to mniej rozpoznawalna firma o niejasnej branży. Warszawa zgodna z preferencją lokalizacyjną.</p>
         <div class="card-actions">
-          <a class="apply" href="https://www.linkedin.com/jobs/view/4469317570/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4469317570" onclick="openCvPreview(this)">📎 Podgląd CV</button>
           <div class="fb-row">
             <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4469317570" onclick="setVerdict(this)">👍 Pasuje</button>
@@ -1082,24 +1131,24 @@
         </div>
       </div>
       <div class="card" data-first-seen="2026-09-28">
-        <div class="tagrow">
-          <span>📍 Warszawa</span>
-          <span>💰 widełki nieznane</span>
-          <span>🕒 zauważona: 28 września 2026</span>
-          <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
-          <span>🔗 LinkedIn</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>Senior Manager, Insights &amp; Innovation (I&amp;I) – Trial Analytics, Insights &amp; Planning (TAIP)</h3>
-            <p class="company">Bristol Myers Squibb</p>
+        <div class="offer-main">
+          <div class="org-mark" aria-hidden="true">BM</div>
+          <div class="offer-body">
+            <div class="offer-title-line">
+              <h3><a class="offer-title" href="https://www.linkedin.com/jobs/view/4472246789/" target="_blank" rel="noopener">Senior Manager, Insights &amp; Innovation (I&amp;I) – Trial Analytics, Insights &amp; Planning (TAIP)</a></h3>
+              <span class="pill consider">👀 warto rozważyć</span>
+            </div>
+            <p class="company">Bristol Myers Squibb · Warszawa</p>
+            <p class="reason">Pharma (BMS), poziom senior manager zgodny z jej obecnym, ale obszar Insights &amp; Innovation/Trial Analytics jest bliżej analityki danych niż klasycznego delivery/PM — częściowe dopasowanie kompetencyjne.</p>
+            <div class="tagrow">
+              <span>🕒 zauważona: 28 września 2026</span>
+              <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
+              <span>🔗 LinkedIn</span>
+            </div>
           </div>
           <div class="score"><div class="score-n">65<span>/100</span></div><div class="score-l">Fit score</div></div>
         </div>
-        <span class="pill consider">👀 warto rozważyć</span>
-        <p class="reason">Pharma (BMS), poziom senior manager zgodny z jej obecnym, ale obszar Insights &amp; Innovation/Trial Analytics jest bliżej analityki danych niż klasycznego delivery/PM — częściowe dopasowanie kompetencyjne.</p>
         <div class="card-actions">
-          <a class="apply" href="https://www.linkedin.com/jobs/view/4472246789/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4472246789" onclick="openCvPreview(this)">📎 Podgląd CV</button>
           <div class="fb-row">
             <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4472246789" onclick="setVerdict(this)">👍 Pasuje</button>
@@ -1111,24 +1160,24 @@
         </div>
       </div>
       <div class="card" data-first-seen="2026-09-28">
-        <div class="tagrow">
-          <span>📍 Warszawa</span>
-          <span>💰 widełki nieznane</span>
-          <span>🕒 zauważona: 28 września 2026</span>
-          <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
-          <span>🔗 LinkedIn</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>Case Processing Manager, Team Lead (PV Manager)</h3>
-            <p class="company">PrimeVigilance</p>
+        <div class="offer-main">
+          <div class="org-mark" aria-hidden="true">P</div>
+          <div class="offer-body">
+            <div class="offer-title-line">
+              <h3><a class="offer-title" href="https://www.linkedin.com/jobs/view/4467630210/" target="_blank" rel="noopener">Case Processing Manager, Team Lead (PV Manager)</a></h3>
+              <span class="pill consider">👀 warto rozważyć</span>
+            </div>
+            <p class="company">PrimeVigilance · Warszawa</p>
+            <p class="reason">Pharmakowigilancja (PV) to obszar pokrewny doświadczeniu regulacyjnemu Joanny, ale rola jest bardziej operacyjna/proceduralna niż delivery/automatyzacja portfolio. Warszawa — zgodna lokalizacja.</p>
+            <div class="tagrow">
+              <span>🕒 zauważona: 28 września 2026</span>
+              <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
+              <span>🔗 LinkedIn</span>
+            </div>
           </div>
           <div class="score"><div class="score-n">60<span>/100</span></div><div class="score-l">Fit score</div></div>
         </div>
-        <span class="pill consider">👀 warto rozważyć</span>
-        <p class="reason">Pharmakowigilancja (PV) to obszar pokrewny doświadczeniu regulacyjnemu Joanny, ale rola jest bardziej operacyjna/proceduralna niż delivery/automatyzacja portfolio. Warszawa — zgodna lokalizacja.</p>
         <div class="card-actions">
-          <a class="apply" href="https://www.linkedin.com/jobs/view/4467630210/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4467630210" onclick="openCvPreview(this)">📎 Podgląd CV</button>
           <div class="fb-row">
             <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4467630210" onclick="setVerdict(this)">👍 Pasuje</button>
@@ -1140,24 +1189,24 @@
         </div>
       </div>
       <div class="card" data-first-seen="2026-09-28">
-        <div class="tagrow">
-          <span>📍 Warszawa</span>
-          <span>💰 widełki nieznane</span>
-          <span>🕒 zauważona: 28 września 2026</span>
-          <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
-          <span>🔗 LinkedIn</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>Manager, Insights &amp; Innovation (I&amp;I) – Trial Analytics, Insights &amp; Planning (TAIP)</h3>
-            <p class="company">Bristol Myers Squibb</p>
+        <div class="offer-main">
+          <div class="org-mark" aria-hidden="true">BM</div>
+          <div class="offer-body">
+            <div class="offer-title-line">
+              <h3><a class="offer-title" href="https://www.linkedin.com/jobs/view/4471621924/" target="_blank" rel="noopener">Manager, Insights &amp; Innovation (I&amp;I) – Trial Analytics, Insights &amp; Planning (TAIP)</a></h3>
+              <span class="pill consider">👀 warto rozważyć</span>
+            </div>
+            <p class="company">Bristol Myers Squibb · Warszawa</p>
+            <p class="reason">Ta sama rodzina stanowisk co pozycja Senior Manager I&amp;I TAIP powyżej (prawdopodobnie inny poziom tego samego zespołu w BMS) — niższy tytuł „Manager” sugeruje mniejszy zakres odpowiedzialności niż jej obecna rola.</p>
+            <div class="tagrow">
+              <span>🕒 zauważona: 28 września 2026</span>
+              <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
+              <span>🔗 LinkedIn</span>
+            </div>
           </div>
           <div class="score"><div class="score-n">58<span>/100</span></div><div class="score-l">Fit score</div></div>
         </div>
-        <span class="pill consider">👀 warto rozważyć</span>
-        <p class="reason">Ta sama rodzina stanowisk co pozycja Senior Manager I&amp;I TAIP powyżej (prawdopodobnie inny poziom tego samego zespołu w BMS) — niższy tytuł „Manager” sugeruje mniejszy zakres odpowiedzialności niż jej obecna rola.</p>
         <div class="card-actions">
-          <a class="apply" href="https://www.linkedin.com/jobs/view/4471621924/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4471621924" onclick="openCvPreview(this)">📎 Podgląd CV</button>
           <div class="fb-row">
             <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4471621924" onclick="setVerdict(this)">👍 Pasuje</button>
@@ -1169,24 +1218,24 @@
         </div>
       </div>
       <div class="card" data-first-seen="2026-09-28">
-        <div class="tagrow">
-          <span>📍 Warszawa</span>
-          <span>💰 widełki nieznane</span>
-          <span>🕒 zauważona: 28 września 2026</span>
-          <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
-          <span>🔗 LinkedIn</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>Launch Manager - Execution Framework</h3>
-            <p class="company">Appfire</p>
+        <div class="offer-main">
+          <div class="org-mark" aria-hidden="true">A</div>
+          <div class="offer-body">
+            <div class="offer-title-line">
+              <h3><a class="offer-title" href="https://www.linkedin.com/jobs/view/4471885834/" target="_blank" rel="noopener">Launch Manager - Execution Framework</a></h3>
+              <span class="pill consider">👀 warto rozważyć</span>
+            </div>
+            <p class="company">Appfire · Warszawa</p>
+            <p class="reason">Tytuł „Launch Manager” jest funkcjonalnie zbliżony do program/delivery managementu, ale Appfire to mała firma software’owa, nie pharma — nieznane środowisko i skala organizacji.</p>
+            <div class="tagrow">
+              <span>🕒 zauważona: 28 września 2026</span>
+              <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
+              <span>🔗 LinkedIn</span>
+            </div>
           </div>
           <div class="score"><div class="score-n">56<span>/100</span></div><div class="score-l">Fit score</div></div>
         </div>
-        <span class="pill consider">👀 warto rozważyć</span>
-        <p class="reason">Tytuł „Launch Manager” jest funkcjonalnie zbliżony do program/delivery managementu, ale Appfire to mała firma software’owa, nie pharma — nieznane środowisko i skala organizacji.</p>
         <div class="card-actions">
-          <a class="apply" href="https://www.linkedin.com/jobs/view/4471885834/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4471885834" onclick="openCvPreview(this)">📎 Podgląd CV</button>
           <div class="fb-row">
             <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4471885834" onclick="setVerdict(this)">👍 Pasuje</button>
@@ -1198,24 +1247,24 @@
         </div>
       </div>
       <div class="card" data-first-seen="2026-09-28">
-        <div class="tagrow">
-          <span>📍 Warszawa</span>
-          <span>💰 widełki nieznane</span>
-          <span>🕒 zauważona: 28 września 2026</span>
-          <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
-          <span>🔗 LinkedIn</span>
-        </div>
-        <div class="card-top">
-          <div>
-            <h3>Project Manager - Warszawa (Mazowieckie), Polska K/M</h3>
-            <p class="company">Astek</p>
+        <div class="offer-main">
+          <div class="org-mark" aria-hidden="true">A</div>
+          <div class="offer-body">
+            <div class="offer-title-line">
+              <h3><a class="offer-title" href="https://www.linkedin.com/jobs/view/4470159992/" target="_blank" rel="noopener">Project Manager - Warszawa (Mazowieckie), Polska K/M</a></h3>
+              <span class="pill consider">👀 warto rozważyć</span>
+            </div>
+            <p class="company">Astek · Warszawa</p>
+            <p class="reason">Ogłoszenie agencyjne (Astek to firma konsultingowo-staffingowa) bez wskazania branży klienta końcowego ani poziomu senioralności — generyczny tytuł PM, tuż nad progiem odrzucenia.</p>
+            <div class="tagrow">
+              <span>🕒 zauważona: 28 września 2026</span>
+              <span>⚠️ ponad 30 dni — sprawdź aktualność</span>
+              <span>🔗 LinkedIn</span>
+            </div>
           </div>
           <div class="score"><div class="score-n">55<span>/100</span></div><div class="score-l">Fit score</div></div>
         </div>
-        <span class="pill consider">👀 warto rozważyć</span>
-        <p class="reason">Ogłoszenie agencyjne (Astek to firma konsultingowo-staffingowa) bez wskazania branży klienta końcowego ani poziomu senioralności — generyczny tytuł PM, tuż nad progiem odrzucenia.</p>
         <div class="card-actions">
-          <a class="apply" href="https://www.linkedin.com/jobs/view/4470159992/" target="_blank" rel="noopener">Zobacz ofertę →</a>
           <button type="button" class="cv-btn" data-job-id="linkedin:4470159992" onclick="openCvPreview(this)">📎 Podgląd CV</button>
           <div class="fb-row">
             <button type="button" class="fb-btn" data-dir="up" data-job-id="linkedin:4470159992" onclick="setVerdict(this)">👍 Pasuje</button>
